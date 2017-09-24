@@ -1,0 +1,16 @@
+[
+{
+  "modid": "ctdmythos",
+  "name": "CTD Mythos",
+  "description": "Chase the Dragon meets Magic!",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "https://minecraft.curseforge.com/projects/ctd-mythos",
+  "updateUrl": "",
+  "authorList": ["TheMasterGeneral","KingRayRay_Ray"],
+  "credits": "KingRayRay_Ray for the ideas, TMG for the code!",
+  "logoFile": "assets/ctdmythos/textures/logo.png",
+  "screenshots": [],
+  "dependencies": ["ctdcore"]
+}
+]
