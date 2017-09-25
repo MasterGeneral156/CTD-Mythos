@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "group": "ctdmythos:bucketcowblood",
+    "pattern": [
+        "NNN",
+        "NHN",
+		"NNN"
+    ],
+    "key": {
+		"N": { "item": "ctdmythos:cowblooddrop" },
+		"H": { "item": "minecraft:bucket" }
+    },
+    "result": {
+        "item": "ctdmythos:bucketcowblood",
+		"count": 1
+    }
+}
