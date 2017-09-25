@@ -4,7 +4,7 @@ public class CowBloodItem extends BaseItem {
 
 	public CowBloodItem(String name, String modid) {
 		super(name, modid);
-		this.maxStackSize=16;
+		this.maxStackSize = 16;
 	}
 
 }
