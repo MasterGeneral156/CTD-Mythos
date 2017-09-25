@@ -1,5 +1,7 @@
 package com.themastergeneral.ctdmythos.common.items;
 
+import com.themastergeneral.ctdmythos.common.config.ModConfig;
+
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
@@ -16,7 +18,7 @@ public class HumanEffigyItem extends BaseItem {
 	public HumanEffigyItem(String name, String modid) {
 		super(name, modid);
 		this.maxStackSize = 1;
-		this.setMaxDamage(4);
+		this.setMaxDamage(ModConfig.DurabilityHumanEffigy-1);
 		this.setNoRepair();
 	}
 
