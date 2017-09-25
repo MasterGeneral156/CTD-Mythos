@@ -1,4 +1,4 @@
-# CTD-Mythos
+# CTD Mythos
 CTD Mythos, brought to you by TheMasterGeneral and KingRayRay Ray!
   
  
@@ -12,3 +12,6 @@ In CTD Mythos you will be given a slight taste of the mythological world of the 
    
   
 Will you find the Golden Fleece?  Or will Cylla eat you up?
+  
+# Downloads  
+https://minecraft.curseforge.com/projects/ctd-mythos
