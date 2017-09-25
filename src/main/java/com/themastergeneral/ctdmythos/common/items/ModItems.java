@@ -5,15 +5,21 @@ import com.themastergeneral.ctdmythos.CTDMythos;
 
 public class ModItems extends RegisterItem {
 	public static HumanEffigyItem humaneffigy;
+	public static ShearsItem grimshears;
+
 	public static CowBloodItem cowblooddrop;
 	public static SingleStackItem bucketcowblood;
+
+	public static BaseItem humansoul;
 
 	public static void registerItems() {
 		humaneffigy = register(new HumanEffigyItem("humaneffigy",
 				CTDMythos.MODID));
+		grimshears = register(new ShearsItem("grimshears", CTDMythos.MODID));
 		cowblooddrop = register(new CowBloodItem("cowblooddrop",
 				CTDMythos.MODID));
 		bucketcowblood = register(new SingleStackItem("bucketcowblood",
 				CTDMythos.MODID));
+		humansoul = register(new BaseItem("humansoul", CTDMythos.MODID));
 	}
 }

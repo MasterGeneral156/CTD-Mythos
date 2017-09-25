@@ -8,7 +8,7 @@
     ],
     "key": {
 		"N": { "item": "minecraft:deadbush" },
-		"H": { "item": "minecraft:skull", "data": 32767 }
+		"H": { "item": "ctdmythos:humansoul" }
     },
     "result": {
         "item": "ctdmythos:humaneffigy",
