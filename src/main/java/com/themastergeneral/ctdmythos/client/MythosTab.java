@@ -5,7 +5,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 
 import com.themastergeneral.ctdmythos.CTDMythos;
-import com.themastergeneral.ctdmythos.common.ModItems;
+import com.themastergeneral.ctdmythos.common.items.ModItems;
 
 public class MythosTab extends CreativeTabs {
 
