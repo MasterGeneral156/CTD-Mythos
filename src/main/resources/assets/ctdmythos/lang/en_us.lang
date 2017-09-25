@@ -1,7 +1,10 @@
 item.humaneffigy.name=Human Effigy
 item.cowblooddrop.name=Cow Blood Drop
 item.bucketcowblood.name=Bucket of Cow Blood
+item.grimshears.name=Grim Shears
+item.humansoul.name=Human Soul Piece
 
 itemGroup.ctdmythos=CTD Mythos
 
 jei.cowblooddrop.desc=Dropped when killing cows. 100% for 1, 50% for 2, 25% for 3.
+jei.humansoul.desc=20% chance to be dropped when you hit another player or a Villager with Grim shears.
