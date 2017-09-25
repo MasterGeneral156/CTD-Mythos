@@ -13,5 +13,6 @@ public class MythosJEI implements IModPlugin {
 	@Override
 	public void register(IModRegistry registry) {
 		registry.addDescription(new ItemStack(ModItems.cowblooddrop), "jei.cowblooddrop.desc");
+		registry.addDescription(new ItemStack(ModItems.humansoul), "jei.humansoul.desc");
 	}
 }
