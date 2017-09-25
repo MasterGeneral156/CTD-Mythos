@@ -1,0 +1,19 @@
+package com.themastergeneral.ctdmythos.common.items;
+
+import com.themastergeneral.ctdcore.item.RegisterItem;
+import com.themastergeneral.ctdmythos.CTDMythos;
+
+public class ModItems extends RegisterItem {
+	public static HumanEffigyItem humaneffigy;
+	public static CowBloodItem cowblooddrop;
+	public static SingleStackItem bucketcowblood;
+
+	public static void registerItems() {
+		humaneffigy = register(new HumanEffigyItem("humaneffigy",
+				CTDMythos.MODID));
+		cowblooddrop = register(new CowBloodItem("cowblooddrop",
+				CTDMythos.MODID));
+		bucketcowblood = register(new SingleStackItem("bucketcowblood",
+				CTDMythos.MODID));
+	}
+}
