@@ -1,3 +1,7 @@
 item.humaneffigy.name=Human Effigy
+item.cowblooddrop.name=Cow Blood Drop
+item.bucketcowblood.name=Bucket of Cow Blood
 
 itemGroup.ctdmythos=CTD Mythos
+
+jei.cowblooddrop.desc=Dropped when killing cows. 100% for 1, 50% for 2, 25% for 3.

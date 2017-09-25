@@ -2,8 +2,9 @@ package com.themastergeneral.ctdmythos.proxy;
 
 import java.io.File;
 
-import com.themastergeneral.ctdmythos.common.ModConfig;
-import com.themastergeneral.ctdmythos.common.ModItems;
+import com.themastergeneral.ctdmythos.common.config.ModConfig;
+import com.themastergeneral.ctdmythos.common.events.MythosEventHandler;
+import com.themastergeneral.ctdmythos.common.items.ModItems;
 
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -22,7 +23,7 @@ public class Common {
 	}
 
 	public void init(FMLInitializationEvent e) {
-
+		MythosEventHandler.LoadEvents();
 	}
 
 	public void postInit(FMLPostInitializationEvent e) {
