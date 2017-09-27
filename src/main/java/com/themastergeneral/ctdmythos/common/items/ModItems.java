@@ -9,6 +9,8 @@ public class ModItems extends RegisterItem {
 
 	public static CowBloodItem cowblooddrop;
 	public static SingleStackItem bucketcowblood;
+	
+	public static LongBowItem longbow;
 
 	public static BaseItem humansoul;
 
@@ -21,5 +23,7 @@ public class ModItems extends RegisterItem {
 		bucketcowblood = register(new SingleStackItem("bucketcowblood",
 				CTDMythos.MODID));
 		humansoul = register(new BaseItem("humansoul", CTDMythos.MODID));
+		
+		longbow = register(new LongBowItem("longbow", CTDMythos.MODID, 72000, 200));
 	}
 }
