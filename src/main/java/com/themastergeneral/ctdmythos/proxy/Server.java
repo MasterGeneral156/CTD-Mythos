@@ -1,8 +1,11 @@
 package com.themastergeneral.ctdmythos.proxy;
 
+import com.themastergeneral.ctdmythos.server.world.WorldGen;
+
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class Server extends Common {
 	@Override
