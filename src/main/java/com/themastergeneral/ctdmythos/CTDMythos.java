@@ -15,15 +15,15 @@ import org.apache.logging.log4j.Logger;
 import com.themastergeneral.ctdmythos.client.MythosTab;
 import com.themastergeneral.ctdmythos.proxy.Common;
 
-@Mod(modid = CTDMythos.MODID, name = CTDMythos.MODNAME, version = CTDMythos.VERSION, dependencies = CTDMythos.DEPENDENCIES, updateJSON = CTDMythos.updateJSON, acceptedMinecraftVersions = CTDMythos.MCVersion)
+@Mod(modid = CTDMythos.MODID, name = CTDMythos.MODNAME, version = CTDMythos.VERSION, acceptedMinecraftVersions = CTDMythos.acceptedMinecraftVersions, updateJSON = CTDMythos.updateJSON, certificateFingerprint = CTDMythos.certificateFingerprint, dependencies = CTDMythos.DEPENDENCIES)
 public class CTDMythos {
 	public static final String MODID = "ctdmythos";
 	public static final String MODNAME = "CTD Mythos";
-	public static final String VERSION = "0.0.6";
-	public static final String DEPENDENCIES = "required-after:ctdcore@[1.2.1,];";
+	public static final String VERSION = "0.0.7";
 	public static final String updateJSON = "https://raw.githubusercontent.com/MasterGeneral156/Version/master/CTD-Mythos.json";
-	public static final String MCVersion = "1.12.2";
-	public static final String FingerPrint = "441b509a0f58a0ef41aca8daf1be20d96287635e";
+	public static final String acceptedMinecraftVersions = "1.12.2";
+	public static final String certificateFingerprint = "441b509a0f58a0ef41aca8daf1be20d96287635e";
+	public static final String DEPENDENCIES = "required-after:ctdcore@[1.2.4,];";
 
 	// Creative Tab
 	public static final MythosTab creativeTab = new MythosTab();
@@ -53,6 +53,6 @@ public class CTDMythos {
 
 	@EventHandler
 	public void onFingerprintViolation(FMLFingerprintViolationEvent e) {
-		FMLLog.warning("Invalid fingerprint detected for CTD Mythos! TheMasterGeneral will not support this version!");
+		//FMLLog.warning("Invalid fingerprint detected for CTD Mythos! TheMasterGeneral will not support this version!");
 	}
 }
