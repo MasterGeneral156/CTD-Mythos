@@ -13,6 +13,12 @@ public class ModItems extends RegisterItem {
 	public static LongBowItem longbow;
 
 	public static BaseItem humansoul;
+	public static BaseItem crystal_woe;
+	public static BaseItem crystal_memory;
+	public static BaseItem crystal_grief;
+	public static BaseItem crystal_fire;
+	public static BaseItem crystal_oath;
+	
 
 	public static void registerItems() {
 		humaneffigy = register(new HumanEffigyItem("humaneffigy",
@@ -23,6 +29,11 @@ public class ModItems extends RegisterItem {
 		bucketcowblood = register(new SingleStackItem("bucketcowblood",
 				CTDMythos.MODID));
 		humansoul = register(new BaseItem("humansoul", CTDMythos.MODID));
+		crystal_woe = register(new BaseItem("crystal_woe", CTDMythos.MODID));
+		crystal_memory = register(new BaseItem("crystal_memory", CTDMythos.MODID));
+		crystal_grief = register(new BaseItem("crystal_grief", CTDMythos.MODID));
+		crystal_fire = register(new BaseItem("crystal_fire", CTDMythos.MODID));
+		crystal_oath = register(new BaseItem("crystal_oath", CTDMythos.MODID));
 		
 		longbow = register(new LongBowItem("longbow", CTDMythos.MODID, 72000, 200));
 	}
