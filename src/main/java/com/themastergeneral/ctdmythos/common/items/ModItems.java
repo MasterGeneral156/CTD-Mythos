@@ -19,6 +19,8 @@ public class ModItems extends RegisterItem {
 	public static BaseItem crystal_fire;
 	public static BaseItem crystal_oath;
 	
+	public static TMGDrill tmgdrill;
+	
 
 	public static void registerItems() {
 		humaneffigy = register(new HumanEffigyItem("humaneffigy",
@@ -36,5 +38,7 @@ public class ModItems extends RegisterItem {
 		crystal_oath = register(new BaseItem("crystal_oath", CTDMythos.MODID));
 		
 		longbow = register(new LongBowItem("longbow", CTDMythos.MODID, 72000, 200));
+		
+		tmgdrill = register(new TMGDrill("tmgdrill"));
 	}
 }
