@@ -22,7 +22,7 @@ public class CTDMythos {
 	public static final String VERSION = "0.0.7";
 	public static final String updateJSON = "https://raw.githubusercontent.com/MasterGeneral156/Version/master/CTD-Mythos.json";
 	public static final String acceptedMinecraftVersions = "1.12.2";
-	public static final String certificateFingerprint = "441b509a0f58a0ef41aca8daf1be20d96287635e";
+	public static final String certificateFingerprint = "1cd8befc36d6dedc5601d77a013f43afc71f899f";
 	public static final String DEPENDENCIES = "required-after:ctdcore@[1.2.4,];";
 
 	// Creative Tab
@@ -53,6 +53,6 @@ public class CTDMythos {
 
 	@EventHandler
 	public void onFingerprintViolation(FMLFingerprintViolationEvent e) {
-		//FMLLog.warning("Invalid fingerprint detected for CTD Mythos! TheMasterGeneral will not support this version!");
+		FMLLog.warning("Invalid fingerprint detected for CTD Mythos! TheMasterGeneral will not support this version!");
 	}
 }
