@@ -30,13 +30,13 @@ public class BaseFood extends ItemFood implements ItemModelProvider {
 	public void registerItemModel(Item item) {
 		CTDCore.proxy.registerItemRenderer(CTDMythos.MODID, this, 0, name);
 	}
-	
+
 	@Override
-	protected void onFoodEaten(ItemStack stack, World worldIn, EntityPlayer player)
-    {
-		//Clear effects if eating the rye loaf.
+	protected void onFoodEaten(ItemStack stack, World worldIn,
+			EntityPlayer player) {
+		// Clear effects if eating the rye loaf.
 		if (stack.getItem() == ModItems.revitalizing_rye)
 			player.clearActivePotions();
-    }
+	}
 
 }
