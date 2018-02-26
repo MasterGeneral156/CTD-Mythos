@@ -1,5 +1,7 @@
 package com.themastergeneral.ctdmythos.common.items;
 
+import net.minecraft.item.Item.ToolMaterial;
+
 import com.themastergeneral.ctdcore.item.RegisterItem;
 import com.themastergeneral.ctdmythos.CTDMythos;
 
@@ -20,6 +22,7 @@ public class ModItems extends RegisterItem {
 	public static BaseItem crystal_oath;
 	
 	public static TMGDrill tmgdrill;
+	public static MythosSwordBase gladius_sword;
 	
 	public static XPTomeItem xptome;
 	
@@ -42,6 +45,7 @@ public class ModItems extends RegisterItem {
 		longbow = register(new LongBowItem("longbow", CTDMythos.MODID, 90000, 200));
 		
 		tmgdrill = register(new TMGDrill("tmgdrill"));
+		gladius_sword = register(new MythosSwordBase(ToolMaterial.GOLD, "gladius_sword", 823));
 		
 		xptome = register(new XPTomeItem("xptome", CTDMythos.MODID));
 	}
