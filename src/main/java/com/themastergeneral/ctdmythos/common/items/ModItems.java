@@ -12,6 +12,8 @@ import com.themastergeneral.ctdmythos.common.items.base.SingleStackItem;
 
 public class ModItems extends RegisterItem {
 	public static HumanEffigyItem humaneffigy;
+	public static MulesKickItem muleskick;
+	
 	public static ShearsItem grimshears;
 
 	public static CowBloodItem cowblooddrop;
@@ -44,6 +46,7 @@ public class ModItems extends RegisterItem {
 	public static void registerItems() {
 		humaneffigy = register(new HumanEffigyItem("humaneffigy",
 				CTDMythos.MODID));
+		muleskick = register(new MulesKickItem("muleskick"));
 		grimshears = register(new ShearsItem("grimshears", CTDMythos.MODID));
 		cowblooddrop = register(new CowBloodItem("cowblooddrop",
 				CTDMythos.MODID));

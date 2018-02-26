@@ -27,7 +27,6 @@ public class ShearsItem extends BaseItem {
 		EntityPlayer player = (EntityPlayer) attacker;
 		target.setHealth(target.getHealth() - 10F);
 		if (target instanceof EntityPlayer || target instanceof EntityVillager) {
-			stack.damageItem(1, attacker);
 			// Random Number Generator!
 			Random randomGenerator = new Random();
 			int itemdrop = randomGenerator.nextInt(100);
@@ -35,7 +34,6 @@ public class ShearsItem extends BaseItem {
 				player.dropItem(new ItemStack(ModItems.humansoul), true);
 		}
 		if (target instanceof EntityEnderman) {
-			stack.damageItem(1, attacker);
 			// Random Number Generator!
 			Random randomGenerator = new Random();
 			int itemdrop = randomGenerator.nextInt(100);
@@ -46,13 +44,21 @@ public class ShearsItem extends BaseItem {
 		}
 		// Ethereal mob drop. Would be phantoms in 1.13 tho
 		if (target instanceof EntitySpider) {
-			stack.damageItem(1, attacker);
 			// Random Number Generator!
 			Random randomGenerator = new Random();
 			int itemdrop = randomGenerator.nextInt(100);
 			if (itemdrop <= 10)
 				player.dropItem(new ItemStack(ModItems.ethereal_fiber), true);
 		}
+		// Mule's Kick drop chance...
+		if (target instanceof EntitySpider) {
+			// Random Number Generator!
+			Random randomGenerator = new Random();
+			int itemdrop = randomGenerator.nextInt(100);
+			if (itemdrop <= 2)
+				player.dropItem(new ItemStack(ModItems.muleskick), true);
+		}
+		stack.damageItem(1, attacker);
 		return false;
 	}
 }
