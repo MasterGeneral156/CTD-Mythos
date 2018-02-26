@@ -10,11 +10,14 @@ item.crystal_memory.name=Crystalized Memory
 item.crystal_oath.name=Crystalized Oath
 item.crystal_woe.name=Crystalized Woe
 item.tmgdrill.name=TMG's Drill
+item.xptome.name=Tome of Knowledge
 
 itemGroup.ctdmythos=CTD Mythos
 
 jei.cowblooddrop.desc=Dropped when killing cows. 100% for 1, 50% for 2, 25% for 3.
 jei.humansoul.desc=20% chance to be dropped when you hit another player or a Villager with Grim shears.
+jei.crystalizedmemory.desc=Place a damaged item in your off-hand slot to repair it completely, costing one crystal.
+jei.xptome.desc=With a normal book in your off-hand, use a Crystal of Woe to store 5 experience levels. To get your levels back, use a Tome of Knowledge.
 
 tile.crystal_fire_ore.name=Crystalized Fire Ore
 tile.crystal_grief_ore.name=Crystalized Grief Ore
