@@ -5,9 +5,12 @@ import java.util.List;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.item.EntityTNTPrimed;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.init.MobEffects;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.ActionResult;
@@ -76,6 +79,18 @@ public class BaseItem extends CTDItem {
 						mainhand.shrink(1);
 						playerIn.dropItem(new ItemStack(ModItems.xptome), false);
 					}
+				}
+			}
+		}
+		// Create Archeron Ingot with TNT and Crystallized Fire
+		if (mainhand.getItem() == ModItems.crystal_fire) {
+			if (offhand != ItemStack.EMPTY) {
+				if (offhand.getItem() == Item.getItemFromBlock(Blocks.TNT)) {
+					worldIn.createExplosion(playerIn, playerIn.posX,
+							playerIn.posY+1, playerIn.posZ, 4.0F, true);
+					playerIn.setHealth(playerIn.getHealth()-5.0F);
+					mainhand.shrink(1);
+					offhand.shrink(1);
 				}
 			}
 		}
