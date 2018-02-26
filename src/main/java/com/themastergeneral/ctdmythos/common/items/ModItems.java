@@ -11,7 +11,7 @@ public class ModItems extends RegisterItem {
 
 	public static CowBloodItem cowblooddrop;
 	public static SingleStackItem bucketcowblood;
-	
+
 	public static LongBowItem longbow;
 
 	public static BaseItem humansoul;
@@ -20,12 +20,15 @@ public class ModItems extends RegisterItem {
 	public static BaseItem crystal_grief;
 	public static BaseItem crystal_fire;
 	public static BaseItem crystal_oath;
-	
+	public static BaseItem archeron_ingot;
+	public static GlowingItem crystal_ender;
+
 	public static TMGDrill tmgdrill;
 	public static MythosSwordBase gladius_sword;
-	
+
 	public static XPTomeItem xptome;
-	
+
+	public static WandItemTeleport teleport_wand;
 
 	public static void registerItems() {
 		humaneffigy = register(new HumanEffigyItem("humaneffigy",
@@ -36,17 +39,25 @@ public class ModItems extends RegisterItem {
 		bucketcowblood = register(new SingleStackItem("bucketcowblood",
 				CTDMythos.MODID));
 		humansoul = register(new BaseItem("humansoul", CTDMythos.MODID));
+		archeron_ingot = register(new BaseItem("archeron_ingot", CTDMythos.MODID));
 		crystal_woe = register(new BaseItem("crystal_woe", CTDMythos.MODID));
-		crystal_memory = register(new BaseItem("crystal_memory", CTDMythos.MODID));
+		crystal_memory = register(new BaseItem("crystal_memory",
+				CTDMythos.MODID));
 		crystal_grief = register(new BaseItem("crystal_grief", CTDMythos.MODID));
 		crystal_fire = register(new BaseItem("crystal_fire", CTDMythos.MODID));
 		crystal_oath = register(new BaseItem("crystal_oath", CTDMythos.MODID));
-		
-		longbow = register(new LongBowItem("longbow", CTDMythos.MODID, 90000, 200));
-		
+		crystal_ender = register(new GlowingItem("crystal_ender", CTDMythos.MODID));
+
+		longbow = register(new LongBowItem("longbow", CTDMythos.MODID, 90000,
+				200));
+
 		tmgdrill = register(new TMGDrill("tmgdrill"));
-		gladius_sword = register(new MythosSwordBase(ToolMaterial.GOLD, "gladius_sword", 823));
-		
+		gladius_sword = register(new MythosSwordBase(ToolMaterial.GOLD,
+				"gladius_sword", 823));
+
 		xptome = register(new XPTomeItem("xptome", CTDMythos.MODID));
+
+		teleport_wand = register(new WandItemTeleport("teleport_wand",
+				CTDMythos.MODID));
 	}
 }
