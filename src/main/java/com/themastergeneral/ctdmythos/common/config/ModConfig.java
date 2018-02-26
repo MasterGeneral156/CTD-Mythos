@@ -12,7 +12,7 @@ public class ModConfig {
 
 	// Actual Config shit
 	public static int DurabilityHumanEffigy = 5;
-	public static int DurabilityShears = 5;
+	public static int DurabilityShears = 25;
 	public static int StoredLevels = 5;
 
 	public static void readConfig() {
