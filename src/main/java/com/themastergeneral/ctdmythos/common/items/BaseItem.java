@@ -20,7 +20,6 @@ import net.minecraft.world.World;
 import com.themastergeneral.ctdcore.item.CTDItem;
 import com.themastergeneral.ctdmythos.CTDMythos;
 import com.themastergeneral.ctdmythos.common.config.ModConfig;
-import com.themastergeneral.ctdmythos.utils.StringUtils;
 
 public class BaseItem extends CTDItem {
 	public BaseItem(String name, String modid) {
