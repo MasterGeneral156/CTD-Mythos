@@ -7,6 +7,7 @@ import com.themastergeneral.ctdmythos.common.config.ModConfig;
 import com.themastergeneral.ctdmythos.common.events.MythosEventHandler;
 import com.themastergeneral.ctdmythos.common.items.ModItems;
 import com.themastergeneral.ctdmythos.common.processing.Processing;
+import com.themastergeneral.ctdmythos.integration.OreDict;
 import com.themastergeneral.ctdmythos.server.world.WorldGen;
 
 import net.minecraftforge.common.config.Configuration;
@@ -31,6 +32,7 @@ public class Common {
 	public void init(FMLInitializationEvent e) {
 		MythosEventHandler.LoadEvents();
 		Processing.initProcessing();
+		OreDict.init();
 	}
 
 	public void postInit(FMLPostInitializationEvent e) {
