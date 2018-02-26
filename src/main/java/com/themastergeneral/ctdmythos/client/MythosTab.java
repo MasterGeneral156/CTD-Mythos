@@ -15,7 +15,7 @@ public class MythosTab extends CreativeTabs {
 
 	@Override
 	public ItemStack getTabIconItem() {
-		return new ItemStack(ModItems.humaneffigy); // shown icon on creative
+		return new ItemStack(ModItems.flight_wand); // shown icon on creative
 													// tab
 	}
 
