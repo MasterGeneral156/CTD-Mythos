@@ -26,6 +26,7 @@ public class ModItems extends RegisterItem {
 	public static BaseItem crystal_fire;
 	public static BaseItem crystal_oath;
 	public static BaseItem ethereal_fiber;
+	public static BaseItem crystal_glove;
 
 	public static BaseFood revitalizing_rye;
 
@@ -57,6 +58,7 @@ public class ModItems extends RegisterItem {
 		crystal_grief = register(new BaseItem("crystal_grief", CTDMythos.MODID));
 		crystal_fire = register(new BaseItem("crystal_fire", CTDMythos.MODID));
 		crystal_oath = register(new BaseItem("crystal_oath", CTDMythos.MODID));
+		crystal_glove = register(new BaseItem("crystal_glove", CTDMythos.MODID));
 		ethereal_fiber = register(new BaseItem("ethereal_fiber",
 				CTDMythos.MODID));
 		crystal_ender = register(new GlowingItem("crystal_ender",

@@ -34,18 +34,23 @@ public class BaseItem extends CTDItem {
 	@Override
 	public void onUpdate(ItemStack stack, World worldIn, Entity entityIn,
 			int itemSlot, boolean isSelected) {
+		EntityPlayer playerIn = (EntityPlayer) entityIn;
+		ItemStack offhand = playerIn.getHeldItemOffhand();
 		// Blindness effect with grief
-		if (stack.getItem() == ModItems.crystal_grief) {
+		if ((stack.getItem() == ModItems.crystal_grief)
+				&& (offhand.getItem() != ModItems.crystal_glove)) {
 			((EntityLivingBase) entityIn).addPotionEffect(new PotionEffect(
 					MobEffects.BLINDNESS, 20, 0, true, false));
 		}
 		// Nausea effect with memory
-		if (stack.getItem() == ModItems.crystal_memory) {
+		if ((stack.getItem() == ModItems.crystal_memory)
+				&& (offhand.getItem() != ModItems.crystal_glove)) {
 			((EntityLivingBase) entityIn).addPotionEffect(new PotionEffect(
 					MobEffects.WEAKNESS, 20, 3, true, false));
 		}
 		// Slowness effect with Woe
-		if (stack.getItem() == ModItems.crystal_woe) {
+		if ((stack.getItem() == ModItems.crystal_woe)
+				&& (offhand.getItem() != ModItems.crystal_glove)) {
 			((EntityLivingBase) entityIn).addPotionEffect(new PotionEffect(
 					MobEffects.SLOWNESS, 20, 2, true, false));
 		}
@@ -88,8 +93,8 @@ public class BaseItem extends CTDItem {
 			if (offhand != ItemStack.EMPTY) {
 				if (offhand.getItem() == Item.getItemFromBlock(Blocks.TNT)) {
 					worldIn.createExplosion(playerIn, playerIn.posX,
-							playerIn.posY+1, playerIn.posZ, 4.0F, true);
-					playerIn.setHealth(playerIn.getHealth()-5.0F);
+							playerIn.posY + 1, playerIn.posZ, 4.0F, true);
+					playerIn.setHealth(playerIn.getHealth() - 5.0F);
 					mainhand.shrink(1);
 					offhand.shrink(1);
 				}

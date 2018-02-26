@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "group": "ctdmythos:crystal_glove",
+    "pattern": [
+        "WMG",
+        "RLR",
+		"FOE"
+    ],
+    "key": {
+		"W": { "item": "ctdmythos:crystal_woe" },
+        "G": { "item": "ctdmythos:crystal_grief" },
+        "R": { "item": "ctdmythos:ethereal_fiber" },
+        "L": { "item": "minecraft:leather" },
+        "F": { "item": "ctdmythos:crystal_fire" },
+        "O": { "item": "ctdmythos:crystal_oath" },
+        "E": { "item": "ctdmythos:crystal_ender" },
+		"M": { "item": "ctdmythos:crystal_memory" }
+    },
+    "result": {
+        "item": "ctdmythos:crystal_glove",
+		"count": 1
+    }
+}
