@@ -25,39 +25,33 @@ public class CrystalGenerator extends WorldGenerator {
 
 	@Override
 	public boolean generate(World world, Random random, BlockPos position) {
-		if (world.getBlockState(position).getMaterial() != Material.WATER)
-        {
-            return false;
-        }
-        else
-        {
-            int j = 2;
+		if (world.getBlockState(position).getMaterial() != Material.WATER) {
+			return false;
+		} else {
+			int j = 2;
 
-            for (int k = position.getX() - i; k <= position.getX() + i; ++k)
-            {
-                for (int l = position.getZ() - i; l <= position.getZ() + i; ++l)
-                {
-                    int i1 = k - position.getX();
-                    int j1 = l - position.getZ();
+			for (int k = position.getX() - i; k <= position.getX() + i; ++k) {
+				for (int l = position.getZ() - i; l <= position.getZ() + i; ++l) {
+					int i1 = k - position.getX();
+					int j1 = l - position.getZ();
 
-                    if (i1 * i1 + j1 * j1 <= i * i)
-                    {
-                        for (int k1 = position.getY() - 2; k1 <= position.getY() + 2; ++k1)
-                        {
-                            BlockPos blockpos = new BlockPos(k, k1, l);
-                            Block block = world.getBlockState(blockpos).getBlock();
+					if (i1 * i1 + j1 * j1 <= i * i) {
+						for (int k1 = position.getY() - 2; k1 <= position
+								.getY() + 2; ++k1) {
+							BlockPos blockpos = new BlockPos(k, k1, l);
+							Block block = world.getBlockState(blockpos)
+									.getBlock();
 
-                            if (block == Blocks.DIRT || block == Blocks.GRASS)
-                            {
-                                world.setBlockState(blockpos, this.block, 2);
-                            }
-                        }
-                    }
-                }
-            }
+							if (block == Blocks.DIRT || block == Blocks.GRASS) {
+								world.setBlockState(blockpos, this.block, 2);
+							}
+						}
+					}
+				}
+			}
 
-            return true;
-        }
+			return true;
+		}
 	}
 
 }

@@ -12,9 +12,8 @@ public class ModBlocks extends RegisterBlock {
 	public static OreBlock crystal_memory_ore;
 	public static OreBlock crystal_oath_ore;
 	public static OreBlock crystal_woe_ore;
-	
-	public static void loadBlocks()
-	{
+
+	public static void loadBlocks() {
 		crystal_fire_ore = register(new OreBlock(Material.SAND,
 				"crystal_fire_ore", CTDMythos.MODID, ModItems.crystal_fire));
 		crystal_grief_ore = register(new OreBlock(Material.SAND,

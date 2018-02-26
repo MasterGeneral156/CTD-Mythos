@@ -12,9 +12,13 @@ import mezz.jei.api.JEIPlugin;
 public class MythosJEI implements IModPlugin {
 	@Override
 	public void register(IModRegistry registry) {
-		registry.addDescription(new ItemStack(ModItems.cowblooddrop), "jei.cowblooddrop.desc");
-		registry.addDescription(new ItemStack(ModItems.humansoul), "jei.humansoul.desc");
-		registry.addDescription(new ItemStack(ModItems.crystal_memory), "jei.crystalizedmemory.desc");
-		registry.addDescription(new ItemStack(ModItems.xptome), "jei.xptome.desc");
+		registry.addDescription(new ItemStack(ModItems.cowblooddrop),
+				"jei.cowblooddrop.desc");
+		registry.addDescription(new ItemStack(ModItems.humansoul),
+				"jei.humansoul.desc");
+		registry.addDescription(new ItemStack(ModItems.crystal_memory),
+				"jei.crystalizedmemory.desc");
+		registry.addDescription(new ItemStack(ModItems.xptome),
+				"jei.xptome.desc");
 	}
 }

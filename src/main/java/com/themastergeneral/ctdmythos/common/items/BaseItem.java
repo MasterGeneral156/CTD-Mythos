@@ -1,5 +1,8 @@
 package com.themastergeneral.ctdmythos.common.items;
 
+import java.util.Iterator;
+import java.util.List;
+
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
@@ -10,11 +13,14 @@ import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumHand;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.Style;
 import net.minecraft.world.World;
 
 import com.themastergeneral.ctdcore.item.CTDItem;
 import com.themastergeneral.ctdmythos.CTDMythos;
 import com.themastergeneral.ctdmythos.common.config.ModConfig;
+import com.themastergeneral.ctdmythos.utils.StringUtils;
 
 public class BaseItem extends CTDItem {
 	public BaseItem(String name, String modid) {
@@ -45,34 +51,27 @@ public class BaseItem extends CTDItem {
 			((EntityLivingBase) entityIn).extinguish();
 		}
 	}
-	
+
 	@Override
 	public ActionResult<ItemStack> onItemRightClick(World worldIn,
 			EntityPlayer playerIn, EnumHand handIn) {
 		ItemStack offhand = playerIn.getHeldItemOffhand();
 		ItemStack mainhand = playerIn.getHeldItemMainhand();
-		//Crystalized Memory to repair the item in the user's offhand, at
-		//the cost of one Crystalized Memory.
-		if (mainhand.getItem() == ModItems.crystal_memory)
-		{
-			if (offhand != ItemStack.EMPTY)
-			{
-				if (offhand.isItemDamaged())
-				{
+		// Crystalized Memory to repair the item in the user's offhand, at
+		// the cost of one Crystalized Memory.
+		if (mainhand.getItem() == ModItems.crystal_memory) {
+			if (offhand != ItemStack.EMPTY) {
+				if (offhand.isItemDamaged()) {
 					offhand.setItemDamage(0);
 					mainhand.shrink(1);
 				}
 			}
 		}
-		//Crystal oath + book in offhand to get a tome of XP
-		if (mainhand.getItem() == ModItems.crystal_oath)
-		{
-			if (offhand != ItemStack.EMPTY)
-			{
-				if (offhand.getItem() == Items.BOOK)
-				{
-					if (playerIn.experienceLevel >= ModConfig.StoredLevels)
-					{
+		// Crystal oath + book in offhand to get a tome of XP
+		if (mainhand.getItem() == ModItems.crystal_oath) {
+			if (offhand != ItemStack.EMPTY) {
+				if (offhand.getItem() == Items.BOOK) {
+					if (playerIn.experienceLevel >= ModConfig.StoredLevels) {
 						playerIn.addExperienceLevel(-ModConfig.StoredLevels);
 						offhand.shrink(1);
 						mainhand.shrink(1);

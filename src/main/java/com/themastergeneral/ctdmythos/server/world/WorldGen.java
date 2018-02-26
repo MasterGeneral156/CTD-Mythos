@@ -21,30 +21,40 @@ public class WorldGen implements IWorldGenerator {
 	private CrystalGenerator gen_woe;
 	private CrystalGenerator gen_memory;
 	private CrystalGenerator gen_grief;
-	
-	public WorldGen()
-	{
-		this.gen_fire = new CrystalGenerator(ModBlocks.crystal_fire_ore.getDefaultState(), 1);
-		this.gen_oath = new CrystalGenerator(ModBlocks.crystal_oath_ore.getDefaultState(), 1);
-		this.gen_memory = new CrystalGenerator(ModBlocks.crystal_memory_ore.getDefaultState(), 1);
-		this.gen_grief = new CrystalGenerator(ModBlocks.crystal_grief_ore.getDefaultState(), 1);
-		this.gen_woe = new CrystalGenerator(ModBlocks.crystal_woe_ore.getDefaultState(), 1);
+
+	public WorldGen() {
+		this.gen_fire = new CrystalGenerator(
+				ModBlocks.crystal_fire_ore.getDefaultState(), 1);
+		this.gen_oath = new CrystalGenerator(
+				ModBlocks.crystal_oath_ore.getDefaultState(), 1);
+		this.gen_memory = new CrystalGenerator(
+				ModBlocks.crystal_memory_ore.getDefaultState(), 1);
+		this.gen_grief = new CrystalGenerator(
+				ModBlocks.crystal_grief_ore.getDefaultState(), 1);
+		this.gen_woe = new CrystalGenerator(
+				ModBlocks.crystal_woe_ore.getDefaultState(), 1);
 	}
-	
+
 	@Override
 	public void generate(Random random, int chunkX, int chunkZ, World world,
 			IChunkGenerator chunkGenerator, IChunkProvider chunkProvider) {
 		switch (world.provider.getDimension()) {
 		case 0: // Overworld
-			this.runGenerator(this.gen_fire, world, random, chunkX, chunkZ, 4, 1, 256);
-			this.runGenerator(this.gen_oath, world, random, chunkX, chunkZ, 4, 1, 256);
-			this.runGenerator(this.gen_woe, world, random, chunkX, chunkZ, 4, 1, 256);
-			this.runGenerator(this.gen_memory, world, random, chunkX, chunkZ, 4, 1, 256);
-			this.runGenerator(this.gen_grief, world, random, chunkX, chunkZ, 4, 1, 256);
+			this.runGenerator(this.gen_fire, world, random, chunkX, chunkZ, 4,
+					1, 256);
+			this.runGenerator(this.gen_oath, world, random, chunkX, chunkZ, 4,
+					1, 256);
+			this.runGenerator(this.gen_woe, world, random, chunkX, chunkZ, 4,
+					1, 256);
+			this.runGenerator(this.gen_memory, world, random, chunkX, chunkZ,
+					4, 1, 256);
+			this.runGenerator(this.gen_grief, world, random, chunkX, chunkZ, 4,
+					1, 256);
 			break;
 		}
-		
+
 	}
+
 	private void runGenerator(WorldGenerator generator, World world,
 			Random rand, int chunk_X, int chunk_Z, int chancesToSpawn,
 			int minHeight, int maxHeight) {
