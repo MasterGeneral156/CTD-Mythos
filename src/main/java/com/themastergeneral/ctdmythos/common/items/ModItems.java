@@ -4,6 +4,7 @@ import net.minecraft.item.Item.ToolMaterial;
 
 import com.themastergeneral.ctdcore.item.RegisterItem;
 import com.themastergeneral.ctdmythos.CTDMythos;
+import com.themastergeneral.ctdmythos.common.items.base.BaseFood;
 import com.themastergeneral.ctdmythos.common.items.base.BaseItem;
 import com.themastergeneral.ctdmythos.common.items.base.GlowingItem;
 import com.themastergeneral.ctdmythos.common.items.base.MythosSwordBase;
@@ -25,6 +26,8 @@ public class ModItems extends RegisterItem {
 	public static BaseItem crystal_fire;
 	public static BaseItem crystal_oath;
 	public static BaseItem ethereal_fiber;
+
+	public static BaseFood revitalizing_rye;
 
 	public static ArcheronIngot archeron_ingot;
 	public static GlowingItem crystal_ender;
@@ -73,5 +76,8 @@ public class ModItems extends RegisterItem {
 
 		flight_wand = register(new WandItemFlight("flight_wand",
 				CTDMythos.MODID));
+
+		revitalizing_rye = register(new BaseFood("revitalizing_rye", 3, 1.0F,
+				false));
 	}
 }

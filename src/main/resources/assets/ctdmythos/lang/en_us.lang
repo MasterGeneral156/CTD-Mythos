@@ -17,6 +17,7 @@ item.teleport_wand.name=Teleportation Wand
 item.archeron_ingot.name=Archeron Ingot
 item.flight_wand.name=Levitation Wand
 item.ethereal_fiber.name=Ethereal Fiber
+item.revitalizing_rye.name=Revitalizing Rye
 
 itemGroup.ctdmythos=CTD Mythos
 

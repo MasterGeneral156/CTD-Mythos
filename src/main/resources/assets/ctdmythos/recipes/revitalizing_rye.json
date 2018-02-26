@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "group": "ctdmythos:revitalizing_rye",
+    "pattern": [
+		"AAA"
+    ],
+    "key": {
+		"A": { "item": "ctdmythos:ethereal_fiber" }
+    },
+    "result": {
+        "item": "ctdmythos:revitalizing_rye",
+		"count": 1
+    }
+}
