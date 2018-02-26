@@ -4,14 +4,16 @@ item.bucketcowblood.name=Bucket of Cow Blood
 item.grimshears.name=Grim Shears
 item.humansoul.name=Human Soul Piece
 item.longbow.name=Long Bow
-item.crystal_fire.name=Crystalized Fire
-item.crystal_grief.name=Crystalized Grief
-item.crystal_memory.name=Crystalized Memory
-item.crystal_oath.name=Crystalized Oath
-item.crystal_woe.name=Crystalized Woe
+item.crystal_fire.name=Crystallized Fire
+item.crystal_grief.name=Crystallized Grief
+item.crystal_memory.name=Crystallized Memory
+item.crystal_oath.name=Crystallized Oath
+item.crystal_woe.name=Crystallized Woe
 item.tmgdrill.name=TMG's Drill
 item.xptome.name=Tome of Knowledge
 item.gladius_sword.name=Gladius
+item.crystal_ender.name=Crystallized Ender
+item.teleport_wand.name=Teleportation Wand
 
 itemGroup.ctdmythos=CTD Mythos
 
@@ -20,8 +22,8 @@ jei.humansoul.desc=20% chance to be dropped when you hit another player or a Vil
 jei.crystalizedmemory.desc=Place a damaged item in your off-hand slot to repair it completely, costing one crystal.
 jei.xptome.desc=With a normal book in your off-hand, use a Crystal of Woe to store 5 experience levels. To get your levels back, use a Tome of Knowledge.
 
-tile.crystal_fire_ore.name=Crystalized Fire Ore
-tile.crystal_grief_ore.name=Crystalized Grief Ore
-tile.crystal_memory_ore.name=Crystalized Memory Ore
-tile.crystal_oath_ore.name=Crystalized Oath Ore
-tile.crystal_woe_ore.name=Crystalized Woe Ore
+tile.crystal_fire_ore.name=Crystallized Fire Ore
+tile.crystal_grief_ore.name=Crystallized Grief Ore
+tile.crystal_memory_ore.name=Crystallized Memory Ore
+tile.crystal_oath_ore.name=Crystallized Oath Ore
+tile.crystal_woe_ore.name=Crystallized Woe Ore
