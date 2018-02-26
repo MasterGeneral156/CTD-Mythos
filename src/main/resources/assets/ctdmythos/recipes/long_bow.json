@@ -7,7 +7,7 @@
 		"SST"
     ],
     "key": {
-		"T": { "item": "minecraft:string" },
+		"T": [{"type": "forge:ore_dict", "ore": "string"}],
 		"S": [{"type": "forge:ore_dict", "ore": "stickWood"}]
     },
     "result": {

@@ -7,8 +7,8 @@
 		" S "
     ],
     "key": {
-		"O": { "item": "ctdmythos:archeron_ingot" },
-        "S": { "item": "minecraft:gold_ingot" }
+		"O": [{"type": "forge:ore_dict", "ore": "ingotArcheron"}],
+        "S": [{"type": "forge:ore_dict", "ore": "ingotGold"}]
     },
     "result": {
         "item": "ctdmythos:gladius_sword",

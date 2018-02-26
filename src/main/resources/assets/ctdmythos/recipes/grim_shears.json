@@ -7,7 +7,7 @@
 		"   "
     ],
     "key": {
-		"A": { "item": "ctdmythos:archeron_ingot" }
+		"A": [{"type": "forge:ore_dict", "ore": "ingotArcheron"}]
     },
     "result": {
         "item": "ctdmythos:grimshears",

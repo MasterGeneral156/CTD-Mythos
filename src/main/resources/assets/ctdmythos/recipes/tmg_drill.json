@@ -7,8 +7,8 @@
 		"S  "
     ],
     "key": {
-		"B": { "item": "minecraft:iron_block" },
-        "S": { "item": "minecraft:stick" },
+		"B": [{"type": "forge:ore_dict", "ore": "blockIron"}],
+        "S": [{"type": "forge:ore_dict", "ore": "stickWood"}],
 		"I": { "item": "minecraft:iron_sword" }
     },
     "result": {

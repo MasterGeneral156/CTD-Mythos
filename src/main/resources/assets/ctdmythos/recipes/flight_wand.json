@@ -7,9 +7,9 @@
 		"O  "
     ],
     "key": {
-		"O": { "item": "ctdmythos:archeron_ingot" },
-        "S": { "item": "minecraft:stick" },
-        "T": { "item": "ctdmythos:crystal_woe" },
+		"O": [{"type": "forge:ore_dict", "ore": "ingotArcheron"}],
+        "S": [{"type": "forge:ore_dict", "ore": "stickWood"}],
+        "T": [{"type": "forge:ore_dict", "ore": "gemCrystallizedWoe"}],
 		"I": { "item": "ctdmythos:xptome" }
     },
     "result": {
