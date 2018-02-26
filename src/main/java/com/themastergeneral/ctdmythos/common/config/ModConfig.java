@@ -13,6 +13,7 @@ public class ModConfig {
 	// Actual Config shit
 	public static int DurabilityHumanEffigy = 5;
 	public static int DurabilityShears = 5;
+	public static int StoredLevels = 5;
 
 	public static void readConfig() {
 		Configuration cfg = Common.config;
@@ -40,5 +41,8 @@ public class ModConfig {
 		DurabilityShears = cfg.getInt("Grim Shears Max Uses", CATEGORY_GENERAL,
 				DurabilityShears, 1, 32766,
 				"How many uses per pair of grim shears");
+		StoredLevels = cfg.getInt("Levels stored in Tome of Knowledge", CATEGORY_GENERAL,
+				StoredLevels, 1, 32766,
+				"How many levels should be stored in a Tome of Knowledge");
 	}
 }

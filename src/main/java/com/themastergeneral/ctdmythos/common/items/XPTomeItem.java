@@ -1,5 +1,7 @@
 package com.themastergeneral.ctdmythos.common.items;
 
+import com.themastergeneral.ctdmythos.common.config.ModConfig;
+
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -22,7 +24,7 @@ public class XPTomeItem extends BaseItem {
 		ItemStack mainhand = playerIn.getHeldItemMainhand();
 		if (mainhand.getItem() == ModItems.xptome)
 		{
-			playerIn.addExperienceLevel(5);
+			playerIn.addExperienceLevel(ModConfig.StoredLevels);
 			mainhand.shrink(1);
 			playerIn.dropItem(new ItemStack(Items.BOOK), false);
 		}
