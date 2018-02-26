@@ -7,22 +7,10 @@ import com.themastergeneral.ctdmythos.CTDMythos;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemSword;
 
-public class TMGDrill extends ItemSword implements ItemModelProvider {
+public class TMGDrill extends MythosSwordBase {
 
-	protected String name;	//Name of the item.
 	public TMGDrill(String name) {
-		super(ToolMaterial.IRON);
+		super(ToolMaterial.IRON, name, 762);
 		this.maxStackSize = 1;
-		this.setMaxDamage(375);
-		this.name=name;
-		this.setRegistryName(name);
-		this.setCreativeTab(CTDMythos.creativeTab);
-		this.setUnlocalizedName(name);
 	}
-
-	@Override
-	public void registerItemModel(Item item) {
-		CTDCore.proxy.registerItemRenderer(CTDMythos.MODID, this, 0, name);
-	}
-
 }
