@@ -1,4 +1,5 @@
-package com.themastergeneral.ctdmythos.common.items;
+package com.themastergeneral.ctdmythos.common.items.base;
+
 
 public class SingleStackItem extends BaseItem {
 

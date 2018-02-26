@@ -1,4 +1,4 @@
-package com.themastergeneral.ctdmythos.common.items;
+package com.themastergeneral.ctdmythos.common.items.base;
 
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagList;
