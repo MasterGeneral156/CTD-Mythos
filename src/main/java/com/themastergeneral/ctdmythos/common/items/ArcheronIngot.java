@@ -1,5 +1,7 @@
 package com.themastergeneral.ctdmythos.common.items;
 
+import com.themastergeneral.ctdmythos.common.items.base.BaseItem;
+
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ActionResult;

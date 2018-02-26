@@ -4,6 +4,10 @@ import net.minecraft.item.Item.ToolMaterial;
 
 import com.themastergeneral.ctdcore.item.RegisterItem;
 import com.themastergeneral.ctdmythos.CTDMythos;
+import com.themastergeneral.ctdmythos.common.items.base.BaseItem;
+import com.themastergeneral.ctdmythos.common.items.base.GlowingItem;
+import com.themastergeneral.ctdmythos.common.items.base.MythosSwordBase;
+import com.themastergeneral.ctdmythos.common.items.base.SingleStackItem;
 
 public class ModItems extends RegisterItem {
 	public static HumanEffigyItem humaneffigy;
@@ -20,6 +24,8 @@ public class ModItems extends RegisterItem {
 	public static BaseItem crystal_grief;
 	public static BaseItem crystal_fire;
 	public static BaseItem crystal_oath;
+	public static BaseItem ethereal_fiber;
+
 	public static ArcheronIngot archeron_ingot;
 	public static GlowingItem crystal_ender;
 
@@ -48,6 +54,8 @@ public class ModItems extends RegisterItem {
 		crystal_grief = register(new BaseItem("crystal_grief", CTDMythos.MODID));
 		crystal_fire = register(new BaseItem("crystal_fire", CTDMythos.MODID));
 		crystal_oath = register(new BaseItem("crystal_oath", CTDMythos.MODID));
+		ethereal_fiber = register(new BaseItem("ethereal_fiber",
+				CTDMythos.MODID));
 		crystal_ender = register(new GlowingItem("crystal_ender",
 				CTDMythos.MODID));
 

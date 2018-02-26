@@ -10,6 +10,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 import com.themastergeneral.ctdmythos.common.config.ModConfig;
+import com.themastergeneral.ctdmythos.common.items.base.WandItemBase;
 
 public class WandItemTeleport extends WandItemBase {
 

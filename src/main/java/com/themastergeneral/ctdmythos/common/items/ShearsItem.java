@@ -3,6 +3,7 @@ package com.themastergeneral.ctdmythos.common.items;
 import java.util.Random;
 
 import com.themastergeneral.ctdmythos.common.config.ModConfig;
+import com.themastergeneral.ctdmythos.common.items.base.BaseItem;
 
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.monster.EntityEnderman;

@@ -1,6 +1,7 @@
 package com.themastergeneral.ctdmythos.common.items;
 
 import com.themastergeneral.ctdmythos.CTDMythos;
+import com.themastergeneral.ctdmythos.common.items.base.WandItemBase;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
