@@ -16,6 +16,7 @@ item.crystal_ender.name=Crystallized Ender
 item.teleport_wand.name=Teleportation Wand
 item.archeron_ingot.name=Archeron Ingot
 item.flight_wand.name=Levitation Wand
+item.ethereal_fiber.name=Ethereal Fiber
 
 itemGroup.ctdmythos=CTD Mythos
 
