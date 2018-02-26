@@ -20,7 +20,7 @@ public class ModItems extends RegisterItem {
 	public static BaseItem crystal_grief;
 	public static BaseItem crystal_fire;
 	public static BaseItem crystal_oath;
-	public static BaseItem archeron_ingot;
+	public static ArcheronIngot archeron_ingot;
 	public static GlowingItem crystal_ender;
 
 	public static TMGDrill tmgdrill;
@@ -29,6 +29,7 @@ public class ModItems extends RegisterItem {
 	public static XPTomeItem xptome;
 
 	public static WandItemTeleport teleport_wand;
+	public static WandItemFlight flight_wand;
 
 	public static void registerItems() {
 		humaneffigy = register(new HumanEffigyItem("humaneffigy",
@@ -39,14 +40,16 @@ public class ModItems extends RegisterItem {
 		bucketcowblood = register(new SingleStackItem("bucketcowblood",
 				CTDMythos.MODID));
 		humansoul = register(new BaseItem("humansoul", CTDMythos.MODID));
-		archeron_ingot = register(new BaseItem("archeron_ingot", CTDMythos.MODID));
+		archeron_ingot = register(new ArcheronIngot("archeron_ingot",
+				CTDMythos.MODID));
 		crystal_woe = register(new BaseItem("crystal_woe", CTDMythos.MODID));
 		crystal_memory = register(new BaseItem("crystal_memory",
 				CTDMythos.MODID));
 		crystal_grief = register(new BaseItem("crystal_grief", CTDMythos.MODID));
 		crystal_fire = register(new BaseItem("crystal_fire", CTDMythos.MODID));
 		crystal_oath = register(new BaseItem("crystal_oath", CTDMythos.MODID));
-		crystal_ender = register(new GlowingItem("crystal_ender", CTDMythos.MODID));
+		crystal_ender = register(new GlowingItem("crystal_ender",
+				CTDMythos.MODID));
 
 		longbow = register(new LongBowItem("longbow", CTDMythos.MODID, 90000,
 				200));
@@ -58,6 +61,9 @@ public class ModItems extends RegisterItem {
 		xptome = register(new XPTomeItem("xptome", CTDMythos.MODID));
 
 		teleport_wand = register(new WandItemTeleport("teleport_wand",
+				CTDMythos.MODID));
+
+		flight_wand = register(new WandItemFlight("flight_wand",
 				CTDMythos.MODID));
 	}
 }
