@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "group": "ctdmythos:teleport_wand",
+    "pattern": [
+        " IT",
+        " SI",
+		"O  "
+    ],
+    "key": {
+		"O": { "item": "ctdmythos:archeron_ingot" },
+        "S": { "item": "minecraft:stick" },
+        "T": { "item": "ctdmythos:crystal_ender" },
+		"I": { "item": "ctdmythos:xptome" }
+    },
+    "result": {
+        "item": "ctdmythos:teleport_wand",
+		"count": 1
+    }
+}

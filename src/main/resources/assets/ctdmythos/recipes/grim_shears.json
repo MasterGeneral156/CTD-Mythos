@@ -1,0 +1,16 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "group": "ctdmythos:grimshears",
+    "pattern": [
+        "A  ",
+        " A ",
+		"   "
+    ],
+    "key": {
+		"A": { "item": "ctdmythos:archeron_ingot" }
+    },
+    "result": {
+        "item": "ctdmythos:grimshears",
+		"count": 1
+    }
+}
