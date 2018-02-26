@@ -14,6 +14,7 @@ import net.minecraft.world.World;
 
 import com.themastergeneral.ctdcore.item.CTDItem;
 import com.themastergeneral.ctdmythos.CTDMythos;
+import com.themastergeneral.ctdmythos.common.config.ModConfig;
 
 public class BaseItem extends CTDItem {
 	public BaseItem(String name, String modid) {
@@ -32,12 +33,12 @@ public class BaseItem extends CTDItem {
 		// Nausea effect with memory
 		if (stack.getItem() == ModItems.crystal_memory) {
 			((EntityLivingBase) entityIn).addPotionEffect(new PotionEffect(
-					MobEffects.NAUSEA, 100, 0, true, false));
+					MobEffects.WEAKNESS, 20, 3, true, false));
 		}
 		// Slowness effect with Woe
 		if (stack.getItem() == ModItems.crystal_woe) {
 			((EntityLivingBase) entityIn).addPotionEffect(new PotionEffect(
-					MobEffects.SLOWNESS, 20, 0, true, false));
+					MobEffects.SLOWNESS, 20, 2, true, false));
 		}
 		// Extinguish fire with Fire
 		if (stack.getItem() == ModItems.crystal_fire) {
@@ -70,9 +71,9 @@ public class BaseItem extends CTDItem {
 			{
 				if (offhand.getItem() == Items.BOOK)
 				{
-					if (playerIn.experienceLevel >= 5)
+					if (playerIn.experienceLevel >= ModConfig.StoredLevels)
 					{
-						playerIn.addExperienceLevel(-5);
+						playerIn.addExperienceLevel(-ModConfig.StoredLevels);
 						offhand.shrink(1);
 						mainhand.shrink(1);
 						playerIn.dropItem(new ItemStack(ModItems.xptome), false);
