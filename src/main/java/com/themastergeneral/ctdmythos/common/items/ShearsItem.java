@@ -5,6 +5,7 @@ import java.util.Random;
 import com.themastergeneral.ctdmythos.common.config.ModConfig;
 
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.monster.EntityEnderman;
 import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
@@ -29,8 +30,17 @@ public class ShearsItem extends BaseItem {
 			Random randomGenerator = new Random();
 			int itemdrop = randomGenerator.nextInt(100);
 			if (itemdrop <= 20)
-				player.inventory.addItemStackToInventory(new ItemStack(
-						ModItems.humansoul));
+				player.dropItem(new ItemStack(ModItems.humansoul), true);
+		}
+		if (target instanceof EntityEnderman) {
+			stack.damageItem(1, attacker);
+			// Random Number Generator!
+			Random randomGenerator = new Random();
+			int itemdrop = randomGenerator.nextInt(100);
+			if (attacker.getHeldItemOffhand().getItem() == ModItems.crystal_grief) {
+				if (itemdrop <= 5)
+					player.dropItem(new ItemStack(ModItems.crystal_ender), true);
+			}
 		}
 		return false;
 	}
