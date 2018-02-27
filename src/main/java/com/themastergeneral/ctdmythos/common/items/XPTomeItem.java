@@ -13,8 +13,8 @@ import net.minecraft.world.World;
 
 public class XPTomeItem extends BaseItem {
 
-	public XPTomeItem(String name, String modid) {
-		super(name, modid);
+	public XPTomeItem(String name) {
+		super(name);
 		this.maxStackSize = 1;
 		this.setNoRepair();
 	}

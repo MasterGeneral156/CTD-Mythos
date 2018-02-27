@@ -7,15 +7,17 @@ import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumHand;
+import net.minecraft.util.SoundCategory;
 import net.minecraft.world.World;
 
 import com.themastergeneral.ctdmythos.CTDMythos;
 import com.themastergeneral.ctdmythos.common.items.base.BaseItem;
+import com.themastergeneral.ctdmythos.common.processing.ModSounds;
 
 public class MulesKickItem extends BaseItem {
 
 	public MulesKickItem(String name) {
-		super(name, CTDMythos.MODID);
+		super(name);
 		this.maxStackSize=1;
 		this.setMaxDamage(4);
 	}
@@ -27,6 +29,7 @@ public class MulesKickItem extends BaseItem {
 		playerIn.addPotionEffect(new PotionEffect(MobEffects.SPEED, 200, 4,
 				true, false));
 		ItemStack.damageItem(1, playerIn);
+		worldIn.playSound(playerIn, playerIn.getPosition(), ModSounds.mules_kick, SoundCategory.PLAYERS, 1.0F, 1.0F);
 		return new ActionResult<ItemStack>(EnumActionResult.PASS,
 				playerIn.getHeldItem(handIn));
 	}

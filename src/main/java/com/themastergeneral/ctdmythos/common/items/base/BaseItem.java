@@ -3,6 +3,7 @@ package com.themastergeneral.ctdmythos.common.items.base;
 import java.util.Iterator;
 import java.util.List;
 
+import net.minecraft.client.audio.SoundManager;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityTNTPrimed;
@@ -16,18 +17,21 @@ import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumHand;
+import net.minecraft.util.SoundCategory;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.Style;
 import net.minecraft.world.World;
+import net.minecraftforge.client.event.sound.SoundEvent;
 
 import com.themastergeneral.ctdcore.item.CTDItem;
 import com.themastergeneral.ctdmythos.CTDMythos;
 import com.themastergeneral.ctdmythos.common.config.ModConfig;
 import com.themastergeneral.ctdmythos.common.items.ModItems;
+import com.themastergeneral.ctdmythos.common.processing.ModSounds;
 
 public class BaseItem extends CTDItem {
-	public BaseItem(String name, String modid) {
-		super(name, modid);
+	public BaseItem(String name) {
+		super(name, CTDMythos.MODID);
 		this.setCreativeTab(CTDMythos.creativeTab);
 	}
 
@@ -72,6 +76,7 @@ public class BaseItem extends CTDItem {
 				if (offhand.isItemDamaged()) {
 					offhand.setItemDamage(0);
 					mainhand.shrink(1);
+					worldIn.playSound(playerIn, playerIn.getPosition(), ModSounds.spell_complete, SoundCategory.PLAYERS, 1.0F, 1.0F);
 				}
 			}
 		}
@@ -83,6 +88,7 @@ public class BaseItem extends CTDItem {
 						playerIn.addExperienceLevel(-ModConfig.StoredLevels);
 						offhand.shrink(1);
 						mainhand.shrink(1);
+						worldIn.playSound(playerIn, playerIn.getPosition(), ModSounds.spell_complete, SoundCategory.PLAYERS, 1.0F, 1.0F);
 						playerIn.dropItem(new ItemStack(ModItems.xptome), false);
 					}
 				}
@@ -96,7 +102,9 @@ public class BaseItem extends CTDItem {
 							playerIn.posY + 1, playerIn.posZ, 4.0F, true);
 					playerIn.setHealth(playerIn.getHealth() - 5.0F);
 					mainhand.shrink(1);
+					worldIn.playSound(playerIn, playerIn.getPosition(), ModSounds.spell_complete, SoundCategory.PLAYERS, 1.0F, 1.0F);
 					offhand.shrink(1);
+					playerIn.dropItem(new ItemStack(ModItems.archeron_ingot), false);
 				}
 			}
 		}

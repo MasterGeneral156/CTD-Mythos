@@ -14,8 +14,8 @@ import com.themastergeneral.ctdmythos.common.items.base.WandItemBase;
 
 public class WandItemTeleport extends WandItemBase {
 
-	public WandItemTeleport(String name, String modid) {
-		super(name, modid);
+	public WandItemTeleport(String name) {
+		super(name);
 	}
 
 	@Override

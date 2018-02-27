@@ -14,8 +14,8 @@ import net.minecraft.item.ItemStack;
 
 public class ShearsItem extends BaseItem {
 
-	public ShearsItem(String name, String modid) {
-		super(name, modid);
+	public ShearsItem(String name) {
+		super(name);
 		this.maxStackSize = 1;
 		this.setMaxDamage(ModConfig.DurabilityShears - 1);
 		this.setNoRepair();

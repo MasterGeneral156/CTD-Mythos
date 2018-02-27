@@ -2,6 +2,7 @@ package com.themastergeneral.ctdmythos.common.items;
 
 import com.themastergeneral.ctdmythos.common.config.ModConfig;
 import com.themastergeneral.ctdmythos.common.items.base.BaseItem;
+import com.themastergeneral.ctdmythos.common.processing.ModSounds;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
@@ -12,12 +13,13 @@ import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumHand;
+import net.minecraft.util.SoundCategory;
 import net.minecraft.world.World;
 
 public class HumanEffigyItem extends BaseItem {
 
-	public HumanEffigyItem(String name, String modid) {
-		super(name, modid);
+	public HumanEffigyItem(String name) {
+		super(name);
 		this.maxStackSize = 1;
 		this.setMaxDamage(ModConfig.DurabilityHumanEffigy - 1);
 		this.setNoRepair();
@@ -31,6 +33,7 @@ public class HumanEffigyItem extends BaseItem {
 		playerIn.addPotionEffect(new PotionEffect(MobEffects.SATURATION, 20, 0,
 				true, false));
 		ItemStack.damageItem(1, playerIn);
+		worldIn.playSound(playerIn, playerIn.getPosition(), ModSounds.human_effigy, SoundCategory.PLAYERS, 1.0F, 1.0F);
 		return new ActionResult<ItemStack>(EnumActionResult.PASS,
 				playerIn.getHeldItem(handIn));
 	}

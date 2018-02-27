@@ -1,5 +1,7 @@
 package com.themastergeneral.ctdmythos.proxy;
 
+import com.themastergeneral.ctdmythos.common.processing.ModSounds;
+
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;

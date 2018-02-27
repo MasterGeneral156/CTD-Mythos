@@ -19,9 +19,9 @@ import com.themastergeneral.ctdmythos.CTDMythos;
 
 public class LongBowItem extends CTDBow {
 
-	public LongBowItem(String name, String modid, int drawspeed,
+	public LongBowItem(String name, int drawspeed,
 			int maxdurability) {
-		super(name, modid, drawspeed, maxdurability);
+		super(name, CTDMythos.MODID, drawspeed, maxdurability);
 		this.setCreativeTab(CTDMythos.creativeTab);
 	}
 }

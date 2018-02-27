@@ -13,7 +13,7 @@ import com.themastergeneral.ctdmythos.common.items.base.SingleStackItem;
 public class ModItems extends RegisterItem {
 	public static HumanEffigyItem humaneffigy;
 	public static MulesKickItem muleskick;
-	
+
 	public static ShearsItem grimshears;
 
 	public static CowBloodItem cowblooddrop;
@@ -44,43 +44,33 @@ public class ModItems extends RegisterItem {
 	public static WandItemFlight flight_wand;
 
 	public static void registerItems() {
-		humaneffigy = register(new HumanEffigyItem("humaneffigy",
-				CTDMythos.MODID));
+		humaneffigy = register(new HumanEffigyItem("humaneffigy"));
 		muleskick = register(new MulesKickItem("muleskick"));
-		grimshears = register(new ShearsItem("grimshears", CTDMythos.MODID));
-		cowblooddrop = register(new CowBloodItem("cowblooddrop",
-				CTDMythos.MODID));
-		bucketcowblood = register(new SingleStackItem("bucketcowblood",
-				CTDMythos.MODID));
-		humansoul = register(new BaseItem("humansoul", CTDMythos.MODID));
-		archeron_ingot = register(new ArcheronIngot("archeron_ingot",
-				CTDMythos.MODID));
-		crystal_woe = register(new BaseItem("crystal_woe", CTDMythos.MODID));
-		crystal_memory = register(new BaseItem("crystal_memory",
-				CTDMythos.MODID));
-		crystal_grief = register(new BaseItem("crystal_grief", CTDMythos.MODID));
-		crystal_fire = register(new BaseItem("crystal_fire", CTDMythos.MODID));
-		crystal_oath = register(new BaseItem("crystal_oath", CTDMythos.MODID));
-		crystal_glove = register(new BaseItem("crystal_glove", CTDMythos.MODID));
-		ethereal_fiber = register(new BaseItem("ethereal_fiber",
-				CTDMythos.MODID));
-		crystal_ender = register(new GlowingItem("crystal_ender",
-				CTDMythos.MODID));
+		grimshears = register(new ShearsItem("grimshears"));
+		cowblooddrop = register(new CowBloodItem("cowblooddrop"));
+		bucketcowblood = register(new SingleStackItem("bucketcowblood"));
+		humansoul = register(new BaseItem("humansoul"));
+		archeron_ingot = register(new ArcheronIngot("archeron_ingot"));
+		crystal_woe = register(new BaseItem("crystal_woe"));
+		crystal_memory = register(new BaseItem("crystal_memory"));
+		crystal_grief = register(new BaseItem("crystal_grief"));
+		crystal_fire = register(new BaseItem("crystal_fire"));
+		crystal_oath = register(new BaseItem("crystal_oath"));
+		crystal_glove = register(new BaseItem("crystal_glove"));
+		ethereal_fiber = register(new BaseItem("ethereal_fiber"));
+		crystal_ender = register(new GlowingItem("crystal_ender"));
 
-		longbow = register(new LongBowItem("longbow", CTDMythos.MODID, 90000,
-				200));
+		longbow = register(new LongBowItem("longbow", 90000, 200));
 
 		tmgdrill = register(new TMGDrill("tmgdrill"));
 		gladius_sword = register(new MythosSwordBase(ToolMaterial.GOLD,
 				"gladius_sword", 823));
 
-		xptome = register(new XPTomeItem("xptome", CTDMythos.MODID));
+		xptome = register(new XPTomeItem("xptome"));
 
-		teleport_wand = register(new WandItemTeleport("teleport_wand",
-				CTDMythos.MODID));
+		teleport_wand = register(new WandItemTeleport("teleport_wand"));
 
-		flight_wand = register(new WandItemFlight("flight_wand",
-				CTDMythos.MODID));
+		flight_wand = register(new WandItemFlight("flight_wand"));
 
 		revitalizing_rye = register(new BaseFood("revitalizing_rye", 3, 1.0F,
 				false));

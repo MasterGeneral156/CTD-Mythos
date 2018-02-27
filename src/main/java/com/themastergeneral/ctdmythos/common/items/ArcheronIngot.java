@@ -11,7 +11,7 @@ import net.minecraft.world.World;
 
 public class ArcheronIngot extends BaseItem {
 
-	public ArcheronIngot(String name, String modid) {
-		super(name, modid);
+	public ArcheronIngot(String name) {
+		super(name);
 	}
 }

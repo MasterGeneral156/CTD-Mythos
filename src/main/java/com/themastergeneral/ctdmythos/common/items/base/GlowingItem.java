@@ -7,8 +7,8 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class GlowingItem extends BaseItem {
 
-	public GlowingItem(String name, String modid) {
-		super(name, modid);
+	public GlowingItem(String name) {
+		super(name);
 	}
 
 	@SideOnly(Side.CLIENT)
