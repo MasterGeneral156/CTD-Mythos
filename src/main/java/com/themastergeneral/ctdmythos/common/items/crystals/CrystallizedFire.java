@@ -49,7 +49,7 @@ public class CrystallizedFire extends BaseItem {
 							false);
 				}
 			}
-			else if (playerIn.isSneaking())
+			if (playerIn.isSneaking())
 			{
 				Block blocktotest = Blocks.BRICK_BLOCK;
 				boolean flag = this.containedBlock == blocktotest;
