@@ -4,12 +4,24 @@ import net.minecraft.item.Item.ToolMaterial;
 
 import com.themastergeneral.ctdcore.item.RegisterItem;
 import com.themastergeneral.ctdmythos.CTDMythos;
-import com.themastergeneral.ctdmythos.common.items.base.BaseFood;
-import com.themastergeneral.ctdmythos.common.items.base.BaseItem;
-import com.themastergeneral.ctdmythos.common.items.base.GlowingItem;
-import com.themastergeneral.ctdmythos.common.items.base.MythosSwordBase;
-import com.themastergeneral.ctdmythos.common.items.base.SingleStackItem;
+import com.themastergeneral.ctdmythos.common.items.artifacts.HumanEffigyItem;
+import com.themastergeneral.ctdmythos.common.items.artifacts.MulesKickItem;
+import com.themastergeneral.ctdmythos.common.items.artifacts.TalismanItemEvasion;
+import com.themastergeneral.ctdmythos.common.items.artifacts.XPTomeItem;
 import com.themastergeneral.ctdmythos.common.items.crystals.CrystallizedFire;
+import com.themastergeneral.ctdmythos.common.items.misc.ArcheronIngot;
+import com.themastergeneral.ctdmythos.common.items.misc.BaseFood;
+import com.themastergeneral.ctdmythos.common.items.misc.BaseItem;
+import com.themastergeneral.ctdmythos.common.items.misc.CowBloodItem;
+import com.themastergeneral.ctdmythos.common.items.misc.GlowingItem;
+import com.themastergeneral.ctdmythos.common.items.misc.SingleStackItem;
+import com.themastergeneral.ctdmythos.common.items.tools.LongBowItem;
+import com.themastergeneral.ctdmythos.common.items.tools.MythosSwordBase;
+import com.themastergeneral.ctdmythos.common.items.tools.ShearsItem;
+import com.themastergeneral.ctdmythos.common.items.tools.TMGDrill;
+import com.themastergeneral.ctdmythos.common.items.wands.WandFireItem;
+import com.themastergeneral.ctdmythos.common.items.wands.WandItemFlight;
+import com.themastergeneral.ctdmythos.common.items.wands.WandItemTeleport;
 
 public class ModItems extends RegisterItem {
 	public static HumanEffigyItem humaneffigy;

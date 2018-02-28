@@ -1,4 +1,4 @@
-package com.themastergeneral.ctdmythos.common.items;
+package com.themastergeneral.ctdmythos.common.items.artifacts;
 
 import java.util.Random;
 
@@ -14,7 +14,7 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 
 import com.themastergeneral.ctdmythos.CTDMythos;
-import com.themastergeneral.ctdmythos.common.items.base.BaseItem;
+import com.themastergeneral.ctdmythos.common.items.misc.BaseItem;
 
 public class TalismanItemEvasion extends BaseItem {
 

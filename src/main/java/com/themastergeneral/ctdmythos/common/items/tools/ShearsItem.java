@@ -1,9 +1,10 @@
-package com.themastergeneral.ctdmythos.common.items;
+package com.themastergeneral.ctdmythos.common.items.tools;
 
 import java.util.Random;
 
 import com.themastergeneral.ctdmythos.common.config.ModConfig;
-import com.themastergeneral.ctdmythos.common.items.base.BaseItem;
+import com.themastergeneral.ctdmythos.common.items.ModItems;
+import com.themastergeneral.ctdmythos.common.items.misc.BaseItem;
 
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.monster.EntityEnderman;

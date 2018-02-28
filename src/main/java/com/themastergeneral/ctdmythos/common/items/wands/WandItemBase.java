@@ -1,4 +1,6 @@
-package com.themastergeneral.ctdmythos.common.items.base;
+package com.themastergeneral.ctdmythos.common.items.wands;
+
+import com.themastergeneral.ctdmythos.common.items.misc.BaseItem;
 
 public class WandItemBase extends BaseItem {
 

@@ -1,9 +1,8 @@
-package com.themastergeneral.ctdmythos.common.items;
+package com.themastergeneral.ctdmythos.common.items.tools;
 
 import com.themastergeneral.ctdcore.CTDCore;
 import com.themastergeneral.ctdcore.client.ItemModelProvider;
 import com.themastergeneral.ctdmythos.CTDMythos;
-import com.themastergeneral.ctdmythos.common.items.base.MythosSwordBase;
 
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemSword;

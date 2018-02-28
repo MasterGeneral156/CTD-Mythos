@@ -1,4 +1,4 @@
-package com.themastergeneral.ctdmythos.common.items.base;
+package com.themastergeneral.ctdmythos.common.items.misc;
 
 import com.themastergeneral.ctdcore.CTDCore;
 import com.themastergeneral.ctdcore.client.ItemModelProvider;

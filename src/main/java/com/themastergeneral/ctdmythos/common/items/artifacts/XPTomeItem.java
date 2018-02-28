@@ -1,7 +1,8 @@
-package com.themastergeneral.ctdmythos.common.items;
+package com.themastergeneral.ctdmythos.common.items.artifacts;
 
 import com.themastergeneral.ctdmythos.common.config.ModConfig;
-import com.themastergeneral.ctdmythos.common.items.base.BaseItem;
+import com.themastergeneral.ctdmythos.common.items.ModItems;
+import com.themastergeneral.ctdmythos.common.items.misc.BaseItem;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;

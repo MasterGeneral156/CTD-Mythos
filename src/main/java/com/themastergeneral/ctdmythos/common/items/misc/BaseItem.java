@@ -1,4 +1,4 @@
-package com.themastergeneral.ctdmythos.common.items.base;
+package com.themastergeneral.ctdmythos.common.items.misc;
 
 import java.util.Iterator;
 import java.util.List;

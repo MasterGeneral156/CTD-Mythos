@@ -1,4 +1,4 @@
-package com.themastergeneral.ctdmythos.common.items;
+package com.themastergeneral.ctdmythos.common.items.wands;
 
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.EntityLivingBase;
@@ -20,7 +20,8 @@ import com.themastergeneral.ctdcore.CTDCore;
 import com.themastergeneral.ctdcore.client.ItemModelProvider;
 import com.themastergeneral.ctdcore.item.CTDBow;
 import com.themastergeneral.ctdmythos.CTDMythos;
-import com.themastergeneral.ctdmythos.common.items.base.BaseItem;
+import com.themastergeneral.ctdmythos.common.items.ModItems;
+import com.themastergeneral.ctdmythos.common.items.misc.BaseItem;
 
 public class WandFireItem extends CTDBow implements ItemModelProvider {
 

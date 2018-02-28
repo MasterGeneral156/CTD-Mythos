@@ -1,7 +1,7 @@
-package com.themastergeneral.ctdmythos.common.items;
+package com.themastergeneral.ctdmythos.common.items.wands;
 
 import com.themastergeneral.ctdmythos.CTDMythos;
-import com.themastergeneral.ctdmythos.common.items.base.WandItemBase;
+import com.themastergeneral.ctdmythos.common.items.ModItems;
 import com.themastergeneral.ctdmythos.common.processing.ModSounds;
 
 import net.minecraft.entity.player.EntityPlayer;

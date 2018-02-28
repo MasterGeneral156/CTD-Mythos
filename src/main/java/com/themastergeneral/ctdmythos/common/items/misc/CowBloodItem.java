@@ -1,6 +1,5 @@
-package com.themastergeneral.ctdmythos.common.items;
+package com.themastergeneral.ctdmythos.common.items.misc;
 
-import com.themastergeneral.ctdmythos.common.items.base.BaseItem;
 
 public class CowBloodItem extends BaseItem {
 

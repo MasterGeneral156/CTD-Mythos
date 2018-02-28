@@ -1,6 +1,4 @@
-package com.themastergeneral.ctdmythos.common.items;
-
-import com.themastergeneral.ctdmythos.common.items.base.BaseItem;
+package com.themastergeneral.ctdmythos.common.items.misc;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
