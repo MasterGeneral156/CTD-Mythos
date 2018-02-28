@@ -10,9 +10,8 @@ public class OreBlock extends BaseBlock {
 
 	private Item drop;
 
-	public OreBlock(Material materialIn, String name, String modid,
-			Item droppeditem) {
-		super(materialIn, name, modid);
+	public OreBlock(Material materialIn, String name, Item droppeditem) {
+		super(materialIn, name);
 		this.setHarvestLevel("shovel", 2);
 		this.setHardness(1.0f);
 		this.drop = droppeditem;

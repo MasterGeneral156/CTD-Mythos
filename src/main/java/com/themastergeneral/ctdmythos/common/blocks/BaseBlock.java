@@ -7,8 +7,8 @@ import com.themastergeneral.ctdmythos.CTDMythos;
 
 public class BaseBlock extends CTDBlock {
 
-	public BaseBlock(Material materialIn, String name, String modid) {
-		super(materialIn, name, modid);
+	public BaseBlock(Material materialIn, String name) {
+		super(materialIn, name, CTDMythos.MODID);
 		setCreativeTab(CTDMythos.creativeTab);
 	}
 
