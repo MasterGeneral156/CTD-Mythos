@@ -9,6 +9,7 @@ import com.themastergeneral.ctdmythos.common.items.base.BaseItem;
 import com.themastergeneral.ctdmythos.common.items.base.GlowingItem;
 import com.themastergeneral.ctdmythos.common.items.base.MythosSwordBase;
 import com.themastergeneral.ctdmythos.common.items.base.SingleStackItem;
+import com.themastergeneral.ctdmythos.common.items.crystals.CrystallizedFire;
 
 public class ModItems extends RegisterItem {
 	public static HumanEffigyItem humaneffigy;
@@ -25,7 +26,7 @@ public class ModItems extends RegisterItem {
 	public static BaseItem crystal_woe;
 	public static BaseItem crystal_memory;
 	public static BaseItem crystal_grief;
-	public static BaseItem crystal_fire;
+	public static CrystallizedFire crystal_fire;
 	public static BaseItem crystal_oath;
 	public static BaseItem ethereal_fiber;
 	public static BaseItem crystal_glove;
@@ -57,7 +58,7 @@ public class ModItems extends RegisterItem {
 		crystal_woe = register(new BaseItem("crystal_woe"));
 		crystal_memory = register(new BaseItem("crystal_memory"));
 		crystal_grief = register(new BaseItem("crystal_grief"));
-		crystal_fire = register(new BaseItem("crystal_fire"));
+		crystal_fire = register(new CrystallizedFire("crystal_fire"));
 		crystal_oath = register(new BaseItem("crystal_oath"));
 		crystal_glove = register(new BaseItem("crystal_glove"));
 		ethereal_fiber = register(new BaseItem("ethereal_fiber"));
