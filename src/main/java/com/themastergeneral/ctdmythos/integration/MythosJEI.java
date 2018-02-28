@@ -1,5 +1,6 @@
 package com.themastergeneral.ctdmythos.integration;
 
+import com.themastergeneral.ctdmythos.common.blocks.ModBlocks;
 import com.themastergeneral.ctdmythos.common.items.CowBloodItem;
 import com.themastergeneral.ctdmythos.common.items.ModItems;
 
@@ -34,5 +35,7 @@ public class MythosJEI implements IModPlugin {
 				"jei.muleskick.desc");
 		registry.addDescription(new ItemStack(ModItems.evasion_talisman),
 				"jei.evasion_talisman.desc");
+		registry.addDescription(new ItemStack(ModBlocks.crystal_fire_brick),
+				"jei.crystal_bricks.desc");
 	}
 }
