@@ -8,6 +8,9 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityTNTPrimed;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.projectile.EntityArrow;
+import net.minecraft.entity.projectile.EntitySmallFireball;
+import net.minecraft.entity.projectile.EntityTippedArrow;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.init.MobEffects;
@@ -50,7 +53,7 @@ public class BaseItem extends CTDItem {
 		if ((stack.getItem() == ModItems.crystal_memory)
 				&& (offhand.getItem() != ModItems.crystal_glove)) {
 			((EntityLivingBase) entityIn).addPotionEffect(new PotionEffect(
-					MobEffects.WEAKNESS, 20, 3, true, false));
+					MobEffects.WEAKNESS, 20, 2, true, false));
 		}
 		// Slowness effect with Woe
 		if ((stack.getItem() == ModItems.crystal_woe)
@@ -76,7 +79,9 @@ public class BaseItem extends CTDItem {
 				if (offhand.isItemDamaged()) {
 					offhand.setItemDamage(0);
 					mainhand.shrink(1);
-					worldIn.playSound(playerIn, playerIn.getPosition(), ModSounds.spell_complete, SoundCategory.PLAYERS, 1.0F, 1.0F);
+					worldIn.playSound(playerIn, playerIn.getPosition(),
+							ModSounds.spell_complete, SoundCategory.PLAYERS,
+							1.0F, 1.0F);
 				}
 			}
 		}
@@ -88,7 +93,9 @@ public class BaseItem extends CTDItem {
 						playerIn.addExperienceLevel(-ModConfig.StoredLevels);
 						offhand.shrink(1);
 						mainhand.shrink(1);
-						worldIn.playSound(playerIn, playerIn.getPosition(), ModSounds.spell_complete, SoundCategory.PLAYERS, 1.0F, 1.0F);
+						worldIn.playSound(playerIn, playerIn.getPosition(),
+								ModSounds.spell_complete,
+								SoundCategory.PLAYERS, 1.0F, 1.0F);
 						playerIn.dropItem(new ItemStack(ModItems.xptome), false);
 					}
 				}
@@ -102,13 +109,22 @@ public class BaseItem extends CTDItem {
 							playerIn.posY + 1, playerIn.posZ, 4.0F, true);
 					playerIn.setHealth(playerIn.getHealth() - 5.0F);
 					mainhand.shrink(1);
-					worldIn.playSound(playerIn, playerIn.getPosition(), ModSounds.spell_complete, SoundCategory.PLAYERS, 1.0F, 1.0F);
+					worldIn.playSound(playerIn, playerIn.getPosition(),
+							ModSounds.spell_complete, SoundCategory.PLAYERS,
+							1.0F, 1.0F);
 					offhand.shrink(1);
-					playerIn.dropItem(new ItemStack(ModItems.archeron_ingot), false);
+					playerIn.dropItem(new ItemStack(ModItems.archeron_ingot),
+							false);
 				}
 			}
 		}
 		return new ActionResult<ItemStack>(EnumActionResult.PASS,
 				playerIn.getHeldItem(handIn));
+	}
+
+	public EntitySmallFireball createArrow(World worldIn, ItemStack stack,
+			EntityLivingBase shooter) {
+		EntitySmallFireball entitytippedarrow = new EntitySmallFireball(worldIn);
+		return entitytippedarrow;
 	}
 }
