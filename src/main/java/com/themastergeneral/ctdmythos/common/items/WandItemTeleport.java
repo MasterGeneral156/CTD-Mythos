@@ -29,6 +29,7 @@ public class WandItemTeleport extends WandItemBase {
 			if (offhand.getItem() == ModItems.crystal_ender) {
 				mainhand.damageItem(1, playerIn);
 				offhand.shrink(1);
+				playerIn.getCooldownTracker().setCooldown(this, 100);
 				BlockPos blockpos = worldIn.provider.getRandomizedSpawnPoint();
 				playerIn.setPositionAndUpdate(blockpos.getX(), blockpos.getY(),
 						blockpos.getZ());

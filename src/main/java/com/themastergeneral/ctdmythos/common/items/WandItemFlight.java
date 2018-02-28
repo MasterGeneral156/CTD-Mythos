@@ -34,7 +34,7 @@ public class WandItemFlight extends WandItemBase {
 		if ((mainhand.getItem() == ModItems.flight_wand) && (playerIn.onGround)) {
 			if (offhand.getItem() == Items.IRON_INGOT) {
 				flighttime = 80;
-				resist = 100;
+				resist = 120;
 			}
 
 			else if (offhand.getItem() == Items.GOLD_INGOT) {
@@ -62,6 +62,7 @@ public class WandItemFlight extends WandItemBase {
 				mainhand.damageItem(1, playerIn);
 				worldIn.playSound(playerIn, playerIn.getPosition(), ModSounds.flight_wand, SoundCategory.PLAYERS, 1.0F, 1.0F);
 				offhand.shrink(1);
+				playerIn.getCooldownTracker().setCooldown(this, flighttime);
 			}
 		}
 		return new ActionResult<ItemStack>(EnumActionResult.PASS,

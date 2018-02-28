@@ -35,6 +35,7 @@ public class HumanEffigyItem extends BaseItem {
 			playerIn.addPotionEffect(new PotionEffect(MobEffects.SATURATION,
 					20, 0, true, false));
 			ItemStack.damageItem(1, playerIn);
+			playerIn.getCooldownTracker().setCooldown(this, 20);
 		}
 		worldIn.playSound(playerIn, playerIn.getPosition(),
 				ModSounds.human_effigy, SoundCategory.PLAYERS, 1.0F, 1.0F);
