@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "group": "ctdmythos:evasion_talisman",
+    "pattern": [
+        " G ",
+        "GEG",
+		" G "
+    ],
+    "key": {
+		"G": [{"type": "forge:ore_dict", "ore": "nuggetGold"}],
+        "E": [{"type": "forge:ore_dict", "ore": "gemCrystallizedEnder"}]
+    },
+    "result": {
+        "item": "ctdmythos:evasion_talisman",
+		"count": 1
+    }
+}
