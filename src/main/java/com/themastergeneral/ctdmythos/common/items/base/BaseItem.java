@@ -101,23 +101,6 @@ public class BaseItem extends CTDItem {
 				}
 			}
 		}
-		// Create Archeron Ingot with TNT and Crystallized Fire
-		if (mainhand.getItem() == ModItems.crystal_fire) {
-			if (offhand != ItemStack.EMPTY) {
-				if (offhand.getItem() == Item.getItemFromBlock(Blocks.TNT)) {
-					worldIn.createExplosion(playerIn, playerIn.posX,
-							playerIn.posY + 1, playerIn.posZ, 4.0F, true);
-					playerIn.setHealth(playerIn.getHealth() - 5.0F);
-					mainhand.shrink(1);
-					worldIn.playSound(playerIn, playerIn.getPosition(),
-							ModSounds.spell_complete, SoundCategory.PLAYERS,
-							1.0F, 1.0F);
-					offhand.shrink(1);
-					playerIn.dropItem(new ItemStack(ModItems.archeron_ingot),
-							false);
-				}
-			}
-		}
 		return new ActionResult<ItemStack>(EnumActionResult.PASS,
 				playerIn.getHeldItem(handIn));
 	}
