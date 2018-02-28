@@ -20,11 +20,13 @@ item.ethereal_fiber.name=Ethereal Fiber
 item.revitalizing_rye.name=Revitalizing Rye
 item.crystal_glove.name=Crystallized Glove
 item.muleskick.name=Mule's Kick
+item.evasion_talisman.name=Talisman of Evasion
 
 itemGroup.ctdmythos=CTD Mythos
 
 jei.crystal_glove.desc=Place in your off-hand to stop the effects of the other Crystallized gems.
 jei.muleskick.desc=Right Click Grim Shears on a horse for a 2% chance of dropping.
+jei.evasion_talisman.desc=15% dodge chance when in your inventory.
 jei.cowblooddrop.desc=Dropped when killing cows. 100% for 1, 50% for 2, 25% for 3.
 jei.teleport_wand.desc=Right click with ender pearl in off-hand to teleport to world spawn.
 jei.flight_wand.desc=Right Click Levitation Wand with Iron Ingot/Gold Ingot/Diamond/Emerald in your off-hand to select levitation effect.

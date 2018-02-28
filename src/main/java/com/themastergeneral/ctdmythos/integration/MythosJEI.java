@@ -32,5 +32,7 @@ public class MythosJEI implements IModPlugin {
 				"jei.crystal_glove.desc");
 		registry.addDescription(new ItemStack(ModItems.muleskick),
 				"jei.muleskick.desc");
+		registry.addDescription(new ItemStack(ModItems.evasion_talisman),
+				"jei.evasion_talisman.desc");
 	}
 }
