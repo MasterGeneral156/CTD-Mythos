@@ -18,18 +18,22 @@ public class MulesKickItem extends BaseItem {
 
 	public MulesKickItem(String name) {
 		super(name);
-		this.maxStackSize=1;
+		this.maxStackSize = 1;
 		this.setMaxDamage(4);
 	}
-	
+
 	@Override
 	public ActionResult<ItemStack> onItemRightClick(World worldIn,
 			EntityPlayer playerIn, EnumHand handIn) {
-		ItemStack ItemStack = playerIn.getHeldItem(handIn);
-		playerIn.addPotionEffect(new PotionEffect(MobEffects.SPEED, 200, 4,
-				true, false));
-		ItemStack.damageItem(1, playerIn);
-		worldIn.playSound(playerIn, playerIn.getPosition(), ModSounds.mules_kick, SoundCategory.PLAYERS, 1.0F, 1.0F);
+		if (!worldIn.isRemote) {
+			ItemStack ItemStack = playerIn.getHeldItem(handIn);
+			playerIn.addPotionEffect(new PotionEffect(MobEffects.SPEED, 200, 4,
+					true, false));
+			ItemStack.damageItem(1, playerIn);
+			playerIn.getCooldownTracker().setCooldown(this, 200);
+		}
+		worldIn.playSound(playerIn, playerIn.getPosition(),
+				ModSounds.mules_kick, SoundCategory.PLAYERS, 1.0F, 1.0F);
 		return new ActionResult<ItemStack>(EnumActionResult.PASS,
 				playerIn.getHeldItem(handIn));
 	}
