@@ -3,6 +3,7 @@ package com.themastergeneral.ctdmythos.common.items.wands;
 import com.themastergeneral.ctdmythos.CTDMythos;
 import com.themastergeneral.ctdmythos.common.items.ModItems;
 import com.themastergeneral.ctdmythos.common.processing.ModSounds;
+import com.themastergeneral.ctdmythos.common.processing.WandFlightItems;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
@@ -32,26 +33,11 @@ public class WandItemFlight extends WandItemBase {
 		ItemStack offhand = playerIn.getHeldItemOffhand();
 		ItemStack mainhand = playerIn.getHeldItemMainhand();
 		if ((mainhand.getItem() == ModItems.flight_wand) && (playerIn.onGround)) {
-			if (offhand.getItem() == Items.IRON_INGOT) {
-				flighttime = 80;
-				resist = 120;
-			}
-
-			else if (offhand.getItem() == Items.GOLD_INGOT) {
-				flighttime = 40;
-				resist = 70;
-				flightmod = 3;
-			}
-
-			else if (offhand.getItem() == Items.DIAMOND) {
-				flighttime = 300;
-				resist = 360;
-				flightmod = 1;
-			}
-
-			else if (offhand.getItem() == Items.EMERALD) {
-				flighttime = 400;
-				resist = 480;
+			if (WandFlightItems.instance().getFlightItem(offhand) != null)
+			{
+				flighttime = WandFlightItems.instance().getFlightTime(offhand);
+				resist = WandFlightItems.instance().getFlightResistance(offhand);
+				flightmod = WandFlightItems.instance().getFlightMultiplier(offhand);
 			}
 			if (flighttime > 0) {
 				playerIn.addPotionEffect(new PotionEffect(
