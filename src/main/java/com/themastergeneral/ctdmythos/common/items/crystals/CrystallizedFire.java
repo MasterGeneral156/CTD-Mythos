@@ -15,15 +15,17 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
 
+import com.themastergeneral.ctdmythos.CTDMythos;
 import com.themastergeneral.ctdmythos.common.blocks.ModBlocks;
 import com.themastergeneral.ctdmythos.common.items.ModItems;
 import com.themastergeneral.ctdmythos.common.items.misc.BaseItem;
+import com.themastergeneral.ctdmythos.common.processing.MainOffhandCrafting;
 import com.themastergeneral.ctdmythos.common.processing.ModSounds;
 
 public class CrystallizedFire extends BaseItem {
 
 	private Block containedBlock;
-	
+
 	public CrystallizedFire(String name) {
 		super(name);
 	}
@@ -34,60 +36,55 @@ public class CrystallizedFire extends BaseItem {
 		ItemStack offhand = playerIn.getHeldItemOffhand();
 		ItemStack mainhand = playerIn.getHeldItemMainhand();
 		// Create Archeron Ingot with TNT and Crystallized Fire
-		if (mainhand.getItem() == ModItems.crystal_fire) {
-			if (offhand != ItemStack.EMPTY) {
-				if (offhand.getItem() == Item.getItemFromBlock(Blocks.TNT)) {
+		if (MainOffhandCrafting.instance().getRecipeResult(mainhand) != null) {
+			if (MainOffhandCrafting.instance().getRecipeOffhand(mainhand)
+					.getItem() == offhand.getItem()) {
+				if (!worldIn.isRemote) {
 					worldIn.createExplosion(playerIn, playerIn.posX,
 							playerIn.posY + 1, playerIn.posZ, 4.0F, true);
 					playerIn.setHealth(playerIn.getHealth() - 5.0F);
-					mainhand.shrink(1);
 					worldIn.playSound(playerIn, playerIn.getPosition(),
 							ModSounds.spell_complete, SoundCategory.PLAYERS,
 							1.0F, 1.0F);
+					playerIn.dropItem(MainOffhandCrafting.instance()
+							.getRecipeResult(mainhand), true);
+					mainhand.shrink(1);
 					offhand.shrink(1);
-					playerIn.dropItem(new ItemStack(ModItems.archeron_ingot),
-							false);
 				}
 			}
-			if (playerIn.isSneaking())
-			{
-				Block blocktotest = Blocks.BRICK_BLOCK;
-				boolean flag = this.containedBlock == blocktotest;
-				RayTraceResult raytraceresult = this.rayTrace(worldIn, playerIn, flag);
-				if (raytraceresult == null)
-				{
-					return new ActionResult(EnumActionResult.PASS, mainhand);
+		}
+		if (playerIn.isSneaking()) {
+			Block blocktotest = Blocks.BRICK_BLOCK;
+			boolean flag = this.containedBlock == blocktotest;
+			RayTraceResult raytraceresult = this.rayTrace(worldIn, playerIn,
+					flag);
+			if (raytraceresult == null) {
+				return new ActionResult(EnumActionResult.PASS, mainhand);
+			} else if (raytraceresult.typeOfHit != RayTraceResult.Type.BLOCK) {
+				return new ActionResult(EnumActionResult.PASS, mainhand);
+			} else {
+				BlockPos blockpos = raytraceresult.getBlockPos();
+				if (!worldIn.isBlockModifiable(playerIn, blockpos)) {
+					return new ActionResult(EnumActionResult.FAIL, mainhand);
 				}
-				else if (raytraceresult.typeOfHit != RayTraceResult.Type.BLOCK)
-				{
-					return new ActionResult(EnumActionResult.PASS, mainhand);
-				}
-				else
-				{
-					BlockPos blockpos = raytraceresult.getBlockPos();
-		            if (!worldIn.isBlockModifiable(playerIn, blockpos))
-		            {
-		                return new ActionResult(EnumActionResult.FAIL, mainhand);
-		            }
-		            if (!playerIn.canPlayerEdit(blockpos.offset(raytraceresult.sideHit), raytraceresult.sideHit, mainhand))
-		            {
-	                    return new ActionResult(EnumActionResult.FAIL, mainhand);
-		            }
-	                else
-	                {
-	                	IBlockState iblockstate = worldIn.getBlockState(blockpos);
-	                	if (iblockstate == blocktotest.getDefaultState())
-	                	{
-	                		worldIn.setBlockState(blockpos, ModBlocks.crystal_fire_brick.getDefaultState(), 11);
-	                		EntityLightningBolt lightning = new EntityLightningBolt(worldIn, blockpos.getX(), blockpos.getY(), blockpos.getZ(), false);
-	                		worldIn.addWeatherEffect(lightning);
-	                		return new ActionResult(EnumActionResult.PASS, mainhand);
-	                	}
-	                	else
-	                	{
-	                		return new ActionResult(EnumActionResult.FAIL, mainhand);
-	                	}
-	                }
+				if (!playerIn.canPlayerEdit(
+						blockpos.offset(raytraceresult.sideHit),
+						raytraceresult.sideHit, mainhand)) {
+					return new ActionResult(EnumActionResult.FAIL, mainhand);
+				} else {
+					IBlockState iblockstate = worldIn.getBlockState(blockpos);
+					if (iblockstate == blocktotest.getDefaultState()) {
+						worldIn.setBlockState(blockpos,
+								ModBlocks.crystal_fire_brick.getDefaultState(),
+								11);
+						EntityLightningBolt lightning = new EntityLightningBolt(
+								worldIn, blockpos.getX(), blockpos.getY(),
+								blockpos.getZ(), false);
+						worldIn.addWeatherEffect(lightning);
+						return new ActionResult(EnumActionResult.PASS, mainhand);
+					} else {
+						return new ActionResult(EnumActionResult.FAIL, mainhand);
+					}
 				}
 			}
 		}
