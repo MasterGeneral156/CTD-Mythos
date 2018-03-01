@@ -7,7 +7,7 @@ import mezz.jei.api.recipe.IRecipeWrapper;
 
 public abstract class CTDMythosJEICategory<T extends IRecipeWrapper> implements IRecipeCategory<T> {
 	protected static final int inputSlot = 0;
-	protected static final int fuelSlot = 1;
+	protected static final int offHand = 1;
 	protected static final int outputSlot = 2;
 
 	public CTDMythosJEICategory(IGuiHelper guiHelper) {
