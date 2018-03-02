@@ -14,11 +14,11 @@ import net.minecraft.util.ResourceLocation;
 public class FlightWandCategory extends CTDMythosJEICategory<FlightWandJEI> {
 	private final IDrawable background;
 	private final String localizedName;
-	ResourceLocation backgroundLocation = new ResourceLocation("ctdmythos", "textures/gui/gui_flightwand.png");
+	ResourceLocation backgroundLocation = new ResourceLocation("ctdmythos", "textures/gui/gui_jei.png");
 
 	public FlightWandCategory(IGuiHelper guiHelper) {
 		super(guiHelper);
-		background = guiHelper.createDrawable(backgroundLocation, 0, 0, 116, 20);
+		background = guiHelper.createDrawable(backgroundLocation, 0, 114, 116, 20);
 		localizedName = "Levitation Wand Catalysts";
 	}
 

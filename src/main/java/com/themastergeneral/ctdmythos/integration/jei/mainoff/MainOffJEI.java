@@ -10,6 +10,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.item.ItemStack;
 
+import com.google.common.collect.Lists;
 import com.themastergeneral.ctdmythos.common.processing.MainOffhandCrafting;
 import com.themastergeneral.ctdmythos.common.processing.WandFlightItems;
 
@@ -26,8 +27,7 @@ public class MainOffJEI implements IRecipeWrapper {
 
 	@Override
 	public void getIngredients(IIngredients ingredients) {
-		ingredients.setInputLists(ItemStack.class, inputs);
-		ingredients.setInputLists(ItemStack.class, offhands);
+		ingredients.setInputs(ItemStack.class, Lists.newArrayList(inputs, offhands));
 		ingredients.setOutput(ItemStack.class, output);
 	}
 

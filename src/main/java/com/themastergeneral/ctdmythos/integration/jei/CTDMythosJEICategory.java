@@ -11,6 +11,6 @@ public abstract class CTDMythosJEICategory<T extends IRecipeWrapper> implements 
 	protected static final int outputSlot = 2;
 
 	public CTDMythosJEICategory(IGuiHelper guiHelper) {
-		ResourceLocation backgroundLocation = new ResourceLocation("ctdmythos", "textures/gui/gui_flightwand.png");
+		ResourceLocation backgroundLocation = new ResourceLocation("ctdmythos", "textures/gui/gui_jei.png");
 	}
 }
