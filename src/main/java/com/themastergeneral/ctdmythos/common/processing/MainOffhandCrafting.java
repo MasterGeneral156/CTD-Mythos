@@ -1,7 +1,5 @@
 package com.themastergeneral.ctdmythos.common.processing;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
@@ -17,8 +15,12 @@ public class MainOffhandCrafting {
 	private static final MainOffhandCrafting MAIN_OFF_HAND_ITEMS = new MainOffhandCrafting();
 
 	// Main Hand + Offhand
-	private final Map<List<ItemStack>, ItemStack> mainHandList = Maps
-			.<List<ItemStack>, ItemStack> newHashMap();
+	private final Map<ItemStack, ItemStack> mainHandList = Maps
+			.<ItemStack, ItemStack> newHashMap();
+
+	// Main Hand + Output
+	private final Map<ItemStack, ItemStack> outputList = Maps
+			.<ItemStack, ItemStack> newHashMap();
 
 	public static MainOffhandCrafting instance() {
 		return MAIN_OFF_HAND_ITEMS;
@@ -52,34 +54,61 @@ public class MainOffhandCrafting {
 
 	public void addRecipeItem(ItemStack mainhand, ItemStack offhand,
 			ItemStack output) {
-		ArrayList list = new ArrayList<ItemStack>();
-		list.add(mainhand);
-		list.add(offhand);
-		this.mainHandList.put(list, output);
+		this.mainHandList.put(mainhand, offhand);
+		this.outputList.put(mainhand, output);
 	}
 
-	public void removeRecipe(List<ItemStack> input) {
-		ItemStack result = getRecipeResult(input);
+	public void removeRecipe(ItemStack input, ItemStack offhand, ItemStack output) {
+		ItemStack result = getRecipeResult(input, offhand);
 		if (result == ItemStack.EMPTY) {
 			CTDMythos.logger.error("Could not remove: " + input
 					+ " from the Main/Offhand registry as it doesn't exist.");
 			return;
 		}
-		this.mainHandList.remove(input);
+		this.mainHandList.remove(input,offhand);
+		this.outputList.remove(input,output);
 	}
 
-	public ItemStack getRecipeResult(List<ItemStack> input) {
-		for (Entry<List<ItemStack>, ItemStack> entry : this.mainHandList
-				.entrySet()) {
-			ItemStack mainhand = input.get(0);
-			ItemStack offhand = input.get(1);
-				return (ItemStack) entry.getValue();
+	public ItemStack getRecipeResult(ItemStack stack, ItemStack offhand) {
+		for (Entry<ItemStack, ItemStack> entry : this.outputList.entrySet()) 
+		{
+			for (Entry<ItemStack, ItemStack> entry2 : this.mainHandList.entrySet()) 
+			{
+				if (entry.getKey() != null)
+				{
+					if (entry2.getKey() != null)
+					{
+						return entry.getValue();
+					}
+				}
+			}
 		}
 
 		return ItemStack.EMPTY;
 	}
 
-	public Map<List<ItemStack>, ItemStack> getRecipeList() {
+	public ItemStack getRecipeOffhand(ItemStack stack, ItemStack offhand) {
+		for (Entry<ItemStack, ItemStack> entry : this.mainHandList.entrySet()) {
+			if (this.compareItemStacks(stack, (ItemStack) entry.getKey())) {
+				if (entry.getValue() == offhand)
+					return (ItemStack) entry.getValue();
+			}
+		}
+
+		return ItemStack.EMPTY;
+	}
+
+	private boolean compareItemStacks(ItemStack stack1, ItemStack stack2) {
+		return stack2.getItem() == stack1.getItem()
+				&& (stack2.getMetadata() == 32767 || stack2.getMetadata() == stack1
+						.getMetadata());
+	}
+
+	public Map<ItemStack, ItemStack> getRecipeList() {
 		return this.mainHandList;
+	}
+
+	public Map<ItemStack, ItemStack> getOutputList() {
+		return this.outputList;
 	}
 }
