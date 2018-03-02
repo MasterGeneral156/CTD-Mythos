@@ -20,7 +20,6 @@ import com.themastergeneral.ctdmythos.common.items.tools.LongBowItem;
 import com.themastergeneral.ctdmythos.common.items.tools.MythosSwordBase;
 import com.themastergeneral.ctdmythos.common.items.tools.ShearsItem;
 import com.themastergeneral.ctdmythos.common.items.tools.TMGDrill;
-import com.themastergeneral.ctdmythos.common.items.wands.WandFireItem;
 import com.themastergeneral.ctdmythos.common.items.wands.WandItemFlight;
 import com.themastergeneral.ctdmythos.common.items.wands.WandItemTeleport;
 
