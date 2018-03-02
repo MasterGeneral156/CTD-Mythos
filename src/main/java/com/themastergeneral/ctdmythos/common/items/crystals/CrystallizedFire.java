@@ -3,6 +3,7 @@ package com.themastergeneral.ctdmythos.common.items.crystals;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.effect.EntityLightningBolt;
+import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
@@ -42,8 +43,9 @@ public class CrystallizedFire extends BaseItem {
 				if (!worldIn.isRemote) {
 					mainhand.shrink(1);
 					offhand.shrink(1);
-					playerIn.entityDropItem(MainOffhandCrafting.instance()
-							.getRecipeResult(mainhand), 0F);
+					worldIn.spawnEntity(new EntityItem(worldIn, playerIn.posX,
+							playerIn.posY, playerIn.posZ, MainOffhandCrafting
+									.instance().getRecipeResult(mainhand)));
 				}
 				worldIn.playSound(playerIn, playerIn.getPosition(),
 						ModSounds.spell_complete, SoundCategory.PLAYERS, 1.0F,
