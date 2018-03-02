@@ -4,6 +4,7 @@ import net.minecraft.item.Item.ToolMaterial;
 
 import com.themastergeneral.ctdcore.item.RegisterItem;
 import com.themastergeneral.ctdmythos.CTDMythos;
+import com.themastergeneral.ctdmythos.common.items.artifacts.DebugItem;
 import com.themastergeneral.ctdmythos.common.items.artifacts.HumanEffigyItem;
 import com.themastergeneral.ctdmythos.common.items.artifacts.MulesKickItem;
 import com.themastergeneral.ctdmythos.common.items.artifacts.TalismanItemEvasion;
@@ -92,5 +93,7 @@ public class ModItems extends RegisterItem {
 				false));
 
 		evasion_talisman = register(new TalismanItemEvasion("evasion_talisman"));
+		
+		register(new DebugItem("debug"));
 	}
 }
