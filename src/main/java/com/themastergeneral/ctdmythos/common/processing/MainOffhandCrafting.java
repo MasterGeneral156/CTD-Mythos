@@ -27,7 +27,7 @@ public class MainOffhandCrafting {
 	}
 
 	private MainOffhandCrafting() {
-		this.addRecipe(new ItemStack(ModItems.crystal_fire), new ItemStack(Blocks.TNT), new ItemStack(ModItems.archeron_ingot));
+		this.addRecipe(new ItemStack(ModItems.crystal_fire, 1), new ItemStack(Blocks.TNT, 1), new ItemStack(ModItems.archeron_ingot, 1));
 	}
 
 	public void addRecipe(ItemStack mainhand, ItemStack offhand,
