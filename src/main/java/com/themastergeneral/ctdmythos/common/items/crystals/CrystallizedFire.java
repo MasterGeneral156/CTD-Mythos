@@ -49,7 +49,7 @@ public class CrystallizedFire extends BaseItem {
 		ItemStack mainhand = playerIn.getHeldItemMainhand();
 		// Create Archeron Ingot with TNT and Crystallized Fire
 		if (MainOffhandCrafting.instance().getRecipeResult(mainhand, offhand) != null) {
-			if (MainOffhandCrafting.instance().getRecipeOffhand(mainhand, offhand)
+			if (MainOffhandCrafting.instance().getRecipeOffhand(mainhand)
 					.getItem() == offhand.getItem()) {
 				if (!worldIn.isRemote) {
 					mainhand.shrink(1);

@@ -29,8 +29,7 @@ public class MainOffMaker {
 
 		for (Entry<ItemStack, ItemStack> entry : smeltingMap.entrySet()) {
 			ItemStack mainhand = entry.getKey();
-			ItemStack offhand3 = entry.getValue();
-			ItemStack offhand = furnaceRecipes.getRecipeOffhand(mainhand, offhand3);
+			ItemStack offhand = furnaceRecipes.getRecipeOffhand(mainhand);
 			ItemStack output = furnaceRecipes.getRecipeResult(mainhand, offhand);
 
 			List<ItemStack> inputs = stackHelper.getSubtypes(mainhand);
