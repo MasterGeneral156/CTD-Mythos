@@ -71,7 +71,7 @@ public class MainOffhandCrafting {
 	}
 
 	public ItemStack getRecipeResult(ItemStack stack, ItemStack offhand) {
-		for (Entry<ItemStack, ItemStack> entry : this.mainHandList.entrySet()) {
+		for (Entry<ItemStack, ItemStack> entry : this.outputList.entrySet()) {
 			if (this.compareItemStacks(stack, (ItemStack) entry.getKey())) {
 				for (Entry<ItemStack, ItemStack> entry2 : this.mainHandList
 						.entrySet()) {
