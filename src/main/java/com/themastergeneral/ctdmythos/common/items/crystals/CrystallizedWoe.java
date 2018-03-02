@@ -44,7 +44,7 @@ public class CrystallizedWoe extends BaseItem {
 		ItemStack mainhand = playerIn.getHeldItemMainhand();
 		// Crystal oath + book in offhand to get a tome of XP
 		if (MainOffhandCrafting.instance().getRecipeResult(mainhand, offhand) != null) {
-			if (MainOffhandCrafting.instance().getRecipeOffhand(mainhand)
+			if (MainOffhandCrafting.instance().getRecipeOffhand(mainhand, offhand)
 					.getItem() == offhand.getItem()) {
 				if (!worldIn.isRemote) {
 					offhand.shrink(1);

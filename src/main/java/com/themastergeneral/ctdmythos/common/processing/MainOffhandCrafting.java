@@ -70,19 +70,20 @@ public class MainOffhandCrafting {
 	}
 
 	public ItemStack getRecipeResult(ItemStack stack, ItemStack offhand) {
-		for (Entry<ItemStack, ItemStack> entry : this.mainHandList.entrySet()) {
+		for (Entry<ItemStack, ItemStack> entry : this.outputList.entrySet()) {
 			if (this.compareItemStacks(stack, (ItemStack) entry.getKey())) {
-				return (ItemStack) entry.getValue();
+					return (ItemStack) entry.getValue();
 			}
 		}
 
 		return ItemStack.EMPTY;
 	}
 
-	public ItemStack getRecipeOffhand(ItemStack stack) {
+	public ItemStack getRecipeOffhand(ItemStack stack, ItemStack offhand) {
 		for (Entry<ItemStack, ItemStack> entry : this.mainHandList.entrySet()) {
 			if (this.compareItemStacks(stack, (ItemStack) entry.getKey())) {
-				return (ItemStack) entry.getValue();
+				if (entry.getValue() == offhand)
+					return (ItemStack) entry.getValue();
 			}
 		}
 
