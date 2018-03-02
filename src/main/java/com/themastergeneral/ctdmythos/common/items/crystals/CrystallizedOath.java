@@ -28,7 +28,7 @@ public class CrystallizedOath extends BaseItem {
 		ItemStack offhand = playerIn.getHeldItemOffhand();
 		ItemStack mainhand = playerIn.getHeldItemMainhand();
 		// Crystal oath + book in offhand to get a tome of XP
-		if (MainOffhandCrafting.instance().getRecipeResult(mainhand) != null) {
+		if (MainOffhandCrafting.instance().getRecipeResult(mainhand, offhand) != null) {
 			if (MainOffhandCrafting.instance().getRecipeOffhand(mainhand)
 					.getItem() == offhand.getItem()) {
 				if (!worldIn.isRemote) {
@@ -39,7 +39,7 @@ public class CrystallizedOath extends BaseItem {
 						worldIn.spawnEntity(new EntityItem(worldIn,
 								playerIn.posX, playerIn.posY, playerIn.posZ,
 								MainOffhandCrafting.instance().getRecipeResult(
-										mainhand)));
+										mainhand, offhand)));
 					}
 					worldIn.playSound(playerIn, playerIn.getPosition(),
 							ModSounds.spell_complete,

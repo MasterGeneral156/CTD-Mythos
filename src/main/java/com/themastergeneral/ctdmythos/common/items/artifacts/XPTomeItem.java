@@ -37,8 +37,7 @@ public class XPTomeItem extends BaseItem {
 			playerIn.addExperienceLevel(ModConfig.StoredLevels);
 			mainhand.shrink(1);
 			worldIn.spawnEntity(new EntityItem(worldIn, playerIn.posX,
-					playerIn.posY, playerIn.posZ, MainOffhandCrafting
-							.instance().getRecipeResult(mainhand)));
+					playerIn.posY, playerIn.posZ, new ItemStack(Items.BOOK)));
 		}
 		return new ActionResult<ItemStack>(EnumActionResult.PASS,
 				playerIn.getHeldItem(handIn));
