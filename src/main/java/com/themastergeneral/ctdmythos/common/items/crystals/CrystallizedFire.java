@@ -1,5 +1,7 @@
 package com.themastergeneral.ctdmythos.common.items.crystals;
 
+import java.util.ArrayList;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
@@ -47,21 +49,20 @@ public class CrystallizedFire extends BaseItem {
 			EntityPlayer playerIn, EnumHand handIn) {
 		ItemStack offhand = playerIn.getHeldItemOffhand();
 		ItemStack mainhand = playerIn.getHeldItemMainhand();
+		ArrayList list = new ArrayList<ItemStack>();
+		list.add(mainhand);
+		list.add(offhand);
 		// Create Archeron Ingot with TNT and Crystallized Fire
-		if (MainOffhandCrafting.instance().getRecipeResult(mainhand, offhand) != null) {
-			if (MainOffhandCrafting.instance().getRecipeOffhand(mainhand, offhand)
-					.getItem() == offhand.getItem()) {
-				if (!worldIn.isRemote) {
-					mainhand.shrink(1);
-					offhand.shrink(1);
-					worldIn.spawnEntity(new EntityItem(worldIn, playerIn.posX,
-							playerIn.posY, playerIn.posZ, MainOffhandCrafting
-									.instance().getRecipeResult(mainhand, offhand)));
-				}
-				worldIn.playSound(playerIn, playerIn.getPosition(),
-						ModSounds.spell_complete, SoundCategory.PLAYERS, 1.0F,
-						1.0F);
+		if (MainOffhandCrafting.instance().getRecipeResult(list) != null) {
+			if (!worldIn.isRemote) {
+				mainhand.shrink(1);
+				offhand.shrink(1);
+				worldIn.spawnEntity(new EntityItem(worldIn, playerIn.posX,
+						playerIn.posY, playerIn.posZ, MainOffhandCrafting
+								.instance().getRecipeResult(list)));
 			}
+			worldIn.playSound(playerIn, playerIn.getPosition(),
+					ModSounds.spell_complete, SoundCategory.PLAYERS, 1.0F, 1.0F);
 		}
 		if (playerIn.isSneaking()) {
 			Block blocktotest = Blocks.BRICK_BLOCK;

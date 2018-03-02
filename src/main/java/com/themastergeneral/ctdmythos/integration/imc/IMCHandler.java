@@ -1,5 +1,6 @@
 package com.themastergeneral.ctdmythos.integration.imc;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
@@ -43,10 +44,10 @@ public class IMCHandler {
 							new ItemStack(nbt.getCompoundTag(OUTPUT)));
 					continue;
 				case REMOVE_MAINOFF_CRAFT:
-					MainOffhandCrafting.instance().removeRecipe(
-							new ItemStack(nbt.getCompoundTag(INPUT)),
-							new ItemStack(nbt.getCompoundTag(OFFHAND)),
-							new ItemStack(nbt.getCompoundTag(OUTPUT)));
+					ArrayList list = new ArrayList<ItemStack>();
+					list.add(INPUT);
+					list.add(OFFHAND);
+					MainOffhandCrafting.instance().removeRecipe(list);
 					continue;
 				}
 				CTDMythos.logger

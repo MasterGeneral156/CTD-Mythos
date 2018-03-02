@@ -21,21 +21,17 @@ public class MainOffMaker {
 	public static List<MainOffJEI> getFlightItems(IJeiHelpers helpers) {
 		IStackHelper stackHelper = helpers.getStackHelper();
 		MainOffhandCrafting furnaceRecipes = MainOffhandCrafting.instance();
-		Map<ItemStack, ItemStack> smeltingMap = furnaceRecipes.getRecipeList();
+		Map<List<ItemStack>, ItemStack> smeltingMap = furnaceRecipes.getRecipeList();
 
-		Map<ItemStack, ItemStack> outputMap = furnaceRecipes.getOutputList();
 
 		List<MainOffJEI> recipes = new ArrayList<>();
 
-		for (Entry<ItemStack, ItemStack> entry : smeltingMap.entrySet()) {
-			ItemStack mainhand = entry.getKey();
+		for (Entry<List<ItemStack>, ItemStack> entry : smeltingMap.entrySet()) {
+			List<ItemStack> mainhand = entry.getKey();
 			ItemStack offhand3 = entry.getValue();
-			ItemStack offhand = furnaceRecipes.getRecipeOffhand(mainhand, offhand3);
-			ItemStack output = furnaceRecipes.getRecipeResult(mainhand, offhand3);
+			ItemStack output = furnaceRecipes.getRecipeResult(mainhand);
 
-			List<ItemStack> inputs = stackHelper.getSubtypes(mainhand);
-			List<ItemStack> offhands = stackHelper.getSubtypes(offhand);
-			MainOffJEI recipe = new MainOffJEI(inputs, offhands, output);
+			MainOffJEI recipe = new MainOffJEI(mainhand, output);
 			recipes.add(recipe);
 		}
 

@@ -16,18 +16,16 @@ import com.themastergeneral.ctdmythos.common.processing.WandFlightItems;
 
 public class MainOffJEI implements IRecipeWrapper {
 	private final List<List<ItemStack>> inputs;
-	private final List<List<ItemStack>> offhands;
 	private final ItemStack output;
 
-	public MainOffJEI(List<ItemStack> inputs, List<ItemStack> offhands, ItemStack output2) {
+	public MainOffJEI(List<ItemStack> inputs, ItemStack output2) {
 		this.inputs = Collections.singletonList(inputs);
-		this.offhands = Collections.singletonList(offhands);
 		this.output = output2;
 	}
 
 	@Override
 	public void getIngredients(IIngredients ingredients) {
-		ingredients.setInputs(ItemStack.class, Lists.newArrayList(inputs, offhands));
+		ingredients.setInputs(ItemStack.class, Lists.newArrayList(inputs));
 		ingredients.setOutput(ItemStack.class, output);
 	}
 
