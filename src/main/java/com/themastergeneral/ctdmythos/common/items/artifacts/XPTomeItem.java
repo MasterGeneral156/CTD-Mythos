@@ -7,8 +7,10 @@ import javax.annotation.Nullable;
 import com.themastergeneral.ctdmythos.common.config.ModConfig;
 import com.themastergeneral.ctdmythos.common.items.ModItems;
 import com.themastergeneral.ctdmythos.common.items.misc.BaseItem;
+import com.themastergeneral.ctdmythos.common.processing.MainOffhandCrafting;
 
 import net.minecraft.client.util.ITooltipFlag;
+import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -34,7 +36,9 @@ public class XPTomeItem extends BaseItem {
 		if (mainhand.getItem() == ModItems.xptome) {
 			playerIn.addExperienceLevel(ModConfig.StoredLevels);
 			mainhand.shrink(1);
-			playerIn.dropItem(new ItemStack(Items.BOOK), false);
+			worldIn.spawnEntity(new EntityItem(worldIn, playerIn.posX,
+					playerIn.posY, playerIn.posZ, MainOffhandCrafting
+							.instance().getRecipeResult(mainhand)));
 		}
 		return new ActionResult<ItemStack>(EnumActionResult.PASS,
 				playerIn.getHeldItem(handIn));
