@@ -31,7 +31,7 @@ public class MainOffMaker {
 			ItemStack mainhand = entry.getKey();
 			ItemStack offhand3 = entry.getValue();
 			ItemStack offhand = furnaceRecipes.getRecipeOffhand(mainhand, offhand3);
-			ItemStack output = furnaceRecipes.getRecipeResult(mainhand, offhand3);
+			ItemStack output = furnaceRecipes.getRecipeResult(mainhand, offhand);
 
 			List<ItemStack> inputs = stackHelper.getSubtypes(mainhand);
 			List<ItemStack> offhands = stackHelper.getSubtypes(offhand);
