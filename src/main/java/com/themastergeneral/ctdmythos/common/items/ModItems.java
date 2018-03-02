@@ -56,7 +56,6 @@ public class ModItems extends RegisterItem {
 
 	public static WandItemTeleport teleport_wand;
 	public static WandItemFlight flight_wand;
-	public static WandFireItem fire_wand;
 
 	public static TalismanItemEvasion evasion_talisman;
 
@@ -91,7 +90,6 @@ public class ModItems extends RegisterItem {
 
 		revitalizing_rye = register(new BaseFood("revitalizing_rye", 3, 1.0F,
 				false));
-		fire_wand = register(new WandFireItem("fire_wand"));
 
 		evasion_talisman = register(new TalismanItemEvasion("evasion_talisman"));
 	}
