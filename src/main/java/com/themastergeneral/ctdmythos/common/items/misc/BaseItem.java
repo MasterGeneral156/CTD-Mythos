@@ -85,29 +85,7 @@ public class BaseItem extends CTDItem {
 				}
 			}
 		}
-		// Crystal oath + book in offhand to get a tome of XP
-		if (mainhand.getItem() == ModItems.crystal_oath) {
-			if (offhand != ItemStack.EMPTY) {
-				if (offhand.getItem() == Items.BOOK) {
-					if (playerIn.experienceLevel >= ModConfig.StoredLevels) {
-						playerIn.addExperienceLevel(-ModConfig.StoredLevels);
-						offhand.shrink(1);
-						mainhand.shrink(1);
-						worldIn.playSound(playerIn, playerIn.getPosition(),
-								ModSounds.spell_complete,
-								SoundCategory.PLAYERS, 1.0F, 1.0F);
-						playerIn.dropItem(new ItemStack(ModItems.xptome), false);
-					}
-				}
-			}
-		}
 		return new ActionResult<ItemStack>(EnumActionResult.PASS,
 				playerIn.getHeldItem(handIn));
-	}
-
-	public EntitySmallFireball createArrow(World worldIn, ItemStack stack,
-			EntityLivingBase shooter) {
-		EntitySmallFireball entitytippedarrow = new EntitySmallFireball(worldIn);
-		return entitytippedarrow;
 	}
 }

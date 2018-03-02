@@ -9,6 +9,7 @@ import com.themastergeneral.ctdmythos.common.items.artifacts.MulesKickItem;
 import com.themastergeneral.ctdmythos.common.items.artifacts.TalismanItemEvasion;
 import com.themastergeneral.ctdmythos.common.items.artifacts.XPTomeItem;
 import com.themastergeneral.ctdmythos.common.items.crystals.CrystallizedFire;
+import com.themastergeneral.ctdmythos.common.items.crystals.CrystallizedOath;
 import com.themastergeneral.ctdmythos.common.items.misc.ArcheronIngot;
 import com.themastergeneral.ctdmythos.common.items.misc.BaseFood;
 import com.themastergeneral.ctdmythos.common.items.misc.BaseItem;
@@ -39,7 +40,7 @@ public class ModItems extends RegisterItem {
 	public static BaseItem crystal_memory;
 	public static BaseItem crystal_grief;
 	public static CrystallizedFire crystal_fire;
-	public static BaseItem crystal_oath;
+	public static CrystallizedOath crystal_oath;
 	public static BaseItem ethereal_fiber;
 	public static BaseItem crystal_glove;
 
@@ -71,7 +72,7 @@ public class ModItems extends RegisterItem {
 		crystal_memory = register(new BaseItem("crystal_memory"));
 		crystal_grief = register(new BaseItem("crystal_grief"));
 		crystal_fire = register(new CrystallizedFire("crystal_fire"));
-		crystal_oath = register(new BaseItem("crystal_oath"));
+		crystal_oath = register(new CrystallizedOath("crystal_oath"));
 		crystal_glove = register(new BaseItem("crystal_glove"));
 		ethereal_fiber = register(new BaseItem("ethereal_fiber"));
 		crystal_ender = register(new GlowingItem("crystal_ender"));
