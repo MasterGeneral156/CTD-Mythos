@@ -40,17 +40,14 @@ public class CrystallizedFire extends BaseItem {
 			if (MainOffhandCrafting.instance().getRecipeOffhand(mainhand)
 					.getItem() == offhand.getItem()) {
 				if (!worldIn.isRemote) {
-					worldIn.createExplosion(playerIn, playerIn.posX,
-							playerIn.posY + 1, playerIn.posZ, 4.0F, true);
-					playerIn.setHealth(playerIn.getHealth() - 5.0F);
-					worldIn.playSound(playerIn, playerIn.getPosition(),
-							ModSounds.spell_complete, SoundCategory.PLAYERS,
-							1.0F, 1.0F);
-					playerIn.dropItem(MainOffhandCrafting.instance()
-							.getRecipeResult(mainhand), true);
 					mainhand.shrink(1);
 					offhand.shrink(1);
+					playerIn.dropItem(MainOffhandCrafting.instance()
+							.getRecipeResult(mainhand), true);
 				}
+				worldIn.playSound(playerIn, playerIn.getPosition(),
+						ModSounds.spell_complete, SoundCategory.PLAYERS,
+						1.0F, 1.0F);
 			}
 		}
 		if (playerIn.isSneaking()) {
