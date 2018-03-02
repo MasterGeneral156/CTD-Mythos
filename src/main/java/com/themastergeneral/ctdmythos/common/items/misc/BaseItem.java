@@ -61,10 +61,6 @@ public class BaseItem extends CTDItem {
 			((EntityLivingBase) entityIn).addPotionEffect(new PotionEffect(
 					MobEffects.SLOWNESS, 20, 2, true, false));
 		}
-		// Extinguish fire with Fire
-		if (stack.getItem() == ModItems.crystal_fire) {
-			((EntityLivingBase) entityIn).extinguish();
-		}
 	}
 
 	@Override

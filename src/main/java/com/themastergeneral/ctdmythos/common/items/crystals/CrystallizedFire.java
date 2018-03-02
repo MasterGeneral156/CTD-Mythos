@@ -2,6 +2,8 @@ package com.themastergeneral.ctdmythos.common.items.crystals;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.effect.EntityLightningBolt;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
@@ -29,6 +31,15 @@ public class CrystallizedFire extends BaseItem {
 
 	public CrystallizedFire(String name) {
 		super(name);
+	}
+
+	@Override
+	public void onUpdate(ItemStack stack, World worldIn, Entity entityIn,
+			int itemSlot, boolean isSelected) {
+		// Extinguish fire with Fire
+		if (stack.getItem() == ModItems.crystal_fire) {
+			((EntityLivingBase) entityIn).extinguish();
+		}
 	}
 
 	@Override
