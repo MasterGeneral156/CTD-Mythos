@@ -31,20 +31,6 @@ public class MainOffhandCrafting {
 				Blocks.TNT, 1), new ItemStack(ModItems.archeron_ingot, 1));
 		this.addRecipe(new ItemStack(ModItems.crystal_oath, 1), new ItemStack(
 				Items.BOOK, 1), new ItemStack(ModItems.xptome, 1));
-
-		// Ore doubling
-		this.addRecipe(new ItemStack(ModItems.crystal_woe, 1), new ItemStack(
-				Blocks.IRON_ORE, 1), new ItemStack(Items.IRON_INGOT, 2));
-		this.addRecipe(new ItemStack(ModItems.crystal_woe, 1), new ItemStack(
-				Blocks.EMERALD_ORE, 1), new ItemStack(Items.EMERALD, 2));
-		this.addRecipe(new ItemStack(ModItems.crystal_woe, 1), new ItemStack(
-				Blocks.DIAMOND_ORE, 1), new ItemStack(Items.DIAMOND, 2));
-		this.addRecipe(new ItemStack(ModItems.crystal_woe, 1), new ItemStack(
-				Blocks.COAL_ORE, 1), new ItemStack(Items.COAL, 2));
-		this.addRecipe(new ItemStack(ModItems.crystal_woe, 1), new ItemStack(
-				Blocks.GOLD_ORE, 1), new ItemStack(Items.GOLD_INGOT, 2));
-		this.addRecipe(new ItemStack(ModItems.crystal_woe, 1), new ItemStack(
-				Blocks.REDSTONE_ORE, 1), new ItemStack(Items.REDSTONE, 2));
 	}
 
 	public void addRecipe(ItemStack mainhand, ItemStack offhand,
@@ -54,6 +40,12 @@ public class MainOffhandCrafting {
 
 	public void addRecipeItem(ItemStack mainhand, ItemStack offhand,
 			ItemStack output) {
+		if (getRecipeResult(mainhand) != ItemStack.EMPTY) {
+			CTDMythos.logger
+					.error("Ignored flight item with conflicting input: "
+							+ mainhand);
+			return;
+		}
 		this.mainHandList.put(mainhand, offhand);
 		this.outputList.put(mainhand, output);
 	}
