@@ -21,6 +21,7 @@ public class DebugItem extends BaseItem {
 	public ActionResult<ItemStack> onItemRightClick(World worldIn,
 			EntityPlayer playerIn, EnumHand handIn) {
 		CTDMythos.logger.info(MainOffhandCrafting.instance().getRecipeList());
+		CTDMythos.logger.info(MainOffhandCrafting.instance().getOutputList());
 		return new ActionResult<ItemStack>(EnumActionResult.PASS,
 				playerIn.getHeldItem(handIn));
 	}
