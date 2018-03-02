@@ -67,13 +67,28 @@ public class MainOffhandCrafting {
 		}
 		this.mainHandList.remove(input);
 	}
-
+	
 	public ItemStack getRecipeResult(List<ItemStack> input) {
 		for (Entry<List<ItemStack>, ItemStack> entry : this.mainHandList
 				.entrySet()) {
-			ItemStack mainhand = input.get(0);
-			ItemStack offhand = input.get(1);
-				return (ItemStack) entry.getValue();
+			if (this.compareItemStacks(input, entry.getKey())) {
+				if (this.compareItemStacks(input, entry.getKey())) {
+					return (ItemStack) entry.getValue();
+				}
+			}
+		}
+
+		return ItemStack.EMPTY;
+	}
+	
+	public ItemStack getRecipeOffhand(List<ItemStack> input) {
+		for (Entry<List<ItemStack>, ItemStack> entry : this.mainHandList
+				.entrySet()) {
+			if (this.compareItemStacks(input, entry.getKey())) {
+				if (this.compareItemStacks(input, entry.getKey())) {
+					return (ItemStack) entry.getValue();
+				}
+			}
 		}
 
 		return ItemStack.EMPTY;
@@ -81,5 +96,19 @@ public class MainOffhandCrafting {
 
 	public Map<List<ItemStack>, ItemStack> getRecipeList() {
 		return this.mainHandList;
+	}
+
+	private boolean compareItemStacks(List<ItemStack> input,
+			List<ItemStack> list) {
+		return list.get(0).getItem() == input.get(0).getItem()
+				&& (list.get(0).getMetadata() == 32767 || list.get(0)
+						.getMetadata() == input.get(0).getMetadata());
+	}
+	
+	private boolean compareItemStacks2(List<ItemStack> input,
+			List<ItemStack> list) {
+		return list.get(0).getItem() == input.get(1).getItem()
+				&& (list.get(0).getMetadata() == 32767 || list.get(0)
+						.getMetadata() == input.get(1).getMetadata());
 	}
 }
