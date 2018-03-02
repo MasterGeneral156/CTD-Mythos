@@ -58,21 +58,27 @@ public class MainOffhandCrafting {
 		this.outputList.put(mainhand, output);
 	}
 
-	public void removeRecipe(ItemStack input, ItemStack offhand, ItemStack output) {
+	public void removeRecipe(ItemStack input, ItemStack offhand,
+			ItemStack output) {
 		ItemStack result = getRecipeResult(input, offhand);
 		if (result == ItemStack.EMPTY) {
 			CTDMythos.logger.error("Could not remove: " + input
 					+ " from the Main/Offhand registry as it doesn't exist.");
 			return;
 		}
-		this.mainHandList.remove(input,offhand);
-		this.outputList.remove(input,output);
+		this.mainHandList.remove(input, offhand);
+		this.outputList.remove(input, output);
 	}
 
 	public ItemStack getRecipeResult(ItemStack stack, ItemStack offhand) {
 		for (Entry<ItemStack, ItemStack> entry : this.outputList.entrySet()) {
 			if (this.compareItemStacks(stack, (ItemStack) entry.getKey())) {
-				return (ItemStack) entry.getValue();
+				for (Entry<ItemStack, ItemStack> entry2 : this.mainHandList
+						.entrySet()) {
+					if (this.compareItemStacks(offhand, (ItemStack) entry2.getKey())) {
+						return (ItemStack) entry2.getValue();
+					}
+				}
 			}
 		}
 
