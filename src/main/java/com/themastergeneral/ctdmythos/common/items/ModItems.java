@@ -11,7 +11,6 @@ import com.themastergeneral.ctdmythos.common.items.artifacts.TalismanItemEvasion
 import com.themastergeneral.ctdmythos.common.items.artifacts.XPTomeItem;
 import com.themastergeneral.ctdmythos.common.items.crystals.CrystallizedFire;
 import com.themastergeneral.ctdmythos.common.items.crystals.CrystallizedOath;
-import com.themastergeneral.ctdmythos.common.items.crystals.CrystallizedWoe;
 import com.themastergeneral.ctdmythos.common.items.misc.ArcheronIngot;
 import com.themastergeneral.ctdmythos.common.items.misc.BaseFood;
 import com.themastergeneral.ctdmythos.common.items.misc.BaseItem;
@@ -37,7 +36,7 @@ public class ModItems extends RegisterItem {
 	public static LongBowItem longbow;
 
 	public static BaseItem humansoul;
-	public static CrystallizedWoe crystal_woe;
+	public static BaseItem crystal_woe;
 	public static BaseItem crystal_memory;
 	public static BaseItem crystal_grief;
 	public static CrystallizedFire crystal_fire;
@@ -68,7 +67,7 @@ public class ModItems extends RegisterItem {
 		bucketcowblood = register(new SingleStackItem("bucketcowblood"));
 		humansoul = register(new BaseItem("humansoul"));
 		archeron_ingot = register(new ArcheronIngot("archeron_ingot"));
-		crystal_woe = register(new CrystallizedWoe("crystal_woe"));
+		crystal_woe = register(new BaseItem("crystal_woe"));
 		crystal_memory = register(new BaseItem("crystal_memory"));
 		crystal_grief = register(new BaseItem("crystal_grief"));
 		crystal_fire = register(new CrystallizedFire("crystal_fire"));
