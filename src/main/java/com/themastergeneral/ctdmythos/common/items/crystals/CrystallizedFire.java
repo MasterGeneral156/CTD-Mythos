@@ -42,12 +42,12 @@ public class CrystallizedFire extends BaseItem {
 				if (!worldIn.isRemote) {
 					mainhand.shrink(1);
 					offhand.shrink(1);
-					playerIn.dropItem(MainOffhandCrafting.instance()
-							.getRecipeResult(mainhand), true);
+					playerIn.entityDropItem(MainOffhandCrafting.instance()
+							.getRecipeResult(mainhand), 0F);
 				}
 				worldIn.playSound(playerIn, playerIn.getPosition(),
-						ModSounds.spell_complete, SoundCategory.PLAYERS,
-						1.0F, 1.0F);
+						ModSounds.spell_complete, SoundCategory.PLAYERS, 1.0F,
+						1.0F);
 			}
 		}
 		if (playerIn.isSneaking()) {
