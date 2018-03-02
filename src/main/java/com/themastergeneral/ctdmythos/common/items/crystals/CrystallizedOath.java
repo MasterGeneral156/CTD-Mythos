@@ -36,13 +36,14 @@ public class CrystallizedOath extends BaseItem {
 						playerIn.addExperienceLevel(-ModConfig.StoredLevels);
 						offhand.shrink(1);
 						mainhand.shrink(1);
-						worldIn.playSound(playerIn, playerIn.getPosition(),
-								ModSounds.spell_complete,
-								SoundCategory.PLAYERS, 1.0F, 1.0F);
-						worldIn.spawnEntity(new EntityItem(worldIn, playerIn.posX,
-								playerIn.posY, playerIn.posZ, MainOffhandCrafting
-										.instance().getRecipeResult(mainhand)));
+						worldIn.spawnEntity(new EntityItem(worldIn,
+								playerIn.posX, playerIn.posY, playerIn.posZ,
+								MainOffhandCrafting.instance().getRecipeResult(
+										mainhand)));
 					}
+					worldIn.playSound(playerIn, playerIn.getPosition(),
+							ModSounds.spell_complete,
+							SoundCategory.PLAYERS, 1.0F, 1.0F);
 				}
 			}
 		}
