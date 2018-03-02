@@ -43,7 +43,7 @@ public class CrystallizedWoe extends BaseItem {
 		ItemStack offhand = playerIn.getHeldItemOffhand();
 		ItemStack mainhand = playerIn.getHeldItemMainhand();
 		// Crystal oath + book in offhand to get a tome of XP
-		if (MainOffhandCrafting.instance().getRecipeResult(mainhand, offhand) != null) {
+		if (MainOffhandCrafting.instance().getRecipeResult(mainhand) != null) {
 			if (MainOffhandCrafting.instance().getRecipeOffhand(mainhand)
 					.getItem() == offhand.getItem()) {
 				if (!worldIn.isRemote) {
@@ -51,7 +51,7 @@ public class CrystallizedWoe extends BaseItem {
 					mainhand.shrink(1);
 					worldIn.spawnEntity(new EntityItem(worldIn, playerIn.posX,
 							playerIn.posY, playerIn.posZ, MainOffhandCrafting
-									.instance().getRecipeResult(mainhand, offhand)));
+									.instance().getRecipeResult(mainhand)));
 				}
 				worldIn.playSound(playerIn, playerIn.getPosition(),
 						ModSounds.spell_complete, SoundCategory.PLAYERS, 1.0F,

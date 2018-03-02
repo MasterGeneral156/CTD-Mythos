@@ -55,6 +55,12 @@ public class BaseItem extends CTDItem {
 			((EntityLivingBase) entityIn).addPotionEffect(new PotionEffect(
 					MobEffects.WEAKNESS, 20, 2, true, false));
 		}
+		// Slowness effect with Woe
+		if ((stack.getItem() == ModItems.crystal_woe)
+				&& (offhand.getItem() != ModItems.crystal_glove)) {
+			((EntityLivingBase) entityIn).addPotionEffect(new PotionEffect(
+					MobEffects.SLOWNESS, 20, 2, true, false));
+		}
 	}
 
 	@Override
