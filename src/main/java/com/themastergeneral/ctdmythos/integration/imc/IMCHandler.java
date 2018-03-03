@@ -44,7 +44,9 @@ public class IMCHandler {
 					continue;
 				case REMOVE_MAINOFF_CRAFT:
 					MainOffhandCrafting.instance().removeRecipe(
-							new ItemStack(nbt.getCompoundTag(INPUT)));
+							new ItemStack(nbt.getCompoundTag(INPUT)),
+							new ItemStack(nbt.getCompoundTag(OFFHAND)),
+							new ItemStack(nbt.getCompoundTag(OUTPUT)));
 					continue;
 				}
 				CTDMythos.logger
