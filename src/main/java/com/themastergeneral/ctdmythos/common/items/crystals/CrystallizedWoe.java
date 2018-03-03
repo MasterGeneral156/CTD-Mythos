@@ -2,7 +2,6 @@ package com.themastergeneral.ctdmythos.common.items.crystals;
 
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumActionResult;
@@ -11,14 +10,13 @@ import net.minecraft.util.SoundCategory;
 import net.minecraft.world.World;
 
 import com.themastergeneral.ctdmythos.common.config.ModConfig;
-import com.themastergeneral.ctdmythos.common.items.ModItems;
 import com.themastergeneral.ctdmythos.common.items.misc.BaseItem;
 import com.themastergeneral.ctdmythos.common.processing.MainOffhandCrafting;
 import com.themastergeneral.ctdmythos.common.processing.ModSounds;
 
-public class CrystallizedOath extends BaseItem {
+public class CrystallizedWoe extends BaseItem {
 
-	public CrystallizedOath(String name) {
+	public CrystallizedWoe(String name) {
 		super(name);
 	}
 
@@ -32,15 +30,11 @@ public class CrystallizedOath extends BaseItem {
 			if (MainOffhandCrafting.instance().getRecipeOffhand(mainhand)
 					.getItem() == offhand.getItem()) {
 				if (!worldIn.isRemote) {
-					if (playerIn.experienceLevel >= ModConfig.StoredLevels) {
-						playerIn.addExperienceLevel(-ModConfig.StoredLevels);
-						offhand.shrink(1);
-						mainhand.shrink(1);
-						worldIn.spawnEntity(new EntityItem(worldIn,
-								playerIn.posX, playerIn.posY, playerIn.posZ,
-								MainOffhandCrafting.instance().getRecipeResult(
-										mainhand)));
-					}
+					offhand.shrink(1);
+					mainhand.shrink(1);
+					worldIn.spawnEntity(new EntityItem(worldIn, playerIn.posX,
+							playerIn.posY, playerIn.posZ, MainOffhandCrafting
+									.instance().getRecipeResult(mainhand)));
 				}
 				worldIn.playSound(playerIn, playerIn.getPosition(),
 						ModSounds.spell_complete, SoundCategory.PLAYERS, 1.0F,
