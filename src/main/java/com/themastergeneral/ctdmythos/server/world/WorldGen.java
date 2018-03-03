@@ -3,6 +3,7 @@ package com.themastergeneral.ctdmythos.server.world;
 import java.util.Random;
 
 import com.themastergeneral.ctdmythos.common.blocks.ModBlocks;
+import com.themastergeneral.ctdmythos.common.config.ModConfig;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -24,15 +25,20 @@ public class WorldGen implements IWorldGenerator {
 
 	public WorldGen() {
 		this.gen_fire = new CrystalGenerator(
-				ModBlocks.crystal_fire_ore.getDefaultState(), 1);
+				ModBlocks.crystal_fire_ore.getDefaultState(),
+				ModConfig.crystalSpawnVeinSize);
 		this.gen_oath = new CrystalGenerator(
-				ModBlocks.crystal_oath_ore.getDefaultState(), 1);
+				ModBlocks.crystal_oath_ore.getDefaultState(),
+				ModConfig.crystalSpawnVeinSize);
 		this.gen_memory = new CrystalGenerator(
-				ModBlocks.crystal_memory_ore.getDefaultState(), 1);
+				ModBlocks.crystal_memory_ore.getDefaultState(),
+				ModConfig.crystalSpawnVeinSize);
 		this.gen_grief = new CrystalGenerator(
-				ModBlocks.crystal_grief_ore.getDefaultState(), 1);
+				ModBlocks.crystal_grief_ore.getDefaultState(),
+				ModConfig.crystalSpawnVeinSize);
 		this.gen_woe = new CrystalGenerator(
-				ModBlocks.crystal_woe_ore.getDefaultState(), 1);
+				ModBlocks.crystal_woe_ore.getDefaultState(),
+				ModConfig.crystalSpawnVeinSize);
 	}
 
 	@Override
@@ -40,16 +46,21 @@ public class WorldGen implements IWorldGenerator {
 			IChunkGenerator chunkGenerator, IChunkProvider chunkProvider) {
 		switch (world.provider.getDimension()) {
 		case 0: // Overworld
-			this.runGenerator(this.gen_fire, world, random, chunkX, chunkZ, 4,
-					1, 256);
-			this.runGenerator(this.gen_oath, world, random, chunkX, chunkZ, 4,
-					1, 256);
-			this.runGenerator(this.gen_woe, world, random, chunkX, chunkZ, 4,
-					1, 256);
+			this.runGenerator(this.gen_fire, world, random, chunkX, chunkZ,
+					ModConfig.crystalSpawnChance, ModConfig.crystalSpawnMinY,
+					ModConfig.crystalSpawnMaxY);
+			this.runGenerator(this.gen_oath, world, random, chunkX, chunkZ,
+					ModConfig.crystalSpawnChance, ModConfig.crystalSpawnMinY,
+					ModConfig.crystalSpawnMaxY);
+			this.runGenerator(this.gen_woe, world, random, chunkX, chunkZ,
+					ModConfig.crystalSpawnChance, ModConfig.crystalSpawnMinY,
+					ModConfig.crystalSpawnMaxY);
 			this.runGenerator(this.gen_memory, world, random, chunkX, chunkZ,
-					4, 1, 256);
-			this.runGenerator(this.gen_grief, world, random, chunkX, chunkZ, 4,
-					1, 256);
+					ModConfig.crystalSpawnChance, ModConfig.crystalSpawnMinY,
+					ModConfig.crystalSpawnMaxY);
+			this.runGenerator(this.gen_grief, world, random, chunkX, chunkZ,
+					ModConfig.crystalSpawnChance, ModConfig.crystalSpawnMinY,
+					ModConfig.crystalSpawnMaxY);
 			break;
 		}
 
