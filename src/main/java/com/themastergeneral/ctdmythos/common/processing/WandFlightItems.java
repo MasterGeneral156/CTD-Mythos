@@ -35,10 +35,10 @@ public class WandFlightItems {
 		this.addFlight(new ItemStack(Items.IRON_INGOT), 80, 0, 120);
 		this.addFlight(new ItemStack(Items.GOLD_INGOT), 40, 3, 70);
 
-		this.addFlight(new ItemStack(Blocks.DIAMOND_BLOCK), 3000, 1, 3600);
-		this.addFlight(new ItemStack(Blocks.EMERALD_BLOCK), 4000, 0, 4800);
-		this.addFlight(new ItemStack(Blocks.IRON_BLOCK), 800, 0, 1200);
-		this.addFlight(new ItemStack(Blocks.GOLD_BLOCK), 400, 3, 700);
+		this.addFlight(new ItemStack(Blocks.DIAMOND_BLOCK), 3000, 1, 3300);
+		this.addFlight(new ItemStack(Blocks.EMERALD_BLOCK), 4000, 0, 4400);
+		this.addFlight(new ItemStack(Blocks.IRON_BLOCK), 800, 0, 860);
+		this.addFlight(new ItemStack(Blocks.GOLD_BLOCK), 400, 3, 500);
 
 		this.addFlight(new ItemStack(Items.IRON_NUGGET), 8, 0, 12);
 		this.addFlight(new ItemStack(Items.GOLD_NUGGET), 4, 3, 7);
