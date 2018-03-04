@@ -11,6 +11,7 @@ import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Multimap;
 import com.themastergeneral.ctdmythos.CTDMythos;
+import com.themastergeneral.ctdmythos.common.blocks.ModBlocks;
 import com.themastergeneral.ctdmythos.common.items.ModItems;
 
 public class MainOffhandCrafting {
@@ -56,6 +57,23 @@ public class MainOffhandCrafting {
 				ModItems.crystal_woe, 1), new ItemStack(Items.EMERALD, 2));
 		this.addRecipe(new ItemStack(Blocks.COAL_ORE, 1), new ItemStack(
 				ModItems.crystal_woe, 1), new ItemStack(Items.COAL, 2));
+		this.addRecipe(new ItemStack(Blocks.QUARTZ_ORE, 1), new ItemStack(
+				ModItems.crystal_woe, 1), new ItemStack(Items.QUARTZ, 2));
+		this.addRecipe(new ItemStack(ModBlocks.crystal_fire_ore, 1),
+				new ItemStack(ModItems.crystal_woe, 1), new ItemStack(
+						ModItems.crystal_fire, 2));
+		this.addRecipe(new ItemStack(ModBlocks.crystal_woe_ore, 1),
+				new ItemStack(ModItems.crystal_woe, 1), new ItemStack(
+						ModItems.crystal_woe, 2));
+		this.addRecipe(new ItemStack(ModBlocks.crystal_memory_ore, 1),
+				new ItemStack(ModItems.crystal_woe, 1), new ItemStack(
+						ModItems.crystal_memory, 2));
+		this.addRecipe(new ItemStack(ModBlocks.crystal_grief_ore, 1),
+				new ItemStack(ModItems.crystal_woe, 1), new ItemStack(
+						ModItems.crystal_grief, 2));
+		this.addRecipe(new ItemStack(ModBlocks.crystal_oath_ore, 1),
+				new ItemStack(ModItems.crystal_woe, 1), new ItemStack(
+						ModItems.crystal_oath, 2));
 	}
 
 	public void addRecipe(ItemStack mainhand, ItemStack offhand,
