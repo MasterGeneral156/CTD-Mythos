@@ -1,0 +1,8 @@
+{
+    "parent": "block/inner_stairs",
+    "textures": {
+        "bottom": "ctdmythos:blocks/crystal_fire_brick",
+        "top": "ctdmythos:blocks/crystal_fire_brick",
+        "side": "ctdmythos:blocks/crystal_fire_brick"
+    }
+}

@@ -1,8 +1,0 @@
-{
-    "parent": "block/stairs",
-    "textures": {
-        "bottom": "ctdmythos:blocks/cystal_fire_brick",
-        "top": "ctdmythos:blocks/cystal_fire_brick",
-        "side": "ctdmythos:blocks/cystal_fire_brick"
-    }
-}

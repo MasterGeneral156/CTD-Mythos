@@ -1,6 +1,6 @@
 {
-    "parent": "ctdmythos:blocks/crystal_fire_stairs",
+    "parent": "ctdmythos:block/crystal_fire_stairs",
     "textures": {
-        "inventory": "ctdmythos:blocks/crystal_fire_brick"
+        "inventory": "ctdmythos:block/crystal_fire_brick"
     }
 }
