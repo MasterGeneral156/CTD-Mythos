@@ -1,4 +1,6 @@
-package com.themastergeneral.ctdmythos.common.blocks;
+package com.themastergeneral.ctdmythos.common.blocks.bricks;
+
+import com.themastergeneral.ctdmythos.common.blocks.BaseBlock;
 
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;

@@ -4,6 +4,8 @@ import net.minecraft.block.material.Material;
 
 import com.themastergeneral.ctdcore.block.RegisterBlock;
 import com.themastergeneral.ctdmythos.CTDMythos;
+import com.themastergeneral.ctdmythos.common.blocks.bricks.BrickBlocks;
+import com.themastergeneral.ctdmythos.common.blocks.bricks.BricksStairs;
 import com.themastergeneral.ctdmythos.common.items.ModItems;
 
 public class ModBlocks extends RegisterBlock {
@@ -14,6 +16,7 @@ public class ModBlocks extends RegisterBlock {
 	public static OreBlock crystal_woe_ore;
 
 	public static BrickBlocks crystal_fire_brick;
+	public static BricksStairs crystal_fire_stairs;
 
 	public static void loadBlocks() {
 		crystal_fire_ore = register(new OreBlock(Material.SAND,
@@ -28,5 +31,6 @@ public class ModBlocks extends RegisterBlock {
 				"crystal_woe_ore", ModItems.crystal_woe));
 
 		crystal_fire_brick = register(new BrickBlocks("crystal_fire_brick"));
+		crystal_fire_stairs = register(new BricksStairs("crystal_fire_stairs", crystal_fire_brick.getDefaultState()));
 	}
 }
