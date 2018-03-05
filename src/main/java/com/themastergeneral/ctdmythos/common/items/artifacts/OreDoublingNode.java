@@ -18,7 +18,7 @@ public class OreDoublingNode extends BaseItem {
 	public OreDoublingNode(String name) {
 		super(name);
 		this.setMaxStackSize(1);
-		this.setMaxDamage(1);
+		this.setMaxDamage(64);
 	}
 
 	public boolean doesContainerItemLeaveCraftingGrid(ItemStack itemStack) {
