@@ -60,6 +60,7 @@ public class OreDoublingNode extends BaseItem {
 								playerIn.posX, playerIn.posY, playerIn.posZ,
 								MainOffhandCrafting.instance().getRecipeResult(
 										mainhand)));
+						playerIn.getCooldownTracker().setCooldown(this, 160);
 					}
 					worldIn.playSound(playerIn, playerIn.getPosition(),
 							ModSounds.spell_complete, SoundCategory.PLAYERS,
