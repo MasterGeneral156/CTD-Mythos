@@ -42,25 +42,29 @@ public class CrystallizedFire extends BaseItem {
 		}
 	}
 
+	// TODO: Wrap crafting check into seperate method.
 	@Override
 	public ActionResult<ItemStack> onItemRightClick(World worldIn,
 			EntityPlayer playerIn, EnumHand handIn) {
 		ItemStack offhand = playerIn.getHeldItemOffhand();
 		ItemStack mainhand = playerIn.getHeldItemMainhand();
 		// Create Archeron Ingot with TNT and Crystallized Fire
-		if (MainOffhandCrafting.instance().getRecipeResult(mainhand) != null) {
-			if (MainOffhandCrafting.instance().getRecipeOffhand(mainhand)
-					.getItem() == offhand.getItem()) {
-				if (!worldIn.isRemote) {
-					mainhand.shrink(1);
-					offhand.shrink(1);
-					worldIn.spawnEntity(new EntityItem(worldIn, playerIn.posX,
-							playerIn.posY, playerIn.posZ, MainOffhandCrafting
-									.instance().getRecipeResult(mainhand)));
+		if (MainOffhandCrafting.instance().getRecipeResult(mainhand) != ItemStack.EMPTY) {
+			if (MainOffhandCrafting.instance().getRecipeOffhand(mainhand) != ItemStack.EMPTY) {
+				if (MainOffhandCrafting.instance().getRecipeOffhand(mainhand)
+						.getItem() == offhand.getItem()) {
+					if (!worldIn.isRemote) {
+						mainhand.shrink(1);
+						offhand.shrink(1);
+						worldIn.spawnEntity(new EntityItem(worldIn,
+								playerIn.posX, playerIn.posY, playerIn.posZ,
+								MainOffhandCrafting.instance().getRecipeResult(
+										mainhand)));
+					}
+					worldIn.playSound(playerIn, playerIn.getPosition(),
+							ModSounds.spell_complete, SoundCategory.PLAYERS,
+							1.0F, 1.0F);
 				}
-				worldIn.playSound(playerIn, playerIn.getPosition(),
-						ModSounds.spell_complete, SoundCategory.PLAYERS, 1.0F,
-						1.0F);
 			}
 		}
 		if (playerIn.isSneaking()) {
