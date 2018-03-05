@@ -9,8 +9,7 @@
     "key": {
 		"O": [{"type": "forge:ore_dict", "ore": "ingotArcheron"}],
         "S": [{"type": "forge:ore_dict", "ore": "stickWood"}],
-        "T": [{"type": "forge:ore_dict", "ore": "gemCrystallizedWoe"}],
-		"I": { "item": "ctdmythos:xptome" }
+        "T": [{"type": "forge:ore_dict", "ore": "gemCrystallizedWoe"}]
     },
     "result": {
         "item": "ctdmythos:node_ore_double",
