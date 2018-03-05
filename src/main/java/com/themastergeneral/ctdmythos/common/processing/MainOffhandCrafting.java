@@ -46,33 +46,35 @@ public class MainOffhandCrafting {
 				ModItems.crystal_oath, 1), new ItemStack(ModItems.xptome, 1));
 		// Ore Doubling
 		this.addRecipe(new ItemStack(Blocks.IRON_ORE, 1), new ItemStack(
-				ModItems.crystal_woe, 1), new ItemStack(Items.IRON_INGOT, 2));
+				ModItems.node_ore_double, 1),
+				new ItemStack(Items.IRON_INGOT, 2));
 		this.addRecipe(new ItemStack(Blocks.GOLD_ORE, 1), new ItemStack(
-				ModItems.crystal_woe, 1), new ItemStack(Items.GOLD_INGOT, 2));
+				ModItems.node_ore_double, 1),
+				new ItemStack(Items.GOLD_INGOT, 2));
 		this.addRecipe(new ItemStack(Blocks.REDSTONE_ORE, 1), new ItemStack(
-				ModItems.crystal_woe, 1), new ItemStack(Items.REDSTONE, 2));
+				ModItems.node_ore_double, 1), new ItemStack(Items.REDSTONE, 2));
 		this.addRecipe(new ItemStack(Blocks.DIAMOND_ORE, 1), new ItemStack(
-				ModItems.crystal_woe, 1), new ItemStack(Items.DIAMOND, 2));
+				ModItems.node_ore_double, 1), new ItemStack(Items.DIAMOND, 2));
 		this.addRecipe(new ItemStack(Blocks.EMERALD_ORE, 1), new ItemStack(
-				ModItems.crystal_woe, 1), new ItemStack(Items.EMERALD, 2));
+				ModItems.node_ore_double, 1), new ItemStack(Items.EMERALD, 2));
 		this.addRecipe(new ItemStack(Blocks.COAL_ORE, 1), new ItemStack(
-				ModItems.crystal_woe, 1), new ItemStack(Items.COAL, 2));
+				ModItems.node_ore_double, 1), new ItemStack(Items.COAL, 2));
 		this.addRecipe(new ItemStack(Blocks.QUARTZ_ORE, 1), new ItemStack(
-				ModItems.crystal_woe, 1), new ItemStack(Items.QUARTZ, 2));
+				ModItems.node_ore_double, 1), new ItemStack(Items.QUARTZ, 2));
 		this.addRecipe(new ItemStack(ModBlocks.crystal_fire_ore, 1),
-				new ItemStack(ModItems.crystal_woe, 1), new ItemStack(
+				new ItemStack(ModItems.node_ore_double, 1), new ItemStack(
 						ModItems.crystal_fire, 2));
 		this.addRecipe(new ItemStack(ModBlocks.crystal_woe_ore, 1),
-				new ItemStack(ModItems.crystal_woe, 1), new ItemStack(
+				new ItemStack(ModItems.node_ore_double, 1), new ItemStack(
 						ModItems.crystal_woe, 2));
 		this.addRecipe(new ItemStack(ModBlocks.crystal_memory_ore, 1),
-				new ItemStack(ModItems.crystal_woe, 1), new ItemStack(
+				new ItemStack(ModItems.node_ore_double, 1), new ItemStack(
 						ModItems.crystal_memory, 2));
 		this.addRecipe(new ItemStack(ModBlocks.crystal_grief_ore, 1),
-				new ItemStack(ModItems.crystal_woe, 1), new ItemStack(
+				new ItemStack(ModItems.node_ore_double, 1), new ItemStack(
 						ModItems.crystal_grief, 2));
 		this.addRecipe(new ItemStack(ModBlocks.crystal_oath_ore, 1),
-				new ItemStack(ModItems.crystal_woe, 1), new ItemStack(
+				new ItemStack(ModItems.node_ore_double, 1), new ItemStack(
 						ModItems.crystal_oath, 2));
 	}
 
