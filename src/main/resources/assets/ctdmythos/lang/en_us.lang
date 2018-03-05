@@ -21,6 +21,7 @@ item.revitalizing_rye.name=Revitalizing Rye
 item.crystal_glove.name=Crystallized Glove
 item.muleskick.name=Mule's Kick
 item.evasion_talisman.name=Talisman of Evasion
+item.node_ore_double.name=Ore Doubling Node
 
 itemGroup.ctdmythos=CTD Mythos
 
