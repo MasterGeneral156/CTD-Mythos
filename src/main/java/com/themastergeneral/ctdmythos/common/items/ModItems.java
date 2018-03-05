@@ -7,6 +7,7 @@ import com.themastergeneral.ctdmythos.CTDMythos;
 import com.themastergeneral.ctdmythos.common.items.artifacts.DebugItem;
 import com.themastergeneral.ctdmythos.common.items.artifacts.HumanEffigyItem;
 import com.themastergeneral.ctdmythos.common.items.artifacts.MulesKickItem;
+import com.themastergeneral.ctdmythos.common.items.artifacts.OreDoublingNode;
 import com.themastergeneral.ctdmythos.common.items.artifacts.TalismanItemEvasion;
 import com.themastergeneral.ctdmythos.common.items.artifacts.XPTomeItem;
 import com.themastergeneral.ctdmythos.common.items.crystals.CrystallizedFire;
@@ -44,6 +45,7 @@ public class ModItems extends RegisterItem {
 	public static CrystallizedOath crystal_oath;
 	public static BaseItem ethereal_fiber;
 	public static BaseItem crystal_glove;
+	public static OreDoublingNode node_ore_double;
 
 	public static BaseFood revitalizing_rye;
 
@@ -97,5 +99,7 @@ public class ModItems extends RegisterItem {
 		evasion_talisman = register(new TalismanItemEvasion("evasion_talisman"));
 
 		debug_item = register(new DebugItem("debug"));
+
+		node_ore_double = register(new OreDoublingNode("node_ore_double"));
 	}
 }
