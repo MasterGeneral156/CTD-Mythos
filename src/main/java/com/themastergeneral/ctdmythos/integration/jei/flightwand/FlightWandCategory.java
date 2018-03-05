@@ -14,11 +14,13 @@ import net.minecraft.util.ResourceLocation;
 public class FlightWandCategory extends CTDMythosJEICategory<FlightWandJEI> {
 	private final IDrawable background;
 	private final String localizedName;
-	ResourceLocation backgroundLocation = new ResourceLocation("ctdmythos", "textures/gui/gui_jei.png");
+	ResourceLocation backgroundLocation = new ResourceLocation("ctdmythos",
+			"textures/gui/gui_jei.png");
 
 	public FlightWandCategory(IGuiHelper guiHelper) {
 		super(guiHelper);
-		background = guiHelper.createDrawable(backgroundLocation, 0, 114, 116, 20);
+		background = guiHelper.createDrawable(backgroundLocation, 0, 114, 116,
+				20);
 		localizedName = "Levitation Wand Catalysts";
 	}
 
@@ -47,7 +49,8 @@ public class FlightWandCategory extends CTDMythosJEICategory<FlightWandJEI> {
 	}
 
 	@Override
-	public void setRecipe(IRecipeLayout recipeLayout, FlightWandJEI recipeWrapper, IIngredients ingredients) {
+	public void setRecipe(IRecipeLayout recipeLayout,
+			FlightWandJEI recipeWrapper, IIngredients ingredients) {
 		IGuiItemStackGroup guiItemStacks = recipeLayout.getItemStacks();
 
 		guiItemStacks.init(inputSlot, true, 0, 0);

@@ -19,7 +19,8 @@ public class MainOffJEI implements IRecipeWrapper {
 	private final List<List<ItemStack>> offhands;
 	private final ItemStack output;
 
-	public MainOffJEI(List<ItemStack> inputs, List<ItemStack> offhands, ItemStack output2) {
+	public MainOffJEI(List<ItemStack> inputs, List<ItemStack> offhands,
+			ItemStack output2) {
 		this.inputs = Collections.singletonList(inputs);
 		this.offhands = Collections.singletonList(offhands);
 		this.output = output2;
@@ -27,12 +28,14 @@ public class MainOffJEI implements IRecipeWrapper {
 
 	@Override
 	public void getIngredients(IIngredients ingredients) {
-		ingredients.setInputs(ItemStack.class, Lists.newArrayList(inputs, offhands));
+		ingredients.setInputs(ItemStack.class,
+				Lists.newArrayList(inputs, offhands));
 		ingredients.setOutput(ItemStack.class, output);
 	}
 
 	@Override
-	public void drawInfo(Minecraft minecraft, int recipeWidth, int recipeHeight, int mouseX, int mouseY) {
+	public void drawInfo(Minecraft minecraft, int recipeWidth,
+			int recipeHeight, int mouseX, int mouseY) {
 		MainOffhandCrafting furnaceRecipes = MainOffhandCrafting.instance();
 	}
 }

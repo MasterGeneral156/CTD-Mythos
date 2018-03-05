@@ -57,7 +57,7 @@ public class ModItems extends RegisterItem {
 
 	public static WandItemTeleport teleport_wand;
 	public static WandItemFlight flight_wand;
-	
+
 	public static DebugItem debug_item;
 
 	public static TalismanItemEvasion evasion_talisman;

@@ -19,33 +19,38 @@ import mezz.jei.api.recipe.IRecipeCategoryRegistration;
 @JEIPlugin
 public class JEICTDMythos implements IModPlugin {
 	@Override
-	public void registerCategories(IRecipeCategoryRegistration registry)
-	{
+	public void registerCategories(IRecipeCategoryRegistration registry) {
 		final IJeiHelpers jeiHelpers = registry.getJeiHelpers();
 		final IGuiHelper guiHelper = jeiHelpers.getGuiHelper();
-		
-		registry.addRecipeCategories(
-				new FlightWandCategory(guiHelper),
-				new MainOffCategory(guiHelper)
-		);
+
+		registry.addRecipeCategories(new FlightWandCategory(guiHelper),
+				new MainOffCategory(guiHelper));
 	}
-	
+
 	@Override
-	public void register(IModRegistry registry)
-	{
-		final IIngredientRegistry ingredientRegistry = registry.getIngredientRegistry();
+	public void register(IModRegistry registry) {
+		final IIngredientRegistry ingredientRegistry = registry
+				.getIngredientRegistry();
 		final IJeiHelpers jeiHelpers = registry.getJeiHelpers();
-		
-		registry.addRecipes(FlightWandMaker.getFlightItems(jeiHelpers), "ctdmythos.flight_wand_items");
-		
-		registry.addRecipeCatalyst(new ItemStack(ModItems.flight_wand), "ctdmythos.flight_wand_items");
-		
-		registry.addRecipes(MainOffMaker.getFlightItems(jeiHelpers), "ctdmythos.mainoff_recipes");
-		
-		registry.addRecipeCatalyst(new ItemStack(ModItems.crystal_fire), "ctdmythos.mainoff_recipes");
-		registry.addRecipeCatalyst(new ItemStack(ModItems.crystal_ender), "ctdmythos.mainoff_recipes");
-		registry.addRecipeCatalyst(new ItemStack(ModItems.crystal_woe), "ctdmythos.mainoff_recipes");
-		registry.addRecipeCatalyst(new ItemStack(ModItems.crystal_oath), "ctdmythos.mainoff_recipes");
-		registry.addRecipeCatalyst(new ItemStack(ModItems.crystal_memory), "ctdmythos.mainoff_recipes");
+
+		registry.addRecipes(FlightWandMaker.getFlightItems(jeiHelpers),
+				"ctdmythos.flight_wand_items");
+
+		registry.addRecipeCatalyst(new ItemStack(ModItems.flight_wand),
+				"ctdmythos.flight_wand_items");
+
+		registry.addRecipes(MainOffMaker.getFlightItems(jeiHelpers),
+				"ctdmythos.mainoff_recipes");
+
+		registry.addRecipeCatalyst(new ItemStack(ModItems.crystal_fire),
+				"ctdmythos.mainoff_recipes");
+		registry.addRecipeCatalyst(new ItemStack(ModItems.crystal_ender),
+				"ctdmythos.mainoff_recipes");
+		registry.addRecipeCatalyst(new ItemStack(ModItems.crystal_woe),
+				"ctdmythos.mainoff_recipes");
+		registry.addRecipeCatalyst(new ItemStack(ModItems.crystal_oath),
+				"ctdmythos.mainoff_recipes");
+		registry.addRecipeCatalyst(new ItemStack(ModItems.crystal_memory),
+				"ctdmythos.mainoff_recipes");
 	}
 }

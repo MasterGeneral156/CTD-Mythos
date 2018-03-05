@@ -28,11 +28,13 @@ public class FlightWandJEI implements IRecipeWrapper {
 	}
 
 	@Override
-	public void drawInfo(Minecraft minecraft, int recipeWidth, int recipeHeight, int mouseX, int mouseY) {
+	public void drawInfo(Minecraft minecraft, int recipeWidth,
+			int recipeHeight, int mouseX, int mouseY) {
 		WandFlightItems furnaceRecipes = WandFlightItems.instance();
 		String experienceString = "Flight: " + output + " ticks.";
 		FontRenderer fontRenderer = minecraft.fontRenderer;
 		int stringWidth = fontRenderer.getStringWidth(experienceString);
-		fontRenderer.drawString(experienceString, recipeWidth - stringWidth, 0, Color.gray.getRGB());
+		fontRenderer.drawString(experienceString, recipeWidth - stringWidth, 0,
+				Color.gray.getRGB());
 	}
 }

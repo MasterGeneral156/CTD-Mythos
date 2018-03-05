@@ -14,11 +14,13 @@ import net.minecraft.util.ResourceLocation;
 public class MainOffCategory extends CTDMythosJEICategory<MainOffJEI> {
 	private final IDrawable background;
 	private final String localizedName;
-	ResourceLocation backgroundLocation = new ResourceLocation("ctdmythos", "textures/gui/gui_jei.png");
+	ResourceLocation backgroundLocation = new ResourceLocation("ctdmythos",
+			"textures/gui/gui_jei.png");
 
 	public MainOffCategory(IGuiHelper guiHelper) {
 		super(guiHelper);
-		background = guiHelper.createDrawable(backgroundLocation, 0, 168, 125, 18, 0, 20, 0, 0);
+		background = guiHelper.createDrawable(backgroundLocation, 0, 168, 125,
+				18, 0, 20, 0, 0);
 		localizedName = "Main/Offhand Crafting";
 	}
 
@@ -47,7 +49,8 @@ public class MainOffCategory extends CTDMythosJEICategory<MainOffJEI> {
 	}
 
 	@Override
-	public void setRecipe(IRecipeLayout recipeLayout, MainOffJEI recipeWrapper, IIngredients ingredients) {
+	public void setRecipe(IRecipeLayout recipeLayout, MainOffJEI recipeWrapper,
+			IIngredients ingredients) {
 		IGuiItemStackGroup guiItemStacks = recipeLayout.getItemStacks();
 
 		guiItemStacks.init(0, true, 0, 0);

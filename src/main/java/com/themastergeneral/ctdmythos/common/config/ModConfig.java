@@ -15,11 +15,11 @@ public class ModConfig {
 	public static int DurabilityHumanEffigy = 5;
 	public static int DurabilityShears = 25;
 	public static int StoredLevels = 5;
-	
-	//World Gen configs
-	public static int crystalSpawnMinY=1;
-	public static int crystalSpawnMaxY=255;
-	public static int crystalSpawnChance=4;
+
+	// World Gen configs
+	public static int crystalSpawnMinY = 1;
+	public static int crystalSpawnMaxY = 255;
+	public static int crystalSpawnChance = 4;
 	public static int crystalSpawnVeinSize = 1;
 
 	public static void readConfig() {
@@ -56,18 +56,20 @@ public class ModConfig {
 				"How many levels should be stored in a Tome of Knowledge");
 
 		// Config for world generation
-		crystalSpawnMinY = cfg.getInt("Crysatllized Ore minimum Y spawn level.",
-				CATEGORY_WORLDGEN, crystalSpawnMinY, 1, 254,
+		crystalSpawnMinY = cfg.getInt(
+				"Crysatllized Ore minimum Y spawn level.", CATEGORY_WORLDGEN,
+				crystalSpawnMinY, 1, 254,
 				"How low should Crystallized Ores spawn.");
-		
-		crystalSpawnMaxY = cfg.getInt("Crysatllized Ore maximum Y spawn level.",
-				CATEGORY_WORLDGEN, crystalSpawnMaxY, 2, 255,
+
+		crystalSpawnMaxY = cfg.getInt(
+				"Crysatllized Ore maximum Y spawn level.", CATEGORY_WORLDGEN,
+				crystalSpawnMaxY, 2, 255,
 				"How high should Crystallized Ores spawn.");
-		
+
 		crystalSpawnChance = cfg.getInt("Crystallized Ore Spawn rate",
 				CATEGORY_WORLDGEN, crystalSpawnChance, 0, 16,
 				"How often should Crystallized Ores spawn.");
-		
+
 		crystalSpawnVeinSize = cfg.getInt("Crystallized Ore Vein Size",
 				CATEGORY_WORLDGEN, crystalSpawnVeinSize, 0, 16,
 				"How big should Crystallized Ores spawn.");

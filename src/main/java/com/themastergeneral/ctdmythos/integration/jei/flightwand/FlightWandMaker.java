@@ -20,7 +20,8 @@ public class FlightWandMaker {
 	public static List<FlightWandJEI> getFlightItems(IJeiHelpers helpers) {
 		IStackHelper stackHelper = helpers.getStackHelper();
 		WandFlightItems furnaceRecipes = WandFlightItems.instance();
-		Map<ItemStack, Integer> smeltingMap = furnaceRecipes.getFlightItemsList();
+		Map<ItemStack, Integer> smeltingMap = furnaceRecipes
+				.getFlightItemsList();
 
 		List<FlightWandJEI> recipes = new ArrayList<>();
 

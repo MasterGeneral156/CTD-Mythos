@@ -22,9 +22,11 @@ public class MainOffMaker {
 	public static List<MainOffJEI> getFlightItems(IJeiHelpers helpers) {
 		IStackHelper stackHelper = helpers.getStackHelper();
 		MainOffhandCrafting furnaceRecipes = MainOffhandCrafting.instance();
-		Multimap<ItemStack, ItemStack> smeltingMap = furnaceRecipes.getRecipeList();
+		Multimap<ItemStack, ItemStack> smeltingMap = furnaceRecipes
+				.getRecipeList();
 
-		Multimap<ItemStack, ItemStack> outputMap = furnaceRecipes.getOutputList();
+		Multimap<ItemStack, ItemStack> outputMap = furnaceRecipes
+				.getOutputList();
 
 		List<MainOffJEI> recipes = new ArrayList<>();
 
