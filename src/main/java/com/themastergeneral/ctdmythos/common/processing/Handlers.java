@@ -11,10 +11,8 @@ public class Handlers {
 	public static void addCrystalRecipe(ItemStack input, ItemStack output,
 			float xp) {
 		// Enderfuge stuff if its available? /shrug.
-		if (Loader.isModLoaded("enderfuge")) {
-			EnderfugeIMC.addEnderfugeSmelt(input, output, xp);
-		} else {
-			GameRegistry.addSmelting(input, output, xp);
-		}
+		ItemStack enderfuge = new ItemStack(input.getItem(), 3);
+		EnderfugeIMC.addEnderfugeSmelt(enderfuge, output, xp);
+		GameRegistry.addSmelting(input, output, xp);
 	}
 }
