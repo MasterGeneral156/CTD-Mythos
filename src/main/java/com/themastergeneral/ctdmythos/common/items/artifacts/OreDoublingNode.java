@@ -54,7 +54,7 @@ public class OreDoublingNode extends BaseItem {
 				if (MainOffhandCrafting.instance().getRecipeOffhand(mainhand)
 						.getItem() == offhand.getItem()) {
 					if (!worldIn.isRemote) {
-						offhand.shrink(1);
+						offhand.damageItem(1, playerIn);
 						mainhand.shrink(1);
 						worldIn.spawnEntity(new EntityItem(worldIn,
 								playerIn.posX, playerIn.posY, playerIn.posZ,
