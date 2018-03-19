@@ -14,6 +14,32 @@ public class OreDict {
 		OreDictionary.registerOre("gemCrystallized", ModItems.crystal_memory);
 		OreDictionary.registerOre("gemCrystallized", ModItems.crystal_oath);
 
+		OreDictionary.registerOre("blockCrystallized",
+				ModBlocks.crystal_fire_block);
+		OreDictionary.registerOre("blockCrystallized",
+				ModBlocks.crystal_oath_block);
+		OreDictionary.registerOre("blockCrystallized",
+				ModBlocks.crystal_memory_block);
+		OreDictionary.registerOre("blockCrystallized",
+				ModBlocks.crystal_grief_block);
+		OreDictionary.registerOre("blockCrystallized",
+				ModBlocks.crystal_woe_block);
+		OreDictionary.registerOre("blockCrystallized",
+				ModBlocks.crystal_oath_block);
+
+		OreDictionary.registerOre("blockCrystallizedFire",
+				ModBlocks.crystal_fire_block);
+		OreDictionary.registerOre("blockCrystallizedOath",
+				ModBlocks.crystal_oath_block);
+		OreDictionary.registerOre("blockCrystallizedMemory",
+				ModBlocks.crystal_memory_block);
+		OreDictionary.registerOre("blockCrystallizedGrief",
+				ModBlocks.crystal_grief_block);
+		OreDictionary.registerOre("blockCrystallizedWoe",
+				ModBlocks.crystal_woe_block);
+		OreDictionary.registerOre("blockCrystallizedOath",
+				ModBlocks.crystal_oath_block);
+
 		OreDictionary.registerOre("gemCrystallizedEnder",
 				ModItems.crystal_ender);
 		OreDictionary.registerOre("gemCrystallizedWoe", ModItems.crystal_woe);
@@ -41,11 +67,6 @@ public class OreDict {
 				ModBlocks.crystal_fire_brick);
 		OreDictionary.registerOre("crystallizedBrick",
 				ModBlocks.crystal_fire_brick);
-
-		OreDictionary.registerOre("stairsCrystallizedBrick",
-				ModBlocks.crystal_fire_stairs);
-		OreDictionary.registerOre("crystallizedBrick",
-				ModBlocks.crystal_fire_stairs);
 
 	}
 }
