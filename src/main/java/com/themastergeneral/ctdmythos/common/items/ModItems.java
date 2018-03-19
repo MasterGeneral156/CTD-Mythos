@@ -4,12 +4,15 @@ import net.minecraft.item.Item.ToolMaterial;
 
 import com.themastergeneral.ctdcore.item.RegisterItem;
 import com.themastergeneral.ctdmythos.CTDMythos;
+import com.themastergeneral.ctdmythos.common.config.ModConfig;
 import com.themastergeneral.ctdmythos.common.items.artifacts.DebugItem;
 import com.themastergeneral.ctdmythos.common.items.artifacts.HumanEffigyItem;
 import com.themastergeneral.ctdmythos.common.items.artifacts.MulesKickItem;
 import com.themastergeneral.ctdmythos.common.items.artifacts.OreDoublingNode;
 import com.themastergeneral.ctdmythos.common.items.artifacts.TalismanItemEvasion;
 import com.themastergeneral.ctdmythos.common.items.artifacts.XPTomeItem;
+import com.themastergeneral.ctdmythos.common.items.baubles.AmuletExtendReach;
+import com.themastergeneral.ctdmythos.common.items.baubles.TrinketHealth;
 import com.themastergeneral.ctdmythos.common.items.crystals.CrystallizedFire;
 import com.themastergeneral.ctdmythos.common.items.crystals.CrystallizedOath;
 import com.themastergeneral.ctdmythos.common.items.crystals.CrystallizedWoe;
@@ -64,6 +67,10 @@ public class ModItems extends RegisterItem {
 
 	public static TalismanItemEvasion evasion_talisman;
 
+	public static AmuletExtendReach amuletreach;
+	public static AmuletExtendReach creativeamuletreach;
+	public static TrinketHealth trinketHealth;
+
 	public static void registerItems() {
 		humaneffigy = register(new HumanEffigyItem("humaneffigy"));
 		muleskick = register(new MulesKickItem("muleskick"));
@@ -101,5 +108,11 @@ public class ModItems extends RegisterItem {
 		debug_item = register(new DebugItem("debug"));
 
 		node_ore_double = register(new OreDoublingNode("node_ore_double"));
+
+		amuletreach = register(new AmuletExtendReach("amuletreach",
+				ModConfig.reachAmuletRange));
+		creativeamuletreach = register(new AmuletExtendReach(
+				"creativeamuletreach", ModConfig.creativereachAmuletRange));
+		trinketHealth = register(new TrinketHealth("trinketHealth"));
 	}
 }

@@ -15,6 +15,8 @@ public class ModConfig {
 	public static int DurabilityHumanEffigy = 5;
 	public static int DurabilityShears = 25;
 	public static int StoredLevels = 5;
+	public static int reachAmuletRange = 10;
+	public static int creativereachAmuletRange = 255;
 
 	// World Gen configs
 	public static int crystalSpawnMinY = 1;
@@ -73,5 +75,20 @@ public class ModConfig {
 		crystalSpawnVeinSize = cfg.getInt("Crystallized Ore Vein Size",
 				CATEGORY_WORLDGEN, crystalSpawnVeinSize, 0, 16,
 				"How big should Crystallized Ores spawn.");
+
+		reachAmuletRange = cfg
+				.getInt("Amulet of Reaching range?",
+						CATEGORY_GENERAL,
+						reachAmuletRange,
+						5,
+						65655,
+						"How large should the player's range be when they equip the Amulet of Reaching? (Vanilla is 5)");
+		creativereachAmuletRange = cfg
+				.getInt("Creative Amulet of Reaching range?",
+						CATEGORY_GENERAL,
+						creativereachAmuletRange,
+						5,
+						65655,
+						"How large should the player's range be when they equip the Creative Amulet of Reaching? (Vanilla is 5)");
 	}
 }
