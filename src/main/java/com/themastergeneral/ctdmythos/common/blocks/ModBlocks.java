@@ -20,6 +20,7 @@ public class ModBlocks extends RegisterBlock {
 
 	public static CrystalBlocks crystal_woe_block;
 	public static CrystalBlocks crystal_fire_block;
+	public static CrystalBlocks crystal_memory_block;
 
 	// Register the blocks by calling this method.
 	public static void loadBlocks() {
@@ -40,5 +41,6 @@ public class ModBlocks extends RegisterBlock {
 
 		crystal_woe_block = register(new CrystalBlocks("crystal_woe_block"));
 		crystal_fire_block = register(new CrystalBlocks("crystal_fire_block"));
+		crystal_memory_block = register(new CrystalBlocks("crystal_memory_block"));
 	}
 }
