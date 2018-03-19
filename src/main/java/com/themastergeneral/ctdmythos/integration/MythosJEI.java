@@ -21,8 +21,6 @@ public class MythosJEI implements IModPlugin {
 				"jei.crystalizedmemory.desc");
 		registry.addDescription(new ItemStack(ModItems.xptome),
 				"jei.xptome.desc");
-		registry.addDescription(new ItemStack(ModItems.archeron_ingot),
-				"jei.archeron_ingot.desc");
 		registry.addDescription(new ItemStack(ModItems.teleport_wand),
 				"jei.teleport_wand.desc");
 		registry.addDescription(new ItemStack(ModItems.crystal_ender),
