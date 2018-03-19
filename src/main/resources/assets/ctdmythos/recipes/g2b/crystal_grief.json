@@ -1,0 +1,16 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "group": "ctdmythos:crystal_grief_block",
+    "pattern": [
+        "BBB",
+        "BBB",
+        "BBB"
+    ],
+    "key": {
+		"B": [{"type": "forge:ore_dict", "ore": "gemCrystallizedGrief"}]
+    },
+    "result": {
+        "item": "ctdmythos:crystal_grief_block",
+		"count": 1
+    }
+}

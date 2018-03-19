@@ -1,0 +1,16 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "group": "ctdmythos:crystal_memory_block",
+    "pattern": [
+        "BBB",
+        "BBB",
+        "BBB"
+    ],
+    "key": {
+		"B": [{"type": "forge:ore_dict", "ore": "gemCrystallizedMemory"}]
+    },
+    "result": {
+        "item": "ctdmythos:crystal_memory_block",
+		"count": 1
+    }
+}

@@ -1,0 +1,16 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "group": "ctdmythos:crystal_fire_block",
+    "pattern": [
+        "BBB",
+        "BBB",
+        "BBB"
+    ],
+    "key": {
+		"B": [{"type": "forge:ore_dict", "ore": "gemCrystallizedFire"}]
+    },
+    "result": {
+        "item": "ctdmythos:crystal_fire_block",
+		"count": 1
+    }
+}
