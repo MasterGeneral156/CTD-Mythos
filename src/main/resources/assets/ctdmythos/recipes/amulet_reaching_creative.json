@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "group": "ctdmythos:creativeamuletreach",
+    "pattern": [
+        "FFF",
+        "F F",
+		"AEA"
+    ],
+    "key": {
+		"A": { "item": "minecraft:command_block" },
+        "E": [{"type": "forge:ore_dict", "ore": "gemCrystallizedEnder"}],
+        "F": { "item": "ctdmythos:ethereal_fiber" }
+    },
+    "result": {
+        "item": "ctdmythos:creativeamuletreach",
+		"count": 1
+    }
+}

@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "group": "ctdmythos:amuletreach",
+    "pattern": [
+        "FFF",
+        "F F",
+		"AEA"
+    ],
+    "key": {
+		"A": [{"type": "forge:ore_dict", "ore": "ingotArcheron"}],
+        "E": [{"type": "forge:ore_dict", "ore": "gemCrystallizedEnder"}],
+        "F": { "item": "ctdmythos:ethereal_fiber" }
+    },
+    "result": {
+        "item": "ctdmythos:amuletreach",
+		"count": 1
+    }
+}
