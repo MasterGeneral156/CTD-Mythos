@@ -21,6 +21,7 @@ public class OreDoublingNode extends BaseItem {
 		this.setMaxDamage(64);
 	}
 
+	// Item does not laeve the crafting table.
 	public boolean doesContainerItemLeaveCraftingGrid(ItemStack itemStack) {
 		return false;
 	}
@@ -43,6 +44,7 @@ public class OreDoublingNode extends BaseItem {
 	}
 
 	// TODO: Wrap crafting check into seperate method.
+	// Craft items with the ore doubling node.
 	@Override
 	public ActionResult<ItemStack> onItemRightClick(World worldIn,
 			EntityPlayer playerIn, EnumHand handIn) {

@@ -22,6 +22,8 @@ public class MulesKickItem extends BaseItem {
 		this.setMaxDamage(4);
 	}
 
+	// When the Mule's Kick is used, give the player Speed 5 for 10 Seconds.
+	// Damage the item and play a sound as well.
 	@Override
 	public ActionResult<ItemStack> onItemRightClick(World worldIn,
 			EntityPlayer playerIn, EnumHand handIn) {

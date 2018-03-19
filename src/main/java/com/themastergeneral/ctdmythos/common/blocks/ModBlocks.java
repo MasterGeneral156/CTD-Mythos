@@ -17,10 +17,11 @@ public class ModBlocks extends RegisterBlock {
 
 	public static BrickBlocks crystal_fire_brick;
 	public static BricksStairs crystal_fire_stairs;
-	
+
 	public static CrystalBlocks crystal_woe_block;
 	public static CrystalBlocks crystal_fire_block;
 
+	// Register the blocks by calling this method.
 	public static void loadBlocks() {
 		crystal_fire_ore = register(new OreBlock(Material.SAND,
 				"crystal_fire_ore", ModItems.crystal_fire));
@@ -34,8 +35,9 @@ public class ModBlocks extends RegisterBlock {
 				"crystal_woe_ore", ModItems.crystal_woe));
 
 		crystal_fire_brick = register(new BrickBlocks("crystal_fire_brick"));
-		crystal_fire_stairs = register(new BricksStairs("crystal_fire_stairs", crystal_fire_brick.getDefaultState()));
-		
+		crystal_fire_stairs = register(new BricksStairs("crystal_fire_stairs",
+				crystal_fire_brick.getDefaultState()));
+
 		crystal_woe_block = register(new CrystalBlocks("crystal_woe_block"));
 		crystal_fire_block = register(new CrystalBlocks("crystal_fire_block"));
 	}

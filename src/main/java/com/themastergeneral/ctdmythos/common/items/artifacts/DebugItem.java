@@ -20,6 +20,7 @@ public class DebugItem extends BaseItem {
 	@Override
 	public ActionResult<ItemStack> onItemRightClick(World worldIn,
 			EntityPlayer playerIn, EnumHand handIn) {
+		// Output the Offhand/Mainhand crafting shit.
 		CTDMythos.logger.info(MainOffhandCrafting.instance().getRecipeList());
 		CTDMythos.logger.info(MainOffhandCrafting.instance().getOutputList());
 		return new ActionResult<ItemStack>(EnumActionResult.PASS,

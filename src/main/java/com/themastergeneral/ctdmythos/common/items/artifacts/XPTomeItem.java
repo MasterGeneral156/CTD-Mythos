@@ -29,6 +29,7 @@ public class XPTomeItem extends BaseItem {
 		this.setNoRepair();
 	}
 
+	// Use the Tome of Knowledge to get 5 experience levels back.
 	@Override
 	public ActionResult<ItemStack> onItemRightClick(World worldIn,
 			EntityPlayer playerIn, EnumHand handIn) {
@@ -44,6 +45,7 @@ public class XPTomeItem extends BaseItem {
 				playerIn.getHeldItem(handIn));
 	}
 
+	// Add tooltip on client side.
 	@SideOnly(Side.CLIENT)
 	@Override
 	public void addInformation(ItemStack stack, @Nullable World worldIn,

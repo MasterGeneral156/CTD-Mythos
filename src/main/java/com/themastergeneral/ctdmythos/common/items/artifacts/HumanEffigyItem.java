@@ -25,11 +25,15 @@ public class HumanEffigyItem extends BaseItem {
 		this.setNoRepair();
 	}
 
+	// Give the player 5 hearts, saturation and damage the item when the
+	// player uses the Human Effigy.
 	@Override
 	public ActionResult<ItemStack> onItemRightClick(World worldIn,
 			EntityPlayer playerIn, EnumHand handIn) {
 
+		// Get mainhand item.
 		ItemStack ItemStack = playerIn.getHeldItem(handIn);
+		// Server world
 		if (!worldIn.isRemote) {
 			playerIn.setHealth(playerIn.getHealth() + 10F);
 			playerIn.addPotionEffect(new PotionEffect(MobEffects.SATURATION,
@@ -37,12 +41,14 @@ public class HumanEffigyItem extends BaseItem {
 			ItemStack.damageItem(1, playerIn);
 			playerIn.getCooldownTracker().setCooldown(this, 20);
 		}
+		// Play sound.
 		worldIn.playSound(playerIn, playerIn.getPosition(),
 				ModSounds.human_effigy, SoundCategory.PLAYERS, 1.0F, 1.0F);
 		return new ActionResult<ItemStack>(EnumActionResult.PASS,
 				playerIn.getHeldItem(handIn));
 	}
 
+	// Heal the player automatically when the Human Effigy is in their inventory
 	@Override
 	public void onUpdate(ItemStack stack, World worldIn, Entity entityIn,
 			int itemSlot, boolean isSelected) {

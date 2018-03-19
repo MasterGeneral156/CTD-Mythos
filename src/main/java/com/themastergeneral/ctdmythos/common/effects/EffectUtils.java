@@ -8,6 +8,7 @@ import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.world.World;
 
 public class EffectUtils {
+	// Generates an entity around the player.
 	public static void generateEntityAroundPlayer(Entity entityIn,
 			World worldIn, Entity particle) {
 		for (float degrees = 0.0F; degrees < 360.0F; degrees += 20.0F) {

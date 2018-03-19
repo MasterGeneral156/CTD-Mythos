@@ -41,6 +41,7 @@ public class BricksStairs extends BlockStairs implements ItemModelProvider,
 		this.setRegistryName(name);
 	}
 
+	// Get the block's model.
 	@Override
 	public void reg(Block block) {
 		Minecraft
@@ -55,6 +56,7 @@ public class BricksStairs extends BlockStairs implements ItemModelProvider,
 								"inventory"));
 	}
 
+	// Get the block's item model.
 	@Override
 	public void registerItemModel(Item itemBlock) {
 		CTDCore.proxy.registerItemRenderer(CTDMythos.MODID, itemBlock, 0, name);

@@ -43,6 +43,7 @@ public class CrystallizedFire extends BaseItem {
 	}
 
 	// TODO: Wrap crafting check into seperate method.
+	// Crafting, yay.
 	@Override
 	public ActionResult<ItemStack> onItemRightClick(World worldIn,
 			EntityPlayer playerIn, EnumHand handIn) {
