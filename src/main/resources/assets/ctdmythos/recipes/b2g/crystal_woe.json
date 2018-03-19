@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "group": "ctdmythos:crystal_woe",
+    "pattern": [
+        "B"
+    ],
+    "key": {
+		"B": [{"type": "forge:ore_dict", "ore": "blockCrystallizedWoe"}]
+    },
+    "result": {
+        "item": "ctdmythos:crystal_woe",
+		"count": 9
+    }
+}

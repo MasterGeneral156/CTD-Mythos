@@ -1,0 +1,14 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "group": "ctdmythos:crystal_memory",
+    "pattern": [
+        "B"
+    ],
+    "key": {
+		"B": [{"type": "forge:ore_dict", "ore": "blockCrystallizedMemory"}]
+    },
+    "result": {
+        "item": "ctdmythos:crystal_memory",
+		"count": 9
+    }
+}
