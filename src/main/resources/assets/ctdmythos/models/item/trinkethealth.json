@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "ctdtweaks:items/trinkethealth"
+        "layer0": "ctdmythos:items/trinkethealth"
     }
 }

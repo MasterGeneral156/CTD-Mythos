@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "ctdtweaks:items/amuletreach"
+        "layer0": "ctdmythos:items/amuletreach"
     }
 }
