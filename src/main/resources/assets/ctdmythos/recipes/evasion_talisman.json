@@ -8,7 +8,7 @@
     ],
     "key": {
 		"G": [{"type": "forge:ore_dict", "ore": "nuggetGold"}],
-        "E": [{"type": "forge:ore_dict", "ore": "gemCrystallizedEnder"}]
+        "E": [{"type": "forge:ore_dict", "ore": "gemCrystallizedWoe"}]
     },
     "result": {
         "item": "ctdmythos:evasion_talisman",
