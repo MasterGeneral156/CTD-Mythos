@@ -41,7 +41,7 @@ public class MainOffhandCrafting {
 	private MainOffhandCrafting() {
 		this.addRecipe(new ItemStack(Blocks.TNT, 1), new ItemStack(
 				ModItems.crystal_fire, 1), new ItemStack(
-				ModItems.archeron_ingot, 1));
+				ModItems.archeron_ingot, 8));
 		this.addRecipe(new ItemStack(Items.BOOK, 1), new ItemStack(
 				ModItems.crystal_oath, 1), new ItemStack(ModItems.xptome, 1));
 		// Ore Doubling
