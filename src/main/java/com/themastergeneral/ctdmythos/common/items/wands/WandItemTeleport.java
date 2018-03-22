@@ -26,14 +26,11 @@ public class WandItemTeleport extends WandItemBase {
 		// Teleport user if they have Crystallized Ender in offhand, and
 		// teleport wand in main-hand.
 		if (mainhand.getItem() == ModItems.teleport_wand) {
-			if (offhand.getItem() == ModItems.crystal_ender) {
 				mainhand.damageItem(1, playerIn);
-				offhand.shrink(1);
 				playerIn.getCooldownTracker().setCooldown(this, 100);
 				BlockPos blockpos = worldIn.provider.getRandomizedSpawnPoint();
 				playerIn.setPositionAndUpdate(blockpos.getX(), blockpos.getY(),
 						blockpos.getZ());
-			}
 		}
 		return new ActionResult<ItemStack>(EnumActionResult.PASS,
 				playerIn.getHeldItem(handIn));
