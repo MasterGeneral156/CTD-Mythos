@@ -53,7 +53,6 @@ public class ModItems extends RegisterItem {
 	public static BaseFood revitalizing_rye;
 
 	public static ArcheronIngot archeron_ingot;
-	public static GlowingItem crystal_ender;
 
 	public static TMGDrill tmgdrill;
 	public static MythosSwordBase gladius_sword;
@@ -86,7 +85,6 @@ public class ModItems extends RegisterItem {
 		crystal_oath = register(new CrystallizedOath("crystal_oath"));
 		crystal_glove = register(new BaseItem("crystal_glove"));
 		ethereal_fiber = register(new BaseItem("ethereal_fiber"));
-		crystal_ender = register(new GlowingItem("crystal_ender"));
 
 		longbow = register(new LongBowItem("longbow", 180000, 200));
 

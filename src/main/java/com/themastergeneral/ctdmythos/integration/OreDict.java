@@ -7,7 +7,6 @@ import net.minecraftforge.oredict.OreDictionary;
 
 public class OreDict {
 	public static final void init() {
-		OreDictionary.registerOre("gemCrystallized", ModItems.crystal_ender);
 		OreDictionary.registerOre("gemCrystallized", ModItems.crystal_woe);
 		OreDictionary.registerOre("gemCrystallized", ModItems.crystal_fire);
 		OreDictionary.registerOre("gemCrystallized", ModItems.crystal_grief);
@@ -40,8 +39,6 @@ public class OreDict {
 		OreDictionary.registerOre("blockCrystallizedOath",
 				ModBlocks.crystal_oath_block);
 
-		OreDictionary.registerOre("gemCrystallizedEnder",
-				ModItems.crystal_ender);
 		OreDictionary.registerOre("gemCrystallizedWoe", ModItems.crystal_woe);
 		OreDictionary.registerOre("gemCrystallizedFire", ModItems.crystal_fire);
 		OreDictionary.registerOre("gemCrystallizedGrief",

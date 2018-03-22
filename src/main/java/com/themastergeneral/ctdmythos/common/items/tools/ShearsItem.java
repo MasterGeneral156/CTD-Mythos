@@ -34,15 +34,6 @@ public class ShearsItem extends BaseItem {
 			if (itemdrop <= 20)
 				player.dropItem(new ItemStack(ModItems.humansoul), true);
 		}
-		if (target instanceof EntityEnderman) {
-			// Random Number Generator!
-			Random randomGenerator = new Random();
-			int itemdrop = randomGenerator.nextInt(100);
-			if (attacker.getHeldItemOffhand().getItem() == ModItems.crystal_grief) {
-				if (itemdrop <= 5)
-					player.dropItem(new ItemStack(ModItems.crystal_ender), true);
-			}
-		}
 		// Ethereal mob drop. Would be phantoms in 1.13 tho
 		if (target instanceof EntitySpider) {
 			// Random Number Generator!

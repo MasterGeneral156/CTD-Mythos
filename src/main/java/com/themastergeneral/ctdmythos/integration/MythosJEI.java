@@ -23,8 +23,6 @@ public class MythosJEI implements IModPlugin {
 				"jei.xptome.desc");
 		registry.addDescription(new ItemStack(ModItems.teleport_wand),
 				"jei.teleport_wand.desc");
-		registry.addDescription(new ItemStack(ModItems.crystal_ender),
-				"jei.crystal_ender.desc");
 		registry.addDescription(new ItemStack(ModItems.crystal_glove),
 				"jei.crystal_glove.desc");
 		registry.addDescription(new ItemStack(ModItems.muleskick),

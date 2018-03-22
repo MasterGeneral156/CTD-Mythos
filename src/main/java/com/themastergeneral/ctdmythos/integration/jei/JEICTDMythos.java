@@ -44,8 +44,6 @@ public class JEICTDMythos implements IModPlugin {
 
 		registry.addRecipeCatalyst(new ItemStack(ModItems.crystal_fire),
 				"ctdmythos.mainoff_recipes");
-		registry.addRecipeCatalyst(new ItemStack(ModItems.crystal_ender),
-				"ctdmythos.mainoff_recipes");
 		registry.addRecipeCatalyst(new ItemStack(ModItems.crystal_woe),
 				"ctdmythos.mainoff_recipes");
 		registry.addRecipeCatalyst(new ItemStack(ModItems.crystal_oath),
