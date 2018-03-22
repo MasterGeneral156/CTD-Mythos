@@ -56,7 +56,7 @@ public class CrystallizedFire extends BaseItem {
 						.getItem() == offhand.getItem()) {
 					if (!worldIn.isRemote) {
 						mainhand.shrink(1);
-						offhand.shrink(1);
+						offhand.shrink(MainOffhandCrafting.instance().getRecipeOffhand(mainhand).getCount());
 						worldIn.spawnEntity(new EntityItem(worldIn,
 								playerIn.posX, playerIn.posY, playerIn.posZ,
 								MainOffhandCrafting.instance().getRecipeResult(

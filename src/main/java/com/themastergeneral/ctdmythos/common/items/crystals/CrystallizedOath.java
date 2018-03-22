@@ -36,7 +36,7 @@ public class CrystallizedOath extends BaseItem {
 					if (!worldIn.isRemote) {
 						if (playerIn.experienceLevel >= ModConfig.StoredLevels) {
 							playerIn.addExperienceLevel(-ModConfig.StoredLevels);
-							offhand.shrink(1);
+							offhand.shrink(MainOffhandCrafting.instance().getRecipeOffhand(mainhand).getCount());
 							mainhand.shrink(1);
 							worldIn.spawnEntity(new EntityItem(worldIn,
 									playerIn.posX, playerIn.posY,

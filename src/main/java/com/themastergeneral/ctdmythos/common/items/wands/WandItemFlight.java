@@ -2,6 +2,7 @@ package com.themastergeneral.ctdmythos.common.items.wands;
 
 import com.themastergeneral.ctdmythos.CTDMythos;
 import com.themastergeneral.ctdmythos.common.items.ModItems;
+import com.themastergeneral.ctdmythos.common.processing.MainOffhandCrafting;
 import com.themastergeneral.ctdmythos.common.processing.ModSounds;
 import com.themastergeneral.ctdmythos.common.processing.WandFlightItems;
 
@@ -50,7 +51,7 @@ public class WandItemFlight extends WandItemBase {
 				worldIn.playSound(playerIn, playerIn.getPosition(),
 						ModSounds.flight_wand, SoundCategory.PLAYERS, 1.0F,
 						1.0F);
-				offhand.shrink(1);
+				offhand.shrink(MainOffhandCrafting.instance().getRecipeOffhand(mainhand).getCount());
 				playerIn.getCooldownTracker().setCooldown(this, flighttime);
 			}
 		}
