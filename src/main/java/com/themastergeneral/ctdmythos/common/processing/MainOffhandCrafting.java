@@ -1,5 +1,6 @@
 package com.themastergeneral.ctdmythos.common.processing;
 
+import java.util.Collection;
 import java.util.Map;
 import java.util.Map.Entry;
 
@@ -133,5 +134,15 @@ public class MainOffhandCrafting {
 
 	public Multimap<ItemStack, ItemStack> getOutputList() {
 		return this.outputList;
+	}
+
+	public int getMainHandQty(ItemStack itemstack) {
+		ItemStack result = getRecipeResult(itemstack);
+		for (Entry<ItemStack, ItemStack> entry : this.mainHandList.entries()) {
+			return entry.getKey().getCount();
+		}
+
+		return 0;
+
 	}
 }
