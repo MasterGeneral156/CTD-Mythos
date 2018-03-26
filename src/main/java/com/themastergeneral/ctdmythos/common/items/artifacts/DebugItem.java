@@ -19,11 +19,4 @@ public class DebugItem extends BaseItem {
 		super(name);
 	}
 
-	public EnumActionResult onItemUse(EntityPlayer playerIn, World worldIn,
-			BlockPos pos, EnumHand handIn, EnumFacing facing, float hitX,
-			float hitY, float hitZ) {
-		validMultiblock(pos, worldIn, playerIn);
-		return EnumActionResult.SUCCESS;
-	}
-
 }

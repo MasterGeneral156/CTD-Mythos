@@ -21,6 +21,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumActionResult;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
@@ -37,7 +38,9 @@ import com.themastergeneral.ctdmythos.common.blocks.ModBlocks;
 import com.themastergeneral.ctdmythos.common.config.ModConfig;
 import com.themastergeneral.ctdmythos.common.effects.EffectUtils;
 import com.themastergeneral.ctdmythos.common.items.ModItems;
+import com.themastergeneral.ctdmythos.common.processing.MainOffhandCrafting;
 import com.themastergeneral.ctdmythos.common.processing.ModSounds;
+import com.themastergeneral.ctdmythos.common.processing.MultiblockRecipes;
 
 public class BaseItem extends CTDItem {
 	public BaseItem(String name) {
@@ -118,58 +121,95 @@ public class BaseItem extends CTDItem {
 								} else {
 									player.sendMessage(new TextComponentString(
 											"Expecting "
-													+ ModBlocks.crystal_fire_brick.getUnlocalizedName()
+													+ ModBlocks.crystal_fire_brick
+															.getUnlocalizedName()
 													+ " at "
 													+ westpos
 													+ " but got "
 													+ world.getBlockState(
-															westpos).getBlock().getUnlocalizedName()));
+															westpos)
+															.getBlock()
+															.getUnlocalizedName()));
 									return false;
 								}
 							} else {
 								player.sendMessage(new TextComponentString(
 										"Expecting "
-												+ ModBlocks.crystal_fire_brick.getUnlocalizedName()
+												+ ModBlocks.crystal_fire_brick
+														.getUnlocalizedName()
 												+ " at "
 												+ eastpos
 												+ " but got "
 												+ world.getBlockState(eastpos)
-														.getBlock().getUnlocalizedName()));
+														.getBlock()
+														.getUnlocalizedName()));
 								return false;
 							}
 						} else {
 							player.sendMessage(new TextComponentString(
 									"Expecting "
-											+ ModBlocks.crystal_fire_brick.getUnlocalizedName()
+											+ ModBlocks.crystal_fire_brick
+													.getUnlocalizedName()
 											+ " at "
 											+ southpos
 											+ " but got "
 											+ world.getBlockState(southpos)
-													.getBlock().getUnlocalizedName()));
+													.getBlock()
+													.getUnlocalizedName()));
 							return false;
 						}
 					} else {
 						player.sendMessage(new TextComponentString("Expecting "
-								+ ModBlocks.crystal_fire_brick.getUnlocalizedName() + " at "
-								+ northpos + " but got "
-								+ world.getBlockState(northpos).getBlock().getUnlocalizedName()));
+								+ ModBlocks.crystal_fire_brick
+										.getUnlocalizedName()
+								+ " at "
+								+ northpos
+								+ " but got "
+								+ world.getBlockState(northpos).getBlock()
+										.getUnlocalizedName()));
 						return false;
 					}
 				} else {
 					player.sendMessage(new TextComponentString("Expecting "
-							+ ModBlocks.crystal_fire_brick.getUnlocalizedName() + " at " + underpos
+							+ ModBlocks.crystal_fire_brick.getUnlocalizedName()
+							+ " at "
+							+ underpos
 							+ " but got "
-							+ world.getBlockState(underpos).getBlock().getUnlocalizedName()));
+							+ world.getBlockState(underpos).getBlock()
+									.getUnlocalizedName()));
 					return false;
 				}
 			} else {
 				player.sendMessage(new TextComponentString("Expecting "
-						+ ModBlocks.crystal_fire_block.getUnlocalizedName() + " at " + startpos
+						+ ModBlocks.crystal_fire_block.getUnlocalizedName()
+						+ " at "
+						+ startpos
 						+ " but got "
-						+ world.getBlockState(startpos).getBlock().getUnlocalizedName()));
+						+ world.getBlockState(startpos).getBlock()
+								.getUnlocalizedName()));
 				return false;
 			}
 		} else
 			return false;
+	}
+
+	public EnumActionResult onItemUse(EntityPlayer playerIn, World worldIn,
+			BlockPos pos, EnumHand handIn, EnumFacing facing, float hitX,
+			float hitY, float hitZ) {
+		if (!worldIn.isRemote) {
+			ItemStack offhand = playerIn.getHeldItemOffhand();
+			ItemStack mainhand = playerIn.getHeldItemMainhand();
+			if (MultiblockRecipes.instance().getRecipeResult(mainhand)
+					.getItem() != ItemStack.EMPTY.getItem()) {
+				if (validMultiblock(pos, worldIn, playerIn)) {
+					mainhand.shrink(1);
+					worldIn.spawnEntity(new EntityItem(worldIn, playerIn.posX,
+							playerIn.posY, playerIn.posZ, MultiblockRecipes
+									.instance().getRecipeResult(mainhand)));
+					return EnumActionResult.SUCCESS;
+				}
+			}
+		}
+		return EnumActionResult.FAIL;
 	}
 }
