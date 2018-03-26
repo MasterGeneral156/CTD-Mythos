@@ -3,6 +3,7 @@ package com.themastergeneral.ctdmythos.common.items.misc;
 import java.util.Iterator;
 import java.util.List;
 
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.audio.SoundManager;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
@@ -22,13 +23,17 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.SoundCategory;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.Style;
+import net.minecraft.util.text.TextComponentString;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.sound.SoundEvent;
 
+import com.jcraft.jorbis.Block;
 import com.themastergeneral.ctdcore.item.CTDItem;
 import com.themastergeneral.ctdmythos.CTDMythos;
+import com.themastergeneral.ctdmythos.common.blocks.ModBlocks;
 import com.themastergeneral.ctdmythos.common.config.ModConfig;
 import com.themastergeneral.ctdmythos.common.effects.EffectUtils;
 import com.themastergeneral.ctdmythos.common.items.ModItems;
@@ -85,5 +90,86 @@ public class BaseItem extends CTDItem {
 		}
 		return new ActionResult<ItemStack>(EnumActionResult.PASS,
 				playerIn.getHeldItem(handIn));
+	}
+
+	public boolean validMultiblock(BlockPos pos, World world,
+			EntityPlayer player) {
+		if (!world.isRemote) {
+			BlockPos startpos = new BlockPos(pos.getX(), pos.getY(), pos.getZ());
+			BlockPos underpos = new BlockPos(pos.getX(), pos.getY() - 1,
+					pos.getZ());
+			BlockPos northpos = new BlockPos(pos.getX() + 1, pos.getY() - 1,
+					pos.getZ());
+			BlockPos southpos = new BlockPos(pos.getX() - 1, pos.getY() - 1,
+					pos.getZ());
+			BlockPos eastpos = new BlockPos(pos.getX(), pos.getY() - 1,
+					pos.getZ() + 1);
+			BlockPos westpos = new BlockPos(pos.getX(), pos.getY() - 1,
+					pos.getZ() - 1);
+			if (world.getBlockState(startpos).getBlock() == ModBlocks.crystal_fire_block) {
+				if (world.getBlockState(underpos).getBlock() == ModBlocks.crystal_fire_brick) {
+					if (world.getBlockState(northpos).getBlock() == ModBlocks.crystal_fire_brick) {
+						if (world.getBlockState(southpos).getBlock() == ModBlocks.crystal_fire_brick) {
+							if (world.getBlockState(eastpos).getBlock() == ModBlocks.crystal_fire_brick) {
+								if (world.getBlockState(westpos).getBlock() == ModBlocks.crystal_fire_brick) {
+									player.sendMessage(new TextComponentString(
+											"Valid multiblock."));
+									return true;
+								} else {
+									player.sendMessage(new TextComponentString(
+											"Expecting "
+													+ ModBlocks.crystal_fire_brick.getUnlocalizedName()
+													+ " at "
+													+ westpos
+													+ " but got "
+													+ world.getBlockState(
+															westpos).getBlock().getUnlocalizedName()));
+									return false;
+								}
+							} else {
+								player.sendMessage(new TextComponentString(
+										"Expecting "
+												+ ModBlocks.crystal_fire_brick.getUnlocalizedName()
+												+ " at "
+												+ eastpos
+												+ " but got "
+												+ world.getBlockState(eastpos)
+														.getBlock().getUnlocalizedName()));
+								return false;
+							}
+						} else {
+							player.sendMessage(new TextComponentString(
+									"Expecting "
+											+ ModBlocks.crystal_fire_brick.getUnlocalizedName()
+											+ " at "
+											+ southpos
+											+ " but got "
+											+ world.getBlockState(southpos)
+													.getBlock().getUnlocalizedName()));
+							return false;
+						}
+					} else {
+						player.sendMessage(new TextComponentString("Expecting "
+								+ ModBlocks.crystal_fire_brick.getUnlocalizedName() + " at "
+								+ northpos + " but got "
+								+ world.getBlockState(northpos).getBlock().getUnlocalizedName()));
+						return false;
+					}
+				} else {
+					player.sendMessage(new TextComponentString("Expecting "
+							+ ModBlocks.crystal_fire_brick.getUnlocalizedName() + " at " + underpos
+							+ " but got "
+							+ world.getBlockState(underpos).getBlock().getUnlocalizedName()));
+					return false;
+				}
+			} else {
+				player.sendMessage(new TextComponentString("Expecting "
+						+ ModBlocks.crystal_fire_block.getUnlocalizedName() + " at " + startpos
+						+ " but got "
+						+ world.getBlockState(startpos).getBlock().getUnlocalizedName()));
+				return false;
+			}
+		} else
+			return false;
 	}
 }
