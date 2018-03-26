@@ -17,20 +17,8 @@ import com.themastergeneral.ctdmythos.common.items.ModItems;
 
 public class MainOffhandCrafting {
 	private static final MainOffhandCrafting MAIN_OFF_HAND_ITEMS = new MainOffhandCrafting();
-
-	// Main Hand + Offhand
-	/*
-	 * private final Map<ItemStack, ItemStack> mainHandList = Maps .<ItemStack,
-	 * ItemStack> newHashMap();
-	 */
 	private final Multimap<ItemStack, ItemStack> mainHandList = ArrayListMultimap
 			.create();
-
-	// Main Hand + Output
-	/*
-	 * private final Map<ItemStack, ItemStack> outputList = Maps .<ItemStack,
-	 * ItemStack> newHashMap();
-	 */
 
 	private final Multimap<ItemStack, ItemStack> outputList = ArrayListMultimap
 			.create();
