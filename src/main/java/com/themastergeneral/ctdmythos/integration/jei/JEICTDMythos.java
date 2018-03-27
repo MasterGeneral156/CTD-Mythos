@@ -2,11 +2,14 @@ package com.themastergeneral.ctdmythos.integration.jei;
 
 import net.minecraft.item.ItemStack;
 
+import com.themastergeneral.ctdmythos.common.blocks.ModBlocks;
 import com.themastergeneral.ctdmythos.common.items.ModItems;
 import com.themastergeneral.ctdmythos.integration.jei.flightwand.FlightWandCategory;
 import com.themastergeneral.ctdmythos.integration.jei.flightwand.FlightWandMaker;
 import com.themastergeneral.ctdmythos.integration.jei.mainoff.MainOffCategory;
 import com.themastergeneral.ctdmythos.integration.jei.mainoff.MainOffMaker;
+import com.themastergeneral.ctdmythos.integration.jei.multiblock.MultiblockCategory;
+import com.themastergeneral.ctdmythos.integration.jei.multiblock.MultiblockMaker;
 
 import mezz.jei.api.IGuiHelper;
 import mezz.jei.api.IJeiHelpers;
@@ -24,7 +27,7 @@ public class JEICTDMythos implements IModPlugin {
 		final IGuiHelper guiHelper = jeiHelpers.getGuiHelper();
 
 		registry.addRecipeCategories(new FlightWandCategory(guiHelper),
-				new MainOffCategory(guiHelper));
+				new MainOffCategory(guiHelper), new MultiblockCategory(guiHelper));
 	}
 
 	@Override
@@ -35,12 +38,10 @@ public class JEICTDMythos implements IModPlugin {
 
 		registry.addRecipes(FlightWandMaker.getFlightItems(jeiHelpers),
 				"ctdmythos.flight_wand_items");
-
-		registry.addRecipeCatalyst(new ItemStack(ModItems.flight_wand),
-				"ctdmythos.flight_wand_items");
-
 		registry.addRecipes(MainOffMaker.getFlightItems(jeiHelpers),
 				"ctdmythos.mainoff_recipes");
+		registry.addRecipes(MultiblockMaker.getFlightItems(jeiHelpers),
+				"ctdmythos.multiblock_recipes");
 
 		registry.addRecipeCatalyst(new ItemStack(ModItems.crystal_fire),
 				"ctdmythos.mainoff_recipes");
@@ -50,5 +51,9 @@ public class JEICTDMythos implements IModPlugin {
 				"ctdmythos.mainoff_recipes");
 		registry.addRecipeCatalyst(new ItemStack(ModItems.crystal_memory),
 				"ctdmythos.mainoff_recipes");
+		registry.addRecipeCatalyst(new ItemStack(ModItems.flight_wand),
+				"ctdmythos.flight_wand_items");
+		registry.addRecipeCatalyst(new ItemStack(ModBlocks.crystal_fire_block),
+				"ctdmythos.multiblock_recipes");
 	}
 }
