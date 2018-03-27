@@ -28,6 +28,7 @@ item.trinketHealth.name=Health Charm
 item.mb_validator.name=Multiblock Validator
 
 itemGroup.ctdmythos=CTD Mythos
+ctdmythos.desc=A mod of magical items!
 
 jei.crystal_glove.desc=Place in your off-hand to stop the effects of the other Crystallized gems.
 jei.muleskick.desc=Right Click Grim Shears on a horse for a 2% chance of dropping.
@@ -52,3 +53,26 @@ tile.crystal_fire_block.name=Crystallized Fire Block
 tile.crystal_memory_block.name=Crystallized Memory Block
 tile.crystal_oath_block.name=Crystallized Oath Block
 tile.crystal_grief_block.name=Crystallized Grief Block
+
+advancement.archeron_ingot.name=Explosive Creation
+advancement.archeron_ingot.desc=Create an Archeron Ingot.
+advancement.node_ore_double.desc=Create an Ore Doubling Node
+advancement.node_ore_double.name=Magically Doubling
+advancement.amuletreach.desc=Create an Amulet of Reaching.
+advancement.amuletreach.name=Reaching Places
+advancement.creativeamuletreach.desc=Cheat in an Amulet of Reaching.
+advancement.creativeamuletreach.name=Cheating Bastard
+advancement.evasion_talisman.name=Swift Dodge
+advancement.evasion_talisman.desc=Craft an Evasion Talisman
+advancement.trinkethealth.name=Extra HP
+advancement.trinkethealth.desc=Craft a Trinket of Health.
+advancement.xptome.name=Wisdom Sharing
+advancement.xptome.desc=Store some experience in a book.
+advancement.flight_wand.name=Fly Away
+advancement.flight_wand.desc=Craft a Flight Wand.
+advancement.teleport_wand.name=Warp Away
+advancement.teleport_wand.desc=Craft a Teleportation Wand.
+advancement.mb_validator.name=Mutliblock Time
+advancement.mb_validator.desc=Craft a Multiblock Validator to create the CTD Mythos Tier I Multiblock.
+advancement.humaneffigy.name=Human on a Stick
+advancement.humaneffigy.desc=Craft a Human Effigy.

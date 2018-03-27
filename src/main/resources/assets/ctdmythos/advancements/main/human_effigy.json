@@ -1,0 +1,34 @@
+{
+    "display": 
+	{
+        "icon": 
+		{
+            "item": "ctdmythos:humaneffigy"
+        },
+        "title": 
+		{
+            "translate": "advancement.humaneffigy.name"
+        },
+        "description": 
+		{
+            "translate": "advancement.humaneffigy.desc"
+        }
+    },
+	"parent": "ctdmythos:main/mb_validator",
+    "criteria": 
+	{
+        "carrot": 
+		{
+            "trigger": "minecraft:inventory_changed",
+            "conditions": 
+			{
+                "items": 
+				[
+                    {
+                        "item": "ctdmythos:humaneffigy"
+                    }
+                ]
+            }
+        }
+    }
+}

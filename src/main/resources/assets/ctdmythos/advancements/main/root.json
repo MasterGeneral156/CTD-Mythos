@@ -1,0 +1,37 @@
+{
+    "display": 
+	{
+        "icon": 
+		{
+            "item": "ctdmythos:crystal_fire"
+        },
+        "title": 
+		{
+            "translate": "itemGroup.ctdmythos"
+        },
+        "description": 
+		{
+            "translate": "ctdmythos.desc"
+        },
+		"frame": "goal",
+		"background": "ctdmythos:textures/blocks/crystal_fire_brick.png",
+		"show_toast": true,
+		"announce_to_chat": true
+    },
+    "criteria": 
+	{
+        "core": 
+		{
+            "trigger": "minecraft:inventory_changed",
+            "conditions": 
+			{
+                "items": 
+				[
+                    {
+                        "item": "ctdmythos:crystal_fire"
+                    }
+                ]
+            }
+        }
+    }
+}

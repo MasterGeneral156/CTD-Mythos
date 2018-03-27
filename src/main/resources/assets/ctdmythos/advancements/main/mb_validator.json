@@ -1,0 +1,34 @@
+{
+    "display": 
+	{
+        "icon": 
+		{
+            "item": "ctdmythos:mb_validator"
+        },
+        "title": 
+		{
+            "translate": "advancement.mb_validator.name"
+        },
+        "description": 
+		{
+            "translate": "advancement.mb_validator.desc"
+        }
+    },
+	"parent": "ctdmythos:main/xp_book",
+    "criteria": 
+	{
+        "carrot": 
+		{
+            "trigger": "minecraft:inventory_changed",
+            "conditions": 
+			{
+                "items": 
+				[
+                    {
+                        "item": "ctdmythos:mb_validator"
+                    }
+                ]
+            }
+        }
+    }
+}

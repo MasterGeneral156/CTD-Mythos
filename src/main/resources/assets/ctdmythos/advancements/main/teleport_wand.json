@@ -1,0 +1,34 @@
+{
+    "display": 
+	{
+        "icon": 
+		{
+            "item": "ctdmythos:teleport_wand"
+        },
+        "title": 
+		{
+            "translate": "advancement.teleport_wand.name"
+        },
+        "description": 
+		{
+            "translate": "advancement.teleport_wand.desc"
+        }
+    },
+	"parent": "ctdmythos:main/xp_book",
+    "criteria": 
+	{
+        "carrot": 
+		{
+            "trigger": "minecraft:inventory_changed",
+            "conditions": 
+			{
+                "items": 
+				[
+                    {
+                        "item": "ctdmythos:teleport_wand"
+                    }
+                ]
+            }
+        }
+    }
+}

@@ -1,0 +1,34 @@
+{
+    "display": 
+	{
+        "icon": 
+		{
+            "item": "ctdmythos:flight_wand"
+        },
+        "title": 
+		{
+            "translate": "advancement.flight_wand.name"
+        },
+        "description": 
+		{
+            "translate": "advancement.flight_wand.desc"
+        }
+    },
+	"parent": "ctdmythos:main/xp_book",
+    "criteria": 
+	{
+        "carrot": 
+		{
+            "trigger": "minecraft:inventory_changed",
+            "conditions": 
+			{
+                "items": 
+				[
+                    {
+                        "item": "ctdmythos:flight_wand"
+                    }
+                ]
+            }
+        }
+    }
+}

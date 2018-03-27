@@ -1,0 +1,34 @@
+{
+    "display": 
+	{
+        "icon": 
+		{
+            "item": "ctdmythos:creativeamuletreach"
+        },
+        "title": 
+		{
+            "translate": "advancement.creativeamuletreach.name"
+        },
+        "description": 
+		{
+            "translate": "advancement.creativeamuletreach.desc"
+        }
+    },
+	"parent": "ctdmythos:main/reaching_amulet",
+    "criteria": 
+	{
+        "carrot": 
+		{
+            "trigger": "minecraft:inventory_changed",
+            "conditions": 
+			{
+                "items": 
+				[
+                    {
+                        "item": "ctdmythos:creativeamuletreach"
+                    }
+                ]
+            }
+        }
+    }
+}
