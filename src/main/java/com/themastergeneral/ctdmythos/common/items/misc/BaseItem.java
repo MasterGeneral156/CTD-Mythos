@@ -126,14 +126,18 @@ public class BaseItem extends CTDItem {
 										player.sendMessage(new TextComponentString(
 												"Expecting "
 														+ ModBlocks.crystal_fire_brick
-																.getUnlocalizedName()
-														+ " at "
-														+ westpos
+																.getLocalizedName()
+														+ " at X: "
+														+ westpos.getX()
+														+ ", Y: "
+														+ westpos.getY()
+														+ ", Z: "
+														+ westpos.getZ()
 														+ " but got "
 														+ world.getBlockState(
 																westpos)
 																.getBlock()
-																.getUnlocalizedName()));
+																.getLocalizedName()));
 									}
 									return false;
 								}
@@ -142,14 +146,17 @@ public class BaseItem extends CTDItem {
 									player.sendMessage(new TextComponentString(
 											"Expecting "
 													+ ModBlocks.crystal_fire_brick
-															.getUnlocalizedName()
-													+ " at "
-													+ eastpos
+															.getLocalizedName()
+													+ " at X: "
+													+ eastpos.getX()
+													+ ", Y: "
+													+ eastpos.getY()
+													+ ", Z: "
+													+ eastpos.getZ()
 													+ " but got "
 													+ world.getBlockState(
-															eastpos)
-															.getBlock()
-															.getUnlocalizedName()));
+															eastpos).getBlock()
+															.getLocalizedName()));
 								}
 								return false;
 							}
@@ -158,13 +165,17 @@ public class BaseItem extends CTDItem {
 								player.sendMessage(new TextComponentString(
 										"Expecting "
 												+ ModBlocks.crystal_fire_brick
-														.getUnlocalizedName()
-												+ " at "
-												+ southpos
+														.getLocalizedName()
+												+ " at X: "
+												+ southpos.getX()
+												+ ", Y: "
+												+ southpos.getY()
+												+ ", Z: "
+												+ southpos.getZ()
 												+ " but got "
 												+ world.getBlockState(southpos)
 														.getBlock()
-														.getUnlocalizedName()));
+														.getLocalizedName()));
 							}
 							return false;
 						}
@@ -173,13 +184,17 @@ public class BaseItem extends CTDItem {
 							player.sendMessage(new TextComponentString(
 									"Expecting "
 											+ ModBlocks.crystal_fire_brick
-													.getUnlocalizedName()
-											+ " at "
-											+ northpos
+													.getLocalizedName()
+											+ " at X: "
+											+ northpos.getX()
+											+ ", Y: "
+											+ northpos.getY()
+											+ ", Z: "
+											+ northpos.getZ()
 											+ " but got "
 											+ world.getBlockState(northpos)
 													.getBlock()
-													.getUnlocalizedName()));
+													.getLocalizedName()));
 						}
 						return false;
 					}
@@ -187,24 +202,32 @@ public class BaseItem extends CTDItem {
 					if (output) {
 						player.sendMessage(new TextComponentString("Expecting "
 								+ ModBlocks.crystal_fire_brick
-										.getUnlocalizedName()
-								+ " at "
-								+ underpos
+										.getLocalizedName()
+								+ " at X: "
+								+ underpos.getX()
+								+ ", Y: "
+								+ underpos.getY()
+								+ ", Z: "
+								+ underpos.getZ()
 								+ " but got "
 								+ world.getBlockState(underpos).getBlock()
-										.getUnlocalizedName()));
+										.getLocalizedName()));
 					}
 					return false;
 				}
 			} else {
 				if (output) {
 					player.sendMessage(new TextComponentString("Expecting "
-							+ ModBlocks.crystal_fire_block.getUnlocalizedName()
-							+ " at "
-							+ startpos
+							+ ModBlocks.crystal_fire_block.getLocalizedName()
+							+ " at X: "
+							+ startpos.getX()
+							+ ", Y: "
+							+ startpos.getY()
+							+ ", Z: "
+							+ startpos.getZ()
 							+ " but got "
 							+ world.getBlockState(startpos).getBlock()
-									.getUnlocalizedName()));
+									.getLocalizedName()));
 				}
 				return false;
 			}
