@@ -25,6 +25,7 @@ item.node_ore_double.name=Ore Doubling Node
 item.amuletreach.name=Amulet of Reaching
 item.creativeamuletreach.name=Amulet of Reaching (Creative)
 item.trinketHealth.name=Health Charm
+item.mb_validator.name=Multiblock Validator
 
 itemGroup.ctdmythos=CTD Mythos
 

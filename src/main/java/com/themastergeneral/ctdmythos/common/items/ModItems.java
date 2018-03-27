@@ -7,6 +7,7 @@ import com.themastergeneral.ctdmythos.CTDMythos;
 import com.themastergeneral.ctdmythos.common.config.ModConfig;
 import com.themastergeneral.ctdmythos.common.items.artifacts.DebugItem;
 import com.themastergeneral.ctdmythos.common.items.artifacts.HumanEffigyItem;
+import com.themastergeneral.ctdmythos.common.items.artifacts.MBValidatorItem;
 import com.themastergeneral.ctdmythos.common.items.artifacts.MulesKickItem;
 import com.themastergeneral.ctdmythos.common.items.artifacts.OreDoublingNode;
 import com.themastergeneral.ctdmythos.common.items.artifacts.TalismanItemEvasion;
@@ -69,6 +70,8 @@ public class ModItems extends RegisterItem {
 	public static AmuletExtendReach amuletreach;
 	public static AmuletExtendReach creativeamuletreach;
 	public static TrinketHealth trinketHealth;
+	
+	public static MBValidatorItem mb_validator;
 
 	public static void registerItems() {
 		humaneffigy = register(new HumanEffigyItem("humaneffigy"));
@@ -112,5 +115,7 @@ public class ModItems extends RegisterItem {
 		creativeamuletreach = register(new AmuletExtendReach(
 				"creativeamuletreach", ModConfig.creativereachAmuletRange));
 		trinketHealth = register(new TrinketHealth("trinketHealth"));
+	
+		mb_validator = register(new MBValidatorItem("mb_validator"));
 	}
 }
