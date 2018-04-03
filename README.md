@@ -1,4 +1,4 @@
-# CTD Mythos
+# CTD Mythos [![](http://cf.way2muchnoise.eu/full_ctd-mythos_downloads.svg)](https://minecraft.curseforge.com/projects/ctd-mythos)
 CTD Mythos, brought to you by TheMasterGeneral and KingRayRay Ray!
   
  
