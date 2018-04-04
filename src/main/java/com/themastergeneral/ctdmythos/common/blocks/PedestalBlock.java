@@ -75,5 +75,14 @@ public class PedestalBlock extends TEBase<PedestalTileEntity> {
 		}
 		super.breakBlock(world, pos, state);
 	}
+	@Override
+	public boolean isOpaqueCube(IBlockState state) {
+		return false;
+	}
+	
+	@Override
+	public boolean isFullCube(IBlockState state) {
+		return false;
+	}
 
 }
