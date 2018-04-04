@@ -9,6 +9,7 @@ import com.themastergeneral.ctdmythos.network.PacketUpdatePedestal;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.items.CapabilityItemHandler;
@@ -56,6 +57,11 @@ public class PedestalTileEntity extends TileEntity {
 		if (world.isRemote) {
 			CTDMythos.wrapper.sendToServer(new PacketRequestUpdatePedestal(this));
 		}
+	}
+	
+	@Override
+	public AxisAlignedBB getRenderBoundingBox() {
+		return new AxisAlignedBB(getPos(), getPos().add(1, 2, 1));
 	}
 
 }
