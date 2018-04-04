@@ -110,7 +110,7 @@ public class BaseItem extends CTDItem {
 					pos.getZ() + 1);
 			BlockPos westpos = new BlockPos(pos.getX(), pos.getY() - 1,
 					pos.getZ() - 1);
-			if (world.getBlockState(startpos).getBlock() == ModBlocks.crystal_fire_block) {
+			if (world.getBlockState(startpos).getBlock() == ModBlocks.pedestal_block) {
 				if (world.getBlockState(underpos).getBlock() == ModBlocks.crystal_fire_brick) {
 					if (world.getBlockState(northpos).getBlock() == ModBlocks.crystal_fire_brick) {
 						if (world.getBlockState(southpos).getBlock() == ModBlocks.crystal_fire_brick) {
@@ -218,7 +218,7 @@ public class BaseItem extends CTDItem {
 			} else {
 				if (output) {
 					player.sendMessage(new TextComponentString("Expecting "
-							+ ModBlocks.crystal_fire_block.getLocalizedName()
+							+ ModBlocks.pedestal_block.getLocalizedName()
 							+ " at X: "
 							+ startpos.getX()
 							+ ", Y: "
