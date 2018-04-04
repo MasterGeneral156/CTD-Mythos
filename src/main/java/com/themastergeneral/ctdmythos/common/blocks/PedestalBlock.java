@@ -43,10 +43,11 @@ public class PedestalBlock extends TEBase<PedestalTileEntity> {
 				ItemStack stack = itemHandler.getStackInSlot(0);
 				if (!stack.isEmpty()) {
 					String localized = CTDMythos.proxy.localize(stack.getUnlocalizedName() + ".name");
-					player.sendMessage(new TextComponentString(stack.getCount() + "x " + localized));
+					player.sendMessage(new TextComponentString(stack.getCount() + " x " + localized));
 				} else {
 					player.sendMessage(new TextComponentString("Empty"));
 				}
+				tile.markDirty();
 			}
 		}
 		return true;
