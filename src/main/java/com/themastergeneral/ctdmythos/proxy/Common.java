@@ -10,7 +10,9 @@ import com.themastergeneral.ctdmythos.common.items.ModItems;
 import com.themastergeneral.ctdmythos.common.processing.Processing;
 import com.themastergeneral.ctdmythos.integration.OreDict;
 import com.themastergeneral.ctdmythos.server.world.WorldGen;
+import com.themastergeneral.ctdmythos.tileentity.ModTileEntities;
 
+import net.minecraft.util.text.translation.I18n;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
@@ -28,6 +30,7 @@ public class Common {
 		ModConfig.readConfig();
 		ModItems.registerItems();
 		ModBlocks.loadBlocks();
+		ModTileEntities.register();
 		GameRegistry.registerWorldGenerator(new WorldGen(), 0);
 	}
 
@@ -39,5 +42,9 @@ public class Common {
 
 	public void postInit(FMLPostInitializationEvent e) {
 
+	}
+	
+	public String localize(String unlocalized, Object... args) {
+		return I18n.translateToLocalFormatted(unlocalized, args);
 	}
 }
