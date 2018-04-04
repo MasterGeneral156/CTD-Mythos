@@ -5,6 +5,7 @@ import java.util.Locale;
 
 import com.themastergeneral.ctdmythos.CTDMythos;
 import com.themastergeneral.ctdmythos.common.processing.MainOffhandCrafting;
+import com.themastergeneral.ctdmythos.common.processing.MultiblockRecipes;
 import com.themastergeneral.ctdmythos.common.processing.WandFlightItems;
 
 import net.minecraft.item.ItemStack;
@@ -48,6 +49,16 @@ public class IMCHandler {
 							new ItemStack(nbt.getCompoundTag(OFFHAND)),
 							new ItemStack(nbt.getCompoundTag(OUTPUT)));
 					continue;
+				case ADD_MB_CRAFT:
+					MultiblockRecipes.instance().addRecipe(
+							new ItemStack(nbt.getCompoundTag(INPUT)),
+							new ItemStack(nbt.getCompoundTag(OUTPUT)));
+					continue;
+				case REMOVE_MB_CRAFT:
+					MultiblockRecipes.instance().removeRecipe(
+							new ItemStack(nbt.getCompoundTag(INPUT)),
+							new ItemStack(nbt.getCompoundTag(OUTPUT)));
+					continue;
 				}
 				CTDMythos.logger
 						.warn("CTD Mythos received an invalid IMC from "
@@ -76,4 +87,7 @@ public class IMCHandler {
 
 	public static final String ADD_MAINOFF_CRAFT = "add_main_offhand_craft";
 	public static final String REMOVE_MAINOFF_CRAFT = "remove_main_offhand_craft";
+	
+	public static final String ADD_MB_CRAFT = "add_mb_craft";
+	public static final String REMOVE_MB_CRAFT = "remove_mb_craft";
 }
