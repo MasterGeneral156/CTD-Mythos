@@ -1,0 +1,12 @@
+{
+	"forge_marker": 1,
+	"variants": {
+		"normal": {
+			"model": "ctdmythos:pedestal_block"
+		},
+		"inventory": {
+			"model": "ctdmythos:pedestal_block",
+			"transform": "forge:default-block"
+		}
+	}
+}

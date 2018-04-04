@@ -53,6 +53,7 @@ tile.crystal_fire_block.name=Crystallized Fire Block
 tile.crystal_memory_block.name=Crystallized Memory Block
 tile.crystal_oath_block.name=Crystallized Oath Block
 tile.crystal_grief_block.name=Crystallized Grief Block
+tile.pedestal_block.name=Pedestal
 
 advancement.archeron_ingot.name=Explosive Creation
 advancement.archeron_ingot.desc=Create an Archeron Ingot.
