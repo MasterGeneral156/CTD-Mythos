@@ -234,26 +234,4 @@ public class BaseItem extends CTDItem {
 		} else
 			return false;
 	}
-
-	public EnumActionResult onItemUse(EntityPlayer playerIn, World worldIn,
-			BlockPos pos, EnumHand handIn, EnumFacing facing, float hitX,
-			float hitY, float hitZ) {
-		if (!worldIn.isRemote) {
-			ItemStack offhand = playerIn.getHeldItemOffhand();
-			ItemStack mainhand = playerIn.getHeldItemMainhand();
-			if (MultiblockRecipes.instance().getRecipeResult(mainhand)
-					.getItem() != ItemStack.EMPTY.getItem()) {
-				if (validMultiblock(pos, worldIn, playerIn, false)) {
-					mainhand.shrink(1);
-					worldIn.addWeatherEffect(new EntityLightningBolt(worldIn,
-							pos.getX(), pos.getY() + 1, pos.getZ(), false));
-					worldIn.spawnEntity(new EntityItem(worldIn, playerIn.posX,
-							playerIn.posY, playerIn.posZ, MultiblockRecipes
-									.instance().getRecipeResult(mainhand)));
-					return EnumActionResult.SUCCESS;
-				}
-			}
-		}
-		return EnumActionResult.FAIL;
-	}
 }
