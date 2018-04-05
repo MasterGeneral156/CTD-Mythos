@@ -53,7 +53,7 @@ public class JEICTDMythos implements IModPlugin {
 				"ctdmythos.mainoff_recipes");
 		registry.addRecipeCatalyst(new ItemStack(ModItems.flight_wand),
 				"ctdmythos.flight_wand_items");
-		registry.addRecipeCatalyst(new ItemStack(ModBlocks.crystal_fire_block),
+		registry.addRecipeCatalyst(new ItemStack(ModBlocks.pedestal_block),
 				"ctdmythos.multiblock_recipes");
 	}
 }
