@@ -1,5 +1,7 @@
 package com.themastergeneral.ctdmythos.common.blocks;
 
+import java.util.Random;
+
 import javax.annotation.Nullable;
 
 import net.minecraft.block.Block;
@@ -11,17 +13,23 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextComponentString;
+import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandler;
 
 import com.themastergeneral.ctdmythos.CTDMythos;
+import com.themastergeneral.ctdmythos.common.items.misc.BaseItem;
+import com.themastergeneral.ctdmythos.common.processing.MultiblockRecipes;
 import com.themastergeneral.ctdmythos.tileentity.PedestalTileEntity;
 
 public class PedestalBlock extends TEBase<PedestalTileEntity> {
 
+	protected static final AxisAlignedBB SOUL_SAND_AABB = new AxisAlignedBB(0.0625D, 0.0D, 0.0625D, 0.9375D, 0.8125D, 0.9375D);
+	
 	public PedestalBlock(String name) {
 		super(Material.ROCK, name);
 	}
@@ -47,7 +55,6 @@ public class PedestalBlock extends TEBase<PedestalTileEntity> {
 				} else {
 					player.sendMessage(new TextComponentString("Empty"));
 				}
-				tile.markDirty();
 			}
 		}
 		return true;
@@ -84,5 +91,9 @@ public class PedestalBlock extends TEBase<PedestalTileEntity> {
 	public boolean isFullCube(IBlockState state) {
 		return false;
 	}
-
+	@Nullable
+    public AxisAlignedBB getCollisionBoundingBox(IBlockState blockState, IBlockAccess worldIn, BlockPos pos)
+    {
+        return SOUL_SAND_AABB;
+    }
 }
