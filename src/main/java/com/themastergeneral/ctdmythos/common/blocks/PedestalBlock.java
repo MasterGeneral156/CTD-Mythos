@@ -43,8 +43,10 @@ public class PedestalBlock extends TEBase<PedestalTileEntity> {
 			if (!player.isSneaking()) {
 				if (heldItem.isEmpty()) {
 					player.setHeldItem(hand, itemHandler.extractItem(0, 64, false));
+					tile.resetTicks();
 				} else {
 					player.setHeldItem(hand, itemHandler.insertItem(0, heldItem, false));
+					tile.resetTicks();
 				}
 				tile.markDirty();
 			} else {
