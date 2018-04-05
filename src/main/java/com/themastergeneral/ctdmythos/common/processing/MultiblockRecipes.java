@@ -2,6 +2,8 @@ package com.themastergeneral.ctdmythos.common.processing;
 
 import java.util.Map.Entry;
 
+import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
 import com.google.common.collect.ArrayListMultimap;
@@ -20,12 +22,33 @@ public class MultiblockRecipes {
 	}
 
 	private MultiblockRecipes() {
-		addRecipe(new ItemStack(ModItems.humansoul), new ItemStack(ModItems.humaneffigy));
-		addRecipe(new ItemStack(ModBlocks.crystal_fire_ore), new ItemStack(ModItems.crystal_fire, 4));
-		addRecipe(new ItemStack(ModBlocks.crystal_woe_ore), new ItemStack(ModItems.crystal_woe, 4));
-		addRecipe(new ItemStack(ModBlocks.crystal_memory_ore), new ItemStack(ModItems.crystal_memory, 4));
-		addRecipe(new ItemStack(ModBlocks.crystal_grief_ore), new ItemStack(ModItems.crystal_grief, 4));
-		addRecipe(new ItemStack(ModBlocks.crystal_oath_ore), new ItemStack(ModItems.crystal_oath, 4));
+		addRecipe(new ItemStack(ModItems.humansoul), new ItemStack(
+				ModItems.humaneffigy));
+		// Ore Doubling
+		this.addRecipe(new ItemStack(Blocks.IRON_ORE, 1), new ItemStack(
+				Items.IRON_INGOT, 2));
+		this.addRecipe(new ItemStack(Blocks.GOLD_ORE, 1), new ItemStack(
+				Items.GOLD_INGOT, 2));
+		this.addRecipe(new ItemStack(Blocks.REDSTONE_ORE, 1), new ItemStack(
+				Items.REDSTONE, 2));
+		this.addRecipe(new ItemStack(Blocks.DIAMOND_ORE, 1), new ItemStack(
+				Items.DIAMOND, 2));
+		this.addRecipe(new ItemStack(Blocks.EMERALD_ORE, 1), new ItemStack(
+				Items.EMERALD, 2));
+		this.addRecipe(new ItemStack(Blocks.COAL_ORE, 1), new ItemStack(
+				Items.COAL, 2));
+		this.addRecipe(new ItemStack(Blocks.QUARTZ_ORE, 1), new ItemStack(
+				Items.QUARTZ, 2));
+		addRecipe(new ItemStack(ModBlocks.crystal_fire_ore), new ItemStack(
+				ModItems.crystal_fire, 4));
+		addRecipe(new ItemStack(ModBlocks.crystal_woe_ore), new ItemStack(
+				ModItems.crystal_woe, 4));
+		addRecipe(new ItemStack(ModBlocks.crystal_memory_ore), new ItemStack(
+				ModItems.crystal_memory, 4));
+		addRecipe(new ItemStack(ModBlocks.crystal_grief_ore), new ItemStack(
+				ModItems.crystal_grief, 4));
+		addRecipe(new ItemStack(ModBlocks.crystal_oath_ore), new ItemStack(
+				ModItems.crystal_oath, 4));
 	}
 
 	public void addRecipe(ItemStack mainhand, ItemStack output) {
