@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "group": "ctdmythos:pedestal_block",
+    "pattern": [
+        "CTC",
+        "BBB",
+		"SSS"
+    ],
+    "key": {
+		"B": [{"type": "forge:ore_dict", "ore": "blockCrystallizedFire"}],
+        "S": [{"type": "forge:ore_dict", "ore": "fireCrystallizedBrick"}],
+		"C": { "item": "ctdmythos:bucketcowblood" },
+        "T": { "item": "ctdmythos:xptome" }
+    },
+    "result": {
+        "item": "ctdmythos:pedestal_block",
+		"count": 1
+    }
+}
