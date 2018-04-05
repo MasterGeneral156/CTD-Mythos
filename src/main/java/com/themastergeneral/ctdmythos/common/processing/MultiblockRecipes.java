@@ -7,6 +7,7 @@ import net.minecraft.item.ItemStack;
 import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.Multimap;
 import com.themastergeneral.ctdmythos.CTDMythos;
+import com.themastergeneral.ctdmythos.common.blocks.ModBlocks;
 import com.themastergeneral.ctdmythos.common.items.ModItems;
 
 public class MultiblockRecipes {
@@ -20,6 +21,11 @@ public class MultiblockRecipes {
 
 	private MultiblockRecipes() {
 		addRecipe(new ItemStack(ModItems.humansoul), new ItemStack(ModItems.humaneffigy));
+		addRecipe(new ItemStack(ModBlocks.crystal_fire_ore), new ItemStack(ModItems.crystal_fire, 4));
+		addRecipe(new ItemStack(ModBlocks.crystal_woe_ore), new ItemStack(ModItems.crystal_woe, 4));
+		addRecipe(new ItemStack(ModBlocks.crystal_memory_ore), new ItemStack(ModItems.crystal_memory, 4));
+		addRecipe(new ItemStack(ModBlocks.crystal_grief_ore), new ItemStack(ModItems.crystal_grief, 4));
+		addRecipe(new ItemStack(ModBlocks.crystal_oath_ore), new ItemStack(ModItems.crystal_oath, 4));
 	}
 
 	public void addRecipe(ItemStack mainhand, ItemStack output) {
