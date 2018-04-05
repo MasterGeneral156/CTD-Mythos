@@ -96,7 +96,7 @@ public class BaseItem extends CTDItem {
 				playerIn.getHeldItem(handIn));
 	}
 
-	public boolean validMultiblock(BlockPos pos, World world,
+	public static boolean validMultiblock(BlockPos pos, World world,
 			EntityPlayer player, boolean output) {
 		if (!world.isRemote) {
 			BlockPos startpos = new BlockPos(pos.getX(), pos.getY(), pos.getZ());
