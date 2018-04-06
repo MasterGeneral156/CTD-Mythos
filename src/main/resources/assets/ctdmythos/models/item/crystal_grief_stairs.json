@@ -1,0 +1,6 @@
+{
+    "parent": "ctdmythos:block/crystal_grief_stairs",
+    "textures": {
+        "inventory": "ctdmythos:block/crystal_grief_brick"
+    }
+}
