@@ -15,6 +15,7 @@ import com.themastergeneral.ctdmythos.common.items.artifacts.XPTomeItem;
 import com.themastergeneral.ctdmythos.common.items.baubles.AmuletExtendReach;
 import com.themastergeneral.ctdmythos.common.items.baubles.TrinketHealth;
 import com.themastergeneral.ctdmythos.common.items.crystals.CrystallizedFire;
+import com.themastergeneral.ctdmythos.common.items.crystals.CrystallizedMemory;
 import com.themastergeneral.ctdmythos.common.items.crystals.CrystallizedOath;
 import com.themastergeneral.ctdmythos.common.items.crystals.CrystallizedWoe;
 import com.themastergeneral.ctdmythos.common.items.misc.ArcheronIngot;
@@ -43,7 +44,7 @@ public class ModItems extends RegisterItem {
 
 	public static BaseItem humansoul;
 	public static CrystallizedWoe crystal_woe;
-	public static BaseItem crystal_memory;
+	public static CrystallizedMemory crystal_memory;
 	public static BaseItem crystal_grief;
 	public static CrystallizedFire crystal_fire;
 	public static CrystallizedOath crystal_oath;
@@ -82,7 +83,7 @@ public class ModItems extends RegisterItem {
 		humansoul = register(new BaseItem("humansoul"));
 		archeron_ingot = register(new ArcheronIngot("archeron_ingot"));
 		crystal_woe = register(new CrystallizedWoe("crystal_woe"));
-		crystal_memory = register(new BaseItem("crystal_memory"));
+		crystal_memory = register(new CrystallizedMemory("crystal_memory"));
 		crystal_grief = register(new BaseItem("crystal_grief"));
 		crystal_fire = register(new CrystallizedFire("crystal_fire"));
 		crystal_oath = register(new CrystallizedOath("crystal_oath"));
