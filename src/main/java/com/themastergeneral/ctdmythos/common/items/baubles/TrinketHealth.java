@@ -1,6 +1,7 @@
 package com.themastergeneral.ctdmythos.common.items.baubles;
 
 import baubles.api.BaubleType;
+import baubles.api.inv.BaublesInventoryWrapper;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.player.EntityPlayer;
@@ -34,5 +35,11 @@ public class TrinketHealth extends BasicBauble {
 		player.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(hp);
 	}	
 
+	@Override
+	public void onWornTick(ItemStack itemstack, EntityLivingBase player)
+	{
+		if (player.getMaxHealth() != 30F)
+			player.getEntityAttribute(SharedMonsterAttributes.MAX_HEALTH).setBaseValue(30F);
+	}
 }
 
