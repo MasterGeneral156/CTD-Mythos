@@ -1,0 +1,16 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "group": "ctdmythos:crystal_woe_stairs",
+    "pattern": [
+        "B  ",
+        "BB ",
+		"BBB"
+    ],
+    "key": {
+		"B": [{"type": "forge:ore_dict", "ore": "woeCrystallizedBrick"}]
+    },
+    "result": {
+        "item": "ctdmythos:crystal_woe_stairs",
+		"count": 6
+    }
+}
