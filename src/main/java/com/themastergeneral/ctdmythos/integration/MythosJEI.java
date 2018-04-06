@@ -31,6 +31,8 @@ public class MythosJEI implements IModPlugin {
 				"jei.evasion_talisman.desc");
 		registry.addDescription(new ItemStack(ModBlocks.crystal_fire_brick),
 				"jei.crystal_bricks.desc");
+		registry.addDescription(new ItemStack(ModBlocks.crystal_oath_brick),
+				"jei.crystal_bricks.desc");
 		registry.addDescription(new ItemStack(ModBlocks.pedestal_block),
 				"jei.pedestal.desc");
 	}
