@@ -21,17 +21,18 @@ import net.minecraft.world.World;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandler;
 
+import com.themastergeneral.ctdcore.block.CTDTEBase;
 import com.themastergeneral.ctdmythos.CTDMythos;
 import com.themastergeneral.ctdmythos.common.items.misc.BaseItem;
 import com.themastergeneral.ctdmythos.common.processing.MultiblockRecipes;
 import com.themastergeneral.ctdmythos.tileentity.PedestalTileEntity;
 
-public class PedestalBlock extends TEBase<PedestalTileEntity> {
+public class PedestalBlock extends CTDTEBase<PedestalTileEntity> {
 
 	protected static final AxisAlignedBB SOUL_SAND_AABB = new AxisAlignedBB(0.0625D, 0.0D, 0.0625D, 0.9375D, 0.8125D, 0.9375D);
 	
 	public PedestalBlock(String name) {
-		super(Material.ROCK, name);
+		super(Material.ROCK, name, CTDMythos.MODID);
 	}
 	
 	@Override
