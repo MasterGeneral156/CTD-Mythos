@@ -19,6 +19,8 @@ public class ModBlocks extends RegisterBlock {
 	public static BricksStairs crystal_fire_stairs;
 	public static BrickBlocks crystal_oath_brick;
 	public static BricksStairs crystal_oath_stairs;
+	public static BrickBlocks crystal_woe_brick;
+	public static BricksStairs crystal_woe_stairs;
 
 	public static CrystalBlocks crystal_woe_block;
 	public static CrystalBlocks crystal_fire_block;
@@ -47,6 +49,9 @@ public class ModBlocks extends RegisterBlock {
 		crystal_oath_brick = register(new BrickBlocks("crystal_oath_brick"));
 		crystal_oath_stairs = register(new BricksStairs("crystal_oath_stairs",
 				crystal_oath_brick.getDefaultState()));
+		crystal_woe_brick = register(new BrickBlocks("crystal_woe_brick"));
+		crystal_woe_stairs = register(new BricksStairs("crystal_woe_stairs",
+				crystal_woe_brick.getDefaultState()));
 
 		crystal_woe_block = register(new CrystalBlocks("crystal_woe_block"));
 		crystal_fire_block = register(new CrystalBlocks("crystal_fire_block"));
