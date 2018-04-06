@@ -33,6 +33,12 @@ public class MythosJEI implements IModPlugin {
 				"jei.crystal_bricks.desc");
 		registry.addDescription(new ItemStack(ModBlocks.crystal_oath_brick),
 				"jei.crystal_bricks.desc");
+		registry.addDescription(new ItemStack(ModBlocks.crystal_memory_brick),
+				"jei.crystal_bricks.desc");
+		registry.addDescription(new ItemStack(ModBlocks.crystal_woe_brick),
+				"jei.crystal_bricks.desc");
+		registry.addDescription(new ItemStack(ModBlocks.crystal_grief_brick),
+				"jei.crystal_bricks.desc");
 		registry.addDescription(new ItemStack(ModBlocks.pedestal_block),
 				"jei.pedestal.desc");
 	}

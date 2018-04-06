@@ -76,6 +76,10 @@ public class OreDict {
 				ModBlocks.crystal_memory_brick);
 		OreDictionary.registerOre("crystallizedBrick",
 				ModBlocks.crystal_memory_brick);
+		OreDictionary.registerOre("griefCrystallizedBrick",
+				ModBlocks.crystal_grief_brick);
+		OreDictionary.registerOre("crystallizedBrick",
+				ModBlocks.crystal_grief_brick);
 
 	}
 }
