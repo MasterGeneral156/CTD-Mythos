@@ -1,0 +1,6 @@
+{
+    "parent": "ctdmythos:blocks/crystal_oath_brick",
+    "textures": {
+        "inventory": "ctdmythos:blocks/crystal_oath_brick"
+    }
+}
