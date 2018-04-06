@@ -26,7 +26,7 @@ import com.themastergeneral.ctdmythos.proxy.Common;
 public class CTDMythos {
 	public static final String MODID = "ctdmythos";
 	public static final String MODNAME = "CTD Mythos";
-	public static final String VERSION = "0.3.1";
+	public static final String VERSION = "0.3.2";
 	// Update JSON link
 	public static final String updateJSON = "https://raw.githubusercontent.com/MasterGeneral156/Version/master/CTD-Mythos.json";
 	public static final String acceptedMinecraftVersions = "1.12.2";
