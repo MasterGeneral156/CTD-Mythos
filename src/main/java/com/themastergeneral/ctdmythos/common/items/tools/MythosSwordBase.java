@@ -17,9 +17,9 @@ import net.minecraft.world.World;
 import com.themastergeneral.ctdcore.CTDCore;
 import com.themastergeneral.ctdcore.client.ItemModelProvider;
 import com.themastergeneral.ctdmythos.CTDMythos;
+import com.themastergeneral.ctdmythos.client.sound.ModSounds;
 import com.themastergeneral.ctdmythos.common.items.ModItems;
 import com.themastergeneral.ctdmythos.common.processing.MainOffhandCrafting;
-import com.themastergeneral.ctdmythos.common.processing.ModSounds;
 
 public class MythosSwordBase extends ItemSword implements ItemModelProvider {
 	protected String name; // Name of the item.

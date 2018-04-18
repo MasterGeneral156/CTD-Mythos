@@ -1,9 +1,9 @@
 package com.themastergeneral.ctdmythos.common.items.wands;
 
 import com.themastergeneral.ctdmythos.CTDMythos;
+import com.themastergeneral.ctdmythos.client.sound.ModSounds;
 import com.themastergeneral.ctdmythos.common.items.ModItems;
 import com.themastergeneral.ctdmythos.common.processing.MainOffhandCrafting;
-import com.themastergeneral.ctdmythos.common.processing.ModSounds;
 import com.themastergeneral.ctdmythos.common.processing.WandFlightItems;
 
 import net.minecraft.entity.player.EntityPlayer;

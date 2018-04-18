@@ -1,6 +1,6 @@
 package com.themastergeneral.ctdmythos.proxy;
 
-import com.themastergeneral.ctdmythos.common.processing.ModSounds;
+import com.themastergeneral.ctdmythos.client.sound.ModSounds;
 import com.themastergeneral.ctdmythos.tileentity.PedestalTileEntity;
 import com.themastergeneral.ctdmythos.tileentity.tesr.TESRPedestal;
 

@@ -35,12 +35,12 @@ import net.minecraftforge.client.event.sound.SoundEvent;
 import com.jcraft.jorbis.Block;
 import com.themastergeneral.ctdcore.item.CTDItem;
 import com.themastergeneral.ctdmythos.CTDMythos;
+import com.themastergeneral.ctdmythos.client.sound.ModSounds;
 import com.themastergeneral.ctdmythos.common.blocks.ModBlocks;
 import com.themastergeneral.ctdmythos.common.config.ModConfig;
 import com.themastergeneral.ctdmythos.common.effects.EffectUtils;
 import com.themastergeneral.ctdmythos.common.items.ModItems;
 import com.themastergeneral.ctdmythos.common.processing.MainOffhandCrafting;
-import com.themastergeneral.ctdmythos.common.processing.ModSounds;
 import com.themastergeneral.ctdmythos.common.processing.MultiblockRecipes;
 
 public class BaseItem extends CTDItem {

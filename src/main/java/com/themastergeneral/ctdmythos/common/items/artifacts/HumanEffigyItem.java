@@ -1,8 +1,8 @@
 package com.themastergeneral.ctdmythos.common.items.artifacts;
 
+import com.themastergeneral.ctdmythos.client.sound.ModSounds;
 import com.themastergeneral.ctdmythos.common.config.ModConfig;
 import com.themastergeneral.ctdmythos.common.items.misc.BaseItem;
-import com.themastergeneral.ctdmythos.common.processing.ModSounds;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;

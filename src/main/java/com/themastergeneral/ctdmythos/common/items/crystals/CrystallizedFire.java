@@ -19,11 +19,11 @@ import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
 
 import com.themastergeneral.ctdmythos.CTDMythos;
+import com.themastergeneral.ctdmythos.client.sound.ModSounds;
 import com.themastergeneral.ctdmythos.common.blocks.ModBlocks;
 import com.themastergeneral.ctdmythos.common.items.ModItems;
 import com.themastergeneral.ctdmythos.common.items.misc.BaseItem;
 import com.themastergeneral.ctdmythos.common.processing.MainOffhandCrafting;
-import com.themastergeneral.ctdmythos.common.processing.ModSounds;
 
 public class CrystallizedFire extends BaseItem {
 

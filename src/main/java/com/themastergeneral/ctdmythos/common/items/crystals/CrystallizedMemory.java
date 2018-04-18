@@ -15,11 +15,11 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
 
+import com.themastergeneral.ctdmythos.client.sound.ModSounds;
 import com.themastergeneral.ctdmythos.common.blocks.ModBlocks;
 import com.themastergeneral.ctdmythos.common.config.ModConfig;
 import com.themastergeneral.ctdmythos.common.items.misc.BaseItem;
 import com.themastergeneral.ctdmythos.common.processing.MainOffhandCrafting;
-import com.themastergeneral.ctdmythos.common.processing.ModSounds;
 
 public class CrystallizedMemory extends BaseItem {
 
