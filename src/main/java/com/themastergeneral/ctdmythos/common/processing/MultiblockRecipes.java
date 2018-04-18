@@ -26,19 +26,19 @@ public class MultiblockRecipes {
 				ModItems.humaneffigy));
 		// Ore Doubling
 		this.addRecipe(new ItemStack(Blocks.IRON_ORE, 1), new ItemStack(
-				Items.IRON_INGOT, 2));
+				Items.IRON_INGOT, 4));
 		this.addRecipe(new ItemStack(Blocks.GOLD_ORE, 1), new ItemStack(
-				Items.GOLD_INGOT, 2));
+				Items.GOLD_INGOT, 4));
 		this.addRecipe(new ItemStack(Blocks.REDSTONE_ORE, 1), new ItemStack(
-				Items.REDSTONE, 2));
+				Items.REDSTONE, 4));
 		this.addRecipe(new ItemStack(Blocks.DIAMOND_ORE, 1), new ItemStack(
-				Items.DIAMOND, 2));
+				Items.DIAMOND, 4));
 		this.addRecipe(new ItemStack(Blocks.EMERALD_ORE, 1), new ItemStack(
-				Items.EMERALD, 2));
+				Items.EMERALD, 4));
 		this.addRecipe(new ItemStack(Blocks.COAL_ORE, 1), new ItemStack(
-				Items.COAL, 2));
+				Items.COAL, 4));
 		this.addRecipe(new ItemStack(Blocks.QUARTZ_ORE, 1), new ItemStack(
-				Items.QUARTZ, 2));
+				Items.QUARTZ, 4));
 		addRecipe(new ItemStack(ModBlocks.crystal_fire_ore), new ItemStack(
 				ModItems.crystal_fire, 4));
 		addRecipe(new ItemStack(ModBlocks.crystal_woe_ore), new ItemStack(
