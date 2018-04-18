@@ -1,5 +1,6 @@
 package com.themastergeneral.ctdmythos.common.blocks;
 
+import java.text.NumberFormat;
 import java.util.Random;
 
 import javax.annotation.Nullable;
@@ -66,9 +67,12 @@ public class PedestalBlock extends CTDTEBase<PedestalTileEntity> {
 				ItemStack stack = itemHandler.getStackInSlot(0);
 				if (tile.validItem()) {
 					player.sendMessage(new TextComponentString("Completion: "
-							+ tile.getTicks() + " / " + 200
-							* tile.inventory.getStackInSlot(0).getCount()
-							+ " ticks."));
+							+ NumberFormat.getInstance()
+									.format(tile.getTicks())
+							+ " / "
+							+ NumberFormat.getInstance().format(
+									200 * tile.inventory.getStackInSlot(0)
+											.getCount()) + " ticks."));
 				} else {
 					player.sendMessage(new TextComponentString(
 							"Empty or invalid recipe."));
@@ -134,8 +138,8 @@ public class PedestalBlock extends CTDTEBase<PedestalTileEntity> {
 			if (rand.nextDouble() < 0.1D) {
 				worldIn.playSound((double) pos.getX() + 0.5D,
 						(double) pos.getY(), (double) pos.getZ() + 0.5D,
-						ModSounds.multiblock_random, SoundCategory.BLOCKS, 1.0F,
-						1.0F, false);
+						ModSounds.multiblock_random, SoundCategory.BLOCKS,
+						1.0F, 1.0F, false);
 			}
 			worldIn.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, d0 - 0.52D,
 					d1, d2 + d4, 0.0D, 0.0D, 0.0D);
