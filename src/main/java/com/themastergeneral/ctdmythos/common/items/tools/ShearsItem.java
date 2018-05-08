@@ -12,6 +12,7 @@ import net.minecraft.entity.monster.EntitySpider;
 import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.DamageSource;
 
 public class ShearsItem extends BaseItem {
 
@@ -26,7 +27,7 @@ public class ShearsItem extends BaseItem {
 	public boolean hitEntity(ItemStack stack, EntityLivingBase target,
 			EntityLivingBase attacker) {
 		EntityPlayer player = (EntityPlayer) attacker;
-		target.setHealth(target.getHealth() - 10F);
+		target.attackEntityFrom(DamageSource.causePlayerDamage(player), 10F);
 		if (target instanceof EntityPlayer || target instanceof EntityVillager) {
 			// Random Number Generator!
 			Random randomGenerator = new Random();
