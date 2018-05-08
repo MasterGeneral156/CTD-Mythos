@@ -2,7 +2,6 @@ package com.themastergeneral.ctdmythos.integration;
 
 import com.themastergeneral.ctdmythos.common.blocks.ModBlocks;
 import com.themastergeneral.ctdmythos.common.items.ModItems;
-import com.themastergeneral.ctdmythos.common.items.misc.CowBloodItem;
 
 import net.minecraft.item.ItemStack;
 import mezz.jei.api.IModPlugin;

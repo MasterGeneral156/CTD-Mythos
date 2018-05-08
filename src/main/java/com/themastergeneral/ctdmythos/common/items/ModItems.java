@@ -22,7 +22,6 @@ import com.themastergeneral.ctdmythos.common.items.crystals.CrystallizedWoe;
 import com.themastergeneral.ctdmythos.common.items.misc.ArcheronIngot;
 import com.themastergeneral.ctdmythos.common.items.misc.BaseFood;
 import com.themastergeneral.ctdmythos.common.items.misc.BaseItem;
-import com.themastergeneral.ctdmythos.common.items.misc.CowBloodItem;
 import com.themastergeneral.ctdmythos.common.items.misc.GlowingItem;
 import com.themastergeneral.ctdmythos.common.items.misc.SingleStackItem;
 import com.themastergeneral.ctdmythos.common.items.tools.LongBowItem;
@@ -38,7 +37,7 @@ public class ModItems extends RegisterItem {
 
 	public static ShearsItem grimshears;
 
-	public static CowBloodItem cowblooddrop;
+	public static BaseItem cowblooddrop;
 	public static SingleStackItem bucketcowblood;
 
 	public static LongBowItem longbow;
@@ -79,7 +78,7 @@ public class ModItems extends RegisterItem {
 		humaneffigy = register(new HumanEffigyItem("humaneffigy"));
 		muleskick = register(new MulesKickItem("muleskick"));
 		grimshears = register(new ShearsItem("grimshears"));
-		cowblooddrop = register(new CowBloodItem("cowblooddrop"));
+		cowblooddrop = register(new BaseItem("cowblooddrop"));
 		bucketcowblood = register(new SingleStackItem("bucketcowblood"));
 		humansoul = register(new BaseItem("humansoul"));
 		archeron_ingot = register(new ArcheronIngot("archeron_ingot"));
