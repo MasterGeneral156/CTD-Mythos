@@ -40,5 +40,7 @@ public class MythosJEI implements IModPlugin {
 				"jei.crystal_bricks.desc");
 		registry.addDescription(new ItemStack(ModBlocks.pedestal_block),
 				"jei.pedestal.desc");
+		registry.addDescription(new ItemStack(ModItems.longbow),
+				"jei.longbow.desc");
 	}
 }
