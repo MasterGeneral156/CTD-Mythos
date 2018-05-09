@@ -90,7 +90,7 @@ public class ModItems extends RegisterItem {
 		crystal_glove = register(new BaseItem("crystal_glove"));
 		ethereal_fiber = register(new BaseItem("ethereal_fiber"));
 
-		longbow = register(new LongBowItem("longbow", 180000, 200));
+		longbow = register(new LongBowItem("longbow", 144000, 640));
 
 		tmgdrill = register(new TMGDrill("tmgdrill"));
 		gladius_sword = register(new MythosSwordBase(ToolMaterial.GOLD,
