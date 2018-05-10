@@ -21,7 +21,7 @@ public class WorldGen implements IWorldGenerator {
 	private WorldGenerator gen_fire;
 	private CrystalGenerator gen_oath;
 	private CrystalGenerator gen_woe;
-	private CrystalGenerator gen_memory;
+	private WorldGenerator gen_memory;
 	private CrystalGenerator gen_grief;
 
 	public WorldGen() {
@@ -31,7 +31,7 @@ public class WorldGen implements IWorldGenerator {
 		this.gen_oath = new CrystalGenerator(
 				ModBlocks.crystal_oath_ore.getDefaultState(),
 				ModConfig.crystalSpawnVeinSize);
-		this.gen_memory = new CrystalGenerator(
+		this.gen_memory = new WorldGenMinable(
 				ModBlocks.crystal_memory_ore.getDefaultState(),
 				ModConfig.crystalSpawnVeinSize);
 		this.gen_grief = new CrystalGenerator(
@@ -53,9 +53,6 @@ public class WorldGen implements IWorldGenerator {
 			this.runGenerator(this.gen_woe, world, random, chunkX, chunkZ,
 					ModConfig.crystalSpawnChance, ModConfig.crystalSpawnMinY,
 					ModConfig.crystalSpawnMaxY);
-			this.runGenerator(this.gen_memory, world, random, chunkX, chunkZ,
-					ModConfig.crystalSpawnChance, ModConfig.crystalSpawnMinY,
-					ModConfig.crystalSpawnMaxY);
 			this.runGenerator(this.gen_grief, world, random, chunkX, chunkZ,
 					ModConfig.crystalSpawnChance, ModConfig.crystalSpawnMinY,
 					ModConfig.crystalSpawnMaxY);
@@ -64,6 +61,11 @@ public class WorldGen implements IWorldGenerator {
 			this.runGenerator(this.gen_fire, world, random, chunkX, chunkZ,
 					ModConfig.crystalSpawnChance, ModConfig.crystalSpawnMinY,
 					ModConfig.crystalSpawnMaxY);
+		case 1: //The End
+			this.runGenerator(this.gen_memory, world, random, chunkX, chunkZ,
+					ModConfig.crystalSpawnChance, ModConfig.crystalSpawnMinY,
+					ModConfig.crystalSpawnMaxY);
+			break;
 		}
 
 	}
