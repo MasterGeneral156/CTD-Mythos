@@ -12,21 +12,22 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.IChunkGenerator;
+import net.minecraft.world.gen.feature.WorldGenMinable;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.fml.common.IWorldGenerator;
 
 public class WorldGen implements IWorldGenerator {
 
-	private CrystalGenerator gen_fire;
+	private WorldGenerator gen_fire;
 	private CrystalGenerator gen_oath;
 	private CrystalGenerator gen_woe;
 	private CrystalGenerator gen_memory;
 	private CrystalGenerator gen_grief;
 
 	public WorldGen() {
-		this.gen_fire = new CrystalGenerator(
+		this.gen_fire = new WorldGenMinable(
 				ModBlocks.crystal_fire_ore.getDefaultState(),
-				ModConfig.crystalSpawnVeinSize);
+				ModConfig.crystalSpawnChance);
 		this.gen_oath = new CrystalGenerator(
 				ModBlocks.crystal_oath_ore.getDefaultState(),
 				ModConfig.crystalSpawnVeinSize);
@@ -46,9 +47,6 @@ public class WorldGen implements IWorldGenerator {
 			IChunkGenerator chunkGenerator, IChunkProvider chunkProvider) {
 		switch (world.provider.getDimension()) {
 		case 0: // Overworld
-			this.runGenerator(this.gen_fire, world, random, chunkX, chunkZ,
-					ModConfig.crystalSpawnChance, ModConfig.crystalSpawnMinY,
-					ModConfig.crystalSpawnMaxY);
 			this.runGenerator(this.gen_oath, world, random, chunkX, chunkZ,
 					ModConfig.crystalSpawnChance, ModConfig.crystalSpawnMinY,
 					ModConfig.crystalSpawnMaxY);
@@ -62,6 +60,10 @@ public class WorldGen implements IWorldGenerator {
 					ModConfig.crystalSpawnChance, ModConfig.crystalSpawnMinY,
 					ModConfig.crystalSpawnMaxY);
 			break;
+		case -1: // Nether
+			this.runGenerator(this.gen_fire, world, random, chunkX, chunkZ,
+					ModConfig.crystalSpawnChance, ModConfig.crystalSpawnMinY,
+					ModConfig.crystalSpawnMaxY);
 		}
 
 	}
