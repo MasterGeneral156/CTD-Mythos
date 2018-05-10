@@ -49,6 +49,10 @@ public class MultiblockRecipes {
 				ModItems.crystal_grief, 4));
 		addRecipe(new ItemStack(ModBlocks.crystal_oath_ore), new ItemStack(
 				ModItems.crystal_oath, 4));
+		
+		//Archeron Ingot
+		addRecipe(new ItemStack(Blocks.TNT), new ItemStack(
+				ModItems.archeron_ingot, 4));
 	}
 
 	public void addRecipe(ItemStack mainhand, ItemStack output) {
