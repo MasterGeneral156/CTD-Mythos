@@ -2,6 +2,8 @@ package com.themastergeneral.ctdmythos.common.items.crystals;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.particle.Particle;
+import net.minecraft.client.particle.ParticleLava;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.effect.EntityLightningBolt;
@@ -21,6 +23,7 @@ import net.minecraft.world.World;
 import com.themastergeneral.ctdmythos.CTDMythos;
 import com.themastergeneral.ctdmythos.client.sound.ModSounds;
 import com.themastergeneral.ctdmythos.common.blocks.ModBlocks;
+import com.themastergeneral.ctdmythos.common.effects.EffectUtils;
 import com.themastergeneral.ctdmythos.common.items.ModItems;
 import com.themastergeneral.ctdmythos.common.items.misc.BaseItem;
 import com.themastergeneral.ctdmythos.common.processing.MainOffhandCrafting;
@@ -56,7 +59,8 @@ public class CrystallizedFire extends BaseItem {
 						.getItem() == offhand.getItem()) {
 					if (!worldIn.isRemote) {
 						mainhand.shrink(1);
-						offhand.shrink(MainOffhandCrafting.instance().getRecipeOffhand(mainhand).getCount());
+						offhand.shrink(MainOffhandCrafting.instance()
+								.getRecipeOffhand(mainhand).getCount());
 						worldIn.spawnEntity(new EntityItem(worldIn,
 								playerIn.posX, playerIn.posY, playerIn.posZ,
 								MainOffhandCrafting.instance().getRecipeResult(
