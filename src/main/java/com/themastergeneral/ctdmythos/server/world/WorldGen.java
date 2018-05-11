@@ -2,6 +2,7 @@ package com.themastergeneral.ctdmythos.server.world;
 
 import java.util.Random;
 
+import com.themastergeneral.ctdmythos.CTDMythos;
 import com.themastergeneral.ctdmythos.common.blocks.ModBlocks;
 import com.themastergeneral.ctdmythos.common.config.ModConfig;
 
@@ -59,9 +60,8 @@ public class WorldGen implements IWorldGenerator {
 			break;
 		case -1: // Nether
 			this.runGenerator(this.gen_fire, world, random, chunkX, chunkZ,
-					ModConfig.crystalSpawnChance, ModConfig.crystalSpawnMinY,
-					ModConfig.crystalSpawnMaxY);
-		case 1: //The End
+					ModConfig.crystalSpawnChance, 1, 128);
+		case 1: // The End
 			this.runGenerator(this.gen_memory, world, random, chunkX, chunkZ,
 					ModConfig.crystalSpawnChance, ModConfig.crystalSpawnMinY,
 					ModConfig.crystalSpawnMaxY);
@@ -74,9 +74,7 @@ public class WorldGen implements IWorldGenerator {
 			Random rand, int chunk_X, int chunk_Z, int chancesToSpawn,
 			int minHeight, int maxHeight) {
 		if (minHeight < 0 || maxHeight > 256 || minHeight > maxHeight)
-			throw new IllegalArgumentException(
-					"Illegal Height Arguments for WorldGenerator");
-
+			CTDMythos.logger.error("Illegal height arguments for WorldGenerator.");
 		int heightDiff = maxHeight - minHeight + 1;
 		for (int i = 0; i < chancesToSpawn; i++) {
 			int x = chunk_X * 16 + rand.nextInt(16);
@@ -84,6 +82,7 @@ public class WorldGen implements IWorldGenerator {
 			int z = chunk_Z * 16 + rand.nextInt(16);
 			BlockPos Pos = new BlockPos(x, y, z);
 			generator.generate(world, rand, Pos);
+			CTDMythos.logger.info("Spawned at " + Pos);
 		}
 	}
 
