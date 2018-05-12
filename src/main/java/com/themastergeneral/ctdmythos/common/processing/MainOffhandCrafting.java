@@ -65,6 +65,8 @@ public class MainOffhandCrafting {
 		this.addRecipe(new ItemStack(ModBlocks.crystal_oath_ore, 1),
 				new ItemStack(ModItems.node_ore_double, 1), new ItemStack(
 						ModItems.crystal_oath, 2));
+		this.addRecipe(new ItemStack(Blocks.LAPIS_ORE), new ItemStack(
+				ModItems.node_ore_double), new ItemStack(Items.DYE, 2, 4));
 	}
 
 	public void addRecipe(ItemStack mainhand, ItemStack offhand,
