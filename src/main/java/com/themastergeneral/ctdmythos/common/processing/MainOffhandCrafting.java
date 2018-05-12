@@ -80,8 +80,8 @@ public class MainOffhandCrafting {
 
 	public void addRecipeItem(ItemStack mainhand, ItemStack offhand,
 			ItemStack output) {
-		this.mainHandList.put(mainhand, offhand);
-		this.outputList.put(mainhand, output);
+		mainHandList.put(mainhand, offhand);
+		outputList.put(mainhand, output);
 	}
 
 	public void removeRecipe(ItemStack input, ItemStack offhand,
@@ -92,13 +92,13 @@ public class MainOffhandCrafting {
 					+ " from the Main/Offhand registry as it doesn't exist.");
 			return;
 		}
-		this.mainHandList.remove(input, offhand);
-		this.outputList.remove(input, output);
+		mainHandList.remove(input, offhand);
+		outputList.remove(input, output);
 	}
 
 	public ItemStack getRecipeResult(ItemStack stack) {
-		for (Entry<ItemStack, ItemStack> entry : this.outputList.entries()) {
-			if (this.compareItemStacks(stack, (ItemStack) entry.getKey())) {
+		for (Entry<ItemStack, ItemStack> entry : outputList.entries()) {
+			if (compareItemStacks(stack, (ItemStack) entry.getKey())) {
 				return (ItemStack) entry.getValue();
 			}
 		}
@@ -107,8 +107,8 @@ public class MainOffhandCrafting {
 	}
 
 	public ItemStack getRecipeOffhand(ItemStack stack) {
-		for (Entry<ItemStack, ItemStack> entry : this.mainHandList.entries()) {
-			if (this.compareItemStacks(stack, (ItemStack) entry.getKey())) {
+		for (Entry<ItemStack, ItemStack> entry : mainHandList.entries()) {
+			if (compareItemStacks(stack, (ItemStack) entry.getKey())) {
 				return (ItemStack) entry.getValue();
 			}
 		}
@@ -123,16 +123,16 @@ public class MainOffhandCrafting {
 	}
 
 	public Multimap<ItemStack, ItemStack> getRecipeList() {
-		return this.mainHandList;
+		return mainHandList;
 	}
 
 	public Multimap<ItemStack, ItemStack> getOutputList() {
-		return this.outputList;
+		return outputList;
 	}
 
 	public int getMainHandQty(ItemStack itemstack) {
 		ItemStack result = getRecipeResult(itemstack);
-		for (Entry<ItemStack, ItemStack> entry : this.mainHandList.entries()) {
+		for (Entry<ItemStack, ItemStack> entry : mainHandList.entries()) {
 			return entry.getKey().getCount();
 		}
 

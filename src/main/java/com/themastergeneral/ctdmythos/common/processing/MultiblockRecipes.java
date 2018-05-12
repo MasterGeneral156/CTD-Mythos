@@ -23,19 +23,19 @@ public class MultiblockRecipes {
 
 	private MultiblockRecipes() {
 		// Ore Doubling
-		this.addRecipe(new ItemStack(Blocks.IRON_ORE, 1), new ItemStack(
+		addRecipe(new ItemStack(Blocks.IRON_ORE, 1), new ItemStack(
 				Items.IRON_INGOT, 4));
-		this.addRecipe(new ItemStack(Blocks.GOLD_ORE, 1), new ItemStack(
+		addRecipe(new ItemStack(Blocks.GOLD_ORE, 1), new ItemStack(
 				Items.GOLD_INGOT, 4));
-		this.addRecipe(new ItemStack(Blocks.REDSTONE_ORE, 1), new ItemStack(
+		addRecipe(new ItemStack(Blocks.REDSTONE_ORE, 1), new ItemStack(
 				Items.REDSTONE, 4));
-		this.addRecipe(new ItemStack(Blocks.DIAMOND_ORE, 1), new ItemStack(
+		addRecipe(new ItemStack(Blocks.DIAMOND_ORE, 1), new ItemStack(
 				Items.DIAMOND, 4));
-		this.addRecipe(new ItemStack(Blocks.EMERALD_ORE, 1), new ItemStack(
+		addRecipe(new ItemStack(Blocks.EMERALD_ORE, 1), new ItemStack(
 				Items.EMERALD, 4));
-		this.addRecipe(new ItemStack(Blocks.COAL_ORE, 1), new ItemStack(
+		addRecipe(new ItemStack(Blocks.COAL_ORE, 1), new ItemStack(
 				Items.COAL, 4));
-		this.addRecipe(new ItemStack(Blocks.QUARTZ_ORE, 1), new ItemStack(
+		addRecipe(new ItemStack(Blocks.QUARTZ_ORE, 1), new ItemStack(
 				Items.QUARTZ, 4));
 		addRecipe(new ItemStack(ModBlocks.crystal_fire_ore), new ItemStack(
 				ModItems.crystal_fire, 4));
@@ -65,11 +65,11 @@ public class MultiblockRecipes {
 	}
 
 	public void addRecipe(ItemStack mainhand, ItemStack output) {
-		this.addRecipeItem(mainhand, output);
+		addRecipeItem(mainhand, output);
 	}
 
 	public void addRecipeItem(ItemStack mainhand, ItemStack output) {
-		this.recipeList.put(mainhand, output);
+		recipeList.put(mainhand, output);
 	}
 
 	public void removeRecipe(ItemStack input, ItemStack output) {
@@ -79,12 +79,12 @@ public class MultiblockRecipes {
 					+ " from the Multiblock registry as it doesn't exist.");
 			return;
 		}
-		this.recipeList.remove(input, output);
+		recipeList.remove(input, output);
 	}
 
 	public ItemStack getRecipeResult(ItemStack stack) {
-		for (Entry<ItemStack, ItemStack> entry : this.recipeList.entries()) {
-			if (this.compareItemStacks(stack, (ItemStack) entry.getKey())) {
+		for (Entry<ItemStack, ItemStack> entry : recipeList.entries()) {
+			if (compareItemStacks(stack, (ItemStack) entry.getKey())) {
 				return (ItemStack) entry.getValue();
 			}
 		}
@@ -99,6 +99,6 @@ public class MultiblockRecipes {
 	}
 
 	public Multimap<ItemStack, ItemStack> getRecipeList() {
-		return this.recipeList;
+		return recipeList;
 	}
 }
