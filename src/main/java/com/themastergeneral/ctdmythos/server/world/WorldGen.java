@@ -57,12 +57,10 @@ public class WorldGen implements IWorldGenerator {
 			this.runGenerator(this.gen_grief, world, random, chunkX, chunkZ,
 					ModConfig.crystalSpawnChance, ModConfig.crystalSpawnMinY,
 					ModConfig.crystalSpawnMaxY);
-			break;
-		case -1: // Nether
-			this.runGenerator(this.gen_fire, world, random, chunkX, chunkZ,
-					ModConfig.crystalSpawnChance, 1, 128);
-		case 1: // The End
 			this.runGenerator(this.gen_memory, world, random, chunkX, chunkZ,
+					ModConfig.crystalSpawnChance, ModConfig.crystalSpawnMinY,
+					ModConfig.crystalSpawnMaxY);
+			this.runGenerator(this.gen_fire, world, random, chunkX, chunkZ,
 					ModConfig.crystalSpawnChance, ModConfig.crystalSpawnMinY,
 					ModConfig.crystalSpawnMaxY);
 			break;
