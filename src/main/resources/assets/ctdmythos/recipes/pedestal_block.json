@@ -3,8 +3,8 @@
     "group": "ctdmythos:pedestal_block",
     "pattern": [
         "CTC",
-        "BBB",
-		"SSS"
+        " B ",
+		" S "
     ],
     "key": {
 		"B": [{"type": "forge:ore_dict", "ore": "blockCrystallizedFire"}],
