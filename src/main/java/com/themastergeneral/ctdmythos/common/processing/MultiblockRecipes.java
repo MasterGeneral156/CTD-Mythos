@@ -49,10 +49,14 @@ public class MultiblockRecipes {
 				ModItems.crystal_grief, 4));
 		addRecipe(new ItemStack(ModBlocks.crystal_oath_ore), new ItemStack(
 				ModItems.crystal_oath, 4));
-		
-		//Archeron Ingot
+
+		// Archeron Ingot
 		addRecipe(new ItemStack(Blocks.TNT), new ItemStack(
 				ModItems.archeron_ingot, 4));
+
+		// Glove
+		addRecipe(new ItemStack(Items.LEATHER), new ItemStack(
+				ModItems.crystal_glove, 1));
 	}
 
 	public void addRecipe(ItemStack mainhand, ItemStack output) {
