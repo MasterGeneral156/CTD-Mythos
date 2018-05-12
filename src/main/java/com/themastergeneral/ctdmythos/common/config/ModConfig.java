@@ -20,10 +20,10 @@ public class ModConfig {
 	public static int bow_draw = 50;
 
 	// World Gen configs
-	public static int crystalSpawnMinY = 1;
-	public static int crystalSpawnMaxY = 255;
-	public static int crystalSpawnChance = 4;
-	public static int crystalSpawnVeinSize = 1;
+	public static int crystalSpawnMinY = 0;
+	public static int crystalSpawnMaxY = 80;
+	public static int crystalSpawnChance = 10;
+	public static int crystalSpawnVeinSize = 4;
 
 	public static void readConfig() {
 		Configuration cfg = Common.config;
