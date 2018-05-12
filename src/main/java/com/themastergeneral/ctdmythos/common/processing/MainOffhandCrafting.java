@@ -7,6 +7,7 @@ import java.util.Map.Entry;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.oredict.OreDictionary;
 
 import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.Maps;
@@ -28,50 +29,53 @@ public class MainOffhandCrafting {
 	}
 
 	private MainOffhandCrafting() {
-		this.addRecipe(new ItemStack(Blocks.TNT, 1), new ItemStack(
+		addRecipe(new ItemStack(Blocks.TNT, 1), new ItemStack(
 				ModItems.crystal_fire, 1), new ItemStack(
 				ModItems.archeron_ingot, 2));
-		this.addRecipe(new ItemStack(Items.BOOK, 1), new ItemStack(
+		addRecipe(new ItemStack(Items.BOOK, 1), new ItemStack(
 				ModItems.crystal_oath, 1), new ItemStack(ModItems.xptome, 1));
 		// Ore Doubling
-		this.addRecipe(new ItemStack(Blocks.IRON_ORE, 1), new ItemStack(
+		addRecipe(new ItemStack(Blocks.IRON_ORE, 1), new ItemStack(
 				ModItems.node_ore_double, 1),
 				new ItemStack(Items.IRON_INGOT, 2));
-		this.addRecipe(new ItemStack(Blocks.GOLD_ORE, 1), new ItemStack(
+		addRecipe(new ItemStack(Blocks.GOLD_ORE, 1), new ItemStack(
 				ModItems.node_ore_double, 1),
 				new ItemStack(Items.GOLD_INGOT, 2));
-		this.addRecipe(new ItemStack(Blocks.REDSTONE_ORE, 1), new ItemStack(
+		addRecipe(new ItemStack(Blocks.REDSTONE_ORE, 1), new ItemStack(
 				ModItems.node_ore_double, 1), new ItemStack(Items.REDSTONE, 2));
-		this.addRecipe(new ItemStack(Blocks.DIAMOND_ORE, 1), new ItemStack(
+		addRecipe(new ItemStack(Blocks.DIAMOND_ORE, 1), new ItemStack(
 				ModItems.node_ore_double, 1), new ItemStack(Items.DIAMOND, 2));
-		this.addRecipe(new ItemStack(Blocks.EMERALD_ORE, 1), new ItemStack(
+		addRecipe(new ItemStack(Blocks.EMERALD_ORE, 1), new ItemStack(
 				ModItems.node_ore_double, 1), new ItemStack(Items.EMERALD, 2));
-		this.addRecipe(new ItemStack(Blocks.COAL_ORE, 1), new ItemStack(
+		addRecipe(new ItemStack(Blocks.COAL_ORE, 1), new ItemStack(
 				ModItems.node_ore_double, 1), new ItemStack(Items.COAL, 2));
-		this.addRecipe(new ItemStack(Blocks.QUARTZ_ORE, 1), new ItemStack(
+		addRecipe(new ItemStack(Blocks.QUARTZ_ORE, 1), new ItemStack(
 				ModItems.node_ore_double, 1), new ItemStack(Items.QUARTZ, 2));
-		this.addRecipe(new ItemStack(ModBlocks.crystal_fire_ore, 1),
+		addRecipe(new ItemStack(ModBlocks.crystal_fire_ore, 1),
 				new ItemStack(ModItems.node_ore_double, 1), new ItemStack(
 						ModItems.crystal_fire, 2));
-		this.addRecipe(new ItemStack(ModBlocks.crystal_woe_ore, 1),
+		addRecipe(new ItemStack(ModBlocks.crystal_woe_ore, 1),
 				new ItemStack(ModItems.node_ore_double, 1), new ItemStack(
 						ModItems.crystal_woe, 2));
-		this.addRecipe(new ItemStack(ModBlocks.crystal_memory_ore, 1),
+		addRecipe(new ItemStack(ModBlocks.crystal_memory_ore, 1),
 				new ItemStack(ModItems.node_ore_double, 1), new ItemStack(
 						ModItems.crystal_memory, 2));
-		this.addRecipe(new ItemStack(ModBlocks.crystal_grief_ore, 1),
+		addRecipe(new ItemStack(ModBlocks.crystal_grief_ore, 1),
 				new ItemStack(ModItems.node_ore_double, 1), new ItemStack(
 						ModItems.crystal_grief, 2));
-		this.addRecipe(new ItemStack(ModBlocks.crystal_oath_ore, 1),
+		addRecipe(new ItemStack(ModBlocks.crystal_oath_ore, 1),
 				new ItemStack(ModItems.node_ore_double, 1), new ItemStack(
 						ModItems.crystal_oath, 2));
-		this.addRecipe(new ItemStack(Blocks.LAPIS_ORE), new ItemStack(
+		addRecipe(new ItemStack(Blocks.LAPIS_ORE), new ItemStack(
 				ModItems.node_ore_double), new ItemStack(Items.DYE, 2, 4));
+		addRecipe(new ItemStack(Blocks.WEB), new ItemStack(
+				ModItems.grimshears, 1, OreDictionary.WILDCARD_VALUE),
+				new ItemStack(ModItems.ethereal_fiber, 4));
 	}
 
 	public void addRecipe(ItemStack mainhand, ItemStack offhand,
 			ItemStack output) {
-		this.addRecipeItem(mainhand, offhand, output);
+		addRecipeItem(mainhand, offhand, output);
 	}
 
 	public void addRecipeItem(ItemStack mainhand, ItemStack offhand,
