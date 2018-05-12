@@ -22,8 +22,6 @@ public class MultiblockRecipes {
 	}
 
 	private MultiblockRecipes() {
-		addRecipe(new ItemStack(ModItems.humansoul), new ItemStack(
-				ModItems.humaneffigy));
 		// Ore Doubling
 		this.addRecipe(new ItemStack(Blocks.IRON_ORE, 1), new ItemStack(
 				Items.IRON_INGOT, 4));
@@ -55,10 +53,6 @@ public class MultiblockRecipes {
 		// Archeron Ingot
 		addRecipe(new ItemStack(Blocks.TNT), new ItemStack(
 				ModItems.archeron_ingot, 4));
-
-		// Glove
-		addRecipe(new ItemStack(Items.LEATHER), new ItemStack(
-				ModItems.crystal_glove, 1));
 
 		addRecipe(new ItemStack(Items.TOTEM_OF_UNDYING), new ItemStack(
 				ModItems.humansoul, 4));
