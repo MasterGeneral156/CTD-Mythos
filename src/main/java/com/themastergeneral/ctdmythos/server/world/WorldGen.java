@@ -74,7 +74,8 @@ public class WorldGen implements IWorldGenerator {
 			Random rand, int chunk_X, int chunk_Z, int chancesToSpawn,
 			int minHeight, int maxHeight) {
 		if (minHeight < 0 || maxHeight > 256 || minHeight > maxHeight)
-			CTDMythos.logger.error("Illegal height arguments for WorldGenerator.");
+			CTDMythos.logger
+					.error("Illegal height arguments for WorldGenerator.");
 		int heightDiff = maxHeight - minHeight + 1;
 		for (int i = 0; i < chancesToSpawn; i++) {
 			int x = chunk_X * 16 + rand.nextInt(16);
