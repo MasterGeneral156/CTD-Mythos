@@ -87,7 +87,7 @@ public class IMCHandler {
 
 	public static final String ADD_MAINOFF_CRAFT = "add_main_offhand_craft";
 	public static final String REMOVE_MAINOFF_CRAFT = "remove_main_offhand_craft";
-	
+
 	public static final String ADD_MB_CRAFT = "add_mb_craft";
 	public static final String REMOVE_MB_CRAFT = "remove_mb_craft";
 }
