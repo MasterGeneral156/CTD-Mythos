@@ -1,5 +1,5 @@
 {
-    "display": 
+  "display": 
 	{
         "icon": 
 		{
@@ -18,20 +18,61 @@
 		"show_toast": true,
 		"announce_to_chat": true
     },
-    "criteria": 
-	{
-        "core": 
-		{
-            "trigger": "minecraft:inventory_changed",
-            "conditions": 
-			{
-                "items": 
-				[
-                    {
-                        "item": "ctdmythos:crystal_fire"
-                    }
-                ]
-            }
-        }
+  "criteria": {
+    "fire": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "ctdmythos:crystal_fire"
+          }
+        ]
+      }
+    },
+	"grief": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "ctdmythos:crystal_grief"
+          }
+        ]
+      }
+    },
+	"oath": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "ctdmythos:crystal_oath"
+          }
+        ]
+      }
+    },
+	"memory": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "ctdmythos:crystal_memory"
+          }
+        ]
+      }
+    },
+	"woe": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "ctdmythos:crystal_woe"
+          }
+        ]
+      }
     }
+  },
+  "requirements": [
+    [
+      "fire", "grief", "oath", "memory", "woe"
+    ]
+  ]
 }
