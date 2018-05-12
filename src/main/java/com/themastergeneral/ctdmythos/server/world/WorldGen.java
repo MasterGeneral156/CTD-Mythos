@@ -20,25 +20,25 @@ import net.minecraftforge.fml.common.IWorldGenerator;
 public class WorldGen implements IWorldGenerator {
 
 	private WorldGenerator gen_fire;
-	private CrystalGenerator gen_oath;
-	private CrystalGenerator gen_woe;
+	private WorldGenerator gen_oath;
+	private WorldGenerator gen_woe;
 	private WorldGenerator gen_memory;
-	private CrystalGenerator gen_grief;
+	private WorldGenerator gen_grief;
 
 	public WorldGen() {
 		this.gen_fire = new WorldGenMinable(
 				ModBlocks.crystal_fire_ore.getDefaultState(),
 				ModConfig.crystalSpawnChance);
-		this.gen_oath = new CrystalGenerator(
+		this.gen_oath = new WorldGenMinable(
 				ModBlocks.crystal_oath_ore.getDefaultState(),
 				ModConfig.crystalSpawnVeinSize);
 		this.gen_memory = new WorldGenMinable(
 				ModBlocks.crystal_memory_ore.getDefaultState(),
 				ModConfig.crystalSpawnVeinSize);
-		this.gen_grief = new CrystalGenerator(
+		this.gen_grief = new WorldGenMinable(
 				ModBlocks.crystal_grief_ore.getDefaultState(),
 				ModConfig.crystalSpawnVeinSize);
-		this.gen_woe = new CrystalGenerator(
+		this.gen_woe = new WorldGenMinable(
 				ModBlocks.crystal_woe_ore.getDefaultState(),
 				ModConfig.crystalSpawnVeinSize);
 	}
