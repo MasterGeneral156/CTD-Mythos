@@ -164,26 +164,23 @@ public class PedestalTileEntity extends TileEntity implements ITickable {
 	}
 
 	public boolean validMB() {
-		if (!world.isRemote) {
-			BlockPos startpos = new BlockPos(pos.getX(), pos.getY(), pos.getZ());
-			BlockPos underpos = new BlockPos(pos.getX(), pos.getY() - 1,
-					pos.getZ());
-			BlockPos northpos = new BlockPos(pos.getX() + 1, pos.getY() - 1,
-					pos.getZ());
-			BlockPos southpos = new BlockPos(pos.getX() - 1, pos.getY() - 1,
-					pos.getZ());
-			BlockPos eastpos = new BlockPos(pos.getX(), pos.getY() - 1,
-					pos.getZ() + 1);
-			BlockPos westpos = new BlockPos(pos.getX(), pos.getY() - 1,
-					pos.getZ() - 1);
-			if (world.getBlockState(startpos).getBlock() == ModBlocks.pedestal_block) {
-				if (world.getBlockState(underpos).getBlock() == ModBlocks.crystal_fire_brick) {
-					if (world.getBlockState(northpos).getBlock() == ModBlocks.crystal_fire_brick) {
-						if (world.getBlockState(southpos).getBlock() == ModBlocks.crystal_fire_brick) {
-							if (world.getBlockState(eastpos).getBlock() == ModBlocks.crystal_fire_brick) {
-								if (world.getBlockState(westpos).getBlock() == ModBlocks.crystal_fire_brick) {
-									return true;
-								}
+		BlockPos startpos = new BlockPos(pos.getX(), pos.getY(), pos.getZ());
+		BlockPos underpos = new BlockPos(pos.getX(), pos.getY() - 1, pos.getZ());
+		BlockPos northpos = new BlockPos(pos.getX() + 1, pos.getY() - 1,
+				pos.getZ());
+		BlockPos southpos = new BlockPos(pos.getX() - 1, pos.getY() - 1,
+				pos.getZ());
+		BlockPos eastpos = new BlockPos(pos.getX(), pos.getY() - 1,
+				pos.getZ() + 1);
+		BlockPos westpos = new BlockPos(pos.getX(), pos.getY() - 1,
+				pos.getZ() - 1);
+		if (world.getBlockState(startpos).getBlock() == ModBlocks.pedestal_block) {
+			if (world.getBlockState(underpos).getBlock() == ModBlocks.crystal_fire_brick) {
+				if (world.getBlockState(northpos).getBlock() == ModBlocks.crystal_fire_brick) {
+					if (world.getBlockState(southpos).getBlock() == ModBlocks.crystal_fire_brick) {
+						if (world.getBlockState(eastpos).getBlock() == ModBlocks.crystal_fire_brick) {
+							if (world.getBlockState(westpos).getBlock() == ModBlocks.crystal_fire_brick) {
+								return true;
 							}
 						}
 					}
