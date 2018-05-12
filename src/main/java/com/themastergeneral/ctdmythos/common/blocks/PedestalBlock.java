@@ -41,6 +41,8 @@ public class PedestalBlock extends CTDTEBase<PedestalTileEntity> {
 
 	public PedestalBlock(String name) {
 		super(Material.ROCK, name, CTDMythos.MODID);
+		this.setHardness(10F);
+		this.setHarvestLevel("pickaxe", 2);
 	}
 
 	@Override
