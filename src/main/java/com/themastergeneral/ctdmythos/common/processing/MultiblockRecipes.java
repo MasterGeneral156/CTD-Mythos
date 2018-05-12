@@ -65,6 +65,9 @@ public class MultiblockRecipes {
 
 		addRecipe(new ItemStack(Items.KNOWLEDGE_BOOK), new ItemStack(
 				ModItems.xptome));
+
+		addRecipe(new ItemStack(Items.STICK), new ItemStack(
+				ModItems.enchanted_stick));
 	}
 
 	public void addRecipe(ItemStack mainhand, ItemStack output) {
