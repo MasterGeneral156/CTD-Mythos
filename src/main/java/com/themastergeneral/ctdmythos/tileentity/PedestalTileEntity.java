@@ -1,19 +1,25 @@
 package com.themastergeneral.ctdmythos.tileentity;
 
+import java.util.Random;
+
 import javax.annotation.Nullable;
 
 import com.themastergeneral.ctdmythos.CTDMythos;
+import com.themastergeneral.ctdmythos.common.blocks.ModBlocks;
 import com.themastergeneral.ctdmythos.common.processing.MultiblockRecipes;
 import com.themastergeneral.ctdmythos.network.PacketRequestUpdatePedestal;
 import com.themastergeneral.ctdmythos.network.PacketUpdatePedestal;
 
 import net.minecraft.entity.effect.EntityLightningBolt;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ITickable;
 import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.text.TextComponentString;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.items.CapabilityItemHandler;
@@ -101,16 +107,41 @@ public class PedestalTileEntity extends TileEntity implements ITickable {
 
 	@Override
 	public void update() {
-		if (validItem()) {
-			incrementTicks();
-			if (getTicks() == 200 * inventory.getStackInSlot(0).getCount()) {
-				int newtotal = inventory.getStackInSlot(0).getCount()
-						* getOutput().getCount();
-				ItemStack Output = new ItemStack(getOutput().getItem(),
-						newtotal, getOutput().getMetadata());
-				world.addWeatherEffect(new EntityLightningBolt(world, pos
-						.getX(), pos.getY() + 1, pos.getZ(), false));
-				this.inventory.setStackInSlot(0, Output);
+		if (validMB()) {
+			if (validItem()) {
+				incrementTicks();
+				if (getTicks() == 200 * inventory.getStackInSlot(0).getCount()) {
+					int newtotal = inventory.getStackInSlot(0).getCount()
+							* getOutput().getCount();
+					ItemStack Output = new ItemStack(getOutput().getItem(),
+							newtotal, getOutput().getMetadata());
+					world.addWeatherEffect(new EntityLightningBolt(world, pos
+							.getX(), pos.getY() + 1, pos.getZ(), false));
+					this.inventory.setStackInSlot(0, Output);
+					Random randomGenerator = new Random();
+					int actualheal = randomGenerator.nextInt(100);
+					if (actualheal < 3) {
+						world.setBlockState(new BlockPos(pos.getX(),
+								pos.getY() - 1, pos.getZ()), Blocks.BRICK_BLOCK
+								.getDefaultState());
+						world.setBlockState(
+								new BlockPos(pos.getX() + 1, pos.getY() - 1,
+										pos.getZ()), Blocks.BRICK_BLOCK
+										.getDefaultState());
+						world.setBlockState(
+								new BlockPos(pos.getX() - 1, pos.getY() - 1,
+										pos.getZ()), Blocks.BRICK_BLOCK
+										.getDefaultState());
+						world.setBlockState(new BlockPos(pos.getX(),
+								pos.getY() - 1, pos.getZ() + 1),
+								Blocks.BRICK_BLOCK.getDefaultState());
+						world.setBlockState(new BlockPos(pos.getX(),
+								pos.getY() - 1, pos.getZ() - 1),
+								Blocks.BRICK_BLOCK.getDefaultState());
+					}
+					resetTicks();
+				}
+			} else {
 				resetTicks();
 			}
 		} else {
@@ -130,6 +161,36 @@ public class PedestalTileEntity extends TileEntity implements ITickable {
 	public ItemStack getOutput() {
 		return MultiblockRecipes.instance().getRecipeResult(
 				this.inventory.getStackInSlot(0));
+	}
+
+	public boolean validMB() {
+		if (!world.isRemote) {
+			BlockPos startpos = new BlockPos(pos.getX(), pos.getY(), pos.getZ());
+			BlockPos underpos = new BlockPos(pos.getX(), pos.getY() - 1,
+					pos.getZ());
+			BlockPos northpos = new BlockPos(pos.getX() + 1, pos.getY() - 1,
+					pos.getZ());
+			BlockPos southpos = new BlockPos(pos.getX() - 1, pos.getY() - 1,
+					pos.getZ());
+			BlockPos eastpos = new BlockPos(pos.getX(), pos.getY() - 1,
+					pos.getZ() + 1);
+			BlockPos westpos = new BlockPos(pos.getX(), pos.getY() - 1,
+					pos.getZ() - 1);
+			if (world.getBlockState(startpos).getBlock() == ModBlocks.pedestal_block) {
+				if (world.getBlockState(underpos).getBlock() == ModBlocks.crystal_fire_brick) {
+					if (world.getBlockState(northpos).getBlock() == ModBlocks.crystal_fire_brick) {
+						if (world.getBlockState(southpos).getBlock() == ModBlocks.crystal_fire_brick) {
+							if (world.getBlockState(eastpos).getBlock() == ModBlocks.crystal_fire_brick) {
+								if (world.getBlockState(westpos).getBlock() == ModBlocks.crystal_fire_brick) {
+									return true;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		return false;
 	}
 
 }
