@@ -10,6 +10,8 @@ import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemArrow;
 import net.minecraft.item.ItemStack;
 import net.minecraft.stats.StatList;
+import net.minecraft.util.ActionResult;
+import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.text.TextComponentString;
@@ -41,7 +43,10 @@ public class LongBowItem extends CTDBow {
 					worldIn, entityplayer, i, !itemstack.isEmpty() || flag);
 			if (i < ModConfig.bow_draw) {
 				if (!worldIn.isRemote) {
-					entityLiving.sendMessage(new TextComponentString(i + " / " + ModConfig.bow_draw + " ticks required."));
+					EntityPlayer playerIn = (EntityPlayer) entityLiving;
+					playerIn.getCooldownTracker().setCooldown(this, 0);
+					entityLiving.sendMessage(new TextComponentString(i + " / "
+							+ ModConfig.bow_draw + " ticks required."));
 				}
 				return;
 			}
@@ -67,7 +72,8 @@ public class LongBowItem extends CTDBow {
 						entityarrow.setAim(entityplayer,
 								entityplayer.rotationPitch,
 								entityplayer.rotationYaw, 0.0F, f * 3.0F, 1.0F);
-						entityarrow.setDamage(entityarrow.getDamage() * ModConfig.bow_multiplier);
+						entityarrow.setDamage(entityarrow.getDamage()
+								* ModConfig.bow_multiplier);
 
 						if (f == 1.0F) {
 							entityarrow.setIsCritical(true);
@@ -146,5 +152,27 @@ public class LongBowItem extends CTDBow {
 
 	protected boolean isArrow(ItemStack stack) {
 		return stack.getItem() instanceof ItemArrow;
+	}
+
+	@Override
+	public ActionResult<ItemStack> onItemRightClick(World worldIn,
+			EntityPlayer playerIn, EnumHand handIn) {
+		ItemStack itemstack = playerIn.getHeldItem(handIn);
+		boolean flag = !this.findAmmo(playerIn).isEmpty();
+
+		ActionResult<ItemStack> ret = net.minecraftforge.event.ForgeEventFactory
+				.onArrowNock(itemstack, worldIn, playerIn, handIn, flag);
+		if (ret != null)
+			return ret;
+
+		if (!playerIn.capabilities.isCreativeMode && !flag) {
+			return flag ? new ActionResult(EnumActionResult.PASS, itemstack)
+					: new ActionResult(EnumActionResult.FAIL, itemstack);
+		} else {
+			playerIn.setActiveHand(handIn);
+			playerIn.getCooldownTracker().setCooldown(this, ModConfig.bow_draw);
+			return new ActionResult<ItemStack>(EnumActionResult.SUCCESS,
+					itemstack);
+		}
 	}
 }
