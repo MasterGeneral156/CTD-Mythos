@@ -4,7 +4,7 @@
     "pattern": [
         "WMG",
         "RLR",
-		"FOE"
+		"FEO"
     ],
     "key": {
 		"W": [{"type": "forge:ore_dict", "ore": "gemCrystallizedWoe"}],
@@ -13,7 +13,7 @@
         "L": [{"type": "forge:ore_dict", "ore": "leather"}],
         "F": [{"type": "forge:ore_dict", "ore": "gemCrystallizedFire"}],
         "O": [{"type": "forge:ore_dict", "ore": "gemCrystallizedOath"}],
-        "E": [{"type": "forge:ore_dict", "ore": "gemCrystallizedEnder"}],
+        "E": { "item": "ctdmythos:xptome" },
 		"M": [{"type": "forge:ore_dict", "ore": "gemCrystallizedMemory"}]
     },
     "result": {
