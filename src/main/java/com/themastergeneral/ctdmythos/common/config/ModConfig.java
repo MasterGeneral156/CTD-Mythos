@@ -18,6 +18,7 @@ public class ModConfig {
 	public static int reachAmuletRange = 10;
 	public static int creativereachAmuletRange = 255;
 	public static int bow_draw = 50;
+	public static int bow_multiplier = 3;
 
 	// World Gen configs
 	public static int crystalSpawnMinY = 0;
@@ -61,6 +62,10 @@ public class ModConfig {
 		bow_draw = cfg.getInt("Longbow Draw Time",
 				CATEGORY_GENERAL, bow_draw, 1, 32766,
 				"How many ticks required before you can fire the longbow.");
+		
+		bow_multiplier = cfg.getInt("Longbow Damage Multiplier",
+				CATEGORY_GENERAL, bow_draw, 2, 10,
+				"Normal bow damage multiplied by this number.");
 
 		// Config for world generation
 		crystalSpawnMinY = cfg.getInt(

@@ -51,7 +51,7 @@ public class LongBowItem extends CTDBow {
 					itemstack = new ItemStack(Items.ARROW);
 				}
 
-				float f = getArrowVelocity(i*2);
+				float f = getArrowVelocity(i);
 
 				if ((double) f >= 0.1D) {
 					boolean flag1 = entityplayer.capabilities.isCreativeMode
@@ -67,7 +67,7 @@ public class LongBowItem extends CTDBow {
 						entityarrow.setAim(entityplayer,
 								entityplayer.rotationPitch,
 								entityplayer.rotationYaw, 0.0F, f * 3.0F, 1.0F);
-						entityarrow.setDamage(entityarrow.getDamage() * 3);
+						entityarrow.setDamage(entityarrow.getDamage() * ModConfig.bow_multiplier);
 
 						if (f == 1.0F) {
 							entityarrow.setIsCritical(true);
