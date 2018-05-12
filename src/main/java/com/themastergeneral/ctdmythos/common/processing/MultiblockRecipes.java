@@ -60,6 +60,9 @@ public class MultiblockRecipes {
 
 		addRecipe(new ItemStack(Items.TOTEM_OF_UNDYING), new ItemStack(
 				ModItems.humansoul, 4));
+
+		addRecipe(new ItemStack(Items.KNOWLEDGE_BOOK), new ItemStack(
+				ModItems.xptome));
 	}
 
 	public void addRecipe(ItemStack mainhand, ItemStack output) {
