@@ -50,14 +50,15 @@ public class CrystallizedFire extends BaseItem {
 	@Override
 	public ActionResult<ItemStack> onItemRightClick(World worldIn,
 			EntityPlayer playerIn, EnumHand handIn) {
-		ItemStack offhand = playerIn.getHeldItemOffhand();
-		ItemStack mainhand = playerIn.getHeldItemMainhand();
-		// Create Archeron Ingot with TNT and Crystallized Fire
-		if (MainOffhandCrafting.instance().getRecipeResult(mainhand) != ItemStack.EMPTY) {
-			if (MainOffhandCrafting.instance().getRecipeOffhand(mainhand) != ItemStack.EMPTY) {
-				if (MainOffhandCrafting.instance().getRecipeOffhand(mainhand)
-						.getItem() == offhand.getItem()) {
-					if (!worldIn.isRemote) {
+		if (!worldIn.isRemote) {
+			ItemStack offhand = playerIn.getHeldItemOffhand();
+			ItemStack mainhand = playerIn.getHeldItemMainhand();
+			// Create Archeron Ingot with TNT and Crystallized Fire
+			if (MainOffhandCrafting.instance().getRecipeResult(mainhand) != ItemStack.EMPTY) {
+				if (MainOffhandCrafting.instance().getRecipeOffhand(mainhand) != ItemStack.EMPTY) {
+					if (MainOffhandCrafting.instance()
+							.getRecipeOffhand(mainhand).getItem() == offhand
+							.getItem()) {
 						mainhand.shrink(1);
 						offhand.shrink(MainOffhandCrafting.instance()
 								.getRecipeOffhand(mainhand).getCount());
@@ -66,43 +67,43 @@ public class CrystallizedFire extends BaseItem {
 								MainOffhandCrafting.instance().getRecipeResult(
 										mainhand)));
 					}
-					worldIn.playSound(playerIn, playerIn.getPosition(),
-							ModSounds.spell_complete, SoundCategory.PLAYERS,
-							1.0F, 1.0F);
 				}
 			}
-		}
-		if (playerIn.isSneaking()) {
-			Block blocktotest = Blocks.BRICK_BLOCK;
-			boolean flag = this.containedBlock == blocktotest;
-			RayTraceResult raytraceresult = this.rayTrace(worldIn, playerIn,
-					flag);
-			if (raytraceresult == null) {
-				return new ActionResult(EnumActionResult.PASS, mainhand);
-			} else if (raytraceresult.typeOfHit != RayTraceResult.Type.BLOCK) {
-				return new ActionResult(EnumActionResult.PASS, mainhand);
-			} else {
-				BlockPos blockpos = raytraceresult.getBlockPos();
-				if (!worldIn.isBlockModifiable(playerIn, blockpos)) {
-					return new ActionResult(EnumActionResult.FAIL, mainhand);
-				}
-				if (!playerIn.canPlayerEdit(
-						blockpos.offset(raytraceresult.sideHit),
-						raytraceresult.sideHit, mainhand)) {
-					return new ActionResult(EnumActionResult.FAIL, mainhand);
+			if (playerIn.isSneaking()) {
+				Block blocktotest = Blocks.BRICK_BLOCK;
+				boolean flag = this.containedBlock == blocktotest;
+				RayTraceResult raytraceresult = this.rayTrace(worldIn,
+						playerIn, flag);
+				if (raytraceresult == null) {
+					return new ActionResult(EnumActionResult.PASS, mainhand);
+				} else if (raytraceresult.typeOfHit != RayTraceResult.Type.BLOCK) {
+					return new ActionResult(EnumActionResult.PASS, mainhand);
 				} else {
-					IBlockState iblockstate = worldIn.getBlockState(blockpos);
-					if (iblockstate == blocktotest.getDefaultState()) {
-						worldIn.setBlockState(blockpos,
-								ModBlocks.crystal_fire_brick.getDefaultState(),
-								11);
-						EntityLightningBolt lightning = new EntityLightningBolt(
-								worldIn, blockpos.getX(), blockpos.getY(),
-								blockpos.getZ(), false);
-						worldIn.addWeatherEffect(lightning);
-						return new ActionResult(EnumActionResult.PASS, mainhand);
-					} else {
+					BlockPos blockpos = raytraceresult.getBlockPos();
+					if (!worldIn.isBlockModifiable(playerIn, blockpos)) {
 						return new ActionResult(EnumActionResult.FAIL, mainhand);
+					}
+					if (!playerIn.canPlayerEdit(
+							blockpos.offset(raytraceresult.sideHit),
+							raytraceresult.sideHit, mainhand)) {
+						return new ActionResult(EnumActionResult.FAIL, mainhand);
+					} else {
+						IBlockState iblockstate = worldIn
+								.getBlockState(blockpos);
+						if (iblockstate == blocktotest.getDefaultState()) {
+							worldIn.setBlockState(blockpos,
+									ModBlocks.crystal_fire_brick
+											.getDefaultState(), 11);
+							EntityLightningBolt lightning = new EntityLightningBolt(
+									worldIn, blockpos.getX(), blockpos.getY(),
+									blockpos.getZ(), false);
+							worldIn.addWeatherEffect(lightning);
+							return new ActionResult(EnumActionResult.PASS,
+									mainhand);
+						} else {
+							return new ActionResult(EnumActionResult.FAIL,
+									mainhand);
+						}
 					}
 				}
 			}
