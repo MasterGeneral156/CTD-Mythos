@@ -12,6 +12,8 @@ public class OreDict {
 		OreDictionary.registerOre("gemCrystallized", ModItems.crystal_grief);
 		OreDictionary.registerOre("gemCrystallized", ModItems.crystal_memory);
 		OreDictionary.registerOre("gemCrystallized", ModItems.crystal_oath);
+		
+		OreDictionary.registerOre("stickEnchanted", ModItems.enchanted_stick);
 
 		OreDictionary.registerOre("blockCrystallized",
 				ModBlocks.crystal_fire_block);
