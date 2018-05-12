@@ -17,6 +17,7 @@ public class ModConfig {
 	public static int StoredLevels = 5;
 	public static int reachAmuletRange = 10;
 	public static int creativereachAmuletRange = 255;
+	public static int bow_draw = 50;
 
 	// World Gen configs
 	public static int crystalSpawnMinY = 1;
@@ -56,6 +57,10 @@ public class ModConfig {
 		StoredLevels = cfg.getInt("Levels stored in Tome of Knowledge",
 				CATEGORY_GENERAL, StoredLevels, 1, 32766,
 				"How many levels should be stored in a Tome of Knowledge");
+		
+		bow_draw = cfg.getInt("Longbow Draw Time",
+				CATEGORY_GENERAL, bow_draw, 1, 32766,
+				"How many ticks required before you can fire the longbow.");
 
 		// Config for world generation
 		crystalSpawnMinY = cfg.getInt(
