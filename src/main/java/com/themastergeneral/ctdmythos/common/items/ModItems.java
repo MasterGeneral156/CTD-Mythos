@@ -73,6 +73,8 @@ public class ModItems extends RegisterItem {
 	public static TrinketHealth trinketHealth;
 	
 	public static MBValidatorItem mb_validator;
+	
+	public static BaseItem enchanted_stick;
 
 	public static void registerItems() {
 		humaneffigy = register(new HumanEffigyItem("humaneffigy"));
@@ -89,6 +91,7 @@ public class ModItems extends RegisterItem {
 		crystal_oath = register(new CrystallizedOath("crystal_oath"));
 		crystal_glove = register(new BaseItem("crystal_glove"));
 		ethereal_fiber = register(new BaseItem("ethereal_fiber"));
+		enchanted_stick = register(new BaseItem("enchanted_stick"));
 
 		longbow = register(new LongBowItem("longbow", 144000, 640));
 
