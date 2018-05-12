@@ -57,6 +57,9 @@ public class MultiblockRecipes {
 		// Glove
 		addRecipe(new ItemStack(Items.LEATHER), new ItemStack(
 				ModItems.crystal_glove, 1));
+
+		addRecipe(new ItemStack(Items.TOTEM_OF_UNDYING), new ItemStack(
+				ModItems.humansoul, 4));
 	}
 
 	public void addRecipe(ItemStack mainhand, ItemStack output) {
