@@ -7,8 +7,8 @@
 		"SST"
     ],
     "key": {
-		"T": [{"type": "forge:ore_dict", "ore": "string"}],
-		"S": [{"type": "forge:ore_dict", "ore": "stickWood"}]
+		"S": [{"type": "forge:ore_dict", "ore": "stickEnchanted"}],
+		"T": { "item": "ctdmythos:ethereal_fiber" }
     },
     "result": {
         "item": "ctdmythos:longbow",
