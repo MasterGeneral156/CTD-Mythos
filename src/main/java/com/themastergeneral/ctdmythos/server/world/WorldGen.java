@@ -81,7 +81,6 @@ public class WorldGen implements IWorldGenerator {
 			int z = chunk_Z * 16 + rand.nextInt(16);
 			BlockPos Pos = new BlockPos(x, y, z);
 			generator.generate(world, rand, Pos);
-			CTDMythos.logger.info("Spawned at " + Pos);
 		}
 	}
 
