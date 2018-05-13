@@ -1,6 +1,7 @@
 package com.themastergeneral.ctdmythos.common.processing;
 
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.oredict.OreDictionary;
 
 import com.themastergeneral.ctdmythos.common.blocks.ModBlocks;
 import com.themastergeneral.ctdmythos.common.items.ModItems;
@@ -17,6 +18,15 @@ public class Processing {
 				new ItemStack(ModItems.crystal_grief, 3), 0F);
 		Handlers.addCrystalRecipe(new ItemStack(ModBlocks.crystal_oath_ore),
 				new ItemStack(ModItems.crystal_oath, 3), 0F);
+
+		// Enderfuge only
+		Handlers.addEnderfugeRecipe(new ItemStack(ModItems.grimshears, 1,
+				OreDictionary.WILDCARD_VALUE), new ItemStack(
+				ModItems.archeron_ingot));
+		
+		Handlers.addEnderfugeRecipe(new ItemStack(ModItems.gladius_sword, 1,
+				OreDictionary.WILDCARD_VALUE), new ItemStack(
+				ModItems.archeron_ingot));
 	}
 
 }

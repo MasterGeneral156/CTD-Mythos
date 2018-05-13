@@ -15,4 +15,8 @@ public class Handlers {
 		EnderfugeIMC.addEnderfugeSmelt(enderfuge, output, xp);
 		GameRegistry.addSmelting(input, output, xp);
 	}
+
+	public static void addEnderfugeRecipe(ItemStack input, ItemStack output) {
+		EnderfugeIMC.addEnderfugeSmelt(input, output, 0F);
+	}
 }
