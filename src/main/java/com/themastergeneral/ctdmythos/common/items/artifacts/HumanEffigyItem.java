@@ -53,6 +53,6 @@ public class HumanEffigyItem extends BaseItem {
 	public void onUpdate(ItemStack stack, World worldIn, Entity entityIn,
 			int itemSlot, boolean isSelected) {
 		((EntityLivingBase) entityIn).addPotionEffect(new PotionEffect(
-				MobEffects.REGENERATION, 20, 0, true, false));
+				MobEffects.REGENERATION, 3, 5, true, false));
 	}
 }
