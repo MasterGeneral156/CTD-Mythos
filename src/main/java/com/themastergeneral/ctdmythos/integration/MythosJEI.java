@@ -16,8 +16,6 @@ public class MythosJEI implements IModPlugin {
 				"jei.cowblooddrop.desc");
 		registry.addDescription(new ItemStack(ModItems.humansoul),
 				"jei.humansoul.desc");
-		registry.addDescription(new ItemStack(ModItems.crystal_memory),
-				"jei.crystalizedmemory.desc");
 		registry.addDescription(new ItemStack(ModItems.teleport_wand),
 				"jei.teleport_wand.desc");
 		registry.addDescription(new ItemStack(ModItems.crystal_glove),
