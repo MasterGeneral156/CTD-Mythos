@@ -10,7 +10,7 @@
 		"B": [{"type": "forge:ore_dict", "ore": "blockCrystallizedFire"}],
         "S": [{"type": "forge:ore_dict", "ore": "fireCrystallizedBrick"}],
 		"C": { "item": "ctdmythos:bucketcowblood" },
-        "T": { "item": "ctdmythos:xptome" }
+        "T": { "item": "minecraft:enchanted_book", "data": 32767 }
     },
     "result": {
         "item": "ctdmythos:pedestal_block",
