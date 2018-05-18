@@ -48,8 +48,8 @@ public class MultiblockRecipes {
 				ModItems.crystal_grief, 2));
 		addRecipe(new ItemStack(ModBlocks.crystal_oath_ore), new ItemStack(
 				ModItems.crystal_oath, 2));
-		addRecipe(new ItemStack(Blocks.LAPIS_ORE), new ItemStack(Items.DYE, 4,
-				2));
+		addRecipe(new ItemStack(Blocks.LAPIS_ORE), new ItemStack(Items.DYE, 2,
+				4));
 		addRecipe(new ItemStack(Blocks.WEB, 2), new ItemStack(
 				ModItems.ethereal_fiber, 8));
 
