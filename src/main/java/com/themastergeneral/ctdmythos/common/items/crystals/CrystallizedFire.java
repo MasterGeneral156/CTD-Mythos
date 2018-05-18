@@ -26,7 +26,6 @@ import com.themastergeneral.ctdmythos.common.blocks.ModBlocks;
 import com.themastergeneral.ctdmythos.common.effects.EffectUtils;
 import com.themastergeneral.ctdmythos.common.items.ModItems;
 import com.themastergeneral.ctdmythos.common.items.misc.BaseItem;
-import com.themastergeneral.ctdmythos.common.processing.MainOffhandCrafting;
 
 public class CrystallizedFire extends BaseItem {
 
@@ -53,22 +52,6 @@ public class CrystallizedFire extends BaseItem {
 		if (!worldIn.isRemote) {
 			ItemStack offhand = playerIn.getHeldItemOffhand();
 			ItemStack mainhand = playerIn.getHeldItemMainhand();
-			// Create Archeron Ingot with TNT and Crystallized Fire
-			if (MainOffhandCrafting.instance().getRecipeResult(mainhand) != ItemStack.EMPTY) {
-				if (MainOffhandCrafting.instance().getRecipeOffhand(mainhand) != ItemStack.EMPTY) {
-					if (MainOffhandCrafting.instance()
-							.getRecipeOffhand(mainhand).getItem() == offhand
-							.getItem()) {
-						mainhand.shrink(1);
-						offhand.shrink(MainOffhandCrafting.instance()
-								.getRecipeOffhand(mainhand).getCount());
-						worldIn.spawnEntity(new EntityItem(worldIn,
-								playerIn.posX, playerIn.posY, playerIn.posZ,
-								MainOffhandCrafting.instance().getRecipeResult(
-										mainhand)));
-					}
-				}
-			}
 			if (playerIn.isSneaking()) {
 				Block blocktotest = Blocks.BRICK_BLOCK;
 				boolean flag = this.containedBlock == blocktotest;

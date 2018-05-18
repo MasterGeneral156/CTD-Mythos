@@ -9,7 +9,6 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.item.ItemStack;
 
 import com.google.common.collect.Lists;
-import com.themastergeneral.ctdmythos.common.processing.MainOffhandCrafting;
 import com.themastergeneral.ctdmythos.common.processing.MultiblockRecipes;
 
 public class MultiblockJEI implements IRecipeWrapper {

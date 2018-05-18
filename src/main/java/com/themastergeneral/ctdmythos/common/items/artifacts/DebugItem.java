@@ -11,7 +11,6 @@ import net.minecraft.world.World;
 
 import com.themastergeneral.ctdmythos.CTDMythos;
 import com.themastergeneral.ctdmythos.common.items.misc.BaseItem;
-import com.themastergeneral.ctdmythos.common.processing.MainOffhandCrafting;
 
 public class DebugItem extends BaseItem {
 

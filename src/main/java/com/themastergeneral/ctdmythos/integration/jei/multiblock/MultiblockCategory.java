@@ -10,7 +10,6 @@ import net.minecraft.util.ResourceLocation;
 
 import com.themastergeneral.ctdmythos.CTDMythos;
 import com.themastergeneral.ctdmythos.integration.jei.CTDMythosJEICategory;
-import com.themastergeneral.ctdmythos.integration.jei.mainoff.MainOffJEI;
 
 public class MultiblockCategory extends CTDMythosJEICategory<MultiblockJEI> {
 	private final IDrawable background;

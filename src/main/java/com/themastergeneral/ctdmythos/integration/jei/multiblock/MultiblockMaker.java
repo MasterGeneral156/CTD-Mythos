@@ -9,9 +9,7 @@ import mezz.jei.api.recipe.IStackHelper;
 import net.minecraft.item.ItemStack;
 
 import com.google.common.collect.Multimap;
-import com.themastergeneral.ctdmythos.common.processing.MainOffhandCrafting;
 import com.themastergeneral.ctdmythos.common.processing.MultiblockRecipes;
-import com.themastergeneral.ctdmythos.integration.jei.mainoff.MainOffJEI;
 
 public class MultiblockMaker {
 	private MultiblockMaker() {

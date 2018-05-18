@@ -19,7 +19,6 @@ import com.themastergeneral.ctdmythos.client.sound.ModSounds;
 import com.themastergeneral.ctdmythos.common.blocks.ModBlocks;
 import com.themastergeneral.ctdmythos.common.config.ModConfig;
 import com.themastergeneral.ctdmythos.common.items.misc.BaseItem;
-import com.themastergeneral.ctdmythos.common.processing.MainOffhandCrafting;
 
 public class CrystallizedWoe extends BaseItem {
 

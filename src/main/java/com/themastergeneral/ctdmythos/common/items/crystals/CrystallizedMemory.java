@@ -19,7 +19,6 @@ import com.themastergeneral.ctdmythos.client.sound.ModSounds;
 import com.themastergeneral.ctdmythos.common.blocks.ModBlocks;
 import com.themastergeneral.ctdmythos.common.config.ModConfig;
 import com.themastergeneral.ctdmythos.common.items.misc.BaseItem;
-import com.themastergeneral.ctdmythos.common.processing.MainOffhandCrafting;
 
 public class CrystallizedMemory extends BaseItem {
 
@@ -36,29 +35,6 @@ public class CrystallizedMemory extends BaseItem {
 		if (!worldIn.isRemote) {
 			ItemStack offhand = playerIn.getHeldItemOffhand();
 			ItemStack mainhand = playerIn.getHeldItemMainhand();
-			// Crystal oath + book in offhand to get a tome of XP
-			if (MainOffhandCrafting.instance().getRecipeResult(mainhand) != ItemStack.EMPTY) {
-				if (MainOffhandCrafting.instance().getRecipeOffhand(mainhand) != ItemStack.EMPTY) {
-					if (MainOffhandCrafting.instance()
-							.getRecipeOffhand(mainhand).getItem() == offhand
-							.getItem()) {
-						if (playerIn.experienceLevel >= ModConfig.StoredLevels) {
-							playerIn.addExperienceLevel(-ModConfig.StoredLevels);
-							offhand.shrink(MainOffhandCrafting.instance()
-									.getRecipeOffhand(mainhand).getCount());
-							mainhand.shrink(1);
-							worldIn.spawnEntity(new EntityItem(worldIn,
-									playerIn.posX, playerIn.posY,
-									playerIn.posZ, MainOffhandCrafting
-											.instance().getRecipeResult(
-													mainhand)));
-						}
-					}
-					worldIn.playSound(playerIn, playerIn.getPosition(),
-							ModSounds.spell_complete, SoundCategory.PLAYERS,
-							1.0F, 1.0F);
-				}
-			}
 			if (playerIn.isSneaking()) {
 				Block blocktotest = Blocks.BRICK_BLOCK;
 				boolean flag = this.containedBlock == blocktotest;

@@ -3,7 +3,6 @@ package com.themastergeneral.ctdmythos.common.items.wands;
 import com.themastergeneral.ctdmythos.CTDMythos;
 import com.themastergeneral.ctdmythos.client.sound.ModSounds;
 import com.themastergeneral.ctdmythos.common.items.ModItems;
-import com.themastergeneral.ctdmythos.common.processing.MainOffhandCrafting;
 import com.themastergeneral.ctdmythos.common.processing.WandFlightItems;
 
 import net.minecraft.entity.player.EntityPlayer;
@@ -51,7 +50,7 @@ public class WandItemFlight extends WandItemBase {
 				worldIn.playSound(playerIn, playerIn.getPosition(),
 						ModSounds.flight_wand, SoundCategory.PLAYERS, 1.0F,
 						1.0F);
-				offhand.shrink(MainOffhandCrafting.instance().getRecipeOffhand(mainhand).getCount());
+				offhand.shrink(WandFlightItems.instance().getFlightItem(mainhand).getCount());
 				playerIn.getCooldownTracker().setCooldown(this, flighttime);
 			}
 		}

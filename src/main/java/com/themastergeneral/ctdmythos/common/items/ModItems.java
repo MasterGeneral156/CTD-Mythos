@@ -9,9 +9,7 @@ import com.themastergeneral.ctdmythos.common.items.artifacts.DebugItem;
 import com.themastergeneral.ctdmythos.common.items.artifacts.HumanEffigyItem;
 import com.themastergeneral.ctdmythos.common.items.artifacts.MBValidatorItem;
 import com.themastergeneral.ctdmythos.common.items.artifacts.MulesKickItem;
-import com.themastergeneral.ctdmythos.common.items.artifacts.OreDoublingNode;
 import com.themastergeneral.ctdmythos.common.items.artifacts.TalismanItemEvasion;
-import com.themastergeneral.ctdmythos.common.items.artifacts.XPTomeItem;
 import com.themastergeneral.ctdmythos.common.items.baubles.AmuletExtendReach;
 import com.themastergeneral.ctdmythos.common.items.baubles.TrinketHealth;
 import com.themastergeneral.ctdmythos.common.items.crystals.CrystallizedFire;
@@ -50,7 +48,6 @@ public class ModItems extends RegisterItem {
 	public static CrystallizedOath crystal_oath;
 	public static BaseItem ethereal_fiber;
 	public static BaseItem crystal_glove;
-	public static OreDoublingNode node_ore_double;
 
 	public static BaseFood revitalizing_rye;
 
@@ -59,7 +56,7 @@ public class ModItems extends RegisterItem {
 	public static TMGDrill tmgdrill;
 	public static MythosSwordBase gladius_sword;
 
-	public static XPTomeItem xptome;
+	public static BaseItem xptome;
 
 	public static WandItemTeleport teleport_wand;
 	public static WandItemFlight flight_wand;
@@ -71,9 +68,9 @@ public class ModItems extends RegisterItem {
 	public static AmuletExtendReach amuletreach;
 	public static AmuletExtendReach creativeamuletreach;
 	public static TrinketHealth trinketHealth;
-	
+
 	public static MBValidatorItem mb_validator;
-	
+
 	public static BaseItem enchanted_stick;
 
 	public static void registerItems() {
@@ -99,7 +96,7 @@ public class ModItems extends RegisterItem {
 		gladius_sword = register(new MythosSwordBase(ToolMaterial.GOLD,
 				"gladius_sword", 823));
 
-		xptome = register(new XPTomeItem("xptome"));
+		xptome = register(new BaseItem("xptome"));
 
 		teleport_wand = register(new WandItemTeleport("teleport_wand"));
 
@@ -112,14 +109,12 @@ public class ModItems extends RegisterItem {
 
 		debug_item = register(new DebugItem("debug"));
 
-		node_ore_double = register(new OreDoublingNode("node_ore_double"));
-
 		amuletreach = register(new AmuletExtendReach("amuletreach",
 				ModConfig.reachAmuletRange));
 		creativeamuletreach = register(new AmuletExtendReach(
 				"creativeamuletreach", ModConfig.creativereachAmuletRange));
 		trinketHealth = register(new TrinketHealth("trinketHealth"));
-	
+
 		mb_validator = register(new MBValidatorItem("mb_validator"));
 	}
 }

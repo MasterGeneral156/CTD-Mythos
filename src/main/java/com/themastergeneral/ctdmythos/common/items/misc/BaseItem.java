@@ -40,7 +40,6 @@ import com.themastergeneral.ctdmythos.common.blocks.ModBlocks;
 import com.themastergeneral.ctdmythos.common.config.ModConfig;
 import com.themastergeneral.ctdmythos.common.effects.EffectUtils;
 import com.themastergeneral.ctdmythos.common.items.ModItems;
-import com.themastergeneral.ctdmythos.common.processing.MainOffhandCrafting;
 import com.themastergeneral.ctdmythos.common.processing.MultiblockRecipes;
 
 public class BaseItem extends CTDItem {
