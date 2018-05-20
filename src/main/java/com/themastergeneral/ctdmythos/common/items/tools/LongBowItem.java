@@ -69,7 +69,7 @@ public class LongBowItem extends CTDBow {
 								.getItem() : Items.ARROW);
 						EntityArrow entityarrow = itemarrow.createArrow(
 								worldIn, itemstack, entityplayer);
-						entityarrow.setAim(entityplayer,
+						entityarrow.shoot(entityplayer,
 								entityplayer.rotationPitch,
 								entityplayer.rotationYaw, 0.0F, f * 3.0F, 1.0F);
 						entityarrow.setDamage(entityarrow.getDamage()
