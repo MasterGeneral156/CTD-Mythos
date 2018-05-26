@@ -151,7 +151,7 @@ public class LongBowItem extends CTDBow {
 	}
 
 	protected boolean isArrow(ItemStack stack) {
-		return stack.getItem() instanceof ItemArrow;
+		return stack.getItem() instanceof MythosArrow;
 	}
 
 	@Override
