@@ -26,6 +26,7 @@ item.creativeamuletreach.name=Amulet of Reaching (Creative)
 item.trinketHealth.name=Health Charm
 item.mb_validator.name=Multiblock Validator
 item.enchanted_stick.name=Enchanted Stick
+item.mythos_arrow.name=Mythos Arrow
 
 itemGroup.ctdmythos=CTD Mythos
 ctdmythos.desc=A mod of magical items!
