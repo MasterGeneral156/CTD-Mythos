@@ -64,7 +64,7 @@ public class ModConfig {
 				"How many ticks required before you can fire the longbow.");
 		
 		bow_multiplier = cfg.getInt("Longbow Damage Multiplier",
-				CATEGORY_GENERAL, bow_draw, 2, 10,
+				CATEGORY_GENERAL, bow_multiplier, 2, 10,
 				"Normal bow damage multiplied by this number.");
 
 		// Config for world generation
