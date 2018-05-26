@@ -11,6 +11,7 @@ import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.Multimap;
 import com.themastergeneral.ctdmythos.CTDMythos;
 import com.themastergeneral.ctdmythos.common.blocks.ModBlocks;
+import com.themastergeneral.ctdmythos.common.config.ModConfig;
 import com.themastergeneral.ctdmythos.common.items.ModItems;
 
 public class MultiblockRecipes {
@@ -68,6 +69,9 @@ public class MultiblockRecipes {
 
 		addRecipe(new ItemStack(Items.ENCHANTED_BOOK, 1,
 				OreDictionary.WILDCARD_VALUE), new ItemStack(ModItems.xptome));
+
+		addRecipe(new ItemStack(Items.ARROW, ModConfig.bow_multiplier),
+				new ItemStack(ModItems.mythos_arrow));
 	}
 
 	public void addRecipe(ItemStack mainhand, ItemStack output) {
