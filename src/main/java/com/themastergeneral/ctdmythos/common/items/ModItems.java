@@ -17,12 +17,12 @@ import com.themastergeneral.ctdmythos.common.items.crystals.CrystallizedGrief;
 import com.themastergeneral.ctdmythos.common.items.crystals.CrystallizedMemory;
 import com.themastergeneral.ctdmythos.common.items.crystals.CrystallizedOath;
 import com.themastergeneral.ctdmythos.common.items.crystals.CrystallizedWoe;
-import com.themastergeneral.ctdmythos.common.items.misc.ArcheronIngot;
 import com.themastergeneral.ctdmythos.common.items.misc.BaseFood;
 import com.themastergeneral.ctdmythos.common.items.misc.BaseItem;
 import com.themastergeneral.ctdmythos.common.items.misc.GlowingItem;
 import com.themastergeneral.ctdmythos.common.items.misc.SingleStackItem;
 import com.themastergeneral.ctdmythos.common.items.tools.LongBowItem;
+import com.themastergeneral.ctdmythos.common.items.tools.MythosArrow;
 import com.themastergeneral.ctdmythos.common.items.tools.MythosSwordBase;
 import com.themastergeneral.ctdmythos.common.items.tools.ShearsItem;
 import com.themastergeneral.ctdmythos.common.items.tools.TMGDrill;
@@ -30,48 +30,44 @@ import com.themastergeneral.ctdmythos.common.items.wands.WandItemFlight;
 import com.themastergeneral.ctdmythos.common.items.wands.WandItemTeleport;
 
 public class ModItems extends RegisterItem {
+
 	public static HumanEffigyItem humaneffigy;
 	public static MulesKickItem muleskick;
-
-	public static ShearsItem grimshears;
-
-	public static BaseItem cowblooddrop;
-	public static SingleStackItem bucketcowblood;
-
+	public static TMGDrill tmgdrill;
+	public static MythosSwordBase gladius_sword;
 	public static LongBowItem longbow;
+	public static ShearsItem grimshears;
+	public static MythosArrow mythos_arrow;
 
-	public static BaseItem humansoul;
 	public static CrystallizedWoe crystal_woe;
 	public static CrystallizedMemory crystal_memory;
 	public static CrystallizedGrief crystal_grief;
 	public static CrystallizedFire crystal_fire;
 	public static CrystallizedOath crystal_oath;
-	public static BaseItem ethereal_fiber;
-	public static BaseItem crystal_glove;
 
+	public static BaseItem ethereal_fiber;
+	public static BaseItem humansoul;
+	public static BaseItem crystal_glove;
+	public static BaseItem cowblooddrop;
+	public static BaseItem xptome;
+	public static BaseItem enchanted_stick;
+	public static BaseItem archeron_ingot;
 	public static BaseFood revitalizing_rye;
 
-	public static ArcheronIngot archeron_ingot;
+	public static SingleStackItem bucketcowblood;
 
-	public static TMGDrill tmgdrill;
-	public static MythosSwordBase gladius_sword;
-
-	public static BaseItem xptome;
-
+	public static MBValidatorItem mb_validator;
 	public static WandItemTeleport teleport_wand;
 	public static WandItemFlight flight_wand;
-
-	public static DebugItem debug_item;
 
 	public static TalismanItemEvasion evasion_talisman;
 
 	public static AmuletExtendReach amuletreach;
 	public static AmuletExtendReach creativeamuletreach;
+
 	public static TrinketHealth trinketHealth;
 
-	public static MBValidatorItem mb_validator;
-
-	public static BaseItem enchanted_stick;
+	public static DebugItem debug_item;
 
 	public static void registerItems() {
 		humaneffigy = register(new HumanEffigyItem("humaneffigy"));
@@ -80,7 +76,7 @@ public class ModItems extends RegisterItem {
 		cowblooddrop = register(new BaseItem("cowblooddrop"));
 		bucketcowblood = register(new SingleStackItem("bucketcowblood"));
 		humansoul = register(new BaseItem("humansoul"));
-		archeron_ingot = register(new ArcheronIngot("archeron_ingot"));
+		archeron_ingot = register(new BaseItem("archeron_ingot"));
 		crystal_woe = register(new CrystallizedWoe("crystal_woe"));
 		crystal_memory = register(new CrystallizedMemory("crystal_memory"));
 		crystal_grief = register(new CrystallizedGrief("crystal_grief"));
@@ -116,5 +112,7 @@ public class ModItems extends RegisterItem {
 		trinketHealth = register(new TrinketHealth("trinketHealth"));
 
 		mb_validator = register(new MBValidatorItem("mb_validator"));
+
+		mythos_arrow = register(new MythosArrow("mythos_arrow", CTDMythos.MODID));
 	}
 }
