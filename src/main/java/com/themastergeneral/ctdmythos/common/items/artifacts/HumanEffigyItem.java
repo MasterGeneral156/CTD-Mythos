@@ -35,7 +35,7 @@ public class HumanEffigyItem extends BaseItem {
 		ItemStack ItemStack = playerIn.getHeldItem(handIn);
 		// Server world
 		if (!worldIn.isRemote) {
-			playerIn.setHealth(playerIn.getHealth() + 10F);
+			playerIn.heal(10F);
 			playerIn.addPotionEffect(new PotionEffect(MobEffects.SATURATION,
 					20, 0, true, false));
 			ItemStack.damageItem(1, playerIn);
@@ -52,7 +52,16 @@ public class HumanEffigyItem extends BaseItem {
 	@Override
 	public void onUpdate(ItemStack stack, World worldIn, Entity entityIn,
 			int itemSlot, boolean isSelected) {
-		((EntityLivingBase) entityIn).addPotionEffect(new PotionEffect(
-				MobEffects.REGENERATION, 3, 5, true, false));
+		//Cast entity to EntityLivingBase
+		if (entityIn instanceof EntityLivingBase) {
+			EntityLivingBase entitylive = (EntityLivingBase) entityIn;
+			//If entity is hurt
+			if ((entitylive.hurtTime != entitylive.maxHurtTime)
+					&& (entitylive.hurtTime != 0)) {
+				//Give heal.
+				entitylive.addPotionEffect(new PotionEffect(
+						MobEffects.REGENERATION, 3, 5, true, false));
+			}
+		}
 	}
 }
