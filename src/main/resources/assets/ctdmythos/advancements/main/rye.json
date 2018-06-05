@@ -14,6 +14,7 @@
             "translate": "advancement.rye.desc"
         }
     },
+	"parent": "ctdmythos:main/fibre",
     "criteria": 
 	{
         "carrot": 
