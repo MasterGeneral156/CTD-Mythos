@@ -3,18 +3,18 @@
 	{
         "icon": 
 		{
-            "item": "ctdmythos:humaneffigy"
+            "item": "ctdmythos:pedestal_block"
         },
         "title": 
 		{
-            "translate": "advancement.humaneffigy.name"
+            "translate": "advancement.pedestal.name"
         },
         "description": 
 		{
-            "translate": "advancement.humaneffigy.desc"
+            "translate": "advancement.pedestal.desc"
         }
     },
-	"parent": "ctdmythos:main/pedestal",
+	"parent": "ctdmythos:main/mb_validator",
     "criteria": 
 	{
         "carrot": 
@@ -25,7 +25,7 @@
                 "items": 
 				[
                     {
-                        "item": "ctdmythos:humaneffigy"
+                        "item": "ctdmythos:pedestal_block"
                     }
                 ]
             }

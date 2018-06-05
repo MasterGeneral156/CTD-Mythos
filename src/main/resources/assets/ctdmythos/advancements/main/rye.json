@@ -3,18 +3,17 @@
 	{
         "icon": 
 		{
-            "item": "ctdmythos:humaneffigy"
+            "item": "ctdmythos:revitalizing_rye"
         },
         "title": 
 		{
-            "translate": "advancement.humaneffigy.name"
+            "translate": "advancement.rye.name"
         },
         "description": 
 		{
-            "translate": "advancement.humaneffigy.desc"
+            "translate": "advancement.rye.desc"
         }
     },
-	"parent": "ctdmythos:main/pedestal",
     "criteria": 
 	{
         "carrot": 
@@ -25,7 +24,7 @@
                 "items": 
 				[
                     {
-                        "item": "ctdmythos:humaneffigy"
+                        "item": "ctdmythos:revitalizing_rye"
                     }
                 ]
             }

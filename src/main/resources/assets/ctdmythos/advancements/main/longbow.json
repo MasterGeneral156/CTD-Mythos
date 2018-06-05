@@ -3,15 +3,15 @@
 	{
         "icon": 
 		{
-            "item": "ctdmythos:humaneffigy"
+            "item": "ctdmythos:longbow"
         },
         "title": 
 		{
-            "translate": "advancement.humaneffigy.name"
+            "translate": "advancement.longbow.name"
         },
         "description": 
 		{
-            "translate": "advancement.humaneffigy.desc"
+            "translate": "advancement.longbow.desc"
         }
     },
 	"parent": "ctdmythos:main/pedestal",
@@ -25,7 +25,7 @@
                 "items": 
 				[
                     {
-                        "item": "ctdmythos:humaneffigy"
+                        "item": "ctdmythos:longbow"
                     }
                 ]
             }
