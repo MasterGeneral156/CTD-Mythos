@@ -24,7 +24,7 @@ public class ShearsItem extends BaseItem
         super(name);
         this.maxStackSize = 1;
         this.setMaxDamage(ModConfig.DurabilityShears - 1);
-        this.setNoRepair();
+        this.getIsRepairable(new ItemStack(this), new ItemStack(ModItems.archeron_ingot));
     }
 
     @Override
