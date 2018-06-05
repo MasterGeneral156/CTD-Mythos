@@ -29,90 +29,92 @@ import com.themastergeneral.ctdmythos.common.items.tools.TMGDrill;
 import com.themastergeneral.ctdmythos.common.items.wands.WandItemFlight;
 import com.themastergeneral.ctdmythos.common.items.wands.WandItemTeleport;
 
-public class ModItems extends RegisterItem {
+public class ModItems extends RegisterItem
+{
 
-	public static HumanEffigyItem humaneffigy;
-	public static MulesKickItem muleskick;
-	public static TMGDrill tmgdrill;
-	public static MythosSwordBase gladius_sword;
-	public static LongBowItem longbow;
-	public static ShearsItem grimshears;
-	public static MythosArrow mythos_arrow;
+    public static HumanEffigyItem humaneffigy;
+    public static MulesKickItem muleskick;
+    public static TMGDrill tmgdrill;
+    public static MythosSwordBase gladius_sword;
+    public static LongBowItem longbow;
+    public static ShearsItem grimshears;
+    public static MythosArrow mythos_arrow;
 
-	public static CrystallizedWoe crystal_woe;
-	public static CrystallizedMemory crystal_memory;
-	public static CrystallizedGrief crystal_grief;
-	public static CrystallizedFire crystal_fire;
-	public static CrystallizedOath crystal_oath;
+    public static CrystallizedWoe crystal_woe;
+    public static CrystallizedMemory crystal_memory;
+    public static CrystallizedGrief crystal_grief;
+    public static CrystallizedFire crystal_fire;
+    public static CrystallizedOath crystal_oath;
 
-	public static BaseItem ethereal_fiber;
-	public static BaseItem humansoul;
-	public static BaseItem crystal_glove;
-	public static BaseItem cowblooddrop;
-	public static BaseItem xptome;
-	public static BaseItem enchanted_stick;
-	public static BaseItem archeron_ingot;
-	public static BaseFood revitalizing_rye;
+    public static BaseItem ethereal_fiber;
+    public static BaseItem humansoul;
+    public static BaseItem crystal_glove;
+    public static BaseItem cowblooddrop;
+    public static BaseItem xptome;
+    public static BaseItem enchanted_stick;
+    public static BaseItem archeron_ingot;
+    public static BaseFood revitalizing_rye;
 
-	public static SingleStackItem bucketcowblood;
+    public static SingleStackItem bucketcowblood;
 
-	public static MBValidatorItem mb_validator;
-	public static WandItemTeleport teleport_wand;
-	public static WandItemFlight flight_wand;
+    public static MBValidatorItem mb_validator;
+    public static WandItemTeleport teleport_wand;
+    public static WandItemFlight flight_wand;
 
-	public static TalismanItemEvasion evasion_talisman;
+    public static TalismanItemEvasion evasion_talisman;
 
-	public static AmuletExtendReach amuletreach;
-	public static AmuletExtendReach creativeamuletreach;
+    public static AmuletExtendReach amuletreach;
+    public static AmuletExtendReach creativeamuletreach;
 
-	public static TrinketHealth trinketHealth;
+    public static TrinketHealth trinketHealth;
 
-	public static DebugItem debug_item;
+    public static DebugItem debug_item;
 
-	public static void registerItems() {
-		humaneffigy = register(new HumanEffigyItem("humaneffigy"));
-		muleskick = register(new MulesKickItem("muleskick"));
-		grimshears = register(new ShearsItem("grimshears"));
-		cowblooddrop = register(new BaseItem("cowblooddrop"));
-		bucketcowblood = register(new SingleStackItem("bucketcowblood"));
-		humansoul = register(new BaseItem("humansoul"));
-		archeron_ingot = register(new BaseItem("archeron_ingot"));
-		crystal_woe = register(new CrystallizedWoe("crystal_woe"));
-		crystal_memory = register(new CrystallizedMemory("crystal_memory"));
-		crystal_grief = register(new CrystallizedGrief("crystal_grief"));
-		crystal_fire = register(new CrystallizedFire("crystal_fire"));
-		crystal_oath = register(new CrystallizedOath("crystal_oath"));
-		crystal_glove = register(new BaseItem("crystal_glove"));
-		ethereal_fiber = register(new BaseItem("ethereal_fiber"));
-		enchanted_stick = register(new BaseItem("enchanted_stick"));
+    public static void registerItems()
+    {
+        humaneffigy = register(new HumanEffigyItem("humaneffigy"));
+        muleskick = register(new MulesKickItem("muleskick"));
+        grimshears = register(new ShearsItem("grimshears"));
+        cowblooddrop = register(new BaseItem("cowblooddrop"));
+        bucketcowblood = register(new SingleStackItem("bucketcowblood"));
+        humansoul = register(new BaseItem("humansoul"));
+        archeron_ingot = register(new BaseItem("archeron_ingot"));
+        crystal_woe = register(new CrystallizedWoe("crystal_woe"));
+        crystal_memory = register(new CrystallizedMemory("crystal_memory"));
+        crystal_grief = register(new CrystallizedGrief("crystal_grief"));
+        crystal_fire = register(new CrystallizedFire("crystal_fire"));
+        crystal_oath = register(new CrystallizedOath("crystal_oath"));
+        crystal_glove = register(new BaseItem("crystal_glove"));
+        ethereal_fiber = register(new BaseItem("ethereal_fiber"));
+        enchanted_stick = register(new BaseItem("enchanted_stick"));
 
-		longbow = register(new LongBowItem("longbow", 144000, 640));
+        longbow = register(new LongBowItem("longbow", 144000, 640));
 
-		tmgdrill = register(new TMGDrill("tmgdrill"));
-		gladius_sword = register(new MythosSwordBase(ToolMaterial.GOLD,
-				"gladius_sword", 823));
+        tmgdrill = register(new TMGDrill("tmgdrill"));
+        gladius_sword = register(new MythosSwordBase(ToolMaterial.GOLD,
+                "gladius_sword", 823));
 
-		xptome = register(new BaseItem("xptome"));
+        xptome = register(new BaseItem("xptome"));
 
-		teleport_wand = register(new WandItemTeleport("teleport_wand"));
+        teleport_wand = register(new WandItemTeleport("teleport_wand"));
 
-		flight_wand = register(new WandItemFlight("flight_wand"));
+        flight_wand = register(new WandItemFlight("flight_wand"));
 
-		revitalizing_rye = register(new BaseFood("revitalizing_rye", 3, 1.0F,
-				false));
+        revitalizing_rye = register(new BaseFood("revitalizing_rye", 3, 1.0F,
+                false));
 
-		evasion_talisman = register(new TalismanItemEvasion("evasion_talisman"));
+        evasion_talisman = register(new TalismanItemEvasion("evasion_talisman"));
 
-		debug_item = register(new DebugItem("debug"));
+        debug_item = register(new DebugItem("debug"));
 
-		amuletreach = register(new AmuletExtendReach("amuletreach",
-				ModConfig.reachAmuletRange));
-		creativeamuletreach = register(new AmuletExtendReach(
-				"creativeamuletreach", ModConfig.creativereachAmuletRange));
-		trinketHealth = register(new TrinketHealth("trinketHealth"));
+        amuletreach = register(new AmuletExtendReach("amuletreach",
+                ModConfig.reachAmuletRange));
+        creativeamuletreach = register(new AmuletExtendReach(
+                "creativeamuletreach", ModConfig.creativereachAmuletRange));
+        trinketHealth = register(new TrinketHealth("trinketHealth"));
 
-		mb_validator = register(new MBValidatorItem("mb_validator"));
+        mb_validator = register(new MBValidatorItem("mb_validator"));
 
-		mythos_arrow = register(new MythosArrow("mythos_arrow", CTDMythos.MODID));
-	}
+        mythos_arrow = register(new MythosArrow("mythos_arrow", CTDMythos.MODID));
+    }
 }

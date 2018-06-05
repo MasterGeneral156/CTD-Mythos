@@ -22,59 +22,66 @@ import com.themastergeneral.ctdmythos.network.PacketRequestUpdatePedestal;
 import com.themastergeneral.ctdmythos.network.PacketUpdatePedestal;
 import com.themastergeneral.ctdmythos.proxy.Common;
 
-@Mod(modid = CTDMythos.MODID, name = CTDMythos.MODNAME, version = CTDMythos.VERSION, acceptedMinecraftVersions = CTDMythos.acceptedMinecraftVersions, updateJSON = CTDMythos.updateJSON, certificateFingerprint = CTDMythos.certificateFingerprint, dependencies = CTDMythos.DEPENDENCIES)
-public class CTDMythos {
-	public static final String MODID = "ctdmythos";
-	public static final String MODNAME = "CTD Mythos";
-	public static final String VERSION = "0.5.3";
-	// Update JSON link
-	public static final String updateJSON = "https://raw.githubusercontent.com/MasterGeneral156/Version/master/CTD-Mythos.json";
-	public static final String acceptedMinecraftVersions = "1.12.2";
-	// TMG's public key
-	public static final String certificateFingerprint = "5101015479fe39f20b47f365472250d312a50a57";
-	// Required after CTD Core
-	// [https://minecraft.curseforge.com/projects/ctd-core]
-	public static final String DEPENDENCIES = "required-after:baubles;required-after:ctdcore@[1.3.3,];";
+@Mod(modid = CTDMythos.MODID, name = CTDMythos.MODNAME, version = CTDMythos.VERSION, acceptedMinecraftVersions = CTDMythos.acceptedMinecraftVersions,
+        updateJSON = CTDMythos.updateJSON, certificateFingerprint = CTDMythos.certificateFingerprint, dependencies = CTDMythos.DEPENDENCIES)
+public class CTDMythos
+{
+    public static final String MODID = "ctdmythos";
+    public static final String MODNAME = "CTD Mythos";
+    public static final String VERSION = "0.5.3";
+    // Update JSON link
+    public static final String updateJSON = "https://raw.githubusercontent.com/MasterGeneral156/Version/master/CTD-Mythos.json";
+    public static final String acceptedMinecraftVersions = "1.12.2";
+    // TMG's public key
+    public static final String certificateFingerprint = "5101015479fe39f20b47f365472250d312a50a57";
+    // Required after CTD Core
+    // [https://minecraft.curseforge.com/projects/ctd-core]
+    public static final String DEPENDENCIES = "required-after:baubles;required-after:ctdcore@[1.3.3,];";
 
-	// Creative Tab
-	public static final MythosTab creativeTab = new MythosTab();
+    // Creative Tab
+    public static final MythosTab creativeTab = new MythosTab();
 
-	@Instance
-	public static CTDMythos instance = new CTDMythos();
+    @Instance
+    public static CTDMythos instance = new CTDMythos();
 
-	@SidedProxy(clientSide = "com.themastergeneral.ctdmythos.proxy.Client", serverSide = "com.themastergeneral.ctdmythos.proxy.Server")
-	public static Common proxy;
-	public static Logger logger;
-	public static SimpleNetworkWrapper wrapper;
+    @SidedProxy(clientSide = "com.themastergeneral.ctdmythos.proxy.Client", serverSide = "com.themastergeneral.ctdmythos.proxy.Server")
+    public static Common proxy;
+    public static Logger logger;
+    public static SimpleNetworkWrapper wrapper;
 
-	@EventHandler
-	public void preInit(FMLPreInitializationEvent e) {
-		logger = e.getModLog();
-		wrapper = NetworkRegistry.INSTANCE.newSimpleChannel(MODID);
-		wrapper.registerMessage(new PacketUpdatePedestal.Handler(), PacketUpdatePedestal.class, 0, Side.CLIENT);
-		wrapper.registerMessage(new PacketRequestUpdatePedestal.Handler(), PacketRequestUpdatePedestal.class, 1, Side.SERVER);
-		proxy.preInit(e);
-		proxy.registerRenderers();
-	}
+    @EventHandler
+    public void preInit(FMLPreInitializationEvent e)
+    {
+        logger = e.getModLog();
+        wrapper = NetworkRegistry.INSTANCE.newSimpleChannel(MODID);
+        wrapper.registerMessage(new PacketUpdatePedestal.Handler(), PacketUpdatePedestal.class, 0, Side.CLIENT);
+        wrapper.registerMessage(new PacketRequestUpdatePedestal.Handler(), PacketRequestUpdatePedestal.class, 1, Side.SERVER);
+        proxy.preInit(e);
+        proxy.registerRenderers();
+    }
 
-	@EventHandler
-	public void init(FMLInitializationEvent e) {
-		proxy.init(e);
-	}
+    @EventHandler
+    public void init(FMLInitializationEvent e)
+    {
+        proxy.init(e);
+    }
 
-	@EventHandler
-	public void postInit(FMLPostInitializationEvent e) {
-		proxy.postInit(e);
-	}
+    @EventHandler
+    public void postInit(FMLPostInitializationEvent e)
+    {
+        proxy.postInit(e);
+    }
 
-	@EventHandler
-	public void onFingerprintViolation(FMLFingerprintViolationEvent e) {
-		FMLLog.warning("Invalid fingerprint detected for CTD Mythos! TheMasterGeneral will not support this version!");
-	}
+    @EventHandler
+    public void onFingerprintViolation(FMLFingerprintViolationEvent e)
+    {
+        FMLLog.warning("Invalid fingerprint detected for CTD Mythos! TheMasterGeneral will not support this version!");
+    }
 
-	@EventHandler
-	public void handleIMC(IMCEvent e) {
-		logger.info("CTD Mythos is awaiting IMC from other mods...");
-		IMCHandler.INSTANCE.handleIMC(e.getMessages());
-	}
+    @EventHandler
+    public void handleIMC(IMCEvent e)
+    {
+        logger.info("CTD Mythos is awaiting IMC from other mods...");
+        IMCHandler.INSTANCE.handleIMC(e.getMessages());
+    }
 }

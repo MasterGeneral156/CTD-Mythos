@@ -34,131 +34,154 @@ import com.themastergeneral.ctdmythos.common.items.misc.BaseItem;
 import com.themastergeneral.ctdmythos.common.processing.MultiblockRecipes;
 import com.themastergeneral.ctdmythos.tileentity.PedestalTileEntity;
 
-public class PedestalBlock extends CTDTEBase<PedestalTileEntity> {
+public class PedestalBlock extends CTDTEBase<PedestalTileEntity>
+{
 
-	protected static final AxisAlignedBB SOUL_SAND_AABB = new AxisAlignedBB(
-			0.0625D, 0.0D, 0.0625D, 0.9375D, 0.8125D, 0.9375D);
+    protected static final AxisAlignedBB SOUL_SAND_AABB = new AxisAlignedBB(
+            0.0625D, 0.0D, 0.0625D, 0.9375D, 0.8125D, 0.9375D);
 
-	public PedestalBlock(String name) {
-		super(Material.ROCK, name, CTDMythos.MODID);
-		this.setHardness(10F);
-		this.setHarvestLevel("pickaxe", 2);
-	}
+    public PedestalBlock(String name)
+    {
+        super(Material.ROCK, name, CTDMythos.MODID);
+        this.setHardness(10F);
+        this.setHarvestLevel("pickaxe", 2);
+    }
 
-	@Override
-	public boolean onBlockActivated(World world, BlockPos pos,
-			IBlockState state, EntityPlayer player, EnumHand hand,
-			EnumFacing side, float hitX, float hitY, float hitZ) {
-		if (!world.isRemote) {
-			PedestalTileEntity tile = getTileEntity(world, pos);
-			ItemStack heldItem = player.getHeldItem(hand);
-			IItemHandler itemHandler = tile.getCapability(
-					CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, side);
-			if (!player.isSneaking()) {
-				if (heldItem.isEmpty()) {
-					player.setHeldItem(hand,
-							itemHandler.extractItem(0, 64, false));
-					tile.resetTicks();
-				} else {
-					player.setHeldItem(hand,
-							itemHandler.insertItem(0, heldItem, false));
-					tile.resetTicks();
-				}
-				tile.markDirty();
-			} else {
-				ItemStack stack = itemHandler.getStackInSlot(0);
-				if (tile.validItem()) {
-					player.sendMessage(new TextComponentString("Completion: "
-							+ NumberFormat.getInstance()
-									.format(tile.getTicks())
-							+ " / "
-							+ NumberFormat.getInstance().format(
-									200 * tile.inventory.getStackInSlot(0)
-											.getCount()) + " ticks."));
-				} else {
-					player.sendMessage(new TextComponentString(
-							"Empty or invalid recipe."));
-				}
-			}
-		}
-		return true;
-	}
+    @Override
+    public boolean onBlockActivated(World world, BlockPos pos,
+            IBlockState state, EntityPlayer player, EnumHand hand,
+            EnumFacing side, float hitX, float hitY, float hitZ)
+    {
+        if (!world.isRemote)
+        {
+            PedestalTileEntity tile = getTileEntity(world, pos);
+            ItemStack heldItem = player.getHeldItem(hand);
+            IItemHandler itemHandler = tile.getCapability(
+                    CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, side);
+            if (!player.isSneaking())
+            {
+                if (heldItem.isEmpty())
+                {
+                    player.setHeldItem(hand,
+                            itemHandler.extractItem(0, 64, false));
+                    tile.resetTicks();
+                }
+                else
+                {
+                    player.setHeldItem(hand,
+                            itemHandler.insertItem(0, heldItem, false));
+                    tile.resetTicks();
+                }
+                tile.markDirty();
+            }
+            else
+            {
+                ItemStack stack = itemHandler.getStackInSlot(0);
+                if (tile.validItem())
+                {
+                    player.sendMessage(new TextComponentString("Completion: "
+                            + NumberFormat.getInstance()
+                                    .format(tile.getTicks())
+                            + " / "
+                            + NumberFormat.getInstance().format(
+                                    200 * tile.inventory.getStackInSlot(0)
+                                            .getCount()) + " ticks."));
+                }
+                else
+                {
+                    player.sendMessage(new TextComponentString(
+                            "Empty or invalid recipe."));
+                }
+            }
+        }
+        return true;
+    }
 
-	@Override
-	public Class<PedestalTileEntity> getTileEntityClass() {
-		return PedestalTileEntity.class;
-	}
+    @Override
+    public Class<PedestalTileEntity> getTileEntityClass()
+    {
+        return PedestalTileEntity.class;
+    }
 
-	@Nullable
-	@Override
-	public PedestalTileEntity createTileEntity(World world, IBlockState state) {
-		return new PedestalTileEntity();
-	}
+    @Nullable
+    @Override
+    public PedestalTileEntity createTileEntity(World world, IBlockState state)
+    {
+        return new PedestalTileEntity();
+    }
 
-	@Override
-	public void breakBlock(World world, BlockPos pos, IBlockState state) {
-		PedestalTileEntity tile = getTileEntity(world, pos);
-		IItemHandler itemHandler = tile
-				.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY,
-						EnumFacing.NORTH);
-		ItemStack stack = itemHandler.getStackInSlot(0);
-		if (!stack.isEmpty()) {
-			EntityItem item = new EntityItem(world, pos.getX(), pos.getY(),
-					pos.getZ(), stack);
-			world.spawnEntity(item);
-		}
-		super.breakBlock(world, pos, state);
-	}
+    @Override
+    public void breakBlock(World world, BlockPos pos, IBlockState state)
+    {
+        PedestalTileEntity tile = getTileEntity(world, pos);
+        IItemHandler itemHandler = tile
+                .getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY,
+                        EnumFacing.NORTH);
+        ItemStack stack = itemHandler.getStackInSlot(0);
+        if (!stack.isEmpty())
+        {
+            EntityItem item = new EntityItem(world, pos.getX(), pos.getY(),
+                    pos.getZ(), stack);
+            world.spawnEntity(item);
+        }
+        super.breakBlock(world, pos, state);
+    }
 
-	@Override
-	public boolean isOpaqueCube(IBlockState state) {
-		return false;
-	}
+    @Override
+    public boolean isOpaqueCube(IBlockState state)
+    {
+        return false;
+    }
 
-	@Override
-	public boolean isFullCube(IBlockState state) {
-		return false;
-	}
+    @Override
+    public boolean isFullCube(IBlockState state)
+    {
+        return false;
+    }
 
-	@Nullable
-	public AxisAlignedBB getCollisionBoundingBox(IBlockState blockState,
-			IBlockAccess worldIn, BlockPos pos) {
-		return SOUL_SAND_AABB;
-	}
+    @Nullable
+    public AxisAlignedBB getCollisionBoundingBox(IBlockState blockState,
+            IBlockAccess worldIn, BlockPos pos)
+    {
+        return SOUL_SAND_AABB;
+    }
 
-	@SideOnly(Side.CLIENT)
-	public void randomDisplayTick(IBlockState stateIn, World worldIn,
-			BlockPos pos, Random rand) {
-		PedestalTileEntity tile = getTileEntity(worldIn, pos);
-		if (tile.getTicks() > 0) {
-			double d0 = (double) pos.getX() + 0.5D;
-			double d1 = (double) pos.getY() + rand.nextDouble() * 6.0D / 16.0D;
-			double d2 = (double) pos.getZ() + 0.5D;
-			double d3 = 0.52D;
-			double d4 = rand.nextDouble() * 0.6D - 0.3D;
+    @SideOnly(Side.CLIENT)
+    public void randomDisplayTick(IBlockState stateIn, World worldIn,
+            BlockPos pos, Random rand)
+    {
+        PedestalTileEntity tile = getTileEntity(worldIn, pos);
+        if (tile.getTicks() > 0)
+        {
+            double d0 = (double) pos.getX() + 0.5D;
+            double d1 = (double) pos.getY() + rand.nextDouble() * 6.0D / 16.0D;
+            double d2 = (double) pos.getZ() + 0.5D;
+            double d3 = 0.52D;
+            double d4 = rand.nextDouble() * 0.6D - 0.3D;
 
-			if (rand.nextDouble() < 0.1D) {
-				worldIn.playSound((double) pos.getX() + 0.5D,
-						(double) pos.getY(), (double) pos.getZ() + 0.5D,
-						ModSounds.multiblock_random, SoundCategory.BLOCKS,
-						1.0F, 1.0F, false);
-			}
-			worldIn.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, d0 - 0.52D,
-					d1, d2 + d4, 0.0D, 0.0D, 0.0D);
-			worldIn.spawnParticle(EnumParticleTypes.FLAME, d0 - 0.52D, d1, d2
-					+ d4, 0.0D, 0.0D, 0.0D);
-			worldIn.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, d0 + 0.52D,
-					d1, d2 + d4, 0.0D, 0.0D, 0.0D);
-			worldIn.spawnParticle(EnumParticleTypes.FLAME, d0 + 0.52D, d1, d2
-					+ d4, 0.0D, 0.0D, 0.0D);
-			worldIn.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, d0 + d4, d1,
-					d2 - 0.52D, 0.0D, 0.0D, 0.0D);
-			worldIn.spawnParticle(EnumParticleTypes.FLAME, d0 + d4, d1,
-					d2 - 0.52D, 0.0D, 0.0D, 0.0D);
-			worldIn.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, d0 + d4, d1,
-					d2 + 0.52D, 0.0D, 0.0D, 0.0D);
-			worldIn.spawnParticle(EnumParticleTypes.FLAME, d0 + d4, d1,
-					d2 + 0.52D, 0.0D, 0.0D, 0.0D);
-		}
-	}
+            if (rand.nextDouble() < 0.1D)
+            {
+                worldIn.playSound((double) pos.getX() + 0.5D,
+                        (double) pos.getY(), (double) pos.getZ() + 0.5D,
+                        ModSounds.multiblock_random, SoundCategory.BLOCKS,
+                        1.0F, 1.0F, false);
+            }
+            worldIn.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, d0 - 0.52D,
+                    d1, d2 + d4, 0.0D, 0.0D, 0.0D);
+            worldIn.spawnParticle(EnumParticleTypes.FLAME, d0 - 0.52D, d1, d2
+                    + d4, 0.0D, 0.0D, 0.0D);
+            worldIn.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, d0 + 0.52D,
+                    d1, d2 + d4, 0.0D, 0.0D, 0.0D);
+            worldIn.spawnParticle(EnumParticleTypes.FLAME, d0 + 0.52D, d1, d2
+                    + d4, 0.0D, 0.0D, 0.0D);
+            worldIn.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, d0 + d4, d1,
+                    d2 - 0.52D, 0.0D, 0.0D, 0.0D);
+            worldIn.spawnParticle(EnumParticleTypes.FLAME, d0 + d4, d1,
+                    d2 - 0.52D, 0.0D, 0.0D, 0.0D);
+            worldIn.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, d0 + d4, d1,
+                    d2 + 0.52D, 0.0D, 0.0D, 0.0D);
+            worldIn.spawnParticle(EnumParticleTypes.FLAME, d0 + d4, d1,
+                    d2 + 0.52D, 0.0D, 0.0D, 0.0D);
+        }
+    }
 }

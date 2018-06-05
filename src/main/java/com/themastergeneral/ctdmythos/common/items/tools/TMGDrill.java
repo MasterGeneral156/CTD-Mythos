@@ -7,10 +7,12 @@ import com.themastergeneral.ctdmythos.CTDMythos;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemSword;
 
-public class TMGDrill extends MythosSwordBase {
+public class TMGDrill extends MythosSwordBase
+{
 
-	public TMGDrill(String name) {
-		super(ToolMaterial.IRON, name, 762);
-		this.maxStackSize = 1;
-	}
+    public TMGDrill(String name)
+    {
+        super(ToolMaterial.IRON, name, 762);
+        this.maxStackSize = 1;
+    }
 }

@@ -7,20 +7,24 @@ import net.minecraft.item.ItemStack;
 import com.themastergeneral.ctdmythos.CTDMythos;
 import com.themastergeneral.ctdmythos.common.items.ModItems;
 
-public class MythosTab extends CreativeTabs {
+public class MythosTab extends CreativeTabs
+{
 
-	public MythosTab() {
-		super(CTDMythos.MODID);
-	}
+    public MythosTab()
+    {
+        super(CTDMythos.MODID);
+    }
 
-	@Override
-	public ItemStack getTabIconItem() {
-		return new ItemStack(ModItems.flight_wand);
-	}
+    @Override
+    public ItemStack getTabIconItem()
+    {
+        return new ItemStack(ModItems.flight_wand);
+    }
 
-	@Override
-	public boolean hasSearchBar() {
-		return false;
-	}
+    @Override
+    public boolean hasSearchBar()
+    {
+        return false;
+    }
 
 }

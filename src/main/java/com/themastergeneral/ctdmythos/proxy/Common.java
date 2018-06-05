@@ -20,34 +20,40 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
-public class Common {
-	public static Configuration config;
+public class Common
+{
+    public static Configuration config;
 
-	public void preInit(FMLPreInitializationEvent e) {
-		File directory = e.getModConfigurationDirectory();
-		config = new Configuration(new File(directory.getPath(),
-				"ctd/ctdmythos.cfg"));
-		ModConfig.readConfig();
-		ModItems.registerItems();
-		ModBlocks.loadBlocks();
-		ModTileEntities.register();
-		GameRegistry.registerWorldGenerator(new WorldGen(), 0);
-	}
+    public void preInit(FMLPreInitializationEvent e)
+    {
+        File directory = e.getModConfigurationDirectory();
+        config = new Configuration(new File(directory.getPath(),
+                "ctd/ctdmythos.cfg"));
+        ModConfig.readConfig();
+        ModItems.registerItems();
+        ModBlocks.loadBlocks();
+        ModTileEntities.register();
+        GameRegistry.registerWorldGenerator(new WorldGen(), 0);
+    }
 
-	public void init(FMLInitializationEvent e) {
-		MythosEventHandler.LoadEvents();
-		Processing.initProcessing();
-		OreDict.init();
-	}
+    public void init(FMLInitializationEvent e)
+    {
+        MythosEventHandler.LoadEvents();
+        Processing.initProcessing();
+        OreDict.init();
+    }
 
-	public void postInit(FMLPostInitializationEvent e) {
+    public void postInit(FMLPostInitializationEvent e)
+    {
 
-	}
-	
-	public String localize(String unlocalized, Object... args) {
-		return I18n.translateToLocalFormatted(unlocalized, args);
-	}
-	
-	public void registerRenderers() {
-	}
+    }
+
+    public String localize(String unlocalized, Object... args)
+    {
+        return I18n.translateToLocalFormatted(unlocalized, args);
+    }
+
+    public void registerRenderers()
+    {
+    }
 }

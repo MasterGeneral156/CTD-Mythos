@@ -11,27 +11,31 @@ import net.minecraft.item.ItemStack;
 import com.google.common.collect.Multimap;
 import com.themastergeneral.ctdmythos.common.processing.MultiblockRecipes;
 
-public class MultiblockMaker {
-	private MultiblockMaker() {
-	}
+public class MultiblockMaker
+{
+    private MultiblockMaker()
+    {
+    }
 
-	public static List<MultiblockJEI> getFlightItems(IJeiHelpers helpers) {
-		IStackHelper stackHelper = helpers.getStackHelper();
-		MultiblockRecipes furnaceRecipes = MultiblockRecipes.instance();
-		Multimap<ItemStack, ItemStack> smeltingMap = furnaceRecipes
-				.getRecipeList();
+    public static List<MultiblockJEI> getFlightItems(IJeiHelpers helpers)
+    {
+        IStackHelper stackHelper = helpers.getStackHelper();
+        MultiblockRecipes furnaceRecipes = MultiblockRecipes.instance();
+        Multimap<ItemStack, ItemStack> smeltingMap = furnaceRecipes
+                .getRecipeList();
 
-		List<MultiblockJEI> recipes = new ArrayList<>();
+        List<MultiblockJEI> recipes = new ArrayList<>();
 
-		for (Entry<ItemStack, ItemStack> entry : smeltingMap.entries()) {
-			ItemStack mainhand = entry.getKey();
-			ItemStack output = furnaceRecipes.getRecipeResult(mainhand);
+        for (Entry<ItemStack, ItemStack> entry : smeltingMap.entries())
+        {
+            ItemStack mainhand = entry.getKey();
+            ItemStack output = furnaceRecipes.getRecipeResult(mainhand);
 
-			List<ItemStack> inputs = stackHelper.getSubtypes(mainhand);
-			MultiblockJEI recipe = new MultiblockJEI(inputs, output);
-			recipes.add(recipe);
-		}
+            List<ItemStack> inputs = stackHelper.getSubtypes(mainhand);
+            MultiblockJEI recipe = new MultiblockJEI(inputs, output);
+            recipes.add(recipe);
+        }
 
-		return recipes;
-	}
+        return recipes;
+    }
 }

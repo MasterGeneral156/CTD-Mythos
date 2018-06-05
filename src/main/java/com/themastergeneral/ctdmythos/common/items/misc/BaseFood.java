@@ -13,30 +13,34 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.world.World;
 
-public class BaseFood extends ItemFood implements ItemModelProvider {
+public class BaseFood extends ItemFood implements ItemModelProvider
+{
 
-	protected String name; // Name of the item.
+    protected String name; // Name of the item.
 
-	public BaseFood(String name, int amount, float saturation,
-			boolean isWolfFood) {
-		super(amount, saturation, isWolfFood);
-		this.name = name;
-		this.setRegistryName(name);
-		this.setCreativeTab(CTDMythos.creativeTab);
-		this.setUnlocalizedName(name);
-	}
+    public BaseFood(String name, int amount, float saturation,
+            boolean isWolfFood)
+    {
+        super(amount, saturation, isWolfFood);
+        this.name = name;
+        this.setRegistryName(name);
+        this.setCreativeTab(CTDMythos.creativeTab);
+        this.setUnlocalizedName(name);
+    }
 
-	@Override
-	public void registerItemModel(Item item) {
-		CTDCore.proxy.registerItemRenderer(CTDMythos.MODID, this, 0, name);
-	}
+    @Override
+    public void registerItemModel(Item item)
+    {
+        CTDCore.proxy.registerItemRenderer(CTDMythos.MODID, this, 0, name);
+    }
 
-	@Override
-	protected void onFoodEaten(ItemStack stack, World worldIn,
-			EntityPlayer player) {
-		// Clear effects if eating the rye loaf.
-		if (stack.getItem() == ModItems.revitalizing_rye)
-			player.clearActivePotions();
-	}
+    @Override
+    protected void onFoodEaten(ItemStack stack, World worldIn,
+            EntityPlayer player)
+    {
+        // Clear effects if eating the rye loaf.
+        if (stack.getItem() == ModItems.revitalizing_rye)
+            player.clearActivePotions();
+    }
 
 }

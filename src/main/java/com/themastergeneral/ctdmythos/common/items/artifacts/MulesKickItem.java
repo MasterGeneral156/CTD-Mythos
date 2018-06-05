@@ -14,30 +14,34 @@ import com.themastergeneral.ctdmythos.CTDMythos;
 import com.themastergeneral.ctdmythos.client.sound.ModSounds;
 import com.themastergeneral.ctdmythos.common.items.misc.BaseItem;
 
-public class MulesKickItem extends BaseItem {
+public class MulesKickItem extends BaseItem
+{
 
-	public MulesKickItem(String name) {
-		super(name);
-		this.maxStackSize = 1;
-		this.setMaxDamage(4);
-	}
+    public MulesKickItem(String name)
+    {
+        super(name);
+        this.maxStackSize = 1;
+        this.setMaxDamage(4);
+    }
 
-	// When the Mule's Kick is used, give the player Speed 5 for 10 Seconds.
-	// Damage the item and play a sound as well.
-	@Override
-	public ActionResult<ItemStack> onItemRightClick(World worldIn,
-			EntityPlayer playerIn, EnumHand handIn) {
-		if (!worldIn.isRemote) {
-			ItemStack ItemStack = playerIn.getHeldItem(handIn);
-			playerIn.addPotionEffect(new PotionEffect(MobEffects.SPEED, 200, 4,
-					true, false));
-			ItemStack.damageItem(1, playerIn);
-			playerIn.getCooldownTracker().setCooldown(this, 200);
-		}
-		worldIn.playSound(playerIn, playerIn.getPosition(),
-				ModSounds.mules_kick, SoundCategory.PLAYERS, 1.0F, 1.0F);
-		return new ActionResult<ItemStack>(EnumActionResult.PASS,
-				playerIn.getHeldItem(handIn));
-	}
+    // When the Mule's Kick is used, give the player Speed 5 for 10 Seconds.
+    // Damage the item and play a sound as well.
+    @Override
+    public ActionResult<ItemStack> onItemRightClick(World worldIn,
+            EntityPlayer playerIn, EnumHand handIn)
+    {
+        if (!worldIn.isRemote)
+        {
+            ItemStack ItemStack = playerIn.getHeldItem(handIn);
+            playerIn.addPotionEffect(new PotionEffect(MobEffects.SPEED, 200, 4,
+                    true, false));
+            ItemStack.damageItem(1, playerIn);
+            playerIn.getCooldownTracker().setCooldown(this, 200);
+        }
+        worldIn.playSound(playerIn, playerIn.getPosition(),
+                ModSounds.mules_kick, SoundCategory.PLAYERS, 1.0F, 1.0F);
+        return new ActionResult<ItemStack>(EnumActionResult.PASS,
+                playerIn.getHeldItem(handIn));
+    }
 
 }

@@ -27,71 +27,90 @@ import com.themastergeneral.ctdmythos.common.effects.EffectUtils;
 import com.themastergeneral.ctdmythos.common.items.ModItems;
 import com.themastergeneral.ctdmythos.common.items.misc.BaseItem;
 
-public class CrystallizedFire extends BaseItem {
+public class CrystallizedFire extends BaseItem
+{
 
-	private Block containedBlock;
+    private Block containedBlock;
 
-	public CrystallizedFire(String name) {
-		super(name);
-	}
+    public CrystallizedFire(String name)
+    {
+        super(name);
+    }
 
-	@Override
-	public void onUpdate(ItemStack stack, World worldIn, Entity entityIn,
-			int itemSlot, boolean isSelected) {
-		// Extinguish fire with Fire
-		if (stack.getItem() == ModItems.crystal_fire) {
-			((EntityLivingBase) entityIn).extinguish();
-		}
-	}
+    @Override
+    public void onUpdate(ItemStack stack, World worldIn, Entity entityIn,
+            int itemSlot, boolean isSelected)
+    {
+        // Extinguish fire with Fire
+        if (stack.getItem() == ModItems.crystal_fire)
+        {
+            ((EntityLivingBase) entityIn).extinguish();
+        }
+    }
 
-	// TODO: Wrap crafting check into seperate method.
-	// Crafting, yay.
-	@Override
-	public ActionResult<ItemStack> onItemRightClick(World worldIn,
-			EntityPlayer playerIn, EnumHand handIn) {
-		if (!worldIn.isRemote) {
-			ItemStack offhand = playerIn.getHeldItemOffhand();
-			ItemStack mainhand = playerIn.getHeldItemMainhand();
-			if (playerIn.isSneaking()) {
-				Block blocktotest = Blocks.BRICK_BLOCK;
-				boolean flag = this.containedBlock == blocktotest;
-				RayTraceResult raytraceresult = this.rayTrace(worldIn,
-						playerIn, flag);
-				if (raytraceresult == null) {
-					return new ActionResult(EnumActionResult.PASS, mainhand);
-				} else if (raytraceresult.typeOfHit != RayTraceResult.Type.BLOCK) {
-					return new ActionResult(EnumActionResult.PASS, mainhand);
-				} else {
-					BlockPos blockpos = raytraceresult.getBlockPos();
-					if (!worldIn.isBlockModifiable(playerIn, blockpos)) {
-						return new ActionResult(EnumActionResult.FAIL, mainhand);
-					}
-					if (!playerIn.canPlayerEdit(
-							blockpos.offset(raytraceresult.sideHit),
-							raytraceresult.sideHit, mainhand)) {
-						return new ActionResult(EnumActionResult.FAIL, mainhand);
-					} else {
-						IBlockState iblockstate = worldIn
-								.getBlockState(blockpos);
-						if (iblockstate == blocktotest.getDefaultState()) {
-							worldIn.setBlockState(blockpos,
-									ModBlocks.crystal_fire_brick
-											.getDefaultState(), 11);
-							EntityLightningBolt lightning = new EntityLightningBolt(
-									worldIn, blockpos.getX(), blockpos.getY(),
-									blockpos.getZ(), false);
-							worldIn.addWeatherEffect(lightning);
-							return new ActionResult(EnumActionResult.PASS,
-									mainhand);
-						} else {
-							return new ActionResult(EnumActionResult.FAIL,
-									mainhand);
-						}
-					}
-				}
-			}
-		}
-		return new ActionResult<ItemStack>(EnumActionResult.PASS,
-				playerIn.getHeldItem(handIn));
-	}
+    // TODO: Wrap crafting check into seperate method.
+    // Crafting, yay.
+    @Override
+    public ActionResult<ItemStack> onItemRightClick(World worldIn,
+            EntityPlayer playerIn, EnumHand handIn)
+    {
+        if (!worldIn.isRemote)
+        {
+            ItemStack offhand = playerIn.getHeldItemOffhand();
+            ItemStack mainhand = playerIn.getHeldItemMainhand();
+            if (playerIn.isSneaking())
+            {
+                Block blocktotest = Blocks.BRICK_BLOCK;
+                boolean flag = this.containedBlock == blocktotest;
+                RayTraceResult raytraceresult = this.rayTrace(worldIn,
+                        playerIn, flag);
+                if (raytraceresult == null)
+                {
+                    return new ActionResult(EnumActionResult.PASS, mainhand);
+                }
+                else if (raytraceresult.typeOfHit != RayTraceResult.Type.BLOCK)
+                {
+                    return new ActionResult(EnumActionResult.PASS, mainhand);
+                }
+                else
+                {
+                    BlockPos blockpos = raytraceresult.getBlockPos();
+                    if (!worldIn.isBlockModifiable(playerIn, blockpos))
+                    {
+                        return new ActionResult(EnumActionResult.FAIL, mainhand);
+                    }
+                    if (!playerIn.canPlayerEdit(
+                            blockpos.offset(raytraceresult.sideHit),
+                            raytraceresult.sideHit, mainhand))
+                    {
+                        return new ActionResult(EnumActionResult.FAIL, mainhand);
+                    }
+                    else
+                    {
+                        IBlockState iblockstate = worldIn
+                                .getBlockState(blockpos);
+                        if (iblockstate == blocktotest.getDefaultState())
+                        {
+                            worldIn.setBlockState(blockpos,
+                                    ModBlocks.crystal_fire_brick
+                                            .getDefaultState(), 11);
+                            EntityLightningBolt lightning = new EntityLightningBolt(
+                                    worldIn, blockpos.getX(), blockpos.getY(),
+                                    blockpos.getZ(), false);
+                            worldIn.addWeatherEffect(lightning);
+                            return new ActionResult(EnumActionResult.PASS,
+                                    mainhand);
+                        }
+                        else
+                        {
+                            return new ActionResult(EnumActionResult.FAIL,
+                                    mainhand);
+                        }
+                    }
+                }
+            }
+        }
+        return new ActionResult<ItemStack>(EnumActionResult.PASS,
+                playerIn.getHeldItem(handIn));
+    }
 }

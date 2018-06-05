@@ -42,195 +42,233 @@ import com.themastergeneral.ctdmythos.common.effects.EffectUtils;
 import com.themastergeneral.ctdmythos.common.items.ModItems;
 import com.themastergeneral.ctdmythos.common.processing.MultiblockRecipes;
 
-public class BaseItem extends CTDItem {
-	public BaseItem(String name) {
-		super(name, CTDMythos.MODID);
-		this.setCreativeTab(CTDMythos.creativeTab);
-	}
+public class BaseItem extends CTDItem
+{
+    public BaseItem(String name)
+    {
+        super(name, CTDMythos.MODID);
+        this.setCreativeTab(CTDMythos.creativeTab);
+    }
 
-	@Override
-	public void onUpdate(ItemStack stack, World worldIn, Entity entityIn,
-			int itemSlot, boolean isSelected) {
-		EntityPlayer playerIn = (EntityPlayer) entityIn;
-		ItemStack offhand = playerIn.getHeldItemOffhand();
-		// Blindness effect with grief
-		if ((stack.getItem() == ModItems.crystal_grief)
-				&& (offhand.getItem() != ModItems.crystal_glove)) {
-			((EntityLivingBase) entityIn).addPotionEffect(new PotionEffect(
-					MobEffects.BLINDNESS, 20, 0, true, false));
-		}
-		// Nausea effect with memory
-		if ((stack.getItem() == ModItems.crystal_memory)
-				&& (offhand.getItem() != ModItems.crystal_glove)) {
-			((EntityLivingBase) entityIn).addPotionEffect(new PotionEffect(
-					MobEffects.WEAKNESS, 20, 2, true, false));
-		}
-		// Slowness effect with Woe
-		if ((stack.getItem() == ModItems.crystal_woe)
-				&& (offhand.getItem() != ModItems.crystal_glove)) {
-			((EntityLivingBase) entityIn).addPotionEffect(new PotionEffect(
-					MobEffects.SLOWNESS, 20, 2, true, false));
-		}
-	}
+    @Override
+    public void onUpdate(ItemStack stack, World worldIn, Entity entityIn,
+            int itemSlot, boolean isSelected)
+    {
+        EntityPlayer playerIn = (EntityPlayer) entityIn;
+        ItemStack offhand = playerIn.getHeldItemOffhand();
+        // Blindness effect with grief
+        if ((stack.getItem() == ModItems.crystal_grief)
+                && (offhand.getItem() != ModItems.crystal_glove))
+        {
+            ((EntityLivingBase) entityIn).addPotionEffect(new PotionEffect(
+                    MobEffects.BLINDNESS, 20, 0, true, false));
+        }
+        // Nausea effect with memory
+        if ((stack.getItem() == ModItems.crystal_memory)
+                && (offhand.getItem() != ModItems.crystal_glove))
+        {
+            ((EntityLivingBase) entityIn).addPotionEffect(new PotionEffect(
+                    MobEffects.WEAKNESS, 20, 2, true, false));
+        }
+        // Slowness effect with Woe
+        if ((stack.getItem() == ModItems.crystal_woe)
+                && (offhand.getItem() != ModItems.crystal_glove))
+        {
+            ((EntityLivingBase) entityIn).addPotionEffect(new PotionEffect(
+                    MobEffects.SLOWNESS, 20, 2, true, false));
+        }
+    }
 
-	@Override
-	public ActionResult<ItemStack> onItemRightClick(World worldIn,
-			EntityPlayer playerIn, EnumHand handIn) {
-		ItemStack offhand = playerIn.getHeldItemOffhand();
-		ItemStack mainhand = playerIn.getHeldItemMainhand();
-		// Crystalized Memory to repair the item in the user's offhand, at
-		// the cost of one Crystalized Memory.
-		if (mainhand.getItem() == ModItems.crystal_memory) {
-			if (offhand != ItemStack.EMPTY) {
-				if (offhand.isItemDamaged()) {
-					offhand.setItemDamage(0);
-					mainhand.shrink(1);
-					worldIn.playSound(playerIn, playerIn.getPosition(),
-							ModSounds.spell_complete, SoundCategory.PLAYERS,
-							1.0F, 1.0F);
-				}
-			}
-		}
-		return new ActionResult<ItemStack>(EnumActionResult.PASS,
-				playerIn.getHeldItem(handIn));
-	}
+    @Override
+    public ActionResult<ItemStack> onItemRightClick(World worldIn,
+            EntityPlayer playerIn, EnumHand handIn)
+    {
+        ItemStack offhand = playerIn.getHeldItemOffhand();
+        ItemStack mainhand = playerIn.getHeldItemMainhand();
+        // Crystalized Memory to repair the item in the user's offhand, at
+        // the cost of one Crystalized Memory.
+        if (mainhand.getItem() == ModItems.crystal_memory)
+        {
+            if (offhand != ItemStack.EMPTY)
+            {
+                if (offhand.isItemDamaged())
+                {
+                    offhand.setItemDamage(0);
+                    mainhand.shrink(1);
+                    worldIn.playSound(playerIn, playerIn.getPosition(),
+                            ModSounds.spell_complete, SoundCategory.PLAYERS,
+                            1.0F, 1.0F);
+                }
+            }
+        }
+        return new ActionResult<ItemStack>(EnumActionResult.PASS,
+                playerIn.getHeldItem(handIn));
+    }
 
-	public static boolean validMultiblock(BlockPos pos, World world,
-			EntityPlayer player, boolean output) {
-		if (!world.isRemote) {
-			BlockPos startpos = new BlockPos(pos.getX(), pos.getY(), pos.getZ());
-			BlockPos underpos = new BlockPos(pos.getX(), pos.getY() - 1,
-					pos.getZ());
-			BlockPos northpos = new BlockPos(pos.getX() + 1, pos.getY() - 1,
-					pos.getZ());
-			BlockPos southpos = new BlockPos(pos.getX() - 1, pos.getY() - 1,
-					pos.getZ());
-			BlockPos eastpos = new BlockPos(pos.getX(), pos.getY() - 1,
-					pos.getZ() + 1);
-			BlockPos westpos = new BlockPos(pos.getX(), pos.getY() - 1,
-					pos.getZ() - 1);
-			if (world.getBlockState(startpos).getBlock() == ModBlocks.pedestal_block) {
-				if (world.getBlockState(underpos).getBlock() == ModBlocks.crystal_fire_brick) {
-					if (world.getBlockState(northpos).getBlock() == ModBlocks.crystal_fire_brick) {
-						if (world.getBlockState(southpos).getBlock() == ModBlocks.crystal_fire_brick) {
-							if (world.getBlockState(eastpos).getBlock() == ModBlocks.crystal_fire_brick) {
-								if (world.getBlockState(westpos).getBlock() == ModBlocks.crystal_fire_brick) {
-									if (output) {
-										player.sendMessage(new TextComponentString(
-												"Valid multiblock."));
-									}
-									return true;
-								} else {
-									if (output) {
-										player.sendMessage(new TextComponentString(
-												"Expecting "
-														+ ModBlocks.crystal_fire_brick
-																.getLocalizedName()
-														+ " at X: "
-														+ westpos.getX()
-														+ ", Y: "
-														+ westpos.getY()
-														+ ", Z: "
-														+ westpos.getZ()
-														+ " but got "
-														+ world.getBlockState(
-																westpos)
-																.getBlock()
-																.getLocalizedName()));
-									}
-									return false;
-								}
-							} else {
-								if (output) {
-									player.sendMessage(new TextComponentString(
-											"Expecting "
-													+ ModBlocks.crystal_fire_brick
-															.getLocalizedName()
-													+ " at X: "
-													+ eastpos.getX()
-													+ ", Y: "
-													+ eastpos.getY()
-													+ ", Z: "
-													+ eastpos.getZ()
-													+ " but got "
-													+ world.getBlockState(
-															eastpos).getBlock()
-															.getLocalizedName()));
-								}
-								return false;
-							}
-						} else {
-							if (output) {
-								player.sendMessage(new TextComponentString(
-										"Expecting "
-												+ ModBlocks.crystal_fire_brick
-														.getLocalizedName()
-												+ " at X: "
-												+ southpos.getX()
-												+ ", Y: "
-												+ southpos.getY()
-												+ ", Z: "
-												+ southpos.getZ()
-												+ " but got "
-												+ world.getBlockState(southpos)
-														.getBlock()
-														.getLocalizedName()));
-							}
-							return false;
-						}
-					} else {
-						if (output) {
-							player.sendMessage(new TextComponentString(
-									"Expecting "
-											+ ModBlocks.crystal_fire_brick
-													.getLocalizedName()
-											+ " at X: "
-											+ northpos.getX()
-											+ ", Y: "
-											+ northpos.getY()
-											+ ", Z: "
-											+ northpos.getZ()
-											+ " but got "
-											+ world.getBlockState(northpos)
-													.getBlock()
-													.getLocalizedName()));
-						}
-						return false;
-					}
-				} else {
-					if (output) {
-						player.sendMessage(new TextComponentString("Expecting "
-								+ ModBlocks.crystal_fire_brick
-										.getLocalizedName()
-								+ " at X: "
-								+ underpos.getX()
-								+ ", Y: "
-								+ underpos.getY()
-								+ ", Z: "
-								+ underpos.getZ()
-								+ " but got "
-								+ world.getBlockState(underpos).getBlock()
-										.getLocalizedName()));
-					}
-					return false;
-				}
-			} else {
-				if (output) {
-					player.sendMessage(new TextComponentString("Expecting "
-							+ ModBlocks.pedestal_block.getLocalizedName()
-							+ " at X: "
-							+ startpos.getX()
-							+ ", Y: "
-							+ startpos.getY()
-							+ ", Z: "
-							+ startpos.getZ()
-							+ " but got "
-							+ world.getBlockState(startpos).getBlock()
-									.getLocalizedName()));
-				}
-				return false;
-			}
-		} else
-			return false;
-	}
+    public static boolean validMultiblock(BlockPos pos, World world,
+            EntityPlayer player, boolean output)
+    {
+        if (!world.isRemote)
+        {
+            BlockPos startpos = new BlockPos(pos.getX(), pos.getY(), pos.getZ());
+            BlockPos underpos = new BlockPos(pos.getX(), pos.getY() - 1,
+                    pos.getZ());
+            BlockPos northpos = new BlockPos(pos.getX() + 1, pos.getY() - 1,
+                    pos.getZ());
+            BlockPos southpos = new BlockPos(pos.getX() - 1, pos.getY() - 1,
+                    pos.getZ());
+            BlockPos eastpos = new BlockPos(pos.getX(), pos.getY() - 1,
+                    pos.getZ() + 1);
+            BlockPos westpos = new BlockPos(pos.getX(), pos.getY() - 1,
+                    pos.getZ() - 1);
+            if (world.getBlockState(startpos).getBlock() == ModBlocks.pedestal_block)
+            {
+                if (world.getBlockState(underpos).getBlock() == ModBlocks.crystal_fire_brick)
+                {
+                    if (world.getBlockState(northpos).getBlock() == ModBlocks.crystal_fire_brick)
+                    {
+                        if (world.getBlockState(southpos).getBlock() == ModBlocks.crystal_fire_brick)
+                        {
+                            if (world.getBlockState(eastpos).getBlock() == ModBlocks.crystal_fire_brick)
+                            {
+                                if (world.getBlockState(westpos).getBlock() == ModBlocks.crystal_fire_brick)
+                                {
+                                    if (output)
+                                    {
+                                        player.sendMessage(new TextComponentString(
+                                                "Valid multiblock."));
+                                    }
+                                    return true;
+                                }
+                                else
+                                {
+                                    if (output)
+                                    {
+                                        player.sendMessage(new TextComponentString(
+                                                "Expecting "
+                                                        + ModBlocks.crystal_fire_brick
+                                                                .getLocalizedName()
+                                                        + " at X: "
+                                                        + westpos.getX()
+                                                        + ", Y: "
+                                                        + westpos.getY()
+                                                        + ", Z: "
+                                                        + westpos.getZ()
+                                                        + " but got "
+                                                        + world.getBlockState(
+                                                                westpos)
+                                                                .getBlock()
+                                                                .getLocalizedName()));
+                                    }
+                                    return false;
+                                }
+                            }
+                            else
+                            {
+                                if (output)
+                                {
+                                    player.sendMessage(new TextComponentString(
+                                            "Expecting "
+                                                    + ModBlocks.crystal_fire_brick
+                                                            .getLocalizedName()
+                                                    + " at X: "
+                                                    + eastpos.getX()
+                                                    + ", Y: "
+                                                    + eastpos.getY()
+                                                    + ", Z: "
+                                                    + eastpos.getZ()
+                                                    + " but got "
+                                                    + world.getBlockState(
+                                                            eastpos).getBlock()
+                                                            .getLocalizedName()));
+                                }
+                                return false;
+                            }
+                        }
+                        else
+                        {
+                            if (output)
+                            {
+                                player.sendMessage(new TextComponentString(
+                                        "Expecting "
+                                                + ModBlocks.crystal_fire_brick
+                                                        .getLocalizedName()
+                                                + " at X: "
+                                                + southpos.getX()
+                                                + ", Y: "
+                                                + southpos.getY()
+                                                + ", Z: "
+                                                + southpos.getZ()
+                                                + " but got "
+                                                + world.getBlockState(southpos)
+                                                        .getBlock()
+                                                        .getLocalizedName()));
+                            }
+                            return false;
+                        }
+                    }
+                    else
+                    {
+                        if (output)
+                        {
+                            player.sendMessage(new TextComponentString(
+                                    "Expecting "
+                                            + ModBlocks.crystal_fire_brick
+                                                    .getLocalizedName()
+                                            + " at X: "
+                                            + northpos.getX()
+                                            + ", Y: "
+                                            + northpos.getY()
+                                            + ", Z: "
+                                            + northpos.getZ()
+                                            + " but got "
+                                            + world.getBlockState(northpos)
+                                                    .getBlock()
+                                                    .getLocalizedName()));
+                        }
+                        return false;
+                    }
+                }
+                else
+                {
+                    if (output)
+                    {
+                        player.sendMessage(new TextComponentString("Expecting "
+                                + ModBlocks.crystal_fire_brick
+                                        .getLocalizedName()
+                                + " at X: "
+                                + underpos.getX()
+                                + ", Y: "
+                                + underpos.getY()
+                                + ", Z: "
+                                + underpos.getZ()
+                                + " but got "
+                                + world.getBlockState(underpos).getBlock()
+                                        .getLocalizedName()));
+                    }
+                    return false;
+                }
+            }
+            else
+            {
+                if (output)
+                {
+                    player.sendMessage(new TextComponentString("Expecting "
+                            + ModBlocks.pedestal_block.getLocalizedName()
+                            + " at X: "
+                            + startpos.getX()
+                            + ", Y: "
+                            + startpos.getY()
+                            + ", Z: "
+                            + startpos.getZ()
+                            + " but got "
+                            + world.getBlockState(startpos).getBlock()
+                                    .getLocalizedName()));
+                }
+                return false;
+            }
+        }
+        else
+            return false;
+    }
 }

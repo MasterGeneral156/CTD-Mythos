@@ -18,29 +18,32 @@ import mezz.jei.api.ingredients.IIngredientRegistry;
 import mezz.jei.api.recipe.IRecipeCategoryRegistration;
 
 @JEIPlugin
-public class JEICTDMythos implements IModPlugin {
-	@Override
-	public void registerCategories(IRecipeCategoryRegistration registry) {
-		final IJeiHelpers jeiHelpers = registry.getJeiHelpers();
-		final IGuiHelper guiHelper = jeiHelpers.getGuiHelper();
+public class JEICTDMythos implements IModPlugin
+{
+    @Override
+    public void registerCategories(IRecipeCategoryRegistration registry)
+    {
+        final IJeiHelpers jeiHelpers = registry.getJeiHelpers();
+        final IGuiHelper guiHelper = jeiHelpers.getGuiHelper();
 
-		registry.addRecipeCategories(new FlightWandCategory(guiHelper),
-				new MultiblockCategory(guiHelper));
-	}
+        registry.addRecipeCategories(new FlightWandCategory(guiHelper),
+                new MultiblockCategory(guiHelper));
+    }
 
-	@Override
-	public void register(IModRegistry registry) {
-		final IIngredientRegistry ingredientRegistry = registry
-				.getIngredientRegistry();
-		final IJeiHelpers jeiHelpers = registry.getJeiHelpers();
+    @Override
+    public void register(IModRegistry registry)
+    {
+        final IIngredientRegistry ingredientRegistry = registry
+                .getIngredientRegistry();
+        final IJeiHelpers jeiHelpers = registry.getJeiHelpers();
 
-		registry.addRecipes(FlightWandMaker.getFlightItems(jeiHelpers),
-				"ctdmythos.flight_wand_items");
-		registry.addRecipes(MultiblockMaker.getFlightItems(jeiHelpers),
-				"ctdmythos.multiblock_recipes");
-		registry.addRecipeCatalyst(new ItemStack(ModItems.flight_wand),
-				"ctdmythos.flight_wand_items");
-		registry.addRecipeCatalyst(new ItemStack(ModBlocks.pedestal_block),
-				"ctdmythos.multiblock_recipes");
-	}
+        registry.addRecipes(FlightWandMaker.getFlightItems(jeiHelpers),
+                "ctdmythos.flight_wand_items");
+        registry.addRecipes(MultiblockMaker.getFlightItems(jeiHelpers),
+                "ctdmythos.multiblock_recipes");
+        registry.addRecipeCatalyst(new ItemStack(ModItems.flight_wand),
+                "ctdmythos.flight_wand_items");
+        registry.addRecipeCatalyst(new ItemStack(ModBlocks.pedestal_block),
+                "ctdmythos.multiblock_recipes");
+    }
 }
