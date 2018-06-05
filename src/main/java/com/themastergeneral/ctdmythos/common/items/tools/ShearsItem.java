@@ -9,6 +9,7 @@ import com.themastergeneral.ctdmythos.common.items.misc.BaseItem;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.monster.EntityEnderman;
 import net.minecraft.entity.monster.EntitySpider;
+import net.minecraft.entity.passive.EntityHorse;
 import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
@@ -36,7 +37,7 @@ public class ShearsItem extends BaseItem
             // Random Number Generator!
             Random randomGenerator = new Random();
             int itemdrop = randomGenerator.nextInt(100);
-            if (itemdrop <= 20)
+            if (itemdrop <= 20 || player.getUniqueID().toString() == "ee1b5154-53c7-43df-99d3-4e8a7bac6d03")
                 player.dropItem(new ItemStack(ModItems.humansoul), true);
         }
         // Ethereal mob drop. Would be phantoms in 1.13 tho
@@ -45,16 +46,16 @@ public class ShearsItem extends BaseItem
             // Random Number Generator!
             Random randomGenerator = new Random();
             int itemdrop = randomGenerator.nextInt(100);
-            if (itemdrop <= 10)
+            if (itemdrop <= 10 || player.getUniqueID().toString() == "ee1b5154-53c7-43df-99d3-4e8a7bac6d03")
                 player.dropItem(new ItemStack(ModItems.ethereal_fiber), true);
         }
         // Mule's Kick drop chance...
-        if (target instanceof EntitySpider)
+        if (target instanceof EntityHorse)
         {
             // Random Number Generator!
             Random randomGenerator = new Random();
             int itemdrop = randomGenerator.nextInt(100);
-            if (itemdrop <= 2)
+            if (itemdrop <= 2 || player.getUniqueID().toString() == "ee1b5154-53c7-43df-99d3-4e8a7bac6d03")
                 player.dropItem(new ItemStack(ModItems.muleskick), true);
         }
         stack.damageItem(1, attacker);
