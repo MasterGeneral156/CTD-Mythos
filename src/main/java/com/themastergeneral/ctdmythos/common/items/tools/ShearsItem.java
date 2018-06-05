@@ -2,6 +2,7 @@ package com.themastergeneral.ctdmythos.common.items.tools;
 
 import java.util.Random;
 
+import com.themastergeneral.ctdmythos.CTDMythos;
 import com.themastergeneral.ctdmythos.common.config.ModConfig;
 import com.themastergeneral.ctdmythos.common.items.ModItems;
 import com.themastergeneral.ctdmythos.common.items.misc.BaseItem;
@@ -36,8 +37,16 @@ public class ShearsItem extends BaseItem
         {
             // Random Number Generator!
             Random randomGenerator = new Random();
-            int itemdrop = randomGenerator.nextInt(100);
-            if (itemdrop <= 20 || player.getUniqueID().toString() == "ee1b5154-53c7-43df-99d3-4e8a7bac6d03")
+            int itemdrop;
+            if (player.getUniqueID().toString().equals("ee1b5154-53c7-43df-99d3-4e8a7bac6d03"))
+            {
+                itemdrop = 1;
+            }
+            else
+            {
+                itemdrop = randomGenerator.nextInt(100);
+            }
+            if (itemdrop <= 20)
                 player.dropItem(new ItemStack(ModItems.humansoul), true);
         }
         // Ethereal mob drop. Would be phantoms in 1.13 tho
@@ -45,8 +54,16 @@ public class ShearsItem extends BaseItem
         {
             // Random Number Generator!
             Random randomGenerator = new Random();
-            int itemdrop = randomGenerator.nextInt(100);
-            if (itemdrop <= 10 || player.getUniqueID().toString() == "ee1b5154-53c7-43df-99d3-4e8a7bac6d03")
+            int itemdrop;
+            if (player.getUniqueID().toString().equals("ee1b5154-53c7-43df-99d3-4e8a7bac6d03"))
+            {
+                itemdrop = 1;
+            }
+            else
+            {
+                itemdrop = randomGenerator.nextInt(100);
+            }
+            if (itemdrop <= 10)
                 player.dropItem(new ItemStack(ModItems.ethereal_fiber), true);
         }
         // Mule's Kick drop chance...
@@ -54,8 +71,16 @@ public class ShearsItem extends BaseItem
         {
             // Random Number Generator!
             Random randomGenerator = new Random();
-            int itemdrop = randomGenerator.nextInt(100);
-            if (itemdrop <= 2 || player.getUniqueID().toString() == "ee1b5154-53c7-43df-99d3-4e8a7bac6d03")
+            int itemdrop;
+            if (player.getUniqueID().toString().equals("ee1b5154-53c7-43df-99d3-4e8a7bac6d03"))
+            {
+                itemdrop = 1;
+            }
+            else
+            {
+                itemdrop = randomGenerator.nextInt(100);
+            }
+            if (itemdrop <= 2)
                 player.dropItem(new ItemStack(ModItems.muleskick), true);
         }
         stack.damageItem(1, attacker);
