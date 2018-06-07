@@ -175,8 +175,7 @@ public class PedestalTileEntity extends TileEntity implements ITickable
     public boolean validItem()
     {
         if (MultiblockRecipes.instance()
-                .getRecipeResult(this.inventory.getStackInSlot(0)).getItem() != ItemStack.EMPTY
-                .getItem())
+                .getRecipeResult(this.inventory.getStackInSlot(0)) != ItemStack.EMPTY)
             return true;
         else
             return false;

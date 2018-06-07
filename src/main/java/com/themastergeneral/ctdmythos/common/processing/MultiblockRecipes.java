@@ -54,12 +54,12 @@ public class MultiblockRecipes
                 ModItems.crystal_oath, 2));
         addRecipe(new ItemStack(Blocks.LAPIS_ORE), new ItemStack(Items.DYE, 2,
                 4));
-        addRecipe(new ItemStack(Blocks.WEB, 2), new ItemStack(
-                ModItems.ethereal_fiber, 8));
+        addRecipe(new ItemStack(Blocks.WEB, 1), new ItemStack(
+                ModItems.ethereal_fiber, 4));
 
         // Archeron Ingot
-        addRecipe(new ItemStack(Blocks.TNT, 4), new ItemStack(
-                ModItems.archeron_ingot, 4));
+        addRecipe(new ItemStack(Blocks.TNT, 1), new ItemStack(
+                ModItems.archeron_ingot, 1));
 
         addRecipe(new ItemStack(Items.TOTEM_OF_UNDYING), new ItemStack(
                 ModItems.humansoul, 4));
@@ -114,9 +114,21 @@ public class MultiblockRecipes
 
     private boolean compareItemStacks(ItemStack stack1, ItemStack stack2)
     {
-        return stack2.getItem() == stack1.getItem()
-                && (stack2.getMetadata() == 32767 || stack2.getMetadata() == stack1
-                        .getMetadata());
+        if (stack2.getItem() == stack1.getItem())
+        {
+            if (stack2.getMetadata() == 32767 || stack2.getMetadata() == stack1.getMetadata())
+            {
+                if ((stack1.getCount() / stack2.getCount()) == stack2.getCount())
+                {
+                    return true;
+                }
+            }
+            else
+            {
+                return false;
+            }
+        }
+        return false;
     }
 
     public Multimap<ItemStack, ItemStack> getRecipeList()
