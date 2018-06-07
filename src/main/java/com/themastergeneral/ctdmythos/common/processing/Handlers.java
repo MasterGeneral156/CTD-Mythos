@@ -13,8 +13,7 @@ public class Handlers
             float xp)
     {
         // Enderfuge stuff if its available? /shrug.
-        ItemStack enderfuge = new ItemStack(input.getItem());
-        EnderfugeIMC.addEnderfugeSmelt(enderfuge, output, xp);
+        EnderfugeIMC.addEnderfugeSmelt(input, new ItemStack(output.getItem(), output.getCount()*3, output.getMetadata()), xp);
         GameRegistry.addSmelting(input, output, xp);
     }
 
