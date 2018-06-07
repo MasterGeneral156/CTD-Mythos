@@ -1,5 +1,6 @@
 package com.themastergeneral.ctdmythos.common.items.artifacts;
 
+import com.themastergeneral.ctdmythos.CTDMythos;
 import com.themastergeneral.ctdmythos.client.sound.ModSounds;
 import com.themastergeneral.ctdmythos.common.config.ModConfig;
 import com.themastergeneral.ctdmythos.common.items.misc.BaseItem;
@@ -19,7 +20,7 @@ import net.minecraft.world.World;
 public class HumanEffigyItem extends BaseItem
 {
 
-    private int timer = 100;
+    protected int doheal = 100;
 
     public HumanEffigyItem(String name)
     {
@@ -63,20 +64,19 @@ public class HumanEffigyItem extends BaseItem
         if (entityIn instanceof EntityLivingBase)
         {
             EntityLivingBase entitylive = (EntityLivingBase) entityIn;
+            EntityPlayer playerIn = (EntityPlayer) entityIn;
             // If entity is hurt
-            if ((entitylive.hurtTime != entitylive.maxHurtTime)
-                    && (entitylive.hurtTime != 0))
+            if ((entityIn.hurtResistantTime != 0) && (((EntityLivingBase) entityIn).hurtTime != 0))
             {
-                timer = 100;
+                doheal = 100;
             }
-            else
-            {
-                timer = timer - 1;
-            }
-            if (timer == 0)
+            if (doheal > 0)
+                doheal--;
+            if (doheal == 0)
             {
                 entitylive.addPotionEffect(new PotionEffect(
-                        MobEffects.REGENERATION, 3, 4, true, false));
+                        MobEffects.REGENERATION, 30, 4, true, false));
+                doheal = -1;
             }
         }
     }
