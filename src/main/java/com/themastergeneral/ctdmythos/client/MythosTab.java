@@ -5,6 +5,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 
 import com.themastergeneral.ctdmythos.CTDMythos;
+import com.themastergeneral.ctdmythos.common.blocks.ModBlocks;
 import com.themastergeneral.ctdmythos.common.items.ModItems;
 
 public class MythosTab extends CreativeTabs
@@ -18,7 +19,7 @@ public class MythosTab extends CreativeTabs
     @Override
     public ItemStack getTabIconItem()
     {
-        return new ItemStack(ModItems.flight_wand);
+        return new ItemStack(ModBlocks.pedestal_block);
     }
 
     @Override
