@@ -73,10 +73,9 @@ public class MultiblockRecipes
         addRecipe(new ItemStack(Items.ENCHANTED_BOOK, 1,
                 OreDictionary.WILDCARD_VALUE), new ItemStack(ModItems.xptome));
 
-        addRecipe(new ItemStack(Items.ARROW, ModConfig.bow_multiplier),
-                new ItemStack(ModItems.mythos_arrow));
-
         addRecipe(new ItemStack(Items.SADDLE), new ItemStack(ModItems.muleskick));
+
+        addRecipe(new ItemStack(Blocks.COMMAND_BLOCK), new ItemStack(ModItems.debug_item));
     }
 
     public void addRecipe(ItemStack mainhand, ItemStack output)
