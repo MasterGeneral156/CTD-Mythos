@@ -36,7 +36,7 @@ public class CTDMythos
     public static final String certificateFingerprint = "5101015479fe39f20b47f365472250d312a50a57";
     // Required after CTD Core
     // [https://minecraft.curseforge.com/projects/ctd-core]
-    public static final String DEPENDENCIES = "required-after:baubles;required-after:ctdcore@[1.3.3,];";
+    public static final String DEPENDENCIES = "required-after:baubles;required-after:ctdcore@[1.3.4,];";
 
     // Creative Tab
     public static final MythosTab creativeTab = new MythosTab();
