@@ -75,6 +75,8 @@ public class MultiblockRecipes
 
         addRecipe(new ItemStack(Items.ARROW, ModConfig.bow_multiplier),
                 new ItemStack(ModItems.mythos_arrow));
+
+        addRecipe(new ItemStack(Items.SADDLE), new ItemStack(ModItems.muleskick));
     }
 
     public void addRecipe(ItemStack mainhand, ItemStack output)
@@ -114,21 +116,9 @@ public class MultiblockRecipes
 
     private boolean compareItemStacks(ItemStack stack1, ItemStack stack2)
     {
-        if (stack2.getItem() == stack1.getItem())
-        {
-            if (stack2.getMetadata() == 32767 || stack2.getMetadata() == stack1.getMetadata())
-            {
-                if ((stack1.getCount() / stack2.getCount()) == stack2.getCount())
-                {
-                    return true;
-                }
-            }
-            else
-            {
-                return false;
-            }
-        }
-        return false;
+        return stack2.getItem() == stack1.getItem()
+                && (stack2.getMetadata() == 32767 || stack2.getMetadata() == stack1
+                        .getMetadata());
     }
 
     public Multimap<ItemStack, ItemStack> getRecipeList()
