@@ -9,6 +9,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
+import net.minecraft.util.text.TextComponentString;
 
 public class TMGDrill extends MythosSwordBase
 {
@@ -45,6 +46,10 @@ public class TMGDrill extends MythosSwordBase
             targetted.dropItem(leggings, false);
             targetted.dropItem(chest, false);
             targetted.dropItem(helmet, false);
+
+            targetted.sendMessage(new TextComponentString("Your armor has been dropped!"));
+            attacker.sendMessage(new TextComponentString("You have dropped your target's armor, at the cost of 1/3 of the Drill's durability."));
+            stack.damageItem(this.getMaxDamage() / 3, attacker);
         }
         return true;
     }
