@@ -56,7 +56,7 @@ public class WandItemFlight extends WandItemBase
                 worldIn.playSound(playerIn, playerIn.getPosition(),
                         ModSounds.flight_wand, SoundCategory.PLAYERS, 1.0F,
                         1.0F);
-                offhand.shrink(WandFlightItems.instance().getFlightItem(mainhand).getCount());
+                offhand.shrink(1);
                 playerIn.getCooldownTracker().setCooldown(this, flighttime);
             }
         }
