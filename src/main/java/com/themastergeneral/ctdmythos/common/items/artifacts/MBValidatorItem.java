@@ -51,6 +51,6 @@ public class MBValidatorItem extends SingleStackItem
     public void addInformation(ItemStack stack, @Nullable World worldIn,
             List<String> tooltip, ITooltipFlag flagIn)
     {
-        tooltip.add("Use on Crystallized Fire Block to test multiblock.");
+        tooltip.add("Use on Pedestal to test multiblock.");
     }
 }
