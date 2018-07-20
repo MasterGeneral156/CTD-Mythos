@@ -4,11 +4,11 @@ item.bucketcowblood.name=Cow Blood Vial
 item.grimshears.name=Grim Shears
 item.humansoul.name=Human Soul Piece
 item.longbow.name=Long Bow
-item.crystal_fire.name=Crystallized Fire
-item.crystal_grief.name=Crystallized Grief
-item.crystal_memory.name=Crystallized Memory
-item.crystal_oath.name=Crystallized Oath
-item.crystal_woe.name=Crystallized Woe
+item.crystal_fire.name=§4Crystallized Fire
+item.crystal_grief.name=§7Crystallized Grief
+item.crystal_memory.name=§aCrystallized Memory
+item.crystal_oath.name=§eCrystallized Oath
+item.crystal_woe.name=§9Crystallized Woe
 item.tmgdrill.name=TMG's Drill
 item.xptome.name=Tome of Knowledge
 item.gladius_sword.name=Archeron Sword
@@ -31,7 +31,7 @@ item.mythos_arrow.name=Mythos Arrow
 itemGroup.ctdmythos=CTD Mythos
 ctdmythos.desc=A mod of magical items!
 
-jei.longbow.desc=3X Stronger than a normal bow.
+jei.longbow.desc=Three times stronger than a normal bow.
 jei.pedestal.desc=Takes 200 ticks per item for crafts to complete. Time will reset for each item change, and will scale up. IE: 32 Items will take 6,400 ticks to be crafted with.
 jei.crystal_glove.desc=Place in your off-hand to stop the effects of the other Crystallized gems.
 jei.muleskick.desc=Right Click Grim Shears on a horse for a 2% chance of dropping.
@@ -102,3 +102,10 @@ advancement.ethereal_fiber.name=Thanks Spidey!
 advancement.ethereal_fiber.desc=Use Grim Shears on a spider to obtain Etherreal Fiber.
 advancement.rye.name=Not Good
 advancement.rye.desc=Craft a loaf of Revitalizing Rye.
+
+info.dropped.armor=§5You have dropped your target's armor, at the cost of 1/3 of your Drills' durability.
+info.dropped.armor2=§5Your armor has been dropped!
+
+pedestal.progress.info=Completion: 
+pedestal.progress.ticks= ticks.
+pedestal.invalid=§4Empty or invalid recipe.
