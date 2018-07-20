@@ -20,6 +20,7 @@ import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextComponentString;
+import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
@@ -79,18 +80,19 @@ public class PedestalBlock extends CTDTEBase<PedestalTileEntity>
                 ItemStack stack = itemHandler.getStackInSlot(0);
                 if (tile.validItem())
                 {
-                    player.sendMessage(new TextComponentString("Completion: "
-                            + NumberFormat.getInstance()
-                                    .format(tile.getTicks())
-                            + " / "
-                            + NumberFormat.getInstance().format(
-                                    200 * tile.inventory.getStackInSlot(0)
-                                            .getCount()) + " ticks."));
+                	TextComponentTranslation message = new TextComponentTranslation("pedestal.progress.info");
+                	message.appendSibling(new TextComponentString(NumberFormat.getInstance().format(tile.getTicks())));
+                	message.appendText(" / ");
+                	message.appendSibling(new TextComponentString(NumberFormat.getInstance().format(
+                            200 * tile.inventory.getStackInSlot(0)
+                            .getCount())));
+                	message.appendSibling(new TextComponentTranslation("pedestal.progress.ticks"));
+                    player.sendMessage(message);
                 }
                 else
                 {
-                    player.sendMessage(new TextComponentString(
-                            "Empty or invalid recipe."));
+                    player.sendMessage(new TextComponentTranslation(
+                            "pedestal.invalid"));
                 }
             }
         }
