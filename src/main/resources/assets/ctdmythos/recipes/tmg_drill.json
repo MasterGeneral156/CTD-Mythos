@@ -8,8 +8,8 @@
     ],
     "key": {
 		"B": [{"type": "forge:ore_dict", "ore": "blockIron"}],
-        "S": [{"type": "forge:ore_dict", "ore": "stickWood"}],
-		"I": { "item": "minecraft:iron_sword" }
+        "S": [{"type": "forge:ore_dict", "ore": "stickEnchanted"}],
+		"I": { "item": "ctdmythos:gladius_sword" }
     },
     "result": {
         "item": "ctdmythos:tmgdrill",
