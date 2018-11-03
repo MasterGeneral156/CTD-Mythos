@@ -27,7 +27,7 @@ public class DebugItem extends BaseItem
     public ActionResult<ItemStack> onItemRightClick(World worldIn,
             EntityPlayer playerIn, EnumHand handIn)
     {
-        CTDMythos.logger.info(playerIn.inventory.armorItemInSlot(4));
+        CTDMythos.logger.info("This does nothing... why do you have this?");
         return new ActionResult<ItemStack>(EnumActionResult.PASS,
                 playerIn.getHeldItem(handIn));
     }
