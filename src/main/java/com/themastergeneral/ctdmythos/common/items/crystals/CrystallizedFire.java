@@ -23,6 +23,7 @@ import net.minecraft.world.World;
 import com.themastergeneral.ctdmythos.CTDMythos;
 import com.themastergeneral.ctdmythos.client.sound.ModSounds;
 import com.themastergeneral.ctdmythos.common.blocks.ModBlocks;
+import com.themastergeneral.ctdmythos.common.config.ModConfig;
 import com.themastergeneral.ctdmythos.common.effects.EffectUtils;
 import com.themastergeneral.ctdmythos.common.items.ModItems;
 import com.themastergeneral.ctdmythos.common.items.misc.BaseItem;
@@ -42,7 +43,7 @@ public class CrystallizedFire extends BaseItem
             int itemSlot, boolean isSelected)
     {
         // Extinguish fire with Fire
-        if (stack.getItem() == ModItems.crystal_fire)
+        if ((stack.getItem() == ModItems.crystal_fire) && (ModConfig.crystal_effects))
         {
             ((EntityLivingBase) entityIn).extinguish();
         }
