@@ -12,6 +12,7 @@ import net.minecraft.world.World;
 
 import com.themastergeneral.ctdmythos.CTDMythos;
 import com.themastergeneral.ctdmythos.client.sound.ModSounds;
+import com.themastergeneral.ctdmythos.common.config.ModConfig;
 import com.themastergeneral.ctdmythos.common.items.misc.BaseItem;
 
 public class MulesKickItem extends BaseItem
@@ -21,7 +22,7 @@ public class MulesKickItem extends BaseItem
     {
         super(name);
         this.maxStackSize = 1;
-        this.setMaxDamage(4);
+        this.setMaxDamage(ModConfig.mule_damage+1);
     }
 
     // When the Mule's Kick is used, give the player Speed 5 for 10 Seconds.

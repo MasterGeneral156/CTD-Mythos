@@ -1,5 +1,6 @@
 package com.themastergeneral.ctdmythos.common.items.wands;
 
+import com.themastergeneral.ctdmythos.common.config.ModConfig;
 import com.themastergeneral.ctdmythos.common.items.misc.BaseItem;
 
 public class WandItemBase extends BaseItem
@@ -9,7 +10,7 @@ public class WandItemBase extends BaseItem
     {
         super(name);
         this.maxStackSize = 1;
-        this.setMaxDamage(64);
+        this.setMaxDamage(ModConfig.wand_damage + 1);
     }
 
 }
