@@ -51,8 +51,8 @@ public class LongBowItem extends CTDBow
                 {
                     EntityPlayer playerIn = (EntityPlayer) entityLiving;
                     playerIn.getCooldownTracker().setCooldown(this, 0);
-                    entityLiving.sendMessage(new TextComponentString(i + " / "
-                            + ModConfig.bow_draw + " ticks required."));
+                    playerIn.sendStatusMessage(new TextComponentString(i + " / "
+                            + ModConfig.bow_draw + " ticks required."), true);
                 }
                 return;
             }
