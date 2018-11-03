@@ -18,7 +18,7 @@ public class TMGDrill extends MythosSwordBase
 
     public TMGDrill(String name)
     {
-        super(ToolMaterial.WOOD, name, 762);
+        super(ToolMaterial.IRON, name, 762);
         this.maxStackSize = 1;
     }
 
@@ -30,6 +30,7 @@ public class TMGDrill extends MythosSwordBase
         {
             // Cast entity to player
             EntityPlayer targetted = (EntityPlayer) target;
+            EntityPlayer attackerr = (EntityPlayer) attacker;
 
             // Get armor items
             ItemStack boots = targetted.inventory.armorItemInSlot(0);
@@ -49,8 +50,8 @@ public class TMGDrill extends MythosSwordBase
             targetted.dropItem(chest, false);
             targetted.dropItem(helmet, false);
             
-        	targetted.sendMessage(new TextComponentTranslation("info.dropped.armor2"));
-            attacker.sendMessage(new TextComponentTranslation("info.dropped.armor"));
+        	targetted.sendStatusMessage(new TextComponentTranslation("info.dropped.armor2"),true);
+            attackerr.sendStatusMessage(new TextComponentTranslation("info.dropped.armor"),true);
             stack.damageItem(this.getMaxDamage(stack) / 3, attacker);
         }
         return true;

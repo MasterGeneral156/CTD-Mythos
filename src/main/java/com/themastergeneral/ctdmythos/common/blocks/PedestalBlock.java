@@ -87,12 +87,12 @@ public class PedestalBlock extends CTDTEBase<PedestalTileEntity>
                             200 * tile.inventory.getStackInSlot(0)
                             .getCount())));
                 	message.appendSibling(new TextComponentTranslation("pedestal.progress.ticks"));
-                    player.sendMessage(message);
+                    player.sendStatusMessage(message,true);
                 }
                 else
                 {
-                    player.sendMessage(new TextComponentTranslation(
-                            "pedestal.invalid"));
+                    player.sendStatusMessage(new TextComponentTranslation(
+                            "pedestal.invalid"),true);
                 }
             }
         }
