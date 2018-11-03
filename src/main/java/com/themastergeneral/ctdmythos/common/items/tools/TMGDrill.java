@@ -37,22 +37,24 @@ public class TMGDrill extends MythosSwordBase
             ItemStack leggings = targetted.inventory.armorItemInSlot(1);
             ItemStack chest = targetted.inventory.armorItemInSlot(2);
             ItemStack helmet = targetted.inventory.armorItemInSlot(3);
-
-            // Delete the armor stack
-            targetted.inventory.deleteStack(boots);
-            targetted.inventory.deleteStack(leggings);
-            targetted.inventory.deleteStack(chest);
-            targetted.inventory.deleteStack(helmet);
-
-            // drop items
-            targetted.dropItem(boots, false);
-            targetted.dropItem(leggings, false);
-            targetted.dropItem(chest, false);
-            targetted.dropItem(helmet, false);
-            
-        	targetted.sendStatusMessage(new TextComponentTranslation("info.dropped.armor2"),true);
-            attackerr.sendStatusMessage(new TextComponentTranslation("info.dropped.armor"),true);
-            stack.damageItem(this.getMaxDamage(stack) / 3, attacker);
+            if (!boots.isEmpty() || !leggings.isEmpty() || !chest.isEmpty() || !helmet.isEmpty())
+            {
+	            // Delete the armor stack
+	            targetted.inventory.deleteStack(boots);
+	            targetted.inventory.deleteStack(leggings);
+	            targetted.inventory.deleteStack(chest);
+	            targetted.inventory.deleteStack(helmet);
+	
+	            // drop items
+	            targetted.dropItem(boots, false);
+	            targetted.dropItem(leggings, false);
+	            targetted.dropItem(chest, false);
+	            targetted.dropItem(helmet, false);
+	            
+	        	targetted.sendStatusMessage(new TextComponentTranslation("info.dropped.armor2"),true);
+	            attackerr.sendStatusMessage(new TextComponentTranslation("info.dropped.armor"),true);
+	            stack.damageItem(this.getMaxDamage(stack) / 3, attacker);
+            }
         }
         return true;
     }
