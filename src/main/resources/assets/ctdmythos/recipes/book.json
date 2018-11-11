@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "group": "patchouli:guide_book",
+    "pattern": [
+        "BG"
+    ],
+    "key": {
+		"B": { "item": "minecraft:book" },
+        "G": [{"type": "forge:ore_dict", "ore": "gemCrystallized"}]
+    },
+    "result": {
+        "item": "patchouli:guide_book",
+        "nbt": {
+            "patchouli:book": "ctdmythos:book"
+        }
+    }
+}

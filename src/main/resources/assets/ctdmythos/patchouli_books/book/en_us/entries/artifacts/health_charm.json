@@ -1,0 +1,16 @@
+{
+    "name": "Health Charm",
+    "icon": "ctdmythos:trinkethealth",
+    "category": "artifact_category",
+    "pages": [
+        {
+            "type": "text",
+            "text": "Equipped in a Bauble slot. It will increase your total health by five whole hearts! This item can be stacked, up to the maximum allowed in the config file."
+        },
+		{
+			"type": "crafting",
+			"recipe": "ctdmythos:trinket_health"
+		
+		}
+    ]
+}

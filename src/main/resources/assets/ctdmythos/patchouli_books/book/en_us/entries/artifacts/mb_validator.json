@@ -1,0 +1,16 @@
+{
+    "name": "Multiblock Validator",
+    "icon": "ctdmythos:mb_validator",
+    "category": "artifact_category",
+    "pages": [
+        {
+            "type": "text",
+            "text": "This is a simple tool that will allow you to verify if your multiblock is complete. Simply click on any block and it'll tell you what's missing, if anything. Otherwise, it'll tell you its a valid multiblock for the Pedestal."
+        },
+		{
+			"type": "crafting",
+			"recipe": "ctdmythos:mb_validator"
+		
+		}
+    ]
+}

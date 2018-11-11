@@ -1,0 +1,17 @@
+{
+    "name": "TMG's Drill",
+    "icon": "ctdmythos:tmgdrill",
+    "category": "weapon_category",
+    "pages": [
+        {
+            "type": "text",
+            "text": "Same traits as an iron sword, but with its own little spin..."
+        },
+		{
+			"type": "crafting",
+			"recipe": "ctdmythos:tmg_drill",
+			"text": "When you hit a player with armor equipped, it'd disarm them, at the cost of one-third of the Drill's Durability."
+		
+		}
+    ]
+}

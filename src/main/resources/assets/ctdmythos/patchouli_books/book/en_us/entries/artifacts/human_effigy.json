@@ -1,0 +1,16 @@
+{
+    "name": "Human Effigy",
+    "icon": "ctdmythos:humaneffigy",
+    "category": "artifact_category",
+    "pages": [
+        {
+            "type": "text",
+            "text": "The Human Effigy is quite interesting. Simply having it in your inventory will give you passive health regen five seconds after you take damage. However, if you use it, it'll completely refill your hunger and health bars to full, but take some of its durability away."
+        },
+		{
+			"type": "crafting",
+			"recipe": "ctdmythos:human_effigy"
+		
+		}
+    ]
+}

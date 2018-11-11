@@ -1,0 +1,16 @@
+{
+    "name": "Crystallized Glove",
+    "icon": "ctdmythos:crystal_glove",
+    "category": "artifact_category",
+    "pages": [
+        {
+            "type": "text",
+            "text": "When placed in your off-hand slot, it'll stop the effects of all Crystal Gem effects."
+        },
+		{
+			"type": "crafting",
+			"recipe": "ctdmythos:crystal_glove"
+		
+		}
+    ]
+}

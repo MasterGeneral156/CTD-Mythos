@@ -1,0 +1,22 @@
+{
+    "name": "Levitation Wand",
+    "icon": "ctdmythos:flight_wand",
+    "category": "artifact_category",
+    "pages": [
+        {
+            "type": "text",
+            "text": "This simply gives levitation. This is not a good substitute for a creative flight item. However, simply place a catalyst item in your off-hand, and then use the wand."
+        },
+		{
+			"type": "crafting",
+			"recipe": "ctdmythos:flight_wand",
+			"text": "Default catalysts can be found on the next page."
+		
+		},
+		{
+			"type": "text",
+			"title": "Default Catalysts",
+			"text": "Iron Nuggets, Gold Nuggets. Iron Blocks, Gold Blocks, Diamond Blocks, Emerald Blocks. Iron Ingot, Gold Ingot, Emerald and Diamond. Nuggets give the least amount of time, whereas the blocks give the most."
+		}
+    ]
+}

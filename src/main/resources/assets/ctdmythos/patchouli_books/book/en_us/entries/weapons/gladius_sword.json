@@ -1,0 +1,17 @@
+{
+    "name": "Archeron Sword",
+    "icon": "ctdmythos:gladius_sword",
+    "category": "weapon_category",
+    "pages": [
+        {
+            "type": "text",
+            "text": "The Archeron Sword is a pretty no-thrills weapon. It has gold weapon stats, but a way higher durability."
+        },
+		{
+			"type": "crafting",
+			"recipe": "ctdmythos:gladius",
+			"text": "Remember, this sword has the same enchantability as gold, so you can get this to become quite the strong sword!"
+		
+		}
+    ]
+}

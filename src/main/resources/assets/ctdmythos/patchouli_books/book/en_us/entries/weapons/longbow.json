@@ -1,0 +1,26 @@
+{
+    "name": "Long Bow",
+    "icon": "ctdmythos:longbow",
+    "category": "weapon_category",
+    "pages": [
+        {
+            "type": "text",
+            "text": "The Long Bow is a very over-powered bow, however you must pull and hold the bow for much longer than a normal bow. By default, the time required is 50 ticks. This is changeable in the config file."
+        },
+		{
+			"type": "crafting",
+			"recipe": "ctdmythos:long_bow",
+			"text": "Power V will destroy anyone in diamond armor, just sayin."
+		
+		},
+		{
+            "type": "text",
+            "text": "The Long Bow also requires special arrows called Mythos Arrows."
+        },
+		{
+			"type": "crafting",
+			"recipe": "ctdmythos:mythos_arrow"
+		
+		}
+    ]
+}
