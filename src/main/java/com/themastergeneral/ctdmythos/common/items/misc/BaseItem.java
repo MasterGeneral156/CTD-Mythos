@@ -138,8 +138,8 @@ public class BaseItem extends CTDItem
                                 {
                                     if (output)
                                     {
-                                        player.sendMessage(new TextComponentString(
-                                                "Valid multiblock."));
+                                        player.sendStatusMessage(new TextComponentString(
+                                                "Valid multiblock."), true);
                                     }
                                     return true;
                                 }
@@ -147,7 +147,7 @@ public class BaseItem extends CTDItem
                                 {
                                     if (output)
                                     {
-                                        player.sendMessage(new TextComponentString(
+                                        player.sendStatusMessage(new TextComponentString(
                                                 "Expecting "
                                                         + ModBlocks.crystal_fire_brick
                                                                 .getLocalizedName()
@@ -161,7 +161,7 @@ public class BaseItem extends CTDItem
                                                         + world.getBlockState(
                                                                 westpos)
                                                                 .getBlock()
-                                                                .getLocalizedName()));
+                                                                .getLocalizedName()), true);
                                     }
                                     return false;
                                 }
@@ -170,7 +170,7 @@ public class BaseItem extends CTDItem
                             {
                                 if (output)
                                 {
-                                    player.sendMessage(new TextComponentString(
+                                    player.sendStatusMessage(new TextComponentString(
                                             "Expecting "
                                                     + ModBlocks.crystal_fire_brick
                                                             .getLocalizedName()
@@ -183,7 +183,7 @@ public class BaseItem extends CTDItem
                                                     + " but got "
                                                     + world.getBlockState(
                                                             eastpos).getBlock()
-                                                            .getLocalizedName()));
+                                                            .getLocalizedName()), true);
                                 }
                                 return false;
                             }
@@ -192,7 +192,7 @@ public class BaseItem extends CTDItem
                         {
                             if (output)
                             {
-                                player.sendMessage(new TextComponentString(
+                                player.sendStatusMessage(new TextComponentString(
                                         "Expecting "
                                                 + ModBlocks.crystal_fire_brick
                                                         .getLocalizedName()
@@ -205,7 +205,7 @@ public class BaseItem extends CTDItem
                                                 + " but got "
                                                 + world.getBlockState(southpos)
                                                         .getBlock()
-                                                        .getLocalizedName()));
+                                                        .getLocalizedName()), true);
                             }
                             return false;
                         }
@@ -214,7 +214,7 @@ public class BaseItem extends CTDItem
                     {
                         if (output)
                         {
-                            player.sendMessage(new TextComponentString(
+                            player.sendStatusMessage(new TextComponentString(
                                     "Expecting "
                                             + ModBlocks.crystal_fire_brick
                                                     .getLocalizedName()
@@ -227,7 +227,7 @@ public class BaseItem extends CTDItem
                                             + " but got "
                                             + world.getBlockState(northpos)
                                                     .getBlock()
-                                                    .getLocalizedName()));
+                                                    .getLocalizedName()), true);
                         }
                         return false;
                     }
@@ -236,7 +236,7 @@ public class BaseItem extends CTDItem
                 {
                     if (output)
                     {
-                        player.sendMessage(new TextComponentString("Expecting "
+                        player.sendStatusMessage(new TextComponentString("Expecting "
                                 + ModBlocks.crystal_fire_brick
                                         .getLocalizedName()
                                 + " at X: "
@@ -247,7 +247,7 @@ public class BaseItem extends CTDItem
                                 + underpos.getZ()
                                 + " but got "
                                 + world.getBlockState(underpos).getBlock()
-                                        .getLocalizedName()));
+                                        .getLocalizedName()), true);
                     }
                     return false;
                 }
@@ -256,7 +256,7 @@ public class BaseItem extends CTDItem
             {
                 if (output)
                 {
-                    player.sendMessage(new TextComponentString("Expecting "
+                    player.sendStatusMessage(new TextComponentString("Expecting "
                             + ModBlocks.pedestal_block.getLocalizedName()
                             + " at X: "
                             + startpos.getX()
@@ -266,7 +266,7 @@ public class BaseItem extends CTDItem
                             + startpos.getZ()
                             + " but got "
                             + world.getBlockState(startpos).getBlock()
-                                    .getLocalizedName()));
+                                    .getLocalizedName()), true);
                 }
                 return false;
             }
