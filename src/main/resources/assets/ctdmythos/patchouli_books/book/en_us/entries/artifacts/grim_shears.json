@@ -1,0 +1,16 @@
+{
+    "name": "Grim Shears",
+    "icon": "ctdmythos:grimshears",
+    "category": "artifact_category",
+    "pages": [
+        {
+            "type": "text",
+            "text": "The Grim Shears can be used to snip a fragments from a humanoid soul. Can be used to get Human Soul Piece."
+        },
+		{
+			"type": "crafting",
+			"recipe": "ctdmythos:grim_shears"
+		
+		}
+    ]
+}
