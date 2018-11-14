@@ -86,6 +86,9 @@ public class MultiblockRecipes {
 				ModItems.debug_item));
 		addRecipe(new ItemStack(ModItems.mb_validator), new ItemStack(
 				ModItems.mb_validator));
+
+		addRecipe(new ItemStack(Items.SHULKER_SHELL), new ItemStack(
+				ModItems.shulker_helmet));
 	}
 
 	public void addRecipe(ItemStack mainhand, ItemStack output) {
