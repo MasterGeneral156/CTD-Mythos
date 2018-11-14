@@ -1,0 +1,16 @@
+{
+    "name": "Human Soul Piece",
+    "icon": "ctdmythos:humansoul",
+    "category": "misc_category",
+    "pages": [
+        {
+            "type": "text",
+            "text": "A crafting item. Can be obtained by hitting a player or villager with $(l:artifacts/grim_shears)Grim Shears$(/l), or by placing a Totem of Undying in the $(l:pedestal/pedestal_block)Pedestal$(/l)."
+        },
+		{
+			"type": "entity",
+			"entity": "minecraft:villager",
+			"scale": "0.75"
+		}
+    ]
+}
