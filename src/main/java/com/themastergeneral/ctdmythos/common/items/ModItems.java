@@ -1,6 +1,8 @@
 package com.themastergeneral.ctdmythos.common.items;
 
+import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item.ToolMaterial;
+import net.minecraft.item.ItemArmor.ArmorMaterial;
 
 import com.themastergeneral.ctdcore.item.RegisterItem;
 import com.themastergeneral.ctdmythos.CTDMythos;
@@ -20,11 +22,13 @@ import com.themastergeneral.ctdmythos.common.items.crystals.CrystallizedWoe;
 import com.themastergeneral.ctdmythos.common.items.misc.BaseFood;
 import com.themastergeneral.ctdmythos.common.items.misc.BaseItem;
 import com.themastergeneral.ctdmythos.common.items.misc.GlowingItem;
+import com.themastergeneral.ctdmythos.common.items.misc.ModArmorMaterials;
 import com.themastergeneral.ctdmythos.common.items.misc.SingleStackItem;
 import com.themastergeneral.ctdmythos.common.items.tools.LongBowItem;
 import com.themastergeneral.ctdmythos.common.items.tools.MythosArrow;
 import com.themastergeneral.ctdmythos.common.items.tools.MythosSwordBase;
 import com.themastergeneral.ctdmythos.common.items.tools.ShearsItem;
+import com.themastergeneral.ctdmythos.common.items.tools.ShulkerHelmet;
 import com.themastergeneral.ctdmythos.common.items.tools.TMGDrill;
 import com.themastergeneral.ctdmythos.common.items.wands.WandItemFlight;
 import com.themastergeneral.ctdmythos.common.items.wands.WandItemTeleport;
@@ -69,6 +73,8 @@ public class ModItems extends RegisterItem
     public static TrinketHealth trinketHealth;
 
     public static DebugItem debug_item;
+    
+    public static ShulkerHelmet shulker_helmet;
 
     public static void registerItems()
     {
@@ -116,5 +122,7 @@ public class ModItems extends RegisterItem
         mb_validator = register(new MBValidatorItem("mb_validator"));
 
         mythos_arrow = register(new MythosArrow("mythos_arrow", CTDMythos.MODID));
+        
+        shulker_helmet = register(new ShulkerHelmet("shulker_helmet", ModArmorMaterials.shulker_armor, 1, EntityEquipmentSlot.HEAD));
     }
 }

@@ -1,0 +1,17 @@
+{
+    "name": "Shulker Helmet",
+    "icon": "ctdmythos:shulker_helmet",
+    "category": "weapon_category",
+    "pages": [
+        {
+            "type": "text",
+            "text": "...what?"
+        },
+		{
+			"type": "crafting",
+			"recipe": "ctdmythos:shulker_helmet",
+			"text": "...still not sure why"
+		
+		}
+    ]
+}
