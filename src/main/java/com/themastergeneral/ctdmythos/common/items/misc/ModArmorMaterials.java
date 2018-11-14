@@ -7,6 +7,6 @@ import net.minecraftforge.common.util.EnumHelper;
 public class ModArmorMaterials {
 	public static ArmorMaterial shulker_armor = EnumHelper.addArmorMaterial(
 			"shulker_armor", "ctdmythos:shulker_helmet", 100,
-			new int[] { 1, 1, 1, 1 }, (int) 0.4F,
-			SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0F);
+			new int[] { 5, 5, 5, 5 }, 7,
+			SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 9F);
 }
