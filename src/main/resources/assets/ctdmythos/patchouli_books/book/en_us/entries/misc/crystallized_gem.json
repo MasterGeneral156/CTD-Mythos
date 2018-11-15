@@ -1,0 +1,31 @@
+{
+    "name": "Crystallized Gems",
+    "icon": "ctdmythos:crystal_fire",
+    "category": "misc_category",
+    "pages": [
+        {
+            "type": "text",
+            "text": "Crystallized Gems drop from Crystallized Ore blocks. Gems may have status effects while in your inventory."
+        },
+		{
+            "type": "spotlight",
+			"item": "ctdmythos:crystal_fire",
+            "text": "Crystallized Fire will extinguish you if you are on fire."
+        },
+		{
+            "type": "spotlight",
+			"item": "ctdmythos:crystal_woe",
+            "text": "Crystallized Woe will give you Slowness III."
+        },
+		{
+            "type": "spotlight",
+			"item": "ctdmythos:crystal_memory",
+            "text": "Crystallized Memory will give you Weakness III."
+        },
+		{
+            "type": "spotlight",
+			"item": "ctdmythos:crystal_grief",
+            "text": "Crystallized Grief will give you Blindness."
+        }
+    ]
+}

@@ -1,0 +1,36 @@
+{
+    "name": "Crystallized Stairs",
+    "icon": "ctdmythos:crystal_fire_stairs",
+    "category": "misc_category",
+    "pages": [
+        {
+            "type": "text",
+            "text": "Just some stairs from $(l:misc/crystallized_bricks)Crystallized Bricks$(/l)."
+        },
+		{
+            "type": "crafting",
+			"recipe": "ctdmythos:crystallized_fire_stairs",
+			"recipe2": "ctdmythos:crystallized_fire_stairs2"
+        },
+		{
+            "type": "crafting",
+			"recipe": "ctdmythos:crystallized_woe_stairs",
+			"recipe2": "ctdmythos:crystallized_woe_stairs2"
+        },
+		{
+            "type": "crafting",
+			"recipe": "ctdmythos:crystallized_oath_stairs",
+			"recipe2": "ctdmythos:crystallized_oath_stairs2"
+        },
+		{
+            "type": "crafting",
+			"recipe": "ctdmythos:crystallized_grief_stairs",
+			"recipe2": "ctdmythos:crystallized_grief_stairs2"
+        },
+		{
+            "type": "crafting",
+			"recipe": "ctdmythos:crystallized_memory_stairs",
+			"recipe2": "ctdmythos:crystallized_memory_stairs2"
+        }
+    ]
+}

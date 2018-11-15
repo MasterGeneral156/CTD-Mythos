@@ -1,0 +1,11 @@
+{
+    "name": "Crystallized Ore",
+    "icon": "ctdmythos:crystal_fire_ore",
+    "category": "misc_category",
+    "pages": [
+        {
+            "type": "text",
+            "text": "Crystallized Ore spawns underground, with similar spawn rates to that of clay. You will need a stone pickaxe or better to successfully mine a Crystallized Ore block."
+        }
+    ]
+}

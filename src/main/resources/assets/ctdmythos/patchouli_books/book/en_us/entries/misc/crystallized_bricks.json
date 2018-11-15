@@ -1,0 +1,36 @@
+{
+    "name": "Crystallized Bricks",
+    "icon": "ctdmythos:crystal_fire_brick",
+    "category": "misc_category",
+    "pages": [
+        {
+            "type": "text",
+            "text": "Crystallized Bricks are crafted by Shift-Right Clicking on normal Clay Bricks with the desired Crystallized Gem in hand."
+        },
+		{
+            "type": "spotlight",
+			"item": "ctdmythos:crystal_fire_brick",
+            "text": "Shift-Right Click with Crystallized Fire."
+        },
+		{
+            "type": "spotlight",
+			"item": "ctdmythos:crystal_woe_brick",
+            "text": "Shift-Right Click with Crystallized Woe."
+        },
+		{
+            "type": "spotlight",
+			"item": "ctdmythos:crystal_memory_brick",
+            "text": "Shift-Right Click with Crystallized Memory."
+        },
+		{
+            "type": "spotlight",
+			"item": "ctdmythos:crystal_grief_brick",
+            "text": "Shift-Right Click with Crystallized Grief."
+        },
+		{
+            "type": "spotlight",
+			"item": "ctdmythos:crystal_oath_brick",
+            "text": "Shift-Right Click with Crystallized Oath."
+        }
+    ]
+}
