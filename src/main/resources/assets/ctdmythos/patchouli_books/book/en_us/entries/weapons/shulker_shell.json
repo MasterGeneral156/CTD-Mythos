@@ -8,7 +8,8 @@
             "text": "Extracting the shell from a Shulker, and using the pedestal to focus some mythos magic onto it should, in theory, make a great helmet. You can be the judge of that."
         },
 		{
-			"type": "text",
+			"type": "spotlight",
+			"item": "ctdmythos:shulker_helmet",
             "text": "Craft using a Shulker Shell in a $(l:pedestal/pedestal_block)Pedestal..."
 		
 		}
