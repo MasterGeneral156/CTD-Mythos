@@ -53,6 +53,8 @@ public class MultiblockRecipes {
 				4));
 		addRecipe(new ItemStack(Blocks.WEB, 1), new ItemStack(
 				ModItems.ethereal_fiber, 4));
+		
+		addRecipe(new ItemStack(Items.GLASS_BOTTLE), new ItemStack(ModItems.lightning_bottle));
 
 		// Archeron Ingot
 		addRecipe(new ItemStack(Blocks.TNT, 1), new ItemStack(

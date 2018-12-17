@@ -21,6 +21,7 @@ import com.themastergeneral.ctdmythos.common.items.crystals.CrystallizedOath;
 import com.themastergeneral.ctdmythos.common.items.crystals.CrystallizedWoe;
 import com.themastergeneral.ctdmythos.common.items.misc.BaseFood;
 import com.themastergeneral.ctdmythos.common.items.misc.BaseItem;
+import com.themastergeneral.ctdmythos.common.items.misc.BottleLightning;
 import com.themastergeneral.ctdmythos.common.items.misc.GlowingItem;
 import com.themastergeneral.ctdmythos.common.items.misc.ModArmorMaterials;
 import com.themastergeneral.ctdmythos.common.items.misc.SingleStackItem;
@@ -75,6 +76,8 @@ public class ModItems extends RegisterItem
     public static DebugItem debug_item;
     
     public static ShulkerHelmet shulker_helmet;
+    
+    public static BottleLightning lightning_bottle;
 
     public static void registerItems()
     {
@@ -120,6 +123,8 @@ public class ModItems extends RegisterItem
         trinketHealth = register(new TrinketHealth("trinketHealth"));
 
         mb_validator = register(new MBValidatorItem("mb_validator"));
+        
+        lightning_bottle = register(new BottleLightning("lightning_bottle"));
 
         mythos_arrow = register(new MythosArrow("mythos_arrow", CTDMythos.MODID));
         
