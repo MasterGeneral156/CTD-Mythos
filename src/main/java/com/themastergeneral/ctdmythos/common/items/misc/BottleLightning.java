@@ -11,7 +11,7 @@ import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumHand;
 import net.minecraft.world.World;
 
-public class BottleLightning extends BaseItem {
+public class BottleLightning extends GlowingItem {
 
 	public BottleLightning(String name) {
 		super(name);
