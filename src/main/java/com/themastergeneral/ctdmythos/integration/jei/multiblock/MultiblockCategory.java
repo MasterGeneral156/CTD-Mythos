@@ -23,7 +23,7 @@ public class MultiblockCategory extends CTDMythosJEICategory<MultiblockJEI>
         super(guiHelper);
         background = guiHelper.createDrawable(backgroundLocation, 0, 168, 125,
                 18, 0, 20, 0, 0);
-        localizedName = "Multiblock Crafting";
+        localizedName = "Pedestal";
     }
 
     @Override
