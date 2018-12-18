@@ -1,5 +1,7 @@
 package com.themastergeneral.ctdmythos.common.items.misc;
 
+import com.themastergeneral.ctdmythos.common.items.ModItems;
+
 import net.minecraft.entity.effect.EntityLightningBolt;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
@@ -19,8 +21,13 @@ public class BottleLightning extends BaseItem {
     public ActionResult<ItemStack> onItemRightClick(World worldIn,
             EntityPlayer playerIn, EnumHand handIn)
     {
-		worldIn.addWeatherEffect(new EntityLightningBolt(worldIn, playerIn.posX, playerIn.posY, playerIn.posZ, false));
-		playerIn.attackEntityFrom(DamageSource.LIGHTNING_BOLT, 100000F);
+		ItemStack mainhand = playerIn.getHeldItemMainhand();
+		if (mainhand.getItem() == ModItems.lightning_bottle)
+		{
+			worldIn.addWeatherEffect(new EntityLightningBolt(worldIn, playerIn.posX, playerIn.posY, playerIn.posZ, false));
+			playerIn.attackEntityFrom(DamageSource.LIGHTNING_BOLT, 100000F);
+			mainhand.shrink(1);
+		}
 		return new ActionResult<ItemStack>(EnumActionResult.PASS,
                 playerIn.getHeldItem(handIn));
     }
