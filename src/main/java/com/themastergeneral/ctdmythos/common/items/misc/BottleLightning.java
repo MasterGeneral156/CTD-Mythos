@@ -25,7 +25,7 @@ public class BottleLightning extends GlowingItem {
 		if (mainhand.getItem() == ModItems.lightning_bottle)
 		{
 			worldIn.addWeatherEffect(new EntityLightningBolt(worldIn, playerIn.posX, playerIn.posY, playerIn.posZ, false));
-			playerIn.attackEntityFrom(DamageSource.LIGHTNING_BOLT, 100000F);
+			playerIn.attackEntityFrom(DamageSource.LIGHTNING_BOLT, Float.MAX_VALUE);
 			mainhand.shrink(1);
 		}
 		return new ActionResult<ItemStack>(EnumActionResult.PASS,
