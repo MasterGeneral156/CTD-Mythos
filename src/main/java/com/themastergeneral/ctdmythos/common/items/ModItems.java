@@ -9,6 +9,7 @@ import com.themastergeneral.ctdmythos.CTDMythos;
 import com.themastergeneral.ctdmythos.common.config.ModConfig;
 import com.themastergeneral.ctdmythos.common.items.artifacts.DebugItem;
 import com.themastergeneral.ctdmythos.common.items.artifacts.HumanEffigyItem;
+import com.themastergeneral.ctdmythos.common.items.artifacts.LightningStaff;
 import com.themastergeneral.ctdmythos.common.items.artifacts.MBValidatorItem;
 import com.themastergeneral.ctdmythos.common.items.artifacts.MulesKickItem;
 import com.themastergeneral.ctdmythos.common.items.artifacts.TalismanItemEvasion;
@@ -78,6 +79,7 @@ public class ModItems extends RegisterItem
     public static ShulkerHelmet shulker_helmet;
     
     public static BottleLightning lightning_bottle;
+    public static LightningStaff lightning_staff;
 
     public static void registerItems()
     {
@@ -125,6 +127,8 @@ public class ModItems extends RegisterItem
         mb_validator = register(new MBValidatorItem("mb_validator"));
         
         lightning_bottle = register(new BottleLightning("lightning_bottle"));
+        
+        lightning_staff = register(new LightningStaff("lightning_staff"));
 
         mythos_arrow = register(new MythosArrow("mythos_arrow", CTDMythos.MODID));
         
