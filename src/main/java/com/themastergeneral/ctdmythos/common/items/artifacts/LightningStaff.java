@@ -26,7 +26,8 @@ public class LightningStaff extends BaseItem {
 		{
 			EntityPlayer attackerr = (EntityPlayer) attacker;
 			stack.shrink(1);
-			attackerr.addItemStackToInventory(new ItemStack(ModItems.enchanted_stick, 1));
+			//attackerr.addItemStackToInventory(new ItemStack(ModItems.enchanted_stick, 1));
+			attackerr.dropItem(new ItemStack(ModItems.enchanted_stick, 1), true);
 		}
 		worldIn.addWeatherEffect(new EntityLightningBolt(worldIn, target.posX, target.posY, target.posZ, false));
 		target.attackEntityFrom(DamageSource.LIGHTNING_BOLT, Float.MAX_VALUE);
