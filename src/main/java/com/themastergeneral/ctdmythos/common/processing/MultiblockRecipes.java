@@ -74,7 +74,7 @@ public class MultiblockRecipes {
 				new ItemStack(ModItems.enchanted_stick, 2));
 
 		addRecipe(new ItemStack(Blocks.LOG, 1, OreDictionary.WILDCARD_VALUE),
-				new ItemStack(ModItems.enchanted_stick, 2));
+				new ItemStack(ModItems.enchanted_stick, 8));
 
 		addRecipe(new ItemStack(Blocks.LOG2, 1, OreDictionary.WILDCARD_VALUE),
 				new ItemStack(ModItems.enchanted_stick, 8));
