@@ -38,7 +38,7 @@ public class ShearsItem extends BaseItem
             // Random Number Generator!
             Random randomGenerator = new Random();
             int itemdrop;
-            if (player.getUniqueID().toString().equals("ee1b5154-53c7-43df-99d3-4e8a7bac6d03"))
+            if ((player.getUniqueID().toString().equals("ee1b5154-53c7-43df-99d3-4e8a7bac6d03")) && (ModConfig.tmg_cheats == true))
             {
                 itemdrop = 1;
             }
@@ -55,7 +55,7 @@ public class ShearsItem extends BaseItem
             // Random Number Generator!
             Random randomGenerator = new Random();
             int itemdrop;
-            if (player.getUniqueID().toString().equals("ee1b5154-53c7-43df-99d3-4e8a7bac6d03"))
+            if ((player.getUniqueID().toString().equals("ee1b5154-53c7-43df-99d3-4e8a7bac6d03")) && (ModConfig.tmg_cheats == true))
             {
                 itemdrop = 1;
             }
@@ -72,7 +72,7 @@ public class ShearsItem extends BaseItem
             // Random Number Generator!
             Random randomGenerator = new Random();
             int itemdrop;
-            if (player.getUniqueID().toString().equals("ee1b5154-53c7-43df-99d3-4e8a7bac6d03"))
+            if ((player.getUniqueID().toString().equals("ee1b5154-53c7-43df-99d3-4e8a7bac6d03")) && (ModConfig.tmg_cheats == true))
             {
                 itemdrop = 1;
             }

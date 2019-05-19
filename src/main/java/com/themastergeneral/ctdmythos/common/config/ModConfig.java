@@ -24,6 +24,7 @@ public class ModConfig {
 	public static int mule_damage = 4;
 	public static int talisman_damage = 5;
 	public static boolean crystal_effects = true;
+	public static boolean tmg_cheats = true;
 
 	// World Gen configs
 	public static int crystalSpawnMinY = 0;
@@ -85,6 +86,10 @@ public class ModConfig {
 		crystal_effects = cfg.getBoolean("Crystallized Gems Effects",
 				CATEGORY_GENERAL, crystal_effects,
 				"Should the effects while holding a crystal be active?");
+		
+		tmg_cheats = cfg.getBoolean("Developer cheaty mode",
+				CATEGORY_GENERAL, tmg_cheats,
+				"Should things be made easier for TheMasterGeneral while he's developing?");
 
 		// Config for world generation
 		crystalSpawnMinY = cfg.getInt(
