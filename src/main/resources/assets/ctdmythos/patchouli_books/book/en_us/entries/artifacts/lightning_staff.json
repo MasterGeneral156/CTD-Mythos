@@ -1,0 +1,15 @@
+{
+    "name": "Staff of Lightning",
+    "icon": "ctdmythos:lightning_staff",
+    "category": "artifact_category",
+    "pages": [
+        {
+            "type": "text",
+            "text": "Using this staff will strike your opponent with a very deadly bolt of lightning. Its so very frightening!"
+        },
+		{
+			"type": "crafting",
+			"recipe": "ctdmythos:lightning_staff"
+		}
+    ]
+}
