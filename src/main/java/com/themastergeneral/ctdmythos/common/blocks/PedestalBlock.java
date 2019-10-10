@@ -79,21 +79,29 @@ public class PedestalBlock extends CTDTEBase<PedestalTileEntity>
             else
             {
                 ItemStack stack = itemHandler.getStackInSlot(0);
-                if (tile.validItem())
+                if (tile.inEnd())
                 {
-                	TextComponentTranslation message = new TextComponentTranslation("pedestal.progress.info");
-                	message.appendSibling(new TextComponentString(NumberFormat.getInstance().format(tile.getTicks())));
-                	message.appendText(" / ");
-                	message.appendSibling(new TextComponentString(NumberFormat.getInstance().format(
-                            200 * tile.inventory.getStackInSlot(0)
-                            .getCount())));
-                	message.appendSibling(new TextComponentTranslation("pedestal.progress.ticks"));
-                    player.sendStatusMessage(message,true);
+	                if (tile.validItem())
+	                {
+	                	TextComponentTranslation message = new TextComponentTranslation("pedestal.progress.info");
+	                	message.appendSibling(new TextComponentString(NumberFormat.getInstance().format(tile.getTicks())));
+	                	message.appendText(" / ");
+	                	message.appendSibling(new TextComponentString(NumberFormat.getInstance().format(
+	                            200 * tile.inventory.getStackInSlot(0)
+	                            .getCount())));
+	                	message.appendSibling(new TextComponentTranslation("pedestal.progress.ticks"));
+	                    player.sendStatusMessage(message,true);
+	                }
+	                else
+	                {
+	                    player.sendStatusMessage(new TextComponentTranslation(
+	                            "pedestal.invalid"),true);
+	                }
                 }
                 else
                 {
-                    player.sendStatusMessage(new TextComponentTranslation(
-                            "pedestal.invalid"),true);
+                	player.sendStatusMessage(new TextComponentTranslation(
+                            "pedestal.needend"),true);
                 }
             }
         }

@@ -112,3 +112,4 @@ info.dropped.armor2=§5Your armor has been dropped!
 pedestal.progress.info=Completion: 
 pedestal.progress.ticks= ticks.
 pedestal.invalid=§4Empty or invalid recipe.
+pedestal.needend=Pedestal will only work in End-based Dimensions.

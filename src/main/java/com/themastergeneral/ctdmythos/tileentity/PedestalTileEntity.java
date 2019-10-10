@@ -20,6 +20,9 @@ import net.minecraft.util.ITickable;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextComponentString;
+import net.minecraft.world.DimensionType;
+import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.BiomeEnd;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.items.CapabilityItemHandler;
@@ -124,42 +127,45 @@ public class PedestalTileEntity extends TileEntity implements ITickable
     {
         if (validMB())
         {
-            if (validItem())
-            {
-                incrementTicks();
-                if (getTicks() == 200 * inventory.getStackInSlot(0).getCount())
-                {
-                    int newtotal = inventory.getStackInSlot(0).getCount()
-                            * getOutput().getCount();
-                    ItemStack Output = new ItemStack(getOutput().getItem(),
-                            newtotal, getOutput().getMetadata());
-                    world.addWeatherEffect(new EntityLightningBolt(world, pos
-                            .getX(), pos.getY() + 1, pos.getZ(), false));
-                    this.inventory.setStackInSlot(0, Output);
-                    Random randomGenerator = new Random();
-                    int actualheal = randomGenerator.nextInt(100);
-                    if (actualheal < 3)
-                    {
-                        world.setBlockState(new BlockPos(pos.getX(),
-                                pos.getY() - 1, pos.getZ()), Blocks.BRICK_BLOCK
-                                .getDefaultState());
-                        world.setBlockState(
-                                new BlockPos(pos.getX() + 1, pos.getY() - 1,
-                                        pos.getZ()), Blocks.BRICK_BLOCK
-                                        .getDefaultState());
-                        world.setBlockState(
-                                new BlockPos(pos.getX() - 1, pos.getY() - 1,
-                                        pos.getZ()), Blocks.BRICK_BLOCK
-                                        .getDefaultState());
-                        world.setBlockState(new BlockPos(pos.getX(),
-                                pos.getY() - 1, pos.getZ() + 1),
-                                Blocks.BRICK_BLOCK.getDefaultState());
-                        world.setBlockState(new BlockPos(pos.getX(),
-                                pos.getY() - 1, pos.getZ() - 1),
-                                Blocks.BRICK_BLOCK.getDefaultState());
-                    }
-                    resetTicks();
-                }
+        	if (inEnd())
+        	{
+	            if (validItem())
+	            {
+	                incrementTicks();
+	                if (getTicks() == 200 * inventory.getStackInSlot(0).getCount())
+	                {
+	                    int newtotal = inventory.getStackInSlot(0).getCount()
+	                            * getOutput().getCount();
+	                    ItemStack Output = new ItemStack(getOutput().getItem(),
+	                            newtotal, getOutput().getMetadata());
+	                    world.addWeatherEffect(new EntityLightningBolt(world, pos
+	                            .getX(), pos.getY() + 1, pos.getZ(), false));
+	                    this.inventory.setStackInSlot(0, Output);
+	                    Random randomGenerator = new Random();
+	                    int actualheal = randomGenerator.nextInt(100);
+	                    if (actualheal < 3)
+	                    {
+	                        world.setBlockState(new BlockPos(pos.getX(),
+	                                pos.getY() - 1, pos.getZ()), Blocks.BRICK_BLOCK
+	                                .getDefaultState());
+	                        world.setBlockState(
+	                                new BlockPos(pos.getX() + 1, pos.getY() - 1,
+	                                        pos.getZ()), Blocks.BRICK_BLOCK
+	                                        .getDefaultState());
+	                        world.setBlockState(
+	                                new BlockPos(pos.getX() - 1, pos.getY() - 1,
+	                                        pos.getZ()), Blocks.BRICK_BLOCK
+	                                        .getDefaultState());
+	                        world.setBlockState(new BlockPos(pos.getX(),
+	                                pos.getY() - 1, pos.getZ() + 1),
+	                                Blocks.BRICK_BLOCK.getDefaultState());
+	                        world.setBlockState(new BlockPos(pos.getX(),
+	                                pos.getY() - 1, pos.getZ() - 1),
+	                                Blocks.BRICK_BLOCK.getDefaultState());
+	                    }
+	                    resetTicks();
+	                }
+	            }
             }
             else
             {
@@ -220,5 +226,11 @@ public class PedestalTileEntity extends TileEntity implements ITickable
         }
         return false;
     }
-
+    public boolean inEnd()
+    {
+    	Biome currentBiome = this.getWorld().getBiome(this.getPos());
+    	if (currentBiome instanceof BiomeEnd)
+    		return true;
+		return false;
+    }
 }
