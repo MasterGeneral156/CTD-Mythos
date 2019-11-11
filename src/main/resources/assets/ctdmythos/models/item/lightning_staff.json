@@ -1,0 +1,6 @@
+{
+    "parent": "item/handheld",
+    "textures": {
+        "layer0": "ctdmythos:items/lightning_staff"
+    }
+}
