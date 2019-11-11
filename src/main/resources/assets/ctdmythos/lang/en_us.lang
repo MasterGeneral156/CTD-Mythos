@@ -108,6 +108,7 @@ advancement.rye.desc=Craft a loaf of Revitalizing Rye.
 
 info.dropped.armor=§5You have dropped your target's armor, at the cost of 1/3 of your Drills' durability.
 info.dropped.armor2=§5Your armor has been dropped!
+info.wand.teleport.fail=You cannot use this wand outside of the overworld.
 
 pedestal.progress.info=Completion: 
 pedestal.progress.ticks= ticks.
