@@ -23,6 +23,7 @@ public class ModConfig {
 	public static int wand_damage = 64;
 	public static int mule_damage = 4;
 	public static int talisman_damage = 5;
+	public static int lightning_staff_damage = 5;
 	public static boolean crystal_effects = true;
 	public static boolean tmg_cheats = true;
 
@@ -68,6 +69,10 @@ public class ModConfig {
 				.getInt("Talisman of Evasion max use", CATEGORY_GENERAL,
 						talisman_damage, 1, 32766,
 						"How many times can a player use Talisman of Evasion before breaking");
+		lightning_staff_damage = cfg
+				.getInt("Staff of Lightning max use", CATEGORY_GENERAL,
+						lightning_staff_damage, 1, 32766,
+						"How many times can a player use the Staff of Lightning before breaking");
 		DurabilityShears = cfg.getInt("Grim Shears Max Uses", CATEGORY_GENERAL,
 				DurabilityShears, 1, 32766,
 				"How many uses per pair of grim shears");

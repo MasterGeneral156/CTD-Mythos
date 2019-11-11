@@ -1,5 +1,6 @@
 package com.themastergeneral.ctdmythos.common.items.artifacts;
 
+import com.themastergeneral.ctdmythos.common.config.ModConfig;
 import com.themastergeneral.ctdmythos.common.items.ModItems;
 import com.themastergeneral.ctdmythos.common.items.misc.BaseItem;
 
@@ -15,6 +16,7 @@ public class LightningStaff extends BaseItem {
 	public LightningStaff(String name) {
 		super(name);
 		this.setMaxStackSize(1);
+		this.setMaxDamage(ModConfig.lightning_staff_damage-1);
 		this.setNoRepair();
 	}
 
@@ -25,9 +27,7 @@ public class LightningStaff extends BaseItem {
 		if (attacker instanceof EntityPlayer)
 		{
 			EntityPlayer attackerr = (EntityPlayer) attacker;
-			stack.shrink(1);
-			//attackerr.addItemStackToInventory(new ItemStack(ModItems.enchanted_stick, 1));
-			attackerr.dropItem(new ItemStack(ModItems.enchanted_stick, 1), true);
+			stack.damageItem(1, attackerr);
 		}
 		worldIn.addWeatherEffect(new EntityLightningBolt(worldIn, target.posX, target.posY, target.posZ, false));
 		target.attackEntityFrom(DamageSource.LIGHTNING_BOLT, Float.MAX_VALUE);
