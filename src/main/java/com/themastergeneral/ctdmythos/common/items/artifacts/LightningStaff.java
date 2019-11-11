@@ -31,8 +31,16 @@ public class LightningStaff extends BaseItem {
 		}
 		worldIn.addWeatherEffect(new EntityLightningBolt(worldIn, target.posX, target.posY, target.posZ, false));
 		target.attackEntityFrom(DamageSource.LIGHTNING_BOLT, Float.MAX_VALUE);
-		//Maybe beat draconic?
 		target.attackEntityFrom(DamageSource.OUT_OF_WORLD, Float.MAX_VALUE);
+		if (ModConfig.ovk_dmg)
+		{
+			target.attackEntityFrom(DamageSource.GENERIC, Float.MAX_VALUE);
+			target.attackEntityFrom(DamageSource.WITHER, Float.MAX_VALUE);
+			target.attackEntityFrom(DamageSource.MAGIC, Float.MAX_VALUE);
+			target.attackEntityFrom(DamageSource.STARVE, Float.MAX_VALUE);
+			target.attackEntityFrom(DamageSource.FLY_INTO_WALL, Float.MAX_VALUE);
+			target.attackEntityFrom(DamageSource.ANVIL, Float.MAX_VALUE);
+		}
 		return true;
     }
 }

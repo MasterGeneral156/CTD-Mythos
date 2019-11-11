@@ -26,6 +26,7 @@ public class ModConfig {
 	public static int lightning_staff_damage = 5;
 	public static boolean crystal_effects = true;
 	public static boolean tmg_cheats = true;
+	public static boolean ovk_dmg = false;
 
 	// World Gen configs
 	public static int crystalSpawnMinY = 0;
@@ -95,6 +96,9 @@ public class ModConfig {
 		tmg_cheats = cfg.getBoolean("Developer cheaty mode",
 				CATEGORY_GENERAL, tmg_cheats,
 				"Should things be made easier for TheMasterGeneral while he's developing?");
+		ovk_dmg = cfg.getBoolean("Lightning Staff Overkill Damage",
+				CATEGORY_GENERAL, ovk_dmg,
+				"Enables some things to make every hit a one hit, as intended by the mod author. This WILL likely be overkill.");
 
 		// Config for world generation
 		crystalSpawnMinY = cfg.getInt(
