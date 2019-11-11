@@ -149,7 +149,7 @@ public class LongBowItem extends CTDBow
         }
     }
 
-    private ItemStack findAmmo(EntityPlayer player)
+    public ItemStack findAmmo(EntityPlayer player)
     {
         if (this.isArrow(player.getHeldItem(EnumHand.OFF_HAND)))
         {
