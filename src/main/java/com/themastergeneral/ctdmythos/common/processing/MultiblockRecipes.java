@@ -91,6 +91,8 @@ public class MultiblockRecipes {
 
 		addRecipe(new ItemStack(Items.SHULKER_SHELL), new ItemStack(
 				ModItems.shulker_helmet));
+		addRecipe(new ItemStack(Blocks.DRAGON_EGG), new ItemStack(
+				ModItems.mythos_pool));
 	}
 
 	public void addRecipe(ItemStack mainhand, ItemStack output) {
