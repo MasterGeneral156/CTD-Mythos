@@ -39,6 +39,7 @@ public class TMGDrill extends MythosSwordBase
             ItemStack helmet = targetted.inventory.armorItemInSlot(3);
             if (checkMythos(getMythos(attackerr), ModConfig.mythosCostDrill))
             {
+            	removeMythos(attackerr, ModConfig.mythosCostDrill);
 	            if (!boots.isEmpty() || !leggings.isEmpty() || !chest.isEmpty() || !helmet.isEmpty())
 	            {
 		            // Delete the armor stack
