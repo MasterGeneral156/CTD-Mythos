@@ -12,12 +12,14 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.SoundCategory;
+import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.world.World;
 
 import com.themastergeneral.ctdcore.CTDCore;
 import com.themastergeneral.ctdcore.client.ItemModelProvider;
 import com.themastergeneral.ctdmythos.CTDMythos;
 import com.themastergeneral.ctdmythos.client.sound.ModSounds;
+import com.themastergeneral.ctdmythos.common.config.ModConfig;
 import com.themastergeneral.ctdmythos.common.items.ModItems;
 
 public class MythosSwordBase extends ItemSword implements ItemModelProvider
@@ -49,16 +51,55 @@ public class MythosSwordBase extends ItemSword implements ItemModelProvider
         // Crystal oath + book in offhand to get a tome of XP
         if (mainhand.getItem() == ModItems.gladius_sword)
         {
-            if (!worldIn.isRemote)
+        	if (checkMythos(getMythos(playerIn), ModConfig.mythosCostSword))
             {
-                mainhand.damageItem(mainhand.getMaxDamage() / 3, playerIn);
-                playerIn.addPotionEffect(new PotionEffect(
-                        MobEffects.RESISTANCE, 200, 4, true, false));
-                playerIn.getCooldownTracker().setCooldown(mainhand.getItem(),
-                        500);
+        		removeMythos(playerIn, ModConfig.mythosCostSword);
+	            if (!worldIn.isRemote)
+	            {
+	                playerIn.addPotionEffect(new PotionEffect(
+	                        MobEffects.RESISTANCE, 200, 4, true, false));
+	                playerIn.getCooldownTracker().setCooldown(mainhand.getItem(),
+	                        500);
+	            }
             }
+        	else
+        	{
+        		playerIn.sendStatusMessage(new TextComponentTranslation(
+    	                "You need at least " + ModConfig.mythosCostSword + " mythos to be boosted."),true);
+        	}
         }
         return new ActionResult<ItemStack>(EnumActionResult.PASS,
                 playerIn.getHeldItem(handIn));
     }
+    public int getMythos(EntityPlayer playerIn)
+	{
+		return playerIn.getEntityData().getInteger("mythos");
+	}
+	
+	public void setMythos(EntityPlayer playerIn, int mythos)
+	{
+		playerIn.getEntityData().setInteger("mythos", mythos);
+	}
+	
+	public boolean checkMythos(int currentMythos, int required)
+	{
+		return currentMythos >= required;
+	}
+	
+	public void removeMythos(EntityPlayer playerIn, int mythosChange)
+	{
+		int mythos = getMythos(playerIn);
+		int newMythos = mythos - mythosChange;
+		if (newMythos < 0)
+			newMythos = 0;
+		setMythos(playerIn, newMythos);
+	}
+	public void addMythos(EntityPlayer playerIn, int mythosChange)
+	{
+		int mythos = getMythos(playerIn);
+		int newMythos = mythos + mythosChange;
+		if (newMythos > ModConfig.mythosMaxStorage)
+			newMythos = ModConfig.mythosMaxStorage;
+		setMythos(playerIn, newMythos);
+	}
 }
