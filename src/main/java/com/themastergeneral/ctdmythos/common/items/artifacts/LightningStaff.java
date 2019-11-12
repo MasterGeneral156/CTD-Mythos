@@ -17,7 +17,6 @@ public class LightningStaff extends BaseItem {
 	public LightningStaff(String name) {
 		super(name);
 		this.setMaxStackSize(1);
-		this.setMaxDamage(ModConfig.lightning_staff_damage-1);
 		this.setNoRepair();
 	}
 
