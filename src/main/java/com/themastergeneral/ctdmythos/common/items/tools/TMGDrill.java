@@ -3,6 +3,7 @@ package com.themastergeneral.ctdmythos.common.items.tools;
 import com.themastergeneral.ctdcore.CTDCore;
 import com.themastergeneral.ctdcore.client.ItemModelProvider;
 import com.themastergeneral.ctdmythos.CTDMythos;
+import com.themastergeneral.ctdmythos.common.config.ModConfig;
 
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
@@ -25,7 +26,6 @@ public class TMGDrill extends MythosSwordBase
     @Override
     public boolean hitEntity(ItemStack stack, EntityLivingBase target, EntityLivingBase attacker)
     {
-        stack.damageItem(1, attacker);
         if (target instanceof EntityPlayer)
         {
             // Cast entity to player
@@ -37,23 +37,30 @@ public class TMGDrill extends MythosSwordBase
             ItemStack leggings = targetted.inventory.armorItemInSlot(1);
             ItemStack chest = targetted.inventory.armorItemInSlot(2);
             ItemStack helmet = targetted.inventory.armorItemInSlot(3);
-            if (!boots.isEmpty() || !leggings.isEmpty() || !chest.isEmpty() || !helmet.isEmpty())
+            if (checkMythos(getMythos(attackerr), ModConfig.mythosCostDrill))
             {
-	            // Delete the armor stack
-	            targetted.inventory.deleteStack(boots);
-	            targetted.inventory.deleteStack(leggings);
-	            targetted.inventory.deleteStack(chest);
-	            targetted.inventory.deleteStack(helmet);
-	
-	            // drop items
-	            targetted.dropItem(boots, false);
-	            targetted.dropItem(leggings, false);
-	            targetted.dropItem(chest, false);
-	            targetted.dropItem(helmet, false);
-	            
-	        	targetted.sendStatusMessage(new TextComponentTranslation("info.dropped.armor2"),true);
-	            attackerr.sendStatusMessage(new TextComponentTranslation("info.dropped.armor"),true);
-	            stack.damageItem(this.getMaxDamage(stack) / 3, attacker);
+	            if (!boots.isEmpty() || !leggings.isEmpty() || !chest.isEmpty() || !helmet.isEmpty())
+	            {
+		            // Delete the armor stack
+		            targetted.inventory.deleteStack(boots);
+		            targetted.inventory.deleteStack(leggings);
+		            targetted.inventory.deleteStack(chest);
+		            targetted.inventory.deleteStack(helmet);
+		
+		            // drop items
+		            targetted.dropItem(boots, false);
+		            targetted.dropItem(leggings, false);
+		            targetted.dropItem(chest, false);
+		            targetted.dropItem(helmet, false);
+		            
+		        	targetted.sendStatusMessage(new TextComponentTranslation("info.dropped.armor2"),true);
+		            attackerr.sendStatusMessage(new TextComponentTranslation("info.dropped.armor"),true);
+	            }
+            }
+            else
+            {
+            	attackerr.sendStatusMessage(new TextComponentTranslation(
+    	                "You need at least " + ModConfig.mythosCostDrill + " mythos to disarm your opponent."),true);
             }
         }
         return true;
