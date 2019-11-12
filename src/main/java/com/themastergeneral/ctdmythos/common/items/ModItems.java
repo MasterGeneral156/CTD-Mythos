@@ -26,6 +26,7 @@ import com.themastergeneral.ctdmythos.common.items.misc.BottleLightning;
 import com.themastergeneral.ctdmythos.common.items.misc.GlowingItem;
 import com.themastergeneral.ctdmythos.common.items.misc.ModArmorMaterials;
 import com.themastergeneral.ctdmythos.common.items.misc.SingleStackItem;
+import com.themastergeneral.ctdmythos.common.items.mythos.MythosPool;
 import com.themastergeneral.ctdmythos.common.items.tools.LongBowItem;
 import com.themastergeneral.ctdmythos.common.items.tools.MythosArrow;
 import com.themastergeneral.ctdmythos.common.items.tools.MythosSwordBase;
@@ -81,6 +82,7 @@ public class ModItems extends RegisterItem
     public static BottleLightning lightning_bottle;
     public static LightningStaff lightning_staff;
 
+    public static MythosPool mythos_pool;
     public static void registerItems()
     {
         humaneffigy = register(new HumanEffigyItem("humaneffigy"));
