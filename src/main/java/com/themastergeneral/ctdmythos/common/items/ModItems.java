@@ -104,7 +104,7 @@ public class ModItems extends RegisterItem
         ethereal_fiber = register(new BaseItem("ethereal_fiber"));
         enchanted_stick = register(new BaseItem("enchanted_stick"));
         mythos_pool = register(new MythosPool("mythos_pool"));
-        mythos_exciter = register(new MythosInventGen("mythos_exciter", 5));
+        mythos_exciter = register(new MythosInventGen("mythos_exciter", ModConfig.mythosExciterGen));
         mythos_nova = register(new MythosInventGen("mythos_nova", ModConfig.mythosMaxStorage));
 
         longbow = register(new LongBowItem("longbow", 144000, 640));

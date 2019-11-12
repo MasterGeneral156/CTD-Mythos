@@ -38,6 +38,7 @@ public class ModConfig {
 	public static int mythosCostTalisman = 750;
 	public static int mythosCostDrill = 1500;
 	public static int mythosCostSword = 1250;
+	public static int mythosExciterGen = 1;
 
 	public static void readConfig() {
 		Configuration cfg = Common.config;
@@ -133,5 +134,7 @@ public class ModConfig {
 				"Mythos Cost");
 		mythosCostSword = cfg.getInt("Sword", CATEGORY_MYTHOS, mythosCostSword, 0, mythosMaxStorage,
 				"Mythos Cost");
+		mythosExciterGen = cfg.getInt("Exciter Generation Rate", CATEGORY_MYTHOS, mythosExciterGen, 0, mythosMaxStorage,
+				"Mythos per Tick");
 	}
 }
