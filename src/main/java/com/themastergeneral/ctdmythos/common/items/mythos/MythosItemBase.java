@@ -29,12 +29,4 @@ public class MythosItemBase extends BaseItem
 	{
 		super(name);
 	}
-	// Add tooltip on client side.
-    @SideOnly(Side.CLIENT)
-    @Override
-    public void addInformation(ItemStack stack, @Nullable World worldIn,
-            List<String> tooltip, ITooltipFlag flagIn)
-    {
-    	tooltip.add("Magical.");
-    }
 }
