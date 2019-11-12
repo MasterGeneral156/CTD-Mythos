@@ -26,6 +26,7 @@ import com.themastergeneral.ctdmythos.common.items.misc.BottleLightning;
 import com.themastergeneral.ctdmythos.common.items.misc.GlowingItem;
 import com.themastergeneral.ctdmythos.common.items.misc.ModArmorMaterials;
 import com.themastergeneral.ctdmythos.common.items.misc.SingleStackItem;
+import com.themastergeneral.ctdmythos.common.items.mythos.MythosInventGen;
 import com.themastergeneral.ctdmythos.common.items.mythos.MythosPool;
 import com.themastergeneral.ctdmythos.common.items.tools.LongBowItem;
 import com.themastergeneral.ctdmythos.common.items.tools.MythosArrow;
@@ -83,6 +84,8 @@ public class ModItems extends RegisterItem
     public static LightningStaff lightning_staff;
 
     public static MythosPool mythos_pool;
+    public static MythosInventGen mythos_exciter;
+    public static MythosInventGen mythos_nova;
     public static void registerItems()
     {
         humaneffigy = register(new HumanEffigyItem("humaneffigy"));
@@ -101,6 +104,8 @@ public class ModItems extends RegisterItem
         ethereal_fiber = register(new BaseItem("ethereal_fiber"));
         enchanted_stick = register(new BaseItem("enchanted_stick"));
         mythos_pool = register(new MythosPool("mythos_pool"));
+        mythos_exciter = register(new MythosInventGen("mythos_exciter", 5));
+        mythos_nova = register(new MythosInventGen("mythos_nova", ModConfig.mythosMaxStorage));
 
         longbow = register(new LongBowItem("longbow", 144000, 640));
 
