@@ -13,18 +13,13 @@ public class ModConfig {
 	private static final String CATEGORY_MYTHOS = "Mythos Balance";
 
 	// Actual Config shit
-	public static int DurabilityHumanEffigy = 5;
 	public static int DurabilityShears = 25;
-	public static int StoredLevels = 5;
 	public static int reachAmuletRange = 10;
 	public static int creativereachAmuletRange = 255;
 	public static int bow_draw = 50;
 	public static int bow_multiplier = 3;
 	public static int heart_stack = 4;
 	public static int wand_damage = 64;
-	public static int mule_damage = 4;
-	public static int talisman_damage = 5;
-	public static int lightning_staff_damage = 5;
 	public static boolean crystal_effects = true;
 	public static boolean tmg_cheats = true;
 	public static boolean ovk_dmg = false;
@@ -37,7 +32,11 @@ public class ModConfig {
 	
 	//Mythos configs
 	public static int mythosMaxStorage = 4000;
-	public static int mythosCostLightingStaff = 2000;
+	public static int mythosCostLightingStaff = 3000;
+	public static int mythosCostEffigy = 250;
+	public static int mythosCostMulesKick = 350;
+	public static int mythosCostTalisman = 750;
+	public static int mythosCostDrill = 1500;
 
 	public static void readConfig() {
 		Configuration cfg = Common.config;
@@ -63,31 +62,13 @@ public class ModConfig {
 		
 		cfg.addCustomCategoryComment(CATEGORY_MYTHOS,
 				"Mythos-based config options.");
-
-		// Config for maximum uses on Human Effigy
-		DurabilityHumanEffigy = cfg.getInt("Human Effigy Max Uses",
-				CATEGORY_GENERAL, DurabilityHumanEffigy, 1, 32766,
-				"How many uses per effigy");
+		
 		wand_damage = cfg.getInt("Wands max use", CATEGORY_GENERAL,
 				wand_damage, 1, 32766,
 				"How many times can a player use a wand item before breaking");
-		mule_damage = cfg.getInt("Mule's Kick max use", CATEGORY_GENERAL,
-				mule_damage, 1, 32766,
-				"How many times can a player use Mule's Kick before breaking");
-		talisman_damage = cfg
-				.getInt("Talisman of Evasion max use", CATEGORY_GENERAL,
-						talisman_damage, 1, 32766,
-						"How many times can a player use Talisman of Evasion before breaking");
-		lightning_staff_damage = cfg
-				.getInt("Staff of Lightning max use", CATEGORY_GENERAL,
-						lightning_staff_damage, 1, 32766,
-						"How many times can a player use the Staff of Lightning before breaking");
 		DurabilityShears = cfg.getInt("Grim Shears Max Uses", CATEGORY_GENERAL,
 				DurabilityShears, 1, 32766,
 				"How many uses per pair of grim shears");
-		StoredLevels = cfg.getInt("Levels stored in Tome of Knowledge",
-				CATEGORY_GENERAL, StoredLevels, 1, 32766,
-				"How many levels should be stored in a Tome of Knowledge");
 
 		bow_draw = cfg.getInt("Longbow Draw Time", CATEGORY_GENERAL, bow_draw,
 				1, 32766,
@@ -128,26 +109,26 @@ public class ModConfig {
 				"How big should Crystallized Ores spawn.");
 
 		heart_stack = cfg.getInt("Heart Charm max stack size.",
-				CATEGORY_WORLDGEN, heart_stack, 1, 64,
+				CATEGORY_GENERAL, heart_stack, 1, 64,
 				"How many Heart Charms can be in a stack, at maximum.");
 
-		reachAmuletRange = cfg
-				.getInt("Amulet of Reaching range?",
-						CATEGORY_GENERAL,
-						reachAmuletRange,
-						5,
-						65655,
+		reachAmuletRange = cfg.getInt("Amulet of Reaching range?", CATEGORY_GENERAL, reachAmuletRange, 5, 65655,
 						"How large should the player's range be when they equip the Amulet of Reaching? (Vanilla is 5)");
-		creativereachAmuletRange = cfg
-				.getInt("Creative Amulet of Reaching range?",
-						CATEGORY_GENERAL,
-						creativereachAmuletRange,
-						5,
-						65655,
-						"How large should the player's range be when they equip the Creative Amulet of Reaching? (Vanilla is 5)");
+		
+		creativereachAmuletRange = cfg.getInt("Creative Amulet of Reaching range?", CATEGORY_GENERAL, creativereachAmuletRange,
+						5, 65655, "How large should the player's range be when they equip the Creative Amulet of Reaching? (Vanilla is 5)");
+		
 		mythosMaxStorage = cfg.getInt("Mythos Max", CATEGORY_MYTHOS, mythosMaxStorage, 0, 20000000,
 				"How much Mythos may a player stockpile?");
 		mythosCostLightingStaff = cfg.getInt("Lightning Staff", CATEGORY_MYTHOS, mythosCostLightingStaff, 0, mythosMaxStorage,
 						"Mythos Cost");
+		mythosCostEffigy = cfg.getInt("Human Effigy", CATEGORY_MYTHOS, mythosCostEffigy, 0, mythosMaxStorage,
+				"Mythos Cost");
+		mythosCostMulesKick = cfg.getInt("Mules Kick", CATEGORY_MYTHOS, mythosCostMulesKick, 0, mythosMaxStorage,
+				"Mythos Cost");
+		mythosCostTalisman = cfg.getInt("Talisman", CATEGORY_MYTHOS, mythosCostTalisman, 0, mythosMaxStorage,
+				"Mythos Cost");
+		mythosCostDrill = cfg.getInt("Drill", CATEGORY_MYTHOS, mythosCostDrill, 0, mythosMaxStorage,
+				"Mythos Cost");
 	}
 }
