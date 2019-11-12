@@ -100,6 +100,7 @@ public class ModItems extends RegisterItem
         crystal_glove = register(new BaseItem("crystal_glove"));
         ethereal_fiber = register(new BaseItem("ethereal_fiber"));
         enchanted_stick = register(new BaseItem("enchanted_stick"));
+        mythos_pool = register(new MythosPool("mythos_pool"));
 
         longbow = register(new LongBowItem("longbow", 144000, 640));
 

@@ -1,5 +1,7 @@
 package com.themastergeneral.ctdmythos.common.items.mythos;
 
+import com.themastergeneral.ctdmythos.common.config.ModConfig;
+
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ActionResult;
@@ -19,7 +21,7 @@ public class MythosPool extends MythosItemBase
     {
 		int mythos = getMythos(playerIn);
 		playerIn.sendStatusMessage(new TextComponentTranslation(
-                mythos + "/ 4000"),true);
+                mythos + " / " + ModConfig.mythosMaxStorage),true);
 		return new ActionResult<ItemStack>(EnumActionResult.PASS, playerIn.getHeldItem(handIn));
     }
 

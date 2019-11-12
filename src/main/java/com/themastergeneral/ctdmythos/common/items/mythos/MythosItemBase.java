@@ -1,8 +1,14 @@
 package com.themastergeneral.ctdmythos.common.items.mythos;
 
+import java.util.List;
+
+import javax.annotation.Nullable;
+
 import com.themastergeneral.ctdmythos.common.config.ModConfig;
+import com.themastergeneral.ctdmythos.common.items.ModItems;
 import com.themastergeneral.ctdmythos.common.items.misc.BaseItem;
 
+import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.effect.EntityLightningBolt;
 import net.minecraft.entity.player.EntityPlayer;
@@ -14,6 +20,8 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class MythosItemBase extends BaseItem 
 {
@@ -21,28 +29,12 @@ public class MythosItemBase extends BaseItem
 	{
 		super(name);
 	}
-	
-	public int getMythos(EntityPlayer playerIn)
-	{
-		return playerIn.getEntityData().getInteger("mythos");
-	}
-	
-	public void setMythos(EntityPlayer playerIn, int mythos)
-	{
-		if (mythos > 0)
-			mythos = 0;
-		playerIn.getEntityData().setInteger("mythos", mythos);
-	}
-	
-	public boolean checkMythos(int required, int currentMythos)
-	{
-		return currentMythos > required;
-	}
-	
-	public void updateMythos(EntityPlayer playerIn, int mythosChange)
-	{
-		int mythos = getMythos(playerIn);
-		int newMythos = mythos - mythosChange;
-		setMythos(playerIn, newMythos);
-	}
+	// Add tooltip on client side.
+    @SideOnly(Side.CLIENT)
+    @Override
+    public void addInformation(ItemStack stack, @Nullable World worldIn,
+            List<String> tooltip, ITooltipFlag flagIn)
+    {
+    	tooltip.add("Magical.");
+    }
 }

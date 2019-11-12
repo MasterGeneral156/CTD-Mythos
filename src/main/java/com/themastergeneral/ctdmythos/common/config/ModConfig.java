@@ -10,6 +10,7 @@ import com.themastergeneral.ctdmythos.proxy.Common;
 public class ModConfig {
 	private static final String CATEGORY_GENERAL = "General";
 	private static final String CATEGORY_WORLDGEN = "World Gen";
+	private static final String CATEGORY_MYTHOS = "Mythos Balance";
 
 	// Actual Config shit
 	public static int DurabilityHumanEffigy = 5;
@@ -33,6 +34,10 @@ public class ModConfig {
 	public static int crystalSpawnMaxY = 80;
 	public static int crystalSpawnChance = 10;
 	public static int crystalSpawnVeinSize = 4;
+	
+	//Mythos configs
+	public static int mythosMaxStorage = 4000;
+	public static int mythosCostLightingStaff = 2000;
 
 	public static void readConfig() {
 		Configuration cfg = Common.config;
@@ -55,6 +60,9 @@ public class ModConfig {
 
 		cfg.addCustomCategoryComment(CATEGORY_WORLDGEN,
 				"CTD Mythos World Generation.");
+		
+		cfg.addCustomCategoryComment(CATEGORY_MYTHOS,
+				"Mythos-based config options.");
 
 		// Config for maximum uses on Human Effigy
 		DurabilityHumanEffigy = cfg.getInt("Human Effigy Max Uses",
@@ -137,5 +145,9 @@ public class ModConfig {
 						5,
 						65655,
 						"How large should the player's range be when they equip the Creative Amulet of Reaching? (Vanilla is 5)");
+		mythosMaxStorage = cfg.getInt("Mythos Max", CATEGORY_MYTHOS, mythosMaxStorage, 0, 20000000,
+				"How much Mythos may a player stockpile?");
+		mythosCostLightingStaff = cfg.getInt("Lightning Staff", CATEGORY_MYTHOS, mythosCostLightingStaff, 0, mythosMaxStorage,
+						"Mythos Cost");
 	}
 }

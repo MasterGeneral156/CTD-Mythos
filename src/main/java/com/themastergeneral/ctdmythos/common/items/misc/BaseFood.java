@@ -47,7 +47,12 @@ public class BaseFood extends ItemFood implements ItemModelProvider
     {
         // Clear effects if eating the rye loaf.
         if (stack.getItem() == ModItems.revitalizing_rye)
+        {
             player.clearActivePotions();
+            int currentMythos = player.getEntityData().getInteger("mythos");
+            int newMythos = currentMythos + 15;
+            player.getEntityData().setInteger("mythos", newMythos);
+        }
     }
     
  // Add tooltip on client side.
@@ -57,7 +62,7 @@ public class BaseFood extends ItemFood implements ItemModelProvider
             List<String> tooltip, ITooltipFlag flagIn)
     {
     	if (stack.getItem() == ModItems.revitalizing_rye)
-    		tooltip.add("Clears status effects.");
+    		tooltip.add("Clears status effects. Increases Mythos.");
     }
 
 }

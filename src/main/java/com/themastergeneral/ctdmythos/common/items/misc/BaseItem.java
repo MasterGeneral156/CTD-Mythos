@@ -274,4 +274,35 @@ public class BaseItem extends CTDItem
         else
             return false;
     }
+    public int getMythos(EntityPlayer playerIn)
+	{
+		return playerIn.getEntityData().getInteger("mythos");
+	}
+	
+	public void setMythos(EntityPlayer playerIn, int mythos)
+	{
+		playerIn.getEntityData().setInteger("mythos", mythos);
+	}
+	
+	public boolean checkMythos(int currentMythos, int required)
+	{
+		return currentMythos >= required;
+	}
+	
+	public void removeMythos(EntityPlayer playerIn, int mythosChange)
+	{
+		int mythos = getMythos(playerIn);
+		int newMythos = mythos - mythosChange;
+		if (newMythos < 0)
+			newMythos = 0;
+		setMythos(playerIn, newMythos);
+	}
+	public void addMythos(EntityPlayer playerIn, int mythosChange)
+	{
+		int mythos = getMythos(playerIn);
+		int newMythos = mythos + mythosChange;
+		if (newMythos > ModConfig.mythosMaxStorage)
+			newMythos = ModConfig.mythosMaxStorage;
+		setMythos(playerIn, newMythos);
+	}
 }

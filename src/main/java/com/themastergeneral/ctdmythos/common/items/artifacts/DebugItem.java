@@ -13,6 +13,7 @@ import net.minecraft.world.World;
 
 import com.mojang.authlib.GameProfile;
 import com.themastergeneral.ctdmythos.CTDMythos;
+import com.themastergeneral.ctdmythos.common.config.ModConfig;
 import com.themastergeneral.ctdmythos.common.items.misc.BaseItem;
 
 public class DebugItem extends BaseItem
@@ -27,7 +28,9 @@ public class DebugItem extends BaseItem
     public ActionResult<ItemStack> onItemRightClick(World worldIn,
             EntityPlayer playerIn, EnumHand handIn)
     {
-        CTDMythos.logger.info("This does nothing... why do you have this?");
+    	addMythos(playerIn,250);
+        CTDMythos.logger.info("Update Mythos.");
+        CTDMythos.logger.info(getMythos(playerIn));
         return new ActionResult<ItemStack>(EnumActionResult.PASS,
                 playerIn.getHeldItem(handIn));
     }
