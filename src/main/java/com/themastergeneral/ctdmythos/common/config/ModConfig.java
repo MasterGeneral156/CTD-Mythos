@@ -37,6 +37,7 @@ public class ModConfig {
 	public static int mythosCostMulesKick = 350;
 	public static int mythosCostTalisman = 750;
 	public static int mythosCostDrill = 1500;
+	public static int mythosCostSword = 1250;
 
 	public static void readConfig() {
 		Configuration cfg = Common.config;
@@ -129,6 +130,8 @@ public class ModConfig {
 		mythosCostTalisman = cfg.getInt("Talisman", CATEGORY_MYTHOS, mythosCostTalisman, 0, mythosMaxStorage,
 				"Mythos Cost");
 		mythosCostDrill = cfg.getInt("Drill", CATEGORY_MYTHOS, mythosCostDrill, 0, mythosMaxStorage,
+				"Mythos Cost");
+		mythosCostSword = cfg.getInt("Sword", CATEGORY_MYTHOS, mythosCostSword, 0, mythosMaxStorage,
 				"Mythos Cost");
 	}
 }
