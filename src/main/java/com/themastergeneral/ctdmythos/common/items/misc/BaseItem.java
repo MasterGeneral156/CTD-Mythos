@@ -276,12 +276,12 @@ public class BaseItem extends CTDItem
     }
     public int getMythos(EntityPlayer playerIn)
 	{
-		return playerIn.getEntityData().getInteger("mythos");
+		return playerIn.getEntityData().getInteger("ctdmythos:mythos");
 	}
 	
 	public void setMythos(EntityPlayer playerIn, int mythos)
 	{
-		playerIn.getEntityData().setInteger("mythos", mythos);
+		playerIn.getEntityData().setInteger("ctdmythos:mythos", mythos);
 	}
 	
 	public boolean checkMythos(int currentMythos, int required)
