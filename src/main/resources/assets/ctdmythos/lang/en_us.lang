@@ -30,6 +30,8 @@ item.mythos_arrow.name=Mythos Arrow
 item.shulker_helmet.name=Shulker Helmet
 item.lightning_bottle.name=Lightning in a Bottle
 item.lightning_staff.name=Staff of Lightning
+item.mythos_pool.name=Mythos Pool
+item.mythos_exciter.name=Mythos Exciter
 
 itemGroup.ctdmythos=CTD Mythos
 ctdmythos.desc=A mod of magical items!
