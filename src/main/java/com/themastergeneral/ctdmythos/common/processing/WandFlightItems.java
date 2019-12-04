@@ -4,6 +4,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 
@@ -15,16 +16,13 @@ public class WandFlightItems
     private static final WandFlightItems FLIGHT_ITEMS = new WandFlightItems();
 
     // Flight Item + Flight Time
-    private final Map<ItemStack, Integer> flightItemsList = Maps
-            .<ItemStack, Integer> newHashMap();
+    private final HashMap<ItemStack, Integer> flightItemsList = new HashMap();
 
     // Flight Item + Flight Multiplier
-    private final Map<ItemStack, Integer> flightMultiList = Maps
-            .<ItemStack, Integer> newHashMap();
+    private final HashMap<ItemStack, Integer> flightMultiList = new HashMap();
 
     // Flight Item + Resistance Time
-    private final Map<ItemStack, Integer> flightResistList = Maps
-            .<ItemStack, Integer> newHashMap();
+    private final HashMap<ItemStack, Integer> flightResistList = new HashMap();
 
     public static WandFlightItems instance()
     {
@@ -58,9 +56,7 @@ public class WandFlightItems
     {
         if (getFlightItem(input) != ItemStack.EMPTY)
         {
-            CTDMythos.logger
-                    .error("Ignored flight item with conflicting input: "
-                            + input);
+            CTDMythos.logger.error("Ignored flight item with conflicting input: " + input);
             return;
         }
         this.flightItemsList.put(input, flighttime);
@@ -133,8 +129,7 @@ public class WandFlightItems
         ItemStack result = getFlightItem(input);
         if (result == ItemStack.EMPTY)
         {
-            CTDMythos.logger.error("Could not remove: " + input
-                    + " from the Flight Wand registry as it doesn't exist.");
+            CTDMythos.logger.error("Could not remove: " + input + " from the Flight Wand registry as it doesn't exist.");
             return;
         }
         this.flightItemsList.remove(input);

@@ -1,6 +1,7 @@
 package com.themastergeneral.ctdmythos.integration.jei.multiblock;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map.Entry;
 
@@ -21,12 +22,11 @@ public class MultiblockMaker
     {
         IStackHelper stackHelper = helpers.getStackHelper();
         MultiblockRecipes furnaceRecipes = MultiblockRecipes.instance();
-        Multimap<ItemStack, ItemStack> smeltingMap = furnaceRecipes
-                .getRecipeList();
+        HashMap<ItemStack, ItemStack> smeltingMap = furnaceRecipes.getRecipeList();
 
         List<MultiblockJEI> recipes = new ArrayList<>();
 
-        for (Entry<ItemStack, ItemStack> entry : smeltingMap.entries())
+        for (Entry<ItemStack, ItemStack> entry : smeltingMap.entrySet())
         {
             ItemStack mainhand = entry.getKey();
             ItemStack output = furnaceRecipes.getRecipeResult(mainhand);

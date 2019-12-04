@@ -1,5 +1,6 @@
 package com.themastergeneral.ctdmythos.common.processing;
 
+import java.util.HashMap;
 import java.util.Map.Entry;
 
 import net.minecraft.init.Blocks;
@@ -16,8 +17,7 @@ import com.themastergeneral.ctdmythos.common.items.ModItems;
 
 public class MultiblockRecipes {
 	private static final MultiblockRecipes MULTIBLOCK_RECIPES = new MultiblockRecipes();
-	private final Multimap<ItemStack, ItemStack> recipeList = ArrayListMultimap
-			.create();
+	private final HashMap<ItemStack, ItemStack> recipeList = new HashMap();
 
 	public static MultiblockRecipes instance() {
 		return MULTIBLOCK_RECIPES;
@@ -114,8 +114,10 @@ public class MultiblockRecipes {
 	}
 
 	public ItemStack getRecipeResult(ItemStack stack) {
-		for (Entry<ItemStack, ItemStack> entry : recipeList.entries()) {
-			if (compareItemStacks(stack, (ItemStack) entry.getKey())) {
+		for (Entry<ItemStack, ItemStack> entry : recipeList.entrySet()) 
+		{
+			if (compareItemStacks(stack, (ItemStack) entry.getKey())) 
+			{
 				return (ItemStack) entry.getValue();
 			}
 		}
@@ -129,7 +131,7 @@ public class MultiblockRecipes {
 						.getMetadata());
 	}
 
-	public Multimap<ItemStack, ItemStack> getRecipeList() {
+	public HashMap<ItemStack, ItemStack> getRecipeList() {
 		return recipeList;
 	}
 }
