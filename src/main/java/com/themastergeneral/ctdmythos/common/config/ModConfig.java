@@ -39,6 +39,7 @@ public class ModConfig {
 	public static int mythosCostDrill = 1500;
 	public static int mythosCostSword = 1250;
 	public static int mythosExciterGen = 1;
+	public static int mythosFlightWand = 500;
 
 	public static void readConfig() {
 		Configuration cfg = Common.config;

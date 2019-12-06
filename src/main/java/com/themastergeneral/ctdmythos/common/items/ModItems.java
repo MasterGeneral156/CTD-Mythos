@@ -35,6 +35,7 @@ import com.themastergeneral.ctdmythos.common.items.tools.ShearsItem;
 import com.themastergeneral.ctdmythos.common.items.tools.ShulkerHelmet;
 import com.themastergeneral.ctdmythos.common.items.tools.TMGDrill;
 import com.themastergeneral.ctdmythos.common.items.wands.WandItemFlight;
+import com.themastergeneral.ctdmythos.common.items.wands.WandItemFlightV2;
 import com.themastergeneral.ctdmythos.common.items.wands.WandItemTeleport;
 
 public class ModItems extends RegisterItem
@@ -68,6 +69,7 @@ public class ModItems extends RegisterItem
     public static MBValidatorItem mb_validator;
     public static WandItemTeleport teleport_wand;
     public static WandItemFlight flight_wand;
+    public static WandItemFlightV2 mythos_flight_wand;
 
     public static TalismanItemEvasion evasion_talisman;
 
@@ -118,6 +120,7 @@ public class ModItems extends RegisterItem
         teleport_wand = register(new WandItemTeleport("teleport_wand"));
 
         flight_wand = register(new WandItemFlight("flight_wand"));
+        mythos_flight_wand = register(new WandItemFlightV2("mythos_flight_wand"));
 
         revitalizing_rye = register(new BaseFood("revitalizing_rye", 3, 1.0F,
                 false));
