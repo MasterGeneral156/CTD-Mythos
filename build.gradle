@@ -2,12 +2,16 @@ buildscript {
     repositories {
         jcenter()
         maven { url = "http://files.minecraftforge.net/maven" }
+		maven { url "https://plugins.gradle.org/m2/" }
     }
     dependencies {
         classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
+		classpath 'gradle.plugin.com.matthewprenger:CurseGradle:1.4.0'
     }
 }
+
 apply plugin: 'net.minecraftforge.gradle.forge'
+apply plugin: 'com.matthewprenger.cursegradle'
 
 version = "${mc_version}-${mod_version}"
 group = "com.themastergeneral.ctdmythos" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
@@ -39,6 +43,11 @@ repositories
 		name = "ModMaven"
 		url = "modmaven.k-4u.nl"
 	}
+	maven 
+	{
+        name = "CurseForge"
+        url = "https://minecraft.curseforge.com/api/maven/"
+    }
 }
 
 dependencies 
@@ -83,3 +92,24 @@ task signJar(type: SignJar, dependsOn: reobfJar) {
 
 // Runs this task automatically when build is ran. 
 build.dependsOn signJar
+
+curseforge {
+  apiKey = project.findProperty('curseAPIKey')
+  
+  tasks.curseforge.dependsOn build
+  project {
+    id = '12345'
+    changelog = file("$buildDir/changelog.txt")
+    releaseType = 'alpha'
+    addGameVersion '${mc_version}'
+
+    mainArtifact(jar) {
+      displayName = "CTD-Mythos-${mc_version}-${mod_version}"
+	  relations {
+		requiredDependency 'ctd-core'
+		requiredDependency 'baubles'
+		optionalDependency 'patchouli'
+	  }
+    }
+  }
+}

@@ -1,0 +1,4 @@
+CTD Mythos 1.12.2-0.7.2
+=======================
++Adds a new and improved Wand of Flight that is fueled by Mythos!
+*We're also attempting automated builds of CTD Mythos...
