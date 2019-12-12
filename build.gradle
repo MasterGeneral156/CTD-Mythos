@@ -98,7 +98,7 @@ curseforge {
   
   tasks.curseforge.dependsOn build
   project {
-    id = '2836'
+    id = '278733'
     changelog = file("$buildDir/changelog.txt")
     releaseType = 'alpha'
     addGameVersion '${mc_version}'
