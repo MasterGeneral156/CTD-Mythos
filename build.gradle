@@ -100,7 +100,7 @@ curseforge {
     //addGameVersion project.findProperty('mc_version')
 
     mainArtifact(jar) {
-      displayName = "CTD-Mythos-${mc_version}-${mod_version}"
+      displayName = "CTD-Mythos-${mc_version}-${mod_version}.jar"
 	  relations {
 		requiredDependency 'ctd-core'
 		requiredDependency 'baubles'
