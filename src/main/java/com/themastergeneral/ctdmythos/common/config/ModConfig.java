@@ -23,6 +23,7 @@ public class ModConfig {
 	public static boolean crystal_effects = true;
 	public static boolean tmg_cheats = true;
 	public static boolean ovk_dmg = false;
+	public static String mythosNBT = "ctdmythos:mythos";
 
 	// World Gen configs
 	public static int crystalSpawnMinY = 0;
@@ -69,6 +70,10 @@ public class ModConfig {
 		wand_damage = cfg.getInt("Wands max use", CATEGORY_GENERAL,
 				wand_damage, 1, 32766,
 				"How many times can a player use a wand item before breaking");
+		mythosNBT = cfg.getString("NBT Name", CATEGORY_GENERAL, mythosNBT, 
+				"The name of the NBT that stores Mythos. May be useful to rename in case of "
+				+ "corruption? Odds are you do not need to change this.");
+		
 		DurabilityShears = cfg.getInt("Grim Shears Max Uses", CATEGORY_GENERAL,
 				DurabilityShears, 1, 32766,
 				"How many uses per pair of grim shears");
