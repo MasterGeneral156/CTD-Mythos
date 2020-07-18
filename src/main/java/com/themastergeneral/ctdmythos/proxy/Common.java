@@ -27,8 +27,7 @@ public class Common
     public void preInit(FMLPreInitializationEvent e)
     {
         File directory = e.getModConfigurationDirectory();
-        config = new Configuration(new File(directory.getPath(),
-                "ctd/ctdmythos.cfg"));
+        config = new Configuration(new File(directory.getPath(), "ctd/ctdmythos.cfg"));
         ModConfig.readConfig();
         ModItems.registerItems();
         ModBlocks.loadBlocks();
