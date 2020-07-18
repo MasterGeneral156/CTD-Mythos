@@ -13,12 +13,17 @@ public class Handlers
             float xp)
     {
         // Enderfuge stuff if its available? /shrug.
-        IMCHelper.addEnderfugeSmelt(input, new ItemStack(output.getItem(), output.getCount()*3, output.getMetadata()), xp);
+        addEnderfugeRecipe(input, new ItemStack(output.getItem(), output.getCount()*2, output.getMetadata()), xp);
         GameRegistry.addSmelting(input, output, xp);
     }
 
     public static void addEnderfugeRecipe(ItemStack input, ItemStack output)
     {
-        IMCHelper.addEnderfugeSmelt(input, output, 0F);
+        addEnderfugeRecipe(input, output, 0F);
+    }
+    
+    public static void addEnderfugeRecipe(ItemStack input, ItemStack output, float xp)
+    {
+        IMCHelper.addEnderfugeSmelt(input, output, xp);
     }
 }
