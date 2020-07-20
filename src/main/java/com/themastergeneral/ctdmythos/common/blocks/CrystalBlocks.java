@@ -8,8 +8,8 @@ public class CrystalBlocks extends BaseBlock
 
     public CrystalBlocks(String name)
     {
-        super(Material.GRASS, name);
-        this.setSoundType(SoundType.GLASS);
+        super(Material.IRON, name);
+        this.setSoundType(SoundType.STONE);
         this.setHardness(5.0F);
         this.setResistance(5.0F);
         this.setHarvestLevel("pickaxe", 3);
