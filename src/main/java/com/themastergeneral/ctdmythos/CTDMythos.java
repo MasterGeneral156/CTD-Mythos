@@ -29,13 +29,9 @@ public class CTDMythos
     public static final String MODID = "ctdmythos";
     public static final String MODNAME = "CTD Mythos";
     public static final String VERSION = "0.7.3";
-    // Update JSON link
     public static final String updateJSON = "https://raw.githubusercontent.com/MasterGeneral156/Version/master/CTD-Mythos.json";
     public static final String acceptedMinecraftVersions = "1.12.2";
-    // TMG's public key
     public static final String certificateFingerprint = "5101015479fe39f20b47f365472250d312a50a57";
-    // Required after CTD Core
-    // [https://minecraft.curseforge.com/projects/ctd-core]
     public static final String DEPENDENCIES = "required-after:baubles;required-after:ctdcore@[1.4.2,];";
 
     // Creative Tab

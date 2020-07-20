@@ -50,28 +50,23 @@ public class PedestalBlock extends CTDTEBase<PedestalTileEntity>
     }
 
     @Override
-    public boolean onBlockActivated(World world, BlockPos pos,
-            IBlockState state, EntityPlayer player, EnumHand hand,
-            EnumFacing side, float hitX, float hitY, float hitZ)
+    public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand, EnumFacing side, float hitX, float hitY, float hitZ)
     {
         if (!world.isRemote)
         {
             PedestalTileEntity tile = getTileEntity(world, pos);
             ItemStack heldItem = player.getHeldItem(hand);
-            IItemHandler itemHandler = tile.getCapability(
-                    CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, side);
+            IItemHandler itemHandler = tile.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, side);
             if (!player.isSneaking())
             {
                 if (heldItem.isEmpty())
                 {
-                    player.setHeldItem(hand,
-                            itemHandler.extractItem(0, 64, false));
+                    player.setHeldItem(hand,itemHandler.extractItem(0, 64, false));
                     tile.resetTicks();
                 }
                 else
                 {
-                    player.setHeldItem(hand,
-                            itemHandler.insertItem(0, heldItem, false));
+                    player.setHeldItem(hand,itemHandler.insertItem(0, heldItem, false));
                     tile.resetTicks();
                 }
                 tile.markDirty();
@@ -86,22 +81,18 @@ public class PedestalBlock extends CTDTEBase<PedestalTileEntity>
 	                	TextComponentTranslation message = new TextComponentTranslation("pedestal.progress.info");
 	                	message.appendSibling(new TextComponentString(NumberFormat.getInstance().format(tile.getTicks())));
 	                	message.appendText(" / ");
-	                	message.appendSibling(new TextComponentString(NumberFormat.getInstance().format(
-	                            200 * tile.inventory.getStackInSlot(0)
-	                            .getCount())));
+	                	message.appendSibling(new TextComponentString(NumberFormat.getInstance().format(200 * tile.inventory.getStackInSlot(0).getCount())));
 	                	message.appendSibling(new TextComponentTranslation("pedestal.progress.ticks"));
 	                    player.sendStatusMessage(message,true);
 	                }
 	                else
 	                {
-	                    player.sendStatusMessage(new TextComponentTranslation(
-	                            "pedestal.invalid"),true);
+	                    player.sendStatusMessage(new TextComponentTranslation("pedestal.invalid"),true);
 	                }
                 }
                 else
                 {
-                	player.sendStatusMessage(new TextComponentTranslation(
-                            "pedestal.needend"),true);
+                	player.sendStatusMessage(new TextComponentTranslation("pedestal.needend"),true);
                 }
             }
         }
@@ -125,14 +116,11 @@ public class PedestalBlock extends CTDTEBase<PedestalTileEntity>
     public void breakBlock(World world, BlockPos pos, IBlockState state)
     {
         PedestalTileEntity tile = getTileEntity(world, pos);
-        IItemHandler itemHandler = tile
-                .getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY,
-                        EnumFacing.NORTH);
+        IItemHandler itemHandler = tile.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, EnumFacing.NORTH);
         ItemStack stack = itemHandler.getStackInSlot(0);
         if (!stack.isEmpty())
         {
-            EntityItem item = new EntityItem(world, pos.getX(), pos.getY(),
-                    pos.getZ(), stack);
+            EntityItem item = new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), stack);
             world.spawnEntity(item);
         }
         super.breakBlock(world, pos, state);
@@ -177,22 +165,14 @@ public class PedestalBlock extends CTDTEBase<PedestalTileEntity>
                         ModSounds.multiblock_random, SoundCategory.BLOCKS,
                         1.0F, 1.0F, false);
             }
-            worldIn.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, d0 - 0.52D,
-                    d1, d2 + d4, 0.0D, 0.0D, 0.0D);
-            worldIn.spawnParticle(EnumParticleTypes.FLAME, d0 - 0.52D, d1, d2
-                    + d4, 0.0D, 0.0D, 0.0D);
-            worldIn.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, d0 + 0.52D,
-                    d1, d2 + d4, 0.0D, 0.0D, 0.0D);
-            worldIn.spawnParticle(EnumParticleTypes.FLAME, d0 + 0.52D, d1, d2
-                    + d4, 0.0D, 0.0D, 0.0D);
-            worldIn.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, d0 + d4, d1,
-                    d2 - 0.52D, 0.0D, 0.0D, 0.0D);
-            worldIn.spawnParticle(EnumParticleTypes.FLAME, d0 + d4, d1,
-                    d2 - 0.52D, 0.0D, 0.0D, 0.0D);
-            worldIn.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, d0 + d4, d1,
-                    d2 + 0.52D, 0.0D, 0.0D, 0.0D);
-            worldIn.spawnParticle(EnumParticleTypes.FLAME, d0 + d4, d1,
-                    d2 + 0.52D, 0.0D, 0.0D, 0.0D);
+            worldIn.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, d0 - 0.52D, d1, d2 + d4, 0.0D, 0.0D, 0.0D);
+            worldIn.spawnParticle(EnumParticleTypes.FLAME, d0 - 0.52D, d1, d2 + d4, 0.0D, 0.0D, 0.0D);
+            worldIn.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, d0 + 0.52D, d1, d2 + d4, 0.0D, 0.0D, 0.0D);
+            worldIn.spawnParticle(EnumParticleTypes.FLAME, d0 + 0.52D, d1, d2 + d4, 0.0D, 0.0D, 0.0D);
+            worldIn.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, d0 + d4, d1, d2 - 0.52D, 0.0D, 0.0D, 0.0D);
+            worldIn.spawnParticle(EnumParticleTypes.FLAME, d0 + d4, d1, d2 - 0.52D, 0.0D, 0.0D, 0.0D);
+            worldIn.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, d0 + d4, d1,  d2 + 0.52D, 0.0D, 0.0D, 0.0D);
+            worldIn.spawnParticle(EnumParticleTypes.FLAME, d0 + d4, d1, d2 + 0.52D, 0.0D, 0.0D, 0.0D);
         }
     }
 }
