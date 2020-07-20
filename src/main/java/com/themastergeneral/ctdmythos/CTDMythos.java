@@ -31,7 +31,7 @@ public class CTDMythos
     public static final String VERSION = "0.7.3";
     public static final String updateJSON = "https://raw.githubusercontent.com/MasterGeneral156/Version/master/CTD-Mythos.json";
     public static final String acceptedMinecraftVersions = "1.12.2";
-    public static final String certificateFingerprint = "5101015479fe39f20b47f365472250d312a50a57";
+    public static final String certificateFingerprint = "b50fe22651b9d97d9d6631514a6a57cd6174b0dc";
     public static final String DEPENDENCIES = "required-after:baubles;required-after:ctdcore@[1.4.2,];";
 
     // Creative Tab
