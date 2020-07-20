@@ -104,7 +104,7 @@ advancement.grimshears.desc=Craft a pair of Grim Shears.
 advancement.humansoul.name=Thanks, Friend
 advancement.humansoul.desc=Use Grim Shears to steal your friend's soul.
 advancement.ethereal_fiber.name=Thanks Spidey!
-advancement.ethereal_fiber.desc=Use Grim Shears on a spider to obtain Etherreal Fiber.
+advancement.ethereal_fiber.desc=Use Grim Shears on a spider to obtain Ethereal Fiber.
 advancement.rye.name=Not Good
 advancement.rye.desc=Craft a loaf of Revitalizing Rye.
 
@@ -115,4 +115,3 @@ info.wand.teleport.fail=You cannot use this wand outside of the overworld.
 pedestal.progress.info=Completion: 
 pedestal.progress.ticks= ticks.
 pedestal.invalid=§4Empty or invalid recipe.
-pedestal.needend=Pedestal will only work in End-based Dimensions.
