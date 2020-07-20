@@ -14,9 +14,9 @@ import net.minecraft.item.ItemStack;
 
 public class LightningRecipes 
 {
-	private static final LightningRecipes LIGHTNING_RECIPES = new LightningRecipes();
-	private final HashMap<ItemStack, ItemStack> recipeList = new HashMap();
-	private final HashMap<ItemStack, ItemStack> outputList = new HashMap();
+	/*private static final LightningRecipes LIGHTNING_RECIPES = new LightningRecipes();
+	private final HashMap<ItemStack, Block> recipeList = new HashMap();
+	private final HashMap<ItemStack, Block> outputList = new HashMap();
 
 	public static LightningRecipes  instance() {
 		return LIGHTNING_RECIPES;
@@ -24,28 +24,28 @@ public class LightningRecipes
 	
 	private LightningRecipes() 
 	{
-		addRecipe(new ItemStack(ModItems.crystal_fire), new ItemStack(Blocks.BRICK_BLOCK), new ItemStack(ModBlocks.crystal_fire_brick));
-		addRecipe(new ItemStack(ModItems.crystal_woe), new ItemStack(Blocks.BRICK_BLOCK), new ItemStack(ModBlocks.crystal_woe_brick));
-		addRecipe(new ItemStack(ModItems.crystal_oath), new ItemStack(Blocks.BRICK_BLOCK), new ItemStack(ModBlocks.crystal_oath_brick));
-		addRecipe(new ItemStack(ModItems.crystal_grief), new ItemStack(Blocks.BRICK_BLOCK), new ItemStack(ModBlocks.crystal_grief_brick));
-		addRecipe(new ItemStack(ModItems.crystal_memory), new ItemStack(Blocks.BRICK_BLOCK), new ItemStack(ModBlocks.crystal_memory_brick));
+		addRecipe(new ItemStack(ModItems.crystal_fire), Blocks.BRICK_BLOCK, ModBlocks.crystal_fire_brick);
+		addRecipe(new ItemStack(ModItems.crystal_woe), Blocks.BRICK_BLOCK, ModBlocks.crystal_woe_brick);
+		addRecipe(new ItemStack(ModItems.crystal_oath), Blocks.BRICK_BLOCK, ModBlocks.crystal_oath_brick);
+		addRecipe(new ItemStack(ModItems.crystal_grief), Blocks.BRICK_BLOCK, ModBlocks.crystal_grief_brick);
+		addRecipe(new ItemStack(ModItems.crystal_memory), Blocks.BRICK_BLOCK, ModBlocks.crystal_memory_brick);
 	}
-	public void addRecipe(ItemStack mainhand, ItemStack block, ItemStack output) 
+	public void addRecipe(ItemStack mainhand, Block block, Block output) 
 	{
 		addRecipeItem(mainhand, block, output);
 	}
-	public void addRecipeItem(ItemStack mainhand, ItemStack block, ItemStack output) 
+	public void addRecipeItem(ItemStack mainhand, Block block, Block output) 
 	{
 		outputList.put(mainhand, output);
 		outputList.put(mainhand, block);
 	}
-	public ItemStack getRecipeItem(ItemStack stack)
+	public Block getRecipeItem(ItemStack stack)
     {
-        for (Entry<ItemStack, ItemStack> entry : this.recipeList.entrySet())
+        for (Entry<ItemStack, Block> entry : this.recipeList.entrySet())
         {
-            if (this.compareItemStacks(stack, (ItemStack) entry.getKey()))
+            if (this.compareItemStacks(stack, entry.getKey()))
             {
-                return (ItemStack) entry.getKey();
+                return entry.getKey().get;
             }
         }
         return ItemStack.EMPTY;
@@ -53,7 +53,7 @@ public class LightningRecipes
 	
 	public ItemStack getOutputItem(ItemStack stack)
     {
-        for (Entry<ItemStack, ItemStack> entry : this.outputList.entrySet())
+        for (Entry<ItemStack, Block> entry : this.outputList.entrySet())
         {
             if (this.compareItemStacks(stack, (ItemStack) entry.getKey()))
             {
@@ -68,11 +68,11 @@ public class LightningRecipes
         return stack2.getItem() == stack1.getItem() && (stack2.getMetadata() == 32767 || stack2.getMetadata() == stack1 .getMetadata());
     }
 
-    public Map<ItemStack, ItemStack> getRecipeList()
+    public HashMap<ItemStack, Block> getRecipeList()
     {
         return this.recipeList;
     }
-    public Map<ItemStack, ItemStack> getOutputList()
+    public HashMap<ItemStack, Block> getOutputList()
     {
         return this.outputList;
     }
@@ -86,5 +86,5 @@ public class LightningRecipes
         }
         this.outputList.remove(input);
         this.recipeList.remove(input);
-    }
+    }*/
 }
