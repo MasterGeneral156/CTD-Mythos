@@ -16,7 +16,7 @@ import net.minecraft.world.World;
 import com.themastergeneral.ctdmythos.common.blocks.ModBlocks;
 import com.themastergeneral.ctdmythos.common.items.misc.BaseItem;
 
-public class CrystallizedGrief extends BaseItem
+public class CrystallizedGrief extends CrystalBase
 {
 
     private Block containedBlock;

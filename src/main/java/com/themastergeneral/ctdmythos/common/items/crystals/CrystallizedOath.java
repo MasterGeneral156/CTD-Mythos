@@ -22,7 +22,7 @@ import com.themastergeneral.ctdmythos.common.config.ModConfig;
 import com.themastergeneral.ctdmythos.common.items.ModItems;
 import com.themastergeneral.ctdmythos.common.items.misc.BaseItem;
 
-public class CrystallizedOath extends BaseItem
+public class CrystallizedOath extends CrystalBase
 {
 
     private Block containedBlock;

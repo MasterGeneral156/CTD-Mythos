@@ -20,7 +20,7 @@ import com.themastergeneral.ctdmythos.common.blocks.ModBlocks;
 import com.themastergeneral.ctdmythos.common.config.ModConfig;
 import com.themastergeneral.ctdmythos.common.items.misc.BaseItem;
 
-public class CrystallizedWoe extends BaseItem
+public class CrystallizedWoe extends CrystalBase
 {
 
     private Block containedBlock;

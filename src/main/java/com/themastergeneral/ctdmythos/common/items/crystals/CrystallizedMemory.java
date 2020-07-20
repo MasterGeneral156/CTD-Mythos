@@ -18,9 +18,10 @@ import net.minecraft.world.World;
 import com.themastergeneral.ctdmythos.client.sound.ModSounds;
 import com.themastergeneral.ctdmythos.common.blocks.ModBlocks;
 import com.themastergeneral.ctdmythos.common.config.ModConfig;
+import com.themastergeneral.ctdmythos.common.items.ModItems;
 import com.themastergeneral.ctdmythos.common.items.misc.BaseItem;
 
-public class CrystallizedMemory extends BaseItem
+public class CrystallizedMemory extends CrystalBase
 {
 
     private Block containedBlock;
@@ -43,8 +44,7 @@ public class CrystallizedMemory extends BaseItem
             {
                 Block blocktotest = Blocks.BRICK_BLOCK;
                 boolean flag = this.containedBlock == blocktotest;
-                RayTraceResult raytraceresult = this.rayTrace(worldIn,
-                        playerIn, flag);
+                RayTraceResult raytraceresult = this.rayTrace(worldIn, playerIn, flag);
                 if (raytraceresult == null)
                 {
                     return new ActionResult(EnumActionResult.PASS, mainhand);
