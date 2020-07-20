@@ -63,8 +63,7 @@ public class CrystallizedFire extends BaseItem
             {
                 Block blocktotest = Blocks.BRICK_BLOCK;
                 boolean flag = this.containedBlock == blocktotest;
-                RayTraceResult raytraceresult = this.rayTrace(worldIn,
-                        playerIn, flag);
+                RayTraceResult raytraceresult = this.rayTrace(worldIn, playerIn, flag);
                 if (raytraceresult == null)
                 {
                     return new ActionResult(EnumActionResult.PASS, mainhand);
@@ -80,32 +79,24 @@ public class CrystallizedFire extends BaseItem
                     {
                         return new ActionResult(EnumActionResult.FAIL, mainhand);
                     }
-                    if (!playerIn.canPlayerEdit(
-                            blockpos.offset(raytraceresult.sideHit),
-                            raytraceresult.sideHit, mainhand))
+                    if (!playerIn.canPlayerEdit(blockpos.offset(raytraceresult.sideHit), raytraceresult.sideHit, mainhand))
                     {
                         return new ActionResult(EnumActionResult.FAIL, mainhand);
                     }
                     else
                     {
-                        IBlockState iblockstate = worldIn
-                                .getBlockState(blockpos);
+                        IBlockState iblockstate = worldIn.getBlockState(blockpos);
                         if (iblockstate == blocktotest.getDefaultState())
                         {
-                            worldIn.setBlockState(blockpos,
-                                    ModBlocks.crystal_fire_brick
-                                            .getDefaultState(), 11);
-                            EntityLightningBolt lightning = new EntityLightningBolt(
-                                    worldIn, blockpos.getX(), blockpos.getY(),
-                                    blockpos.getZ(), false);
+                            worldIn.setBlockState(blockpos,ModBlocks.crystal_fire_brick.getDefaultState(), 11);
+                            EntityLightningBolt lightning = new EntityLightningBolt(worldIn, blockpos.getX(), blockpos.getY(),blockpos.getZ(), false);
                             worldIn.addWeatherEffect(lightning);
-                            return new ActionResult(EnumActionResult.PASS,
-                                    mainhand);
+                            mainhand.shrink(1);
+                            return new ActionResult(EnumActionResult.PASS,mainhand);
                         }
                         else
                         {
-                            return new ActionResult(EnumActionResult.FAIL,
-                                    mainhand);
+                            return new ActionResult(EnumActionResult.FAIL, mainhand);
                         }
                     }
                 }

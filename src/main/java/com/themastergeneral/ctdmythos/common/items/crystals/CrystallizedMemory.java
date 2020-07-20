@@ -79,6 +79,7 @@ public class CrystallizedMemory extends BaseItem
                                     worldIn, blockpos.getX(), blockpos.getY(),
                                     blockpos.getZ(), false);
                             worldIn.addWeatherEffect(lightning);
+                            mainhand.shrink(1);
                             return new ActionResult(EnumActionResult.PASS,
                                     mainhand);
                         }
