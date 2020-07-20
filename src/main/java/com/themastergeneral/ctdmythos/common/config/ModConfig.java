@@ -42,33 +42,33 @@ public class ModConfig {
 	public static int mythosExciterGen = 1;
 	public static int mythosFlightWand = 500;
 
-	public static void readConfig() {
+	public static void readConfig() 
+	{
 		Configuration cfg = Common.config;
-		try {
+		try 
+		{
 			cfg.load();
 			initGeneralConfig(cfg);
-		} catch (Exception e1) {
-			CTDMythos.logger.log(Level.ERROR, "Problem loading config file!",
-					e1);
-		} finally {
-			if (cfg.hasChanged()) {
+		} 
+		catch (Exception e1)
+		{
+			CTDMythos.logger.log(Level.ERROR, "Problem loading config file!", e1);
+		} 
+		finally 
+		{
+			if (cfg.hasChanged()) 
+			{
 				cfg.save();
 			}
 		}
 	}
 
 	private static void initGeneralConfig(Configuration cfg) {
-		cfg.addCustomCategoryComment(CATEGORY_GENERAL,
-				"General configuration for our mod.");
-
-		cfg.addCustomCategoryComment(CATEGORY_WORLDGEN,
-				"CTD Mythos World Generation.");
+		cfg.addCustomCategoryComment(CATEGORY_GENERAL, "General configuration for our mod.");
+		cfg.addCustomCategoryComment(CATEGORY_WORLDGEN, "CTD Mythos World Generation.");
+		cfg.addCustomCategoryComment(CATEGORY_MYTHOS, "Mythos-based config options.");
 		
-		cfg.addCustomCategoryComment(CATEGORY_MYTHOS,
-				"Mythos-based config options.");
-		
-		wand_damage = cfg.getInt("Wands max use", CATEGORY_GENERAL,
-				wand_damage, 1, 32766,
+		wand_damage = cfg.getInt("Wands max use", CATEGORY_GENERAL, wand_damage, 1, 32766,
 				"How many times can a player use a wand item before breaking");
 		mythosNBT = cfg.getString("NBT Name", CATEGORY_GENERAL, mythosNBT, 
 				"The name of the NBT that stores Mythos. May be useful to rename in case of "
