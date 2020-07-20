@@ -28,5 +28,6 @@ public class MythosItemBase extends BaseItem
 	public MythosItemBase(String name) 
 	{
 		super(name);
+		this.maxStackSize = 1;
 	}
 }
