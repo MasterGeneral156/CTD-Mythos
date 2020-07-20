@@ -54,31 +54,5 @@ public class CrystalBase extends BaseItem {
 	        }
         }
     }
-	
-	@Override
-    public ActionResult<ItemStack> onItemRightClick(World worldIn,
-            EntityPlayer playerIn, EnumHand handIn)
-    {
-        ItemStack offhand = playerIn.getHeldItemOffhand();
-        ItemStack mainhand = playerIn.getHeldItemMainhand();
-        // Crystalized Memory to repair the item in the user's offhand, at
-        // the cost of one Crystalized Memory.
-        if (mainhand.getItem() == ModItems.crystal_memory)
-        {
-            if (offhand != ItemStack.EMPTY)
-            {
-                if (offhand.isItemDamaged())
-                {
-                    offhand.setItemDamage(0);
-                    mainhand.shrink(1);
-                    worldIn.playSound(playerIn, playerIn.getPosition(),
-                            ModSounds.spell_complete, SoundCategory.PLAYERS,
-                            1.0F, 1.0F);
-                }
-            }
-        }
-        return new ActionResult<ItemStack>(EnumActionResult.PASS,
-                playerIn.getHeldItem(handIn));
-    }
 
 }
