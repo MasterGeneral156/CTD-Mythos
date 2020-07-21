@@ -14,6 +14,7 @@ import com.themastergeneral.ctdmythos.common.items.artifacts.MBValidatorItem;
 import com.themastergeneral.ctdmythos.common.items.artifacts.MulesKickItem;
 import com.themastergeneral.ctdmythos.common.items.artifacts.TalismanItemEvasion;
 import com.themastergeneral.ctdmythos.common.items.baubles.AmuletExtendReach;
+import com.themastergeneral.ctdmythos.common.items.baubles.BasicBauble;
 import com.themastergeneral.ctdmythos.common.items.baubles.TrinketHealth;
 import com.themastergeneral.ctdmythos.common.items.crystals.CrystallizedFire;
 import com.themastergeneral.ctdmythos.common.items.crystals.CrystallizedGrief;
@@ -58,6 +59,7 @@ public class ModItems extends RegisterItem
     public static BaseItem ethereal_fiber;
     public static BaseItem humansoul;
     public static BaseItem crystal_glove;
+    public static BasicBauble crystal_glove;
     public static BaseItem cowblooddrop;
     public static BaseItem xptome;
     public static BaseItem enchanted_stick;
@@ -102,7 +104,7 @@ public class ModItems extends RegisterItem
         crystal_grief = register(new CrystallizedGrief("crystal_grief"));
         crystal_fire = register(new CrystallizedFire("crystal_fire"));
         crystal_oath = register(new CrystallizedOath("crystal_oath"));
-        crystal_glove = register(new BaseItem("crystal_glove"));
+        crystal_glove = register(new BasicBauble("crystal_glove"));
         ethereal_fiber = register(new BaseItem("ethereal_fiber"));
         enchanted_stick = register(new BaseItem("enchanted_stick"));
         mythos_pool = register(new MythosPool("mythos_pool", 20000, 250));

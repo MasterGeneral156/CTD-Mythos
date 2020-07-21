@@ -5,6 +5,10 @@ import com.themastergeneral.ctdmythos.common.config.ModConfig;
 import com.themastergeneral.ctdmythos.common.items.ModItems;
 import com.themastergeneral.ctdmythos.common.items.misc.BaseItem;
 
+import baubles.api.BaublesApi;
+import baubles.api.cap.BaublesContainer;
+import baubles.api.inv.BaublesInventoryWrapper;
+import baubles.common.Baubles;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
@@ -28,29 +32,25 @@ public class CrystalBase extends BaseItem {
             int itemSlot, boolean isSelected)
     {
         EntityPlayer playerIn = (EntityPlayer) entityIn;
-        ItemStack offhand = playerIn.getHeldItemOffhand();
-        if (ModConfig.crystal_effects)
+        if (BaublesApi.isBaubleEquipped(playerIn, ModItems.crystal_glove) == -1)
         {
-	        // Blindness effect with grief
-	        if ((stack.getItem() == ModItems.crystal_grief)
-	                && (offhand.getItem() != ModItems.crystal_glove))
+	        if (ModConfig.crystal_effects)
 	        {
-	            ((EntityLivingBase) entityIn).addPotionEffect(new PotionEffect(
-	                    MobEffects.BLINDNESS, 20, 0, true, false));
-	        }
-	        // Nausea effect with memory
-	        if ((stack.getItem() == ModItems.crystal_memory)
-	                && (offhand.getItem() != ModItems.crystal_glove))
-	        {
-	            ((EntityLivingBase) entityIn).addPotionEffect(new PotionEffect(
-	                    MobEffects.WEAKNESS, 20, 2, true, false));
-	        }
-	        // Slowness effect with Woe
-	        if ((stack.getItem() == ModItems.crystal_woe)
-	                && (offhand.getItem() != ModItems.crystal_glove))
-	        {
-	            ((EntityLivingBase) entityIn).addPotionEffect(new PotionEffect(
-	                    MobEffects.SLOWNESS, 20, 2, true, false));
+		        // Blindness effect with grief
+		        if ((stack.getItem() == ModItems.crystal_grief))
+		        {
+		            playerIn.addPotionEffect(new PotionEffect(MobEffects.BLINDNESS, 20, 0, true, false));
+		        }
+		        // Nausea effect with memory
+		        if ((stack.getItem() == ModItems.crystal_memory))
+		        {
+		        	playerIn.addPotionEffect(new PotionEffect(MobEffects.WEAKNESS, 20, 2, true, false));
+		        }
+		        // Slowness effect with Woe
+		        if ((stack.getItem() == ModItems.crystal_woe))
+		        {
+		        	playerIn.addPotionEffect(new PotionEffect(MobEffects.SLOWNESS, 20, 2, true, false));
+		        }
 	        }
         }
     }

@@ -38,7 +38,7 @@ ctdmythos.desc=A mod of magical items!
 
 jei.longbow.desc=Three times stronger than a normal bow.
 jei.pedestal.desc=Takes 200 ticks per item for crafts to complete. Time will reset for each item change, and will scale up. IE: 32 Items will take 6,400 ticks to be crafted with.
-jei.crystal_glove.desc=Place in your off-hand to stop the effects of the other Crystallized gems.
+jei.crystal_glove.desc=Place in any Bauble slot to stop the negatives effects from Crystallized gems.
 jei.muleskick.desc=Right Click Grim Shears on a horse for a 2% chance of dropping.
 jei.evasion_talisman.desc=15% dodge chance when in your inventory.
 jei.crystal_bricks.desc=Shift + Right Click Crystallized item on Clay Bricks to get Crystallized Bricks.
