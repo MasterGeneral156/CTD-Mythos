@@ -5,32 +5,32 @@
     "pages": [
         {
             "type": "text",
-            "text": "Crystallized Bricks are crafted by Shift-Right Clicking on normal Clay Bricks with the desired Crystallized Gem in hand."
+            "text": "Simply shift+right click a bricks block with a respective Crystallized Gem, while in its respective biome to craft a Crystallized Brick Block. This will cost the Crystallized Gem, but net some Mythos."
         },
 		{
             "type": "spotlight",
 			"item": "ctdmythos:crystal_fire_brick",
-            "text": "Shift-Right Click with Crystallized Fire."
+            "text": "Shift-Right Click with Crystallized Fire. You must be in a Hell-based biome."
         },
 		{
             "type": "spotlight",
 			"item": "ctdmythos:crystal_woe_brick",
-            "text": "Shift-Right Click with Crystallized Woe."
+            "text": "Shift-Right Click with Crystallized Woe. You must be in a Ocean-based biome."
         },
 		{
             "type": "spotlight",
 			"item": "ctdmythos:crystal_memory_brick",
-            "text": "Shift-Right Click with Crystallized Memory."
+            "text": "Shift-Right Click with Crystallized Memory. You must be in a Plains-based biome."
         },
 		{
             "type": "spotlight",
 			"item": "ctdmythos:crystal_grief_brick",
-            "text": "Shift-Right Click with Crystallized Grief."
+            "text": "Shift-Right Click with Crystallized Grief. You must be in a Taiga-based biome."
         },
 		{
             "type": "spotlight",
 			"item": "ctdmythos:crystal_oath_brick",
-            "text": "Shift-Right Click with Crystallized Oath."
+            "text": "Shift-Right Click with Crystallized Oath. You must be in a Desert-based biome."
         }
     ]
 }
