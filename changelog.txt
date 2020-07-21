@@ -1,4 +1,9 @@
 =========================
+CTD Mythos 1.12.2-0.8.0b
+=========================
+*Fix the Unrealized Mythos Pool recipe.
+
+=========================
 CTD Mythos 1.12.2-0.8.0
 =========================
 *Loads of internal clean-ups, coding refactors, etc.
