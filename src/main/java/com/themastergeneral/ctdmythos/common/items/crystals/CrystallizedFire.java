@@ -19,7 +19,9 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
+import net.minecraft.util.text.TextComponentString;
 import net.minecraft.world.World;
+import net.minecraft.world.biome.BiomeHell;
 
 import com.themastergeneral.ctdmythos.CTDMythos;
 import com.themastergeneral.ctdmythos.client.sound.ModSounds;
@@ -60,7 +62,7 @@ public class CrystallizedFire extends CrystalBase
             ItemStack offhand = playerIn.getHeldItemOffhand();
             ItemStack mainhand = playerIn.getHeldItemMainhand();
             //Make this only work in the nether.
-            if (worldIn.getBiome(playerIn.getPosition()) == Biomes.HELL)
+            if (worldIn.getBiome(playerIn.getPosition()) instanceof BiomeHell)
     		{
 	            if (playerIn.isSneaking())
 	            {
@@ -95,6 +97,7 @@ public class CrystallizedFire extends CrystalBase
 	                            EntityLightningBolt lightning = new EntityLightningBolt(worldIn, blockpos.getX(), blockpos.getY(),blockpos.getZ(), false);
 	                            worldIn.addWeatherEffect(lightning);
 	                            mainhand.shrink(1);
+	                            addMythos(playerIn,25);
 	                            return new ActionResult(EnumActionResult.PASS,mainhand);
 	                        }
 	                        else
@@ -105,6 +108,10 @@ public class CrystallizedFire extends CrystalBase
 	                }
 	            }
             }
+            else
+        	{
+        		playerIn.sendStatusMessage(new TextComponentString("This may only be done in a Hell-based biome. (Nether)"), true);
+        	}
         }
         return new ActionResult<ItemStack>(EnumActionResult.PASS,
                 playerIn.getHeldItem(handIn));
