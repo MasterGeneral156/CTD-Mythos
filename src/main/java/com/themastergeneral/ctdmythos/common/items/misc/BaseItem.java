@@ -53,12 +53,12 @@ public class BaseItem extends CTDItem
         this.setCreativeTab(CTDMythos.creativeTab);
     }
     //Can't move these for technical debt reasons.
-    public int getMythos(EntityPlayer playerIn)
+    public static int getMythos(EntityPlayer playerIn)
 	{
 		return playerIn.getEntityData().getInteger("ctdmythos:mythos");
 	}
 	
-	public void setMythos(EntityPlayer playerIn, int mythos)
+	public static void setMythos(EntityPlayer playerIn, int mythos)
 	{
 		playerIn.getEntityData().setInteger("ctdmythos:mythos", mythos);
 	}
@@ -68,7 +68,7 @@ public class BaseItem extends CTDItem
 		return currentMythos >= required;
 	}
 	
-	public void removeMythos(EntityPlayer playerIn, int mythosChange)
+	public static void removeMythos(EntityPlayer playerIn, int mythosChange)
 	{
 		int mythos = getMythos(playerIn);
 		int newMythos = mythos - mythosChange;
@@ -76,7 +76,7 @@ public class BaseItem extends CTDItem
 			newMythos = 0;
 		setMythos(playerIn, newMythos);
 	}
-	public void addMythos(EntityPlayer playerIn, int mythosChange)
+	public static void addMythos(EntityPlayer playerIn, int mythosChange)
 	{
 		int mythos = getMythos(playerIn);
 		int newMythos = mythos + mythosChange;
