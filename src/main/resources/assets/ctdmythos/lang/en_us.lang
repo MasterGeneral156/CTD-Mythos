@@ -32,6 +32,7 @@ item.lightning_bottle.name=Lightning in a Bottle
 item.lightning_staff.name=Staff of Lightning
 item.mythos_pool.name=Unrealized Mythos Pool
 item.mythos_exciter.name=Mythos Exciter
+item.mythos_pick.name=Mythos Shatterer
 
 itemGroup.ctdmythos=CTD Mythos
 ctdmythos.desc=A mod of magical items!

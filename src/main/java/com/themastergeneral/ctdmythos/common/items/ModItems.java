@@ -28,6 +28,7 @@ import com.themastergeneral.ctdmythos.common.items.misc.GlowingItem;
 import com.themastergeneral.ctdmythos.common.items.misc.ModArmorMaterials;
 import com.themastergeneral.ctdmythos.common.items.misc.SingleStackItem;
 import com.themastergeneral.ctdmythos.common.items.mythos.MythosInventGen;
+import com.themastergeneral.ctdmythos.common.items.mythos.MythosPick;
 import com.themastergeneral.ctdmythos.common.items.mythos.MythosPool;
 import com.themastergeneral.ctdmythos.common.items.tools.LongBowItem;
 import com.themastergeneral.ctdmythos.common.items.tools.MythosArrow;
@@ -89,6 +90,8 @@ public class ModItems extends RegisterItem
     public static MythosPool mythos_pool;
     public static MythosInventGen mythos_exciter;
     public static MythosInventGen mythos_nova;
+    
+    public static MythosPick mythos_pick;
     public static void registerItems()
     {
         humaneffigy = register(new HumanEffigyItem("humaneffigy"));
@@ -143,7 +146,7 @@ public class ModItems extends RegisterItem
         lightning_staff = register(new LightningStaff("lightning_staff"));
 
         mythos_arrow = register(new MythosArrow("mythos_arrow", CTDMythos.MODID));
-        
+        mythos_pick = register(new MythosPick("mythos_pick", 4000, 50));
         shulker_helmet = register(new ShulkerHelmet("shulker_helmet", ModArmorMaterials.shulker_armor, 1, EntityEquipmentSlot.HEAD));
     }
 }
