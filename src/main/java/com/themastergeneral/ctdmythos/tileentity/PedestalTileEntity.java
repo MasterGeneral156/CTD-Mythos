@@ -136,12 +136,24 @@ public class PedestalTileEntity extends TileEntity implements ITickable
                     Random randomGenerator = new Random();
                     int actualheal = randomGenerator.nextInt(100);
                     //Change bricks to normal bricks occasionally.
-                    if (actualheal < 3)
+                    if (actualheal == 3)
                     {
                         world.setBlockState(new BlockPos(pos.getX(), pos.getY() - 1, pos.getZ()), Blocks.BRICK_BLOCK.getDefaultState());
+                    }
+                    if (actualheal == 13)
+                    {
                         world.setBlockState(new BlockPos(pos.getX() + 1, pos.getY() - 1, pos.getZ()), Blocks.BRICK_BLOCK.getDefaultState());
+                    }
+                    if (actualheal == 23)
+                    {
                         world.setBlockState(new BlockPos(pos.getX() - 1, pos.getY() - 1, pos.getZ()), Blocks.BRICK_BLOCK.getDefaultState());
+                    }
+                    if (actualheal == 43)
+                    {
                         world.setBlockState(new BlockPos(pos.getX(), pos.getY() - 1, pos.getZ() + 1), Blocks.BRICK_BLOCK.getDefaultState());
+                    }
+                    if (actualheal == 63)
+                    {
                         world.setBlockState(new BlockPos(pos.getX(), pos.getY() - 1, pos.getZ() - 1), Blocks.BRICK_BLOCK.getDefaultState());
                     }
                     resetTicks();
