@@ -25,74 +25,36 @@ public class MultiblockRecipes {
 
 	private MultiblockRecipes() {
 		// Ore Doubling
-		addRecipe(new ItemStack(Blocks.IRON_ORE, 1), new ItemStack(
-				Items.IRON_INGOT, 2));
-		addRecipe(new ItemStack(Blocks.GOLD_ORE, 1), new ItemStack(
-				Items.GOLD_INGOT, 2));
-		addRecipe(new ItemStack(Blocks.REDSTONE_ORE, 1), new ItemStack(
-				Items.REDSTONE, 2));
-		addRecipe(new ItemStack(Blocks.DIAMOND_ORE, 1), new ItemStack(
-				Items.DIAMOND, 2));
-		addRecipe(new ItemStack(Blocks.EMERALD_ORE, 1), new ItemStack(
-				Items.EMERALD, 2));
-		addRecipe(new ItemStack(Blocks.COAL_ORE, 1), new ItemStack(Items.COAL,
-				2));
-		addRecipe(new ItemStack(Blocks.QUARTZ_ORE, 1), new ItemStack(
-				Items.QUARTZ, 2));
-		addRecipe(new ItemStack(ModBlocks.crystal_fire_ore), new ItemStack(
-				ModItems.crystal_fire, 2));
-		addRecipe(new ItemStack(ModBlocks.crystal_woe_ore), new ItemStack(
-				ModItems.crystal_woe, 2));
-		addRecipe(new ItemStack(ModBlocks.crystal_memory_ore), new ItemStack(
-				ModItems.crystal_memory, 2));
-		addRecipe(new ItemStack(ModBlocks.crystal_grief_ore), new ItemStack(
-				ModItems.crystal_grief, 2));
-		addRecipe(new ItemStack(ModBlocks.crystal_oath_ore), new ItemStack(
-				ModItems.crystal_oath, 2));
-		addRecipe(new ItemStack(Blocks.LAPIS_ORE), new ItemStack(Items.DYE, 2,
-				4));
-		addRecipe(new ItemStack(Blocks.WEB, 1), new ItemStack(
-				ModItems.ethereal_fiber, 4));
-		
+		addRecipe(new ItemStack(Blocks.IRON_ORE, 1), new ItemStack(Items.IRON_INGOT, 2));
+		addRecipe(new ItemStack(Blocks.GOLD_ORE, 1), new ItemStack(Items.GOLD_INGOT, 2));
+		addRecipe(new ItemStack(Blocks.REDSTONE_ORE, 1), new ItemStack(Items.REDSTONE, 2));
+		addRecipe(new ItemStack(Blocks.DIAMOND_ORE, 1), new ItemStack(Items.DIAMOND, 2));
+		addRecipe(new ItemStack(Blocks.EMERALD_ORE, 1), new ItemStack(Items.EMERALD, 2));
+		addRecipe(new ItemStack(Blocks.COAL_ORE, 1), new ItemStack(Items.COAL, 2));
+		addRecipe(new ItemStack(Blocks.QUARTZ_ORE, 1), new ItemStack(Items.QUARTZ, 2));
+		addRecipe(new ItemStack(ModBlocks.crystal_fire_ore), new ItemStack(ModItems.crystal_fire, 2));
+		addRecipe(new ItemStack(ModBlocks.crystal_woe_ore), new ItemStack(ModItems.crystal_woe, 2));
+		addRecipe(new ItemStack(ModBlocks.crystal_memory_ore), new ItemStack(ModItems.crystal_memory, 2));
+		addRecipe(new ItemStack(ModBlocks.crystal_grief_ore), new ItemStack(ModItems.crystal_grief, 2));
+		addRecipe(new ItemStack(ModBlocks.crystal_oath_ore), new ItemStack(ModItems.crystal_oath, 2));
+		addRecipe(new ItemStack(Blocks.LAPIS_ORE), new ItemStack(Items.DYE, 2, 4));
+		addRecipe(new ItemStack(Blocks.WEB, 1), new ItemStack(ModItems.ethereal_fiber, 4));
 		addRecipe(new ItemStack(Items.GLASS_BOTTLE), new ItemStack(ModItems.lightning_bottle));
+		addRecipe(new ItemStack(Blocks.TNT, 1), new ItemStack(ModItems.archeron_ingot, 1));
+		addRecipe(new ItemStack(Items.TOTEM_OF_UNDYING), new ItemStack(ModItems.humansoul, 4));
+		addRecipe(new ItemStack(Items.KNOWLEDGE_BOOK), new ItemStack(ModItems.xptome));
+		
+		addRecipe(new ItemStack(Items.STICK), new ItemStack(ModItems.enchanted_stick));
+		addRecipe(new ItemStack(Blocks.PLANKS, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(ModItems.enchanted_stick, 2));
+		addRecipe(new ItemStack(Blocks.LOG, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(ModItems.enchanted_stick, 8));
+		addRecipe(new ItemStack(Blocks.LOG2, 1, OreDictionary.WILDCARD_VALUE), new ItemStack(ModItems.enchanted_stick, 8));
 
-		// Archeron Ingot
-		addRecipe(new ItemStack(Blocks.TNT, 1), new ItemStack(
-				ModItems.archeron_ingot, 1));
-
-		addRecipe(new ItemStack(Items.TOTEM_OF_UNDYING), new ItemStack(
-				ModItems.humansoul, 4));
-
-		addRecipe(new ItemStack(Items.KNOWLEDGE_BOOK), new ItemStack(
-				ModItems.xptome));
-
-		addRecipe(new ItemStack(Items.STICK), new ItemStack(
-				ModItems.enchanted_stick));
-
-		addRecipe(
-				new ItemStack(Blocks.PLANKS, 1, OreDictionary.WILDCARD_VALUE),
-				new ItemStack(ModItems.enchanted_stick, 2));
-
-		addRecipe(new ItemStack(Blocks.LOG, 1, OreDictionary.WILDCARD_VALUE),
-				new ItemStack(ModItems.enchanted_stick, 8));
-
-		addRecipe(new ItemStack(Blocks.LOG2, 1, OreDictionary.WILDCARD_VALUE),
-				new ItemStack(ModItems.enchanted_stick, 8));
-
-		addRecipe(new ItemStack(Items.ENCHANTED_BOOK, 1,
-				OreDictionary.WILDCARD_VALUE), new ItemStack(ModItems.xptome));
-
-		addRecipe(new ItemStack(Items.SADDLE),
-				new ItemStack(ModItems.muleskick));
-		addRecipe(new ItemStack(Blocks.COMMAND_BLOCK), new ItemStack(
-				ModItems.debug_item));
-		addRecipe(new ItemStack(ModItems.mb_validator), new ItemStack(
-				ModItems.mb_validator));
-
-		addRecipe(new ItemStack(Items.SHULKER_SHELL), new ItemStack(
-				ModItems.shulker_helmet));
-		addRecipe(new ItemStack(Blocks.DRAGON_EGG), new ItemStack(
-				ModItems.mythos_pool));
+		
+		addRecipe(new ItemStack(Items.ENCHANTED_BOOK, 1,OreDictionary.WILDCARD_VALUE), new ItemStack(ModItems.xptome));
+		addRecipe(new ItemStack(Items.SADDLE), new ItemStack(ModItems.muleskick));
+		addRecipe(new ItemStack(Blocks.COMMAND_BLOCK), new ItemStack(ModItems.debug_item));
+		addRecipe(new ItemStack(ModItems.mb_validator), new ItemStack(ModItems.mb_validator));
+		addRecipe(new ItemStack(Items.SHULKER_SHELL), new ItemStack(ModItems.shulker_helmet));
 	}
 
 	public void addRecipe(ItemStack mainhand, ItemStack output) {
