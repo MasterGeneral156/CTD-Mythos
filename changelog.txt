@@ -1,0 +1,16 @@
+=========================
+CTD Mythos 1.12.2-0.8.0
+=========================
+*Loads of internal clean-ups, coding refactors, etc.
++Crystallized Gems are now consumed when creating Crystallized Brick Blocks.
+*Mythos-based items are now hard-coded to 1-item stacks.
++Rewrote Mythos Pools. Will likely stand-in for how future items are balanced.
+*You may store Mythos by shift+right clicking, remove by right clicking.
+*Crystallized Brick Blocks may only be created in specific biomes, based on the gem used.
+*Crystallized Glove is now a Bauble.
+*Updated the Pedestal to allow each brick of the multiblock base to be individually defuse.
+*Updated Pedestal to ensure all logic is done on the server.
++Created a pickaxe that runs on Mythos, Mythos Shatterer. 50 Mythos per use.
+*New recipe for Mythos Pool.
+*Mythos Pool renamed to Unrealized Mythos Pool.
+*Pedestal renamed to Mythos Pedestal.
