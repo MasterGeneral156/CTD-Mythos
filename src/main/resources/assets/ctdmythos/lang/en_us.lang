@@ -30,7 +30,7 @@ item.mythos_arrow.name=Mythos Arrow
 item.shulker_helmet.name=Shulker Helmet
 item.lightning_bottle.name=Lightning in a Bottle
 item.lightning_staff.name=Staff of Lightning
-item.mythos_pool.name=Mythos Pool
+item.mythos_pool.name=Unrealized Mythos Pool
 item.mythos_exciter.name=Mythos Exciter
 
 itemGroup.ctdmythos=CTD Mythos
@@ -67,7 +67,7 @@ tile.crystal_fire_block.name=§4Crystallized Fire Block§r
 tile.crystal_memory_block.name=§aCrystallized Memory Block§r
 tile.crystal_oath_block.name=§eCrystallized Oath Block§r
 tile.crystal_grief_block.name=§7Crystallized Grief Block§r
-tile.pedestal_block.name=Pedestal
+tile.pedestal_block.name=Mythos Pedestal
 
 advancement.archeron_ingot.name=Explosive Creation
 advancement.archeron_ingot.desc=Create an Archeron Ingot.
