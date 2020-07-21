@@ -38,7 +38,7 @@ public class MythosInventGen extends MythosItemBase {
     public void addInformation(ItemStack stack, @Nullable World worldIn,
             List<String> tooltip, ITooltipFlag flagIn)
     {
-    	tooltip.add("Generates " + mpt + " mythos / tick.");
+    	tooltip.add("Generates " + mpt + " Mythos/t");
     }
 
 }
