@@ -58,7 +58,6 @@ public class ModItems extends RegisterItem
 
     public static BaseItem ethereal_fiber;
     public static BaseItem humansoul;
-    public static BaseItem crystal_glove;
     public static BasicBauble crystal_glove;
     public static BaseItem cowblooddrop;
     public static BaseItem xptome;
