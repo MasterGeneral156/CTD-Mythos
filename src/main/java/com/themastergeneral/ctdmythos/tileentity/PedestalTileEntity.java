@@ -122,51 +122,54 @@ public class PedestalTileEntity extends TileEntity implements ITickable
     @Override
     public void update()
     {
-        if (validMB())
+    	if (!world.isRemote)
         {
-            if (validItem())
-            {
-                incrementTicks();
-                if (getTicks() == 200 * inventory.getStackInSlot(0).getCount())
-                {
-                    int newtotal = inventory.getStackInSlot(0).getCount() * getOutput().getCount();
-                    ItemStack Output = new ItemStack(getOutput().getItem(), newtotal, getOutput().getMetadata());
-                    world.addWeatherEffect(new EntityLightningBolt(world, pos.getX(), pos.getY() + 1, pos.getZ(), false));
-                    this.inventory.setStackInSlot(0, Output);
-                    Random randomGenerator = new Random();
-                    int actualheal = randomGenerator.nextInt(100);
-                    //Change bricks to normal bricks occasionally.
-                    if (actualheal == 3)
-                    {
-                        world.setBlockState(new BlockPos(pos.getX(), pos.getY() - 1, pos.getZ()), Blocks.BRICK_BLOCK.getDefaultState());
-                    }
-                    if (actualheal == 13)
-                    {
-                        world.setBlockState(new BlockPos(pos.getX() + 1, pos.getY() - 1, pos.getZ()), Blocks.BRICK_BLOCK.getDefaultState());
-                    }
-                    if (actualheal == 23)
-                    {
-                        world.setBlockState(new BlockPos(pos.getX() - 1, pos.getY() - 1, pos.getZ()), Blocks.BRICK_BLOCK.getDefaultState());
-                    }
-                    if (actualheal == 43)
-                    {
-                        world.setBlockState(new BlockPos(pos.getX(), pos.getY() - 1, pos.getZ() + 1), Blocks.BRICK_BLOCK.getDefaultState());
-                    }
-                    if (actualheal == 63)
-                    {
-                        world.setBlockState(new BlockPos(pos.getX(), pos.getY() - 1, pos.getZ() - 1), Blocks.BRICK_BLOCK.getDefaultState());
-                    }
-                    resetTicks();
-                }
-            }
-            else
-            {
-                resetTicks();
-            }
-        }
-        else
-        {
-            resetTicks();
+	        if (validMB())
+	        {
+	            if (validItem())
+	            {
+	                incrementTicks();
+	                if (getTicks() == 200 * inventory.getStackInSlot(0).getCount())
+	                {
+	                    int newtotal = inventory.getStackInSlot(0).getCount() * getOutput().getCount();
+	                    ItemStack Output = new ItemStack(getOutput().getItem(), newtotal, getOutput().getMetadata());
+	                    world.addWeatherEffect(new EntityLightningBolt(world, pos.getX(), pos.getY() + 1, pos.getZ(), false));
+	                    this.inventory.setStackInSlot(0, Output);
+	                    Random randomGenerator = new Random();
+	                    int actualheal = randomGenerator.nextInt(100);
+	                    //Change bricks to normal bricks occasionally.
+	                    if (actualheal == 3)
+	                    {
+	                        world.setBlockState(new BlockPos(pos.getX(), pos.getY() - 1, pos.getZ()), Blocks.BRICK_BLOCK.getDefaultState());
+	                    }
+	                    if (actualheal == 13)
+	                    {
+	                        world.setBlockState(new BlockPos(pos.getX() + 1, pos.getY() - 1, pos.getZ()), Blocks.BRICK_BLOCK.getDefaultState());
+	                    }
+	                    if (actualheal == 23)
+	                    {
+	                        world.setBlockState(new BlockPos(pos.getX() - 1, pos.getY() - 1, pos.getZ()), Blocks.BRICK_BLOCK.getDefaultState());
+	                    }
+	                    if (actualheal == 43)
+	                    {
+	                        world.setBlockState(new BlockPos(pos.getX(), pos.getY() - 1, pos.getZ() + 1), Blocks.BRICK_BLOCK.getDefaultState());
+	                    }
+	                    if (actualheal == 63)
+	                    {
+	                        world.setBlockState(new BlockPos(pos.getX(), pos.getY() - 1, pos.getZ() - 1), Blocks.BRICK_BLOCK.getDefaultState());
+	                    }
+	                    resetTicks();
+	                }
+	            }
+	            else
+	            {
+	                resetTicks();
+	            }
+	        }
+	        else
+	        {
+	            resetTicks();
+	        }
         }
     }
 
