@@ -201,11 +201,4 @@ public class PedestalTileEntity extends TileEntity implements ITickable
         }
         return false;
     }
-    public boolean inEnd()
-    {
-    	Biome currentBiome = this.getWorld().getBiome(this.getPos());
-    	if (currentBiome instanceof BiomeEnd)
-    		return true;
-		return false;
-    }
 }
