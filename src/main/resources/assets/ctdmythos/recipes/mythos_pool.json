@@ -12,7 +12,7 @@
 		"F": [{"type": "forge:ore_dict", "ore": "gemCrystallizedFire"}],
 		"G": [{"type": "forge:ore_dict", "ore": "gemCrystallizedGrief"}],
 		"O": [{"type": "forge:ore_dict", "ore": "gemCrystallizedOath"}],
-		"W": [{"type": "forge:ore_dict", "ore": "gemCrystallizedWoe"}],
+		"W": [{"type": "forge:ore_dict", "ore": "gemCrystallizedWoe"}]
     },
     "result": {
         "item": "ctdmythos:mythos_pool"
