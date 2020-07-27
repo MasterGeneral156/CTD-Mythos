@@ -1,7 +1,7 @@
 {
 	"name": "Mythos Guide",
 	"landing_text": "Thanks for crafting me. This book will serve as a general guide for the mod, CTD Mythos.",
-	"version": 2,
+	"version": 3,
 	"creative_tab": "ctdmythos",
 	"model": "ctdmythos:patchouli_texture",
 	"show_progress": false

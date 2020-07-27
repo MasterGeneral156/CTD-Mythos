@@ -1,0 +1,23 @@
+{
+    "name": "Mythos Infusion",
+    "icon": "ctdmythos:crystal_grief",
+    "category": "mythos_category",
+    "pages": [
+        {
+            "type": "text",
+            "text": "You may infuse certain items with Mythos. Shift + Right Click to store Mythos in an item. If your item acts like a buffer or capacitor, you may use normal right click to remove energy from the item. Not all items may have their Mythos withdrawn."
+        },
+		{
+            "type": "text",
+            "text": "Note, items that may be infused typically have some unique traits of their own. Understanding these will allow you prepare accordingly for future uses."
+        },
+		{
+            "type": "text",
+            "text": "Firstly, they may store only a finite of Mythos. So, no, you cannot store infinite Mythos in an item. You can easily tell how full an item is by looking at its durability bar. When full, it will also have a nice, shiny enchantment glint."
+        },
+		{
+            "type": "text",
+            "text": "Secondly, these items have a static Mythos transfer rate. An item will always take/remove X Mythos no matter the task. That means you need at least that much Mythos collected. Infused items will not automatically withdraw from other Mythos storage devices."
+        }
+    ]
+}
