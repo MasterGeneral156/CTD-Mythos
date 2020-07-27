@@ -31,25 +31,16 @@ public class MulesKickItem extends BaseItem
     public ActionResult<ItemStack> onItemRightClick(World worldIn,
             EntityPlayer playerIn, EnumHand handIn)
     {
-    	int playerMythos = getMythos(playerIn);
-		if (checkMythos(playerMythos, ModConfig.mythosCostMulesKick))
-		{
-			removeMythos(playerIn, ModConfig.mythosCostMulesKick);
-	        if (!worldIn.isRemote)
-	        {
-	            ItemStack ItemStack = playerIn.getHeldItem(handIn);
-	            playerIn.addPotionEffect(new PotionEffect(MobEffects.SPEED, 200, 4,
-	                    true, false));
-	            playerIn.getCooldownTracker().setCooldown(this, 200);
-	        }
-	        worldIn.playSound(playerIn, playerIn.getPosition(),
-                ModSounds.mules_kick, SoundCategory.PLAYERS, 1.0F, 1.0F);
-		}
-		else
-		{
-			playerIn.sendStatusMessage(new TextComponentTranslation(
-	                "You need at least " + ModConfig.mythosCostMulesKick + " mythos to use the Mule's Kick."),true);
-		}
+        if (!worldIn.isRemote)
+        {
+            ItemStack ItemStack = playerIn.getHeldItem(handIn);
+            playerIn.addPotionEffect(new PotionEffect(MobEffects.SPEED, 200, 4,
+                    true, false));
+            playerIn.getCooldownTracker().setCooldown(this, 200);
+            ItemStack.damageItem(1, playerIn);
+        }
+        worldIn.playSound(playerIn, playerIn.getPosition(),
+            ModSounds.mules_kick, SoundCategory.PLAYERS, 1.0F, 1.0F);
         return new ActionResult<ItemStack>(EnumActionResult.PASS,
                 playerIn.getHeldItem(handIn));
     }
