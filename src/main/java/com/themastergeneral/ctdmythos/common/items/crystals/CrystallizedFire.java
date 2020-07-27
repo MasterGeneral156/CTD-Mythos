@@ -47,7 +47,7 @@ public class CrystallizedFire extends CrystalBase
         // Extinguish fire with Fire
         if ((stack.getItem() == ModItems.crystal_fire) && (ModConfig.crystal_effects))
         {
-            ((EntityLivingBase) entityIn).extinguish();
+            entityIn.extinguish();
         }
     }
 
