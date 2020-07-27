@@ -1,0 +1,17 @@
+{
+    "name": "Mythos Exciter",
+    "icon": "ctdmythos:mythos_exciter",
+    "category": "mythos_category",
+    "pages": [
+        {
+            "type": "text",
+            "text": "You may generate Mythos passively using a Mythos Exciter. Be wary, this device only works during the day, and has a small chance to burn out completely."
+        },
+		{
+			"type": "crafting",
+			"recipe": "ctdmythos:mythos_exciter",
+			"title": "Mythos Exciter",
+			"text": "Generates 1 Mythos/tick. Stores 512 Mythos."
+		}
+    ]
+}
