@@ -32,13 +32,26 @@ public class MythosInventGen extends MythosItemBase {
 	@Override
     public void onUpdate(ItemStack stack, World worldIn, Entity entityIn, int itemSlot, boolean isSelected)
     {
-		if (getCurrentPool(stack) > getMaxPool(stack))
+		if (!worldIn.isRemote)
 		{
-			setPool(stack, getMaxPool(stack));
-		}
-		if (getCurrentPool(stack) < getMaxPool(stack))
-		{
-			setPool(stack, getCurrentPool(stack) + mpt);
+			//Mythos generation and checks.
+			if (getCurrentPool(stack) > getMaxPool(stack))
+			{
+				setPool(stack, getMaxPool(stack));
+			}
+			if (getCurrentPool(stack) < getMaxPool(stack))
+			{
+				//Item specific effects.
+				Item item = stack.getItem();
+				//Mythos Exciter works only in daytime.
+				if (item == ModItems.mythos_exciter)
+				{
+					if (entityIn.getEntityWorld().isDaytime())
+					{
+						addToPool(stack, mpt);
+					}
+				}
+			}
 		}
     }
 	// Add tooltip on client side.
