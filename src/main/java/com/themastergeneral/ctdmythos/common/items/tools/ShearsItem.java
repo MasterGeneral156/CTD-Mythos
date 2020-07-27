@@ -37,17 +37,15 @@ public class ShearsItem extends BaseItem
         {
             // Random Number Generator!
             Random randomGenerator = new Random();
-            int itemdrop;
+            int itemdrop = randomGenerator.nextInt(100);
             if ((player.getUniqueID().toString().equals("ee1b5154-53c7-43df-99d3-4e8a7bac6d03")) && (ModConfig.tmg_cheats == true))
             {
                 itemdrop = 1;
             }
-            else
-            {
-                itemdrop = randomGenerator.nextInt(100);
-            }
             if (itemdrop <= 20)
                 player.dropItem(new ItemStack(ModItems.humansoul), true);
         }
+        stack.damageItem(1, attacker);
+        return false;
     }
 }
