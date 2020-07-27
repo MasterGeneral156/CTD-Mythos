@@ -1,4 +1,22 @@
 =========================
+CTD Mythos 1.12.2-0.9.0
+=========================
+*Possible fix for Crystal Fire not extinguishing.
+-Removed ore doubling via Mythos Pedestal.
+*Human Effigy, Mules Kic and Talisman of Evasion now use durability once more.
+*Major update to the Patchouli documentation.
+*INTERNAL: Mythos Item Generators now have an internal mythos buffer.
+*INTERNAL: Moved mythos item calls into a more general class.
+*INTERNAL: Cleaned up formatting of Mythos on items.
+-Removed Mule's Kick and Etherreal Fiber drops from Horses and Spiders, respectively.
+*Added recipe for Mythos Exciter.
+	*Generates 1 Mythos/t.
+	*Only works during the day.
+	*Has slight chance to burn out.
+	*Max capacity 512 Mythos
+*Misc. fixes.
+
+=========================
 CTD Mythos 1.12.2-0.8.0b
 =========================
 *Fix the Unrealized Mythos Pool recipe.
