@@ -45,10 +45,10 @@ public class MythosItemBase extends BaseItem
 	@Override
     public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand handIn)
     {
-		int playerMythos = getMythos(playerIn);
 		//New way will shift click to store, click to withdraw.
 		if (!worldIn.isRemote)
         {
+			int playerMythos = getMythos(playerIn);
             ItemStack mainhand = playerIn.getHeldItem(handIn);
             if (playerIn.isSneaking())
             {
@@ -81,9 +81,12 @@ public class MythosItemBase extends BaseItem
 	@Override 
 	public void onUpdate(ItemStack stack, World worldIn, Entity entityIn, int itemSlot, boolean isSelected)
     {
-		if (getCurrentPool(stack) > getMaxPool(stack))
+		if (!worldIn.isRemote)
 		{
-			setPool(stack, getMaxPool(stack));
+			if (getCurrentPool(stack) > getMaxPool(stack))
+			{
+				setPool(stack, getMaxPool(stack));
+			}
 		}
     }
 	
