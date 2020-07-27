@@ -32,11 +32,12 @@ public class MultiblockRecipes {
 		addRecipe(new ItemStack(Blocks.EMERALD_ORE, 1), new ItemStack(Items.EMERALD, 2));
 		addRecipe(new ItemStack(Blocks.COAL_ORE, 1), new ItemStack(Items.COAL, 2));
 		addRecipe(new ItemStack(Blocks.QUARTZ_ORE, 1), new ItemStack(Items.QUARTZ, 2));
-		addRecipe(new ItemStack(ModBlocks.crystal_fire_ore), new ItemStack(ModItems.crystal_fire, 2));
+		//TODO: Ore doubling.
+		/*addRecipe(new ItemStack(ModBlocks.crystal_fire_ore), new ItemStack(ModItems.crystal_fire, 2));
 		addRecipe(new ItemStack(ModBlocks.crystal_woe_ore), new ItemStack(ModItems.crystal_woe, 2));
 		addRecipe(new ItemStack(ModBlocks.crystal_memory_ore), new ItemStack(ModItems.crystal_memory, 2));
 		addRecipe(new ItemStack(ModBlocks.crystal_grief_ore), new ItemStack(ModItems.crystal_grief, 2));
-		addRecipe(new ItemStack(ModBlocks.crystal_oath_ore), new ItemStack(ModItems.crystal_oath, 2));
+		addRecipe(new ItemStack(ModBlocks.crystal_oath_ore), new ItemStack(ModItems.crystal_oath, 2));*/
 		addRecipe(new ItemStack(Blocks.LAPIS_ORE), new ItemStack(Items.DYE, 2, 4));
 		addRecipe(new ItemStack(Blocks.WEB, 1), new ItemStack(ModItems.ethereal_fiber, 4));
 		addRecipe(new ItemStack(Items.GLASS_BOTTLE), new ItemStack(ModItems.lightning_bottle));
