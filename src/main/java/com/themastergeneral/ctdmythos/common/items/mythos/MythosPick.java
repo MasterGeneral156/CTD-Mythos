@@ -76,10 +76,9 @@ public class MythosPick extends ItemPickaxe implements ItemModelProvider
 	@Override
     public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand handIn)
     {
-		int playerMythos = BaseItem.getMythos(playerIn);
-		//New way will shift click to store, click to withdraw.
 		if (!worldIn.isRemote)
         {
+			int playerMythos = BaseItem.getMythos(playerIn);
             ItemStack mainhand = playerIn.getHeldItem(handIn);
             if (playerIn.isSneaking())
             {
