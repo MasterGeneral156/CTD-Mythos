@@ -2,6 +2,7 @@ package com.themastergeneral.ctdmythos.common.items.mythos;
 
 import java.text.NumberFormat;
 import java.util.List;
+import java.util.Random;
 
 import javax.annotation.Nullable;
 
@@ -49,6 +50,12 @@ public class MythosInventGen extends MythosItemBase {
 					if (entityIn.getEntityWorld().isDaytime())
 					{
 						addToPool(stack, mpt);
+						Random randomGenerator = new Random();
+			            int itemdrop = randomGenerator.nextInt(100000);
+			            if (itemdrop == 49)
+			            {
+			            	stack.shrink(1);
+			            }
 					}
 				}
 			}
