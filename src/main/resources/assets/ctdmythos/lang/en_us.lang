@@ -33,6 +33,7 @@ item.lightning_staff.name=Staff of Lightning
 item.mythos_pool.name=Unrealized Mythos Pool
 item.mythos_exciter.name=Mythos Exciter
 item.mythos_pick.name=Mythos Shatterer
+item.mythos_flight_wand.name=Mythos Flight Wand
 
 itemGroup.ctdmythos=CTD Mythos
 ctdmythos.desc=A mod of magical items!
