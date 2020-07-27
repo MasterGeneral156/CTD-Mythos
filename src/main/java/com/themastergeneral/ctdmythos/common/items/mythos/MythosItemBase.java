@@ -101,6 +101,7 @@ public class MythosItemBase extends BaseItem
 	{
 		return true;
 	}
+	
 	@Override
 	public double getDurabilityForDisplay(ItemStack stack)
     {
