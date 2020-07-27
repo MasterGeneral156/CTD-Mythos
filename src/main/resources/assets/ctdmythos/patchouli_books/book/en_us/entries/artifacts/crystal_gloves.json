@@ -5,7 +5,7 @@
     "pages": [
         {
             "type": "text",
-            "text": "When placed in your off-hand slot, it'll stop the effects of all Crystal Gem effects."
+            "text": "When placed in any Baubles slot, it'll stop the effects of all Crystal Gem effects."
         },
 		{
 			"type": "crafting",

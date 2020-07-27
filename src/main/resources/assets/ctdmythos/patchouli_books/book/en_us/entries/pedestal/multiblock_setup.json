@@ -11,7 +11,7 @@
 		{
 			"type": "multiblock",
 			"name": "Pedestal",
-			"text": "If you're confused, use a $(l:artifacts/mb_validator)Multiblock Validator!",
+			"text": "If you're confused, use a $(l:artifacts/mb_validator)Multiblock Validator$(/l).",
 			"multiblock": {
 				"pattern": [
 					["   "," 0 ", "   "],

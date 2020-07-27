@@ -10,7 +10,7 @@
 		{
 			"type": "spotlight",
 			"item": "ctdmythos:shulker_helmet",
-            "text": "Craft using a Shulker Shell in a $(l:pedestal/pedestal_block)Pedestal..."
+            "text": "Craft using a Shulker Shell in a $(l:pedestal/pedestal_block)Mythos Pedestal$(/l)."
 		
 		}
     ]

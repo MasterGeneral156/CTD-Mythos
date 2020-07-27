@@ -10,22 +10,22 @@
 		{
             "type": "spotlight",
 			"item": "ctdmythos:crystal_fire",
-            "text": "Crystallized Fire will extinguish you if you are on fire."
+            "text": "Extinguishes you if you are on fire."
         },
 		{
             "type": "spotlight",
 			"item": "ctdmythos:crystal_woe",
-            "text": "Crystallized Woe will give you Slowness III."
+            "text": "Gives you Slowness III."
         },
 		{
             "type": "spotlight",
 			"item": "ctdmythos:crystal_memory",
-            "text": "Crystallized Memory will give you Weakness III."
+            "text": "Gives you Weakness III."
         },
 		{
             "type": "spotlight",
 			"item": "ctdmythos:crystal_grief",
-            "text": "Crystallized Grief will give you Blindness."
+            "text": "Gives you Blindness."
         }
     ]
 }

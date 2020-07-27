@@ -5,7 +5,7 @@
     "pages": [
         {
             "type": "text",
-            "text": "This is a simple tool that will allow you to verify if your multiblock is complete. Simply click on any block and it'll tell you what's missing, if anything. Otherwise, it'll tell you its a valid multiblock for the Pedestal."
+            "text": "This is a simple tool that will allow you to verify if your multiblock is complete. Simply click on any block and it'll tell you what's missing, if anything. Otherwise, it'll tell you its a valid multiblock for the (l:pedestal/pedestal_block)Mythos Pedestal$(/l)."
         },
 		{
 			"type": "crafting",

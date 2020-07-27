@@ -5,7 +5,7 @@
     "pages": [
         {
             "type": "text",
-            "text": "The Mule's Kick will grant the person who uses it Speed for 10 seconds. Crafted by inputting a Saddle into the Pedestal."
+            "text": "The Mule's Kick will grant the person who uses it Speed for 10 seconds. Crafted by inputting a Saddle into the $(l:pedestal/pedestal_block)Mythos Pedestal$(/l)."
         }
     ]
 }
