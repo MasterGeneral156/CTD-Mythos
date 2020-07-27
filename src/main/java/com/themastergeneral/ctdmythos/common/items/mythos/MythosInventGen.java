@@ -51,7 +51,7 @@ public class MythosInventGen extends MythosItemBase {
 					{
 						addToPool(stack, mpt);
 						Random randomGenerator = new Random();
-			            int itemdrop = randomGenerator.nextInt(100000);
+			            int itemdrop = randomGenerator.nextInt(1000000);
 			            if (itemdrop == 49)
 			            {
 			            	stack.shrink(1);
