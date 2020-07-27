@@ -17,8 +17,8 @@ public class OreBlock extends BaseBlock
 
     public OreBlock(String name, Item droppeditem)
     {
-        super(Material.GROUND, name);
-        this.setHarvestLevel("pickaxe", 2);
+        super(Material.ROCK, name);
+        this.setHarvestLevel("pickaxe", 1);
         this.setSoundType(SoundType.STONE);
         this.setHardness(1.0f);
         this.drop = droppeditem;

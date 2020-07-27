@@ -12,7 +12,7 @@ public class CrystalBlocks extends BaseBlock
         this.setSoundType(SoundType.STONE);
         this.setHardness(5.0F);
         this.setResistance(5.0F);
-        this.setHarvestLevel("pickaxe", 3);
+        this.setHarvestLevel("pickaxe", 2);
     }
 
 }

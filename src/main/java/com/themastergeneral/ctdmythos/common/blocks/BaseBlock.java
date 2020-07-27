@@ -12,6 +12,8 @@ public class BaseBlock extends CTDBlock
     {
         super(materialIn, name, CTDMythos.MODID);
         setCreativeTab(CTDMythos.creativeTab);
+        setHardness(1F);
+        setHarvestLevel("pickaxe", 1);
     }
 
 }

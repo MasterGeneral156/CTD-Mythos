@@ -10,11 +10,11 @@ public class BrickBlocks extends BaseBlock
 
     public BrickBlocks(String name)
     {
-        super(Material.GROUND, name);
+        super(Material.ROCK, name);
         this.setHardness(2.0F);
         this.setResistance(10.0F);
         this.setSoundType(SoundType.STONE);
-        this.setHarvestLevel("pickaxe", 0);
+        this.setHarvestLevel("pickaxe", 1);
     }
 
 }

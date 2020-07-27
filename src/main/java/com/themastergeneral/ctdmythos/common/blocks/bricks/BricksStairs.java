@@ -36,7 +36,7 @@ public class BricksStairs extends BlockStairs implements ItemModelProvider,
         this.name = name;
         this.setResistance(10.0F);
         this.setSoundType(SoundType.STONE);
-        this.setHarvestLevel("pickaxe", 0);
+        this.setHarvestLevel("pickaxe", 1);
         this.setLightOpacity(255);
         this.setCreativeTab(CTDMythos.creativeTab);
         this.setUnlocalizedName(name);
