@@ -1,5 +1,6 @@
 package com.themastergeneral.ctdmythos.common.items.mythos;
 
+import java.text.NumberFormat;
 import java.util.List;
 
 import javax.annotation.Nullable;
@@ -109,7 +110,7 @@ public class MythosPick extends ItemPickaxe implements ItemModelProvider
 	@Override
 	public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn) 
 	{
-		tooltip.add("Mythos: " + getCurrentPool(stack) + "/" + getMaxPool(stack));
+		tooltip.add("Mythos: " + NumberFormat.getInstance().format(getCurrentPool(stack)) + "/" + NumberFormat.getInstance().format(getMaxPool(stack)));
 	}
 	
 	@Override
