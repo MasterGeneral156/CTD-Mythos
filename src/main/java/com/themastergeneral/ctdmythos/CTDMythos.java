@@ -8,11 +8,15 @@ import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLFingerprintViolationEvent;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLInterModComms.IMCEvent;
+import net.minecraftforge.fml.common.event.FMLLoadCompleteEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 import net.minecraftforge.fml.relauncher.Side;
+
+import java.util.LinkedList;
+import java.util.List;
 
 import org.apache.logging.log4j.Logger;
 
@@ -22,10 +26,16 @@ import com.themastergeneral.ctdmythos.network.PacketRequestUpdatePedestal;
 import com.themastergeneral.ctdmythos.network.PacketUpdatePedestal;
 import com.themastergeneral.ctdmythos.proxy.Common;
 
+import crafttweaker.CraftTweakerAPI;
+import crafttweaker.IAction;
+
 @Mod(modid = CTDMythos.MODID, name = CTDMythos.MODNAME, version = CTDMythos.VERSION, acceptedMinecraftVersions = CTDMythos.acceptedMinecraftVersions,
         updateJSON = CTDMythos.updateJSON, certificateFingerprint = CTDMythos.certificateFingerprint, dependencies = CTDMythos.DEPENDENCIES)
 public class CTDMythos
 {
+    public static final List<IAction> LATE_REMOVALS = new LinkedList<>();
+    public static final List<IAction> LATE_ADDITIONS = new LinkedList<>();
+    
     public static final String MODID = "ctdmythos";
     public static final String MODNAME = "CTD Mythos";
     public static final String VERSION = "0.9.0";
@@ -72,6 +82,21 @@ public class CTDMythos
     public void onFingerprintViolation(FMLFingerprintViolationEvent e)
     {
         FMLLog.warning("Invalid fingerprint detected for CTD Mythos! TheMasterGeneral will not support this version!");
+    }
+    
+    //Needed for craft tweaker!
+    @Mod.EventHandler
+    public void loadComplete(FMLLoadCompleteEvent event) 
+    {
+        try {
+            LATE_REMOVALS.forEach(CraftTweakerAPI::apply);
+            LATE_ADDITIONS.forEach(CraftTweakerAPI::apply);
+        } catch(Exception e) {
+            e.printStackTrace();
+            CraftTweakerAPI.logError("Error while applying actions", e);
+        }
+        LATE_REMOVALS.clear();
+        LATE_ADDITIONS.clear();
     }
 
     @EventHandler
