@@ -118,6 +118,15 @@ public class PedestalTileEntity extends TileEntity implements ITickable
         tickup = 0;
         markDirty();
     }
+    
+    public int getTotalTicks()
+    {
+    	int baseTick = 200;
+    	int ticks = baseTick;
+    	if (world.isThundering())
+    		ticks /= 2;
+    	return ticks;
+    }
 
     @Override
     public void update()
@@ -129,7 +138,7 @@ public class PedestalTileEntity extends TileEntity implements ITickable
 	            if (validItem())
 	            {
 	                incrementTicks();
-	                if (getTicks() == 200 * inventory.getStackInSlot(0).getCount())
+	                if (getTicks() == getTotalTicks() * inventory.getStackInSlot(0).getCount())
 	                {
 	                    ItemStack Output = new ItemStack(getOutput().getItem(), getOutput().getCount(), getOutput().getMetadata());
 	                    world.addWeatherEffect(new EntityLightningBolt(world, pos.getX(), pos.getY() + 1, pos.getZ(), false));
