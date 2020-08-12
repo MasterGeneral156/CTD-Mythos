@@ -131,8 +131,7 @@ public class PedestalTileEntity extends TileEntity implements ITickable
 	                incrementTicks();
 	                if (getTicks() == 200 * inventory.getStackInSlot(0).getCount())
 	                {
-	                    int newtotal = inventory.getStackInSlot(0).getCount() * getOutput().getCount();
-	                    ItemStack Output = new ItemStack(getOutput().getItem(), newtotal, getOutput().getMetadata());
+	                    ItemStack Output = new ItemStack(getOutput().getItem(), getOutput().getCount(), getOutput().getMetadata());
 	                    world.addWeatherEffect(new EntityLightningBolt(world, pos.getX(), pos.getY() + 1, pos.getZ(), false));
 	                    this.inventory.setStackInSlot(0, Output);
 	                    resetTicks();
