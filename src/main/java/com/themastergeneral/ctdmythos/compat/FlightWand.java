@@ -27,4 +27,10 @@ public class FlightWand
 	{
 		WandFlightItems.instance().removeFlight(InputHelper.toStack(input));
 	}
+	
+	@ZenMethod
+    public static void removeAllRecipes() 
+	{
+		WandFlightItems.instance().getFlightItemsList().clear();
+	}
 }

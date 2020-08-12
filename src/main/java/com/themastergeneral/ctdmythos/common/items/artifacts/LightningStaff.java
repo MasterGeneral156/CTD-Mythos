@@ -18,6 +18,7 @@ public class LightningStaff extends BaseItem {
 		super(name);
 		this.setMaxStackSize(1);
 		this.setNoRepair();
+		this.setMaxDamage(25);
 	}
 
 	@Override

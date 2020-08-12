@@ -23,6 +23,7 @@ public class MulesKickItem extends BaseItem
     {
         super(name);
         this.maxStackSize = 1;
+        this.setMaxDamage(25);
     }
 
     // When the Mule's Kick is used, give the player Speed 5 for 10 Seconds.

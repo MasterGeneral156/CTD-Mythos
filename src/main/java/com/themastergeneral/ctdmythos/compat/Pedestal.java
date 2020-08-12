@@ -25,4 +25,10 @@ public class Pedestal
 		MultiblockRecipes.instance().removeRecipe(InputHelper.toStack(input), InputHelper.toStack(output));
 	}
 	
+	@ZenMethod
+    public static void removeAllRecipes() 
+	{
+		MultiblockRecipes.instance().getRecipeList().clear();
+	}
+	
 }

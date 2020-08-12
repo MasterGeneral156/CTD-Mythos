@@ -28,6 +28,7 @@ public class HumanEffigyItem extends BaseItem
         super(name);
         this.maxStackSize = 1;
         this.setNoRepair();
+        this.setMaxDamage(25);
     }
 
     // Give the player 5 hearts, saturation and damage the item when the
@@ -38,15 +39,11 @@ public class HumanEffigyItem extends BaseItem
     {
         // Get mainhand item.
         ItemStack ItemStack = playerIn.getHeldItem(handIn);
-        // Server world
-        if (!worldIn.isRemote)
-        {
-            playerIn.heal(10F);
-            playerIn.addPotionEffect(new PotionEffect(MobEffects.SATURATION, 5,
-                    1, true, false));
-            playerIn.getCooldownTracker().setCooldown(this, 20);
-            ItemStack.damageItem(1, playerIn);
-        }
+        playerIn.heal(10F);
+        playerIn.addPotionEffect(new PotionEffect(MobEffects.SATURATION, 5,
+                1, true, false));
+        playerIn.getCooldownTracker().setCooldown(this, 20);
+        ItemStack.damageItem(1, playerIn);
         // Play sound.
         worldIn.playSound(playerIn, playerIn.getPosition(),
                 ModSounds.human_effigy, SoundCategory.PLAYERS, 1.0F, 1.0F);
