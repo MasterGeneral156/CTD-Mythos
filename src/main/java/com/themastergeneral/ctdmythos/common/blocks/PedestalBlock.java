@@ -3,6 +3,7 @@ package com.themastergeneral.ctdmythos.common.blocks;
 import java.text.NumberFormat;
 import java.util.Random;
 
+import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 import net.minecraft.block.Block;
@@ -66,8 +67,11 @@ public class PedestalBlock extends CTDTEBase<PedestalTileEntity>
                 }
                 else
                 {
-                    player.setHeldItem(hand,itemHandler.insertItem(0, heldItem, false));
-                    tile.resetTicks();
+                	if (tile.isValidItem(heldItem))
+                	{
+                		player.setHeldItem(hand,itemHandler.insertItem(0, heldItem, false));
+                		tile.resetTicks();
+                	}
                 }
                 tile.markDirty();
             }

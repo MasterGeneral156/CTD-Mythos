@@ -165,6 +165,14 @@ public class PedestalTileEntity extends TileEntity implements ITickable
         else
             return false;
     }
+    
+    public boolean isValidItem(ItemStack stack)
+    {
+        if (MultiblockRecipes.instance().getRecipeResult(stack) != ItemStack.EMPTY)
+            return true;
+        else
+            return false;
+    }
 
     public ItemStack getOutput()
     {
