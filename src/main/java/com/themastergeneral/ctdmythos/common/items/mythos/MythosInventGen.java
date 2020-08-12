@@ -58,6 +58,10 @@ public class MythosInventGen extends MythosItemBase {
 			            }
 					}
 				}
+				if (item == ModItems.mythos_nova)
+				{
+					addToPool(stack, mpt);
+				}
 			}
 		}
     }
