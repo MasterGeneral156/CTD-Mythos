@@ -3,18 +3,18 @@
 	{
         "icon": 
 		{
-            "item": "ctdmythos:muleskick"
+            "item": "ctdmythos:amuletreach"
         },
         "title": 
 		{
-            "translate": "advancement.muleskick.name"
+            "translate": "advancement.amulet_reach.name"
         },
         "description": 
 		{
-            "translate": "advancement.muleskick.desc"
+            "translate": "advancement.amulet_reach.desc"
         }
     },
-	"parent": "ctdmythos:main/shears",
+	"parent": "ctdmythos:new/mythos_pedestal",
     "criteria": 
 	{
         "carrot": 
@@ -25,7 +25,7 @@
                 "items": 
 				[
                     {
-                        "item": "ctdmythos:muleskick"
+                        "item": "ctdmythos:amuletreach"
                     }
                 ]
             }

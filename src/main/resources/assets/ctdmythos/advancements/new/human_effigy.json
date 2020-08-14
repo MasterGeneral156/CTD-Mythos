@@ -3,18 +3,19 @@
 	{
         "icon": 
 		{
-            "item": "ctdmythos:humansoul"
+            "item": "ctdmythos:humaneffigy"
         },
         "title": 
 		{
-            "translate": "advancement.humansoul.name"
+            "translate": "advancement.human_effigy.name"
         },
         "description": 
 		{
-            "translate": "advancement.humansoul.desc"
-        }
+            "translate": "advancement.human_effigy.desc"
+        },
+		"frame": "challenge"
     },
-	"parent": "ctdmythos:main/shears",
+	"parent": "ctdmythos:new/human_soul",
     "criteria": 
 	{
         "carrot": 
@@ -25,7 +26,7 @@
                 "items": 
 				[
                     {
-                        "item": "ctdmythos:humansoul"
+                        "item": "ctdmythos:humaneffigy"
                     }
                 ]
             }

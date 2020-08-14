@@ -3,18 +3,18 @@
 	{
         "icon": 
 		{
-            "item": "ctdmythos:flight_wand"
+            "item": "ctdmythos:lightning_bottle"
         },
         "title": 
 		{
-            "translate": "advancement.flight_wand.name"
+            "translate": "advancement.lightning_bottle.name"
         },
         "description": 
 		{
-            "translate": "advancement.flight_wand.desc"
+            "translate": "advancement.lightning_bottle.desc"
         }
     },
-	"parent": "ctdmythos:main/xp_book",
+	"parent": "ctdmythos:new/mythos_pedestal",
     "criteria": 
 	{
         "carrot": 
@@ -25,7 +25,7 @@
                 "items": 
 				[
                     {
-                        "item": "ctdmythos:flight_wand"
+                        "item": "ctdmythos:lightning_bottle"
                     }
                 ]
             }

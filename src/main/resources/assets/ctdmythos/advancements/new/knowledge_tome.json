@@ -3,18 +3,18 @@
 	{
         "icon": 
 		{
-            "item": "ctdmythos:trinkethealth"
+            "item": "ctdmythos:xptome"
         },
         "title": 
 		{
-            "translate": "advancement.trinkethealth.name"
+            "translate": "advancement.knowledge_tome.name"
         },
         "description": 
 		{
-            "translate": "advancement.trinkethealth.desc"
+            "translate": "advancement.knowledge_tome.desc"
         }
     },
-	"parent": "ctdmythos:main/archeron_ingot",
+	"parent": "ctdmythos:new/mythos_pedestal",
     "criteria": 
 	{
         "carrot": 
@@ -25,7 +25,7 @@
                 "items": 
 				[
                     {
-                        "item": "ctdmythos:trinkethealth"
+                        "item": "ctdmythos:xptome"
                     }
                 ]
             }

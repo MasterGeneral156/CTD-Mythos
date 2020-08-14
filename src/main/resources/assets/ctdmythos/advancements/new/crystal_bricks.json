@@ -1,30 +1,27 @@
 {
-  "display": 
+    "display": 
 	{
         "icon": 
 		{
-            "item": "ctdmythos:crystal_fire"
+            "item": "ctdmythos:crystal_fire_brick"
         },
         "title": 
 		{
-            "translate": "itemGroup.ctdmythos"
+            "translate": "advancement.crystal_bricks.name"
         },
         "description": 
 		{
-            "translate": "ctdmythos.desc"
-        },
-		"frame": "goal",
-		"background": "ctdmythos:textures/blocks/crystal_fire_brick.png",
-		"show_toast": true,
-		"announce_to_chat": true
+            "translate": "advancement.crystal_bricks.desc"
+        }
     },
-  "criteria": {
+	"parent": "ctdmythos:new/cow_blood",
+    "criteria": {
     "fire": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
-            "item": "ctdmythos:crystal_fire"
+            "item": "ctdmythos:crystal_fire_brick"
           }
         ]
       }
@@ -34,7 +31,7 @@
       "conditions": {
         "items": [
           {
-            "item": "ctdmythos:crystal_grief"
+            "item": "ctdmythos:crystal_grief_brick"
           }
         ]
       }
@@ -44,7 +41,7 @@
       "conditions": {
         "items": [
           {
-            "item": "ctdmythos:crystal_oath"
+            "item": "ctdmythos:crystal_oath_brick"
           }
         ]
       }
@@ -54,7 +51,7 @@
       "conditions": {
         "items": [
           {
-            "item": "ctdmythos:crystal_memory"
+            "item": "ctdmythos:crystal_memory_brick"
           }
         ]
       }
@@ -64,7 +61,7 @@
       "conditions": {
         "items": [
           {
-            "item": "ctdmythos:crystal_woe"
+            "item": "ctdmythos:crystal_woe_brick"
           }
         ]
       }

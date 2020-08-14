@@ -3,18 +3,19 @@
 	{
         "icon": 
 		{
-            "item": "ctdmythos:revitalizing_rye"
+            "item": "ctdmythos:mythos_pick"
         },
         "title": 
 		{
-            "translate": "advancement.rye.name"
+            "translate": "advancement.mythos_pick.name"
         },
         "description": 
 		{
-            "translate": "advancement.rye.desc"
-        }
+            "translate": "advancement.mythos_pick.desc"
+        },
+		"frame": "challenge"
     },
-	"parent": "ctdmythos:main/fibre",
+	"parent": "ctdmythos:new/mythos_base",
     "criteria": 
 	{
         "carrot": 
@@ -25,7 +26,7 @@
                 "items": 
 				[
                     {
-                        "item": "ctdmythos:revitalizing_rye"
+                        "item": "ctdmythos:mythos_pick"
                     }
                 ]
             }

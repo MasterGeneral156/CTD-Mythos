@@ -3,18 +3,18 @@
 	{
         "icon": 
 		{
-            "item": "ctdmythos:amuletreach"
+            "item": "ctdmythos:gladius_sword"
         },
         "title": 
 		{
-            "translate": "advancement.amuletreach.name"
+            "translate": "advancement.archeron_sword.name"
         },
         "description": 
 		{
-            "translate": "advancement.amuletreach.desc"
+            "translate": "advancement.archeron_sword.desc"
         }
     },
-	"parent": "ctdmythos:main/archeron_ingot",
+	"parent": "ctdmythos:new/archeron_ingot",
     "criteria": 
 	{
         "carrot": 
@@ -25,7 +25,7 @@
                 "items": 
 				[
                     {
-                        "item": "ctdmythos:amuletreach"
+                        "item": "ctdmythos:gladius_sword"
                     }
                 ]
             }

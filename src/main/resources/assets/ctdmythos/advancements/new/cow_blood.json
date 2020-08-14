@@ -3,18 +3,18 @@
 	{
         "icon": 
 		{
-            "item": "ctdmythos:mb_validator"
+            "item": "ctdmythos:cowblooddrop"
         },
         "title": 
 		{
-            "translate": "advancement.mb_validator.name"
+            "translate": "advancement.cow_blood_drop.name"
         },
         "description": 
 		{
-            "translate": "advancement.mb_validator.desc"
+            "translate": "advancement.cow_blood_drop.desc"
         }
     },
-	"parent": "ctdmythos:main/xp_book",
+	"parent": "ctdmythos:new/root",
     "criteria": 
 	{
         "carrot": 
@@ -25,7 +25,7 @@
                 "items": 
 				[
                     {
-                        "item": "ctdmythos:mb_validator"
+                        "item": "ctdmythos:cowblooddrop"
                     }
                 ]
             }

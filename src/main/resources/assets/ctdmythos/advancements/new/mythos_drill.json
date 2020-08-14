@@ -3,18 +3,18 @@
 	{
         "icon": 
 		{
-            "item": "ctdmythos:humaneffigy"
+            "item": "ctdmythos:tmgdrill"
         },
         "title": 
 		{
-            "translate": "advancement.humaneffigy.name"
+            "translate": "advancement.mythos_drill.name"
         },
         "description": 
 		{
-            "translate": "advancement.humaneffigy.desc"
+            "translate": "advancement.mythos_drill.desc"
         }
     },
-	"parent": "ctdmythos:main/pedestal",
+	"parent": "ctdmythos:new/mythos_base",
     "criteria": 
 	{
         "carrot": 
@@ -25,7 +25,7 @@
                 "items": 
 				[
                     {
-                        "item": "ctdmythos:humaneffigy"
+                        "item": "ctdmythos:tmgdrill"
                     }
                 ]
             }

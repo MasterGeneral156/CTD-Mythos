@@ -3,18 +3,18 @@
 	{
         "icon": 
 		{
-            "item": "ctdmythos:creativeamuletreach"
+            "item": "ctdmythos:archeron_ingot"
         },
         "title": 
 		{
-            "translate": "advancement.creativeamuletreach.name"
+            "translate": "advancement.archeron_ingot.name"
         },
         "description": 
 		{
-            "translate": "advancement.creativeamuletreach.desc"
+            "translate": "advancement.archeron_ingot.desc"
         }
     },
-	"parent": "ctdmythos:main/reaching_amulet",
+	"parent": "ctdmythos:new/mythos_pedestal",
     "criteria": 
 	{
         "carrot": 
@@ -25,7 +25,7 @@
                 "items": 
 				[
                     {
-                        "item": "ctdmythos:creativeamuletreach"
+                        "item": "ctdmythos:archeron_ingot"
                     }
                 ]
             }

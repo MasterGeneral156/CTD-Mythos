@@ -1,0 +1,35 @@
+{
+    "display": 
+	{
+        "icon": 
+		{
+            "item": "ctdmythos:pedestal_block"
+        },
+        "title": 
+		{
+            "translate": "advancement.pedestal.name"
+        },
+        "description": 
+		{
+            "translate": "advancement.pedestal.desc"
+        },
+		"frame": "goal"
+    },
+	"parent": "ctdmythos:new/crystal_bricks",
+    "criteria": 
+	{
+        "carrot": 
+		{
+            "trigger": "minecraft:inventory_changed",
+            "conditions": 
+			{
+                "items": 
+				[
+                    {
+                        "item": "ctdmythos:pedestal_block"
+                    }
+                ]
+            }
+        }
+    }
+}

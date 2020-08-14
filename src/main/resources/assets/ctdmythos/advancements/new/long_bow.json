@@ -3,18 +3,18 @@
 	{
         "icon": 
 		{
-            "item": "ctdmythos:evasion_talisman"
+            "item": "ctdmythos:longbow"
         },
         "title": 
 		{
-            "translate": "advancement.evasion_talisman.name"
+            "translate": "advancement.mythos_bow.name"
         },
         "description": 
 		{
-            "translate": "advancement.evasion_talisman.desc"
+            "translate": "advancement.mythos_bow.desc"
         }
     },
-	"parent": "ctdmythos:main/archeron_ingot",
+	"parent": "ctdmythos:new/mythos_pedestal",
     "criteria": 
 	{
         "carrot": 
@@ -25,7 +25,7 @@
                 "items": 
 				[
                     {
-                        "item": "ctdmythos:evasion_talisman"
+                        "item": "ctdmythos:longbow"
                     }
                 ]
             }

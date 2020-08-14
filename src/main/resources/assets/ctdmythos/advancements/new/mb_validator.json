@@ -3,18 +3,18 @@
 	{
         "icon": 
 		{
-            "item": "ctdmythos:grimshears"
+            "item": "ctdmythos:mb_validator"
         },
         "title": 
 		{
-            "translate": "advancement.grimshears.name"
+            "translate": "advancement.mb_validator.name"
         },
         "description": 
 		{
-            "translate": "advancement.grimshears.desc"
+            "translate": "advancement.mb_validator.desc"
         }
     },
-	"parent": "ctdmythos:main/archeron_ingot",
+	"parent": "ctdmythos:new/crystal_bricks",
     "criteria": 
 	{
         "carrot": 
@@ -25,7 +25,7 @@
                 "items": 
 				[
                     {
-                        "item": "ctdmythos:grimshears"
+                        "item": "ctdmythos:mb_validator"
                     }
                 ]
             }
