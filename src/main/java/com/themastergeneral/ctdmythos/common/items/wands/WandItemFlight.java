@@ -47,15 +47,10 @@ public class WandItemFlight extends WandItemBase
             }
             if (flighttime > 0)
             {
-                playerIn.addPotionEffect(new PotionEffect(
-                        MobEffects.LEVITATION, flighttime, flightmod, true,
-                        false));
-                playerIn.addPotionEffect(new PotionEffect(
-                        MobEffects.RESISTANCE, resist, 11, true, false));
+                playerIn.addPotionEffect(new PotionEffect(MobEffects.LEVITATION, flighttime, flightmod, true,false));
+                playerIn.addPotionEffect(new PotionEffect(MobEffects.RESISTANCE, resist, 11, true, false));
                 mainhand.damageItem(1, playerIn);
-                worldIn.playSound(playerIn, playerIn.getPosition(),
-                        ModSounds.flight_wand, SoundCategory.PLAYERS, 1.0F,
-                        1.0F);
+                playerIn.playSound(ModSounds.flight_wand, 1.0F, 1.0F);
                 offhand.shrink(1);
                 playerIn.getCooldownTracker().setCooldown(this, flighttime);
             }
