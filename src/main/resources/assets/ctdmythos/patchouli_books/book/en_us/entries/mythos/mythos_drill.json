@@ -1,7 +1,7 @@
 {
-    "name": "TMG's Drill",
+    "name": "Mythos Drill",
     "icon": "ctdmythos:tmgdrill",
-    "category": "weapon_category",
+    "category": "mythos_category",
     "pages": [
         {
             "type": "text",
@@ -9,8 +9,8 @@
         },
 		{
 			"type": "crafting",
-			"recipe": "ctdmythos:tmg_drill",
-			"text": "When you hit a player with armor equipped, it'd disarm them, at the cost of one-third of the Drill's Durability."
+			"recipe": "ctdmythos:mythos_drill",
+			"text": "For 1,024 Mythos, you can disarm the player you hit."
 		
 		}
     ]
