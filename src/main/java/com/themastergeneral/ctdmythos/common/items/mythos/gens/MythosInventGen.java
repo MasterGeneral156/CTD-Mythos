@@ -1,4 +1,4 @@
-package com.themastergeneral.ctdmythos.common.items.mythos;
+package com.themastergeneral.ctdmythos.common.items.mythos.gens;
 
 import java.text.NumberFormat;
 import java.util.List;
@@ -8,6 +8,7 @@ import javax.annotation.Nullable;
 
 import com.themastergeneral.ctdmythos.common.config.ModConfig;
 import com.themastergeneral.ctdmythos.common.items.ModItems;
+import com.themastergeneral.ctdmythos.common.items.mythos.MythosItemBase;
 
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
