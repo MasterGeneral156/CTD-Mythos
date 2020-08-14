@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "group": "ctdmythos:mythos_negator",
+    "pattern": [
+        "ACA",
+        "CEC",
+		"ACA"
+    ],
+    "key": {
+		"A": [{"type": "forge:ore_dict", "ore": "ingotArcheron"}],
+		"C": { "item": "minecraft:shulker_shell" },
+		"E": { "item": "ctdmythos:mythos_exciter" }
+    },
+    "result": {
+        "item": "ctdmythos:mythos_negator"
+    }
+}
