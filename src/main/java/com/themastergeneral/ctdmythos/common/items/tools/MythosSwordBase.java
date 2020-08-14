@@ -46,7 +46,7 @@ public class MythosSwordBase extends ItemSword implements ItemModelProvider
     public ActionResult<ItemStack> onItemRightClick(World worldIn,
             EntityPlayer playerIn, EnumHand handIn)
     {
-        ItemStack offhand = playerIn.getHeldItemOffhand();
+        /*ItemStack offhand = playerIn.getHeldItemOffhand();
         ItemStack mainhand = playerIn.getHeldItemMainhand();
         // Crystal oath + book in offhand to get a tome of XP
         if (mainhand.getItem() == ModItems.gladius_sword)
@@ -67,7 +67,7 @@ public class MythosSwordBase extends ItemSword implements ItemModelProvider
         		playerIn.sendStatusMessage(new TextComponentTranslation(
     	                "You need at least " + ModConfig.mythosCostSword + " mythos to be boosted."),true);
         	}
-        }
+        }*/
         return new ActionResult<ItemStack>(EnumActionResult.PASS,
                 playerIn.getHeldItem(handIn));
     }

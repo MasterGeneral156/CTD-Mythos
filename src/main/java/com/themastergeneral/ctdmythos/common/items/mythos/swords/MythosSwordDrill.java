@@ -1,46 +1,51 @@
-package com.themastergeneral.ctdmythos.common.items.tools;
+package com.themastergeneral.ctdmythos.common.items.mythos.swords;
 
-import com.themastergeneral.ctdcore.CTDCore;
-import com.themastergeneral.ctdcore.client.ItemModelProvider;
-import com.themastergeneral.ctdmythos.CTDMythos;
 import com.themastergeneral.ctdmythos.common.config.ModConfig;
+import com.themastergeneral.ctdmythos.common.items.mythos.MythosSword;
 
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemSword;
-import net.minecraft.util.text.TextComponentString;
+import net.minecraft.util.ActionResult;
+import net.minecraft.util.DamageSource;
+import net.minecraft.util.EnumActionResult;
+import net.minecraft.util.EnumHand;
 import net.minecraft.util.text.TextComponentTranslation;
-import net.minecraft.util.text.TextFormatting;
+import net.minecraft.world.World;
 
-public class TMGDrill extends MythosSwordBase
-{
+public class MythosSwordDrill extends MythosSword {
 
-    public TMGDrill(String name)
-    {
-        super(ToolMaterial.IRON, name, 762);
-        this.maxStackSize = 1;
-    }
+	private float attackDamage;
 
-    @Override
+	public MythosSwordDrill() 
+	{
+		super("tmgdrill", 4096, 128);
+		this.attackDamage = 5.25F;
+	}
+	
+	public float getAttackDamage()
+	{
+		return attackDamage;
+		
+	}
+	
+	@Override
     public boolean hitEntity(ItemStack stack, EntityLivingBase target, EntityLivingBase attacker)
     {
-        if (target instanceof EntityPlayer)
+		if (target instanceof EntityPlayer)
         {
             // Cast entity to player
             EntityPlayer targetted = (EntityPlayer) target;
-            EntityPlayer attackerr = (EntityPlayer) attacker;
+            EntityPlayer attackerr = (EntityPlayer) attacker;           
 
             // Get armor items
             ItemStack boots = targetted.inventory.armorItemInSlot(0);
             ItemStack leggings = targetted.inventory.armorItemInSlot(1);
             ItemStack chest = targetted.inventory.armorItemInSlot(2);
             ItemStack helmet = targetted.inventory.armorItemInSlot(3);
-            if (checkMythos(getMythos(attackerr), ModConfig.mythosCostDrill))
+            if (getCurrentPool(stack) >= 1024)
             {
-            	removeMythos(attackerr, ModConfig.mythosCostDrill);
-	            if (!boots.isEmpty() || !leggings.isEmpty() || !chest.isEmpty() || !helmet.isEmpty())
+				if (!boots.isEmpty() || !leggings.isEmpty() || !chest.isEmpty() || !helmet.isEmpty())
 	            {
 		            // Delete the armor stack
 		            targetted.inventory.deleteStack(boots);
@@ -56,14 +61,18 @@ public class TMGDrill extends MythosSwordBase
 		            
 		        	targetted.sendStatusMessage(new TextComponentTranslation("info.dropped.armor2"),true);
 		            attackerr.sendStatusMessage(new TextComponentTranslation("info.dropped.armor"),true);
+		            
+		            removeFromPool(stack, 1024);
 	            }
             }
             else
             {
             	attackerr.sendStatusMessage(new TextComponentTranslation(
-    	                "You need at least " + ModConfig.mythosCostDrill + " mythos to disarm your opponent."),true);
+    	                "You need at least 1,024 mythos to disarm your opponent."),true);
             }
         }
-        return true;
+		target.attackEntityFrom(DamageSource.GENERIC, getAttackDamage());
+		return true;
     }
+
 }
