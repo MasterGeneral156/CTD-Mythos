@@ -28,15 +28,16 @@ import com.themastergeneral.ctdmythos.common.items.misc.GlowingItem;
 import com.themastergeneral.ctdmythos.common.items.misc.ModArmorMaterials;
 import com.themastergeneral.ctdmythos.common.items.misc.SingleStackItem;
 import com.themastergeneral.ctdmythos.common.items.mythos.MythosFlightWand;
-import com.themastergeneral.ctdmythos.common.items.mythos.MythosInventGen;
 import com.themastergeneral.ctdmythos.common.items.mythos.MythosPick;
 import com.themastergeneral.ctdmythos.common.items.mythos.MythosPool;
+import com.themastergeneral.ctdmythos.common.items.mythos.gens.MythosGenFall;
+import com.themastergeneral.ctdmythos.common.items.mythos.gens.MythosInventGen;
+import com.themastergeneral.ctdmythos.common.items.mythos.swords.MythosSwordDrill;
 import com.themastergeneral.ctdmythos.common.items.tools.LongBowItem;
 import com.themastergeneral.ctdmythos.common.items.tools.MythosArrow;
 import com.themastergeneral.ctdmythos.common.items.tools.MythosSwordBase;
 import com.themastergeneral.ctdmythos.common.items.tools.ShearsItem;
 import com.themastergeneral.ctdmythos.common.items.tools.ShulkerHelmet;
-import com.themastergeneral.ctdmythos.common.items.tools.TMGDrill;
 import com.themastergeneral.ctdmythos.common.items.wands.WandItemFlight;
 import com.themastergeneral.ctdmythos.common.items.wands.WandItemTeleport;
 
@@ -45,7 +46,7 @@ public class ModItems extends RegisterItem
 
     public static HumanEffigyItem humaneffigy;
     public static MulesKickItem muleskick;
-    public static TMGDrill tmgdrill;
+    public static MythosSwordDrill tmgdrill;
     public static MythosSwordBase gladius_sword;
     public static LongBowItem longbow;
     public static ShearsItem grimshears;
@@ -90,6 +91,7 @@ public class ModItems extends RegisterItem
     public static MythosPool mythos_pool;
     public static MythosInventGen mythos_exciter;
     public static MythosInventGen mythos_nova;
+    public static MythosGenFall mythos_negator;
     
     public static MythosPick mythos_pick;
     public static void registerItems()
@@ -112,10 +114,11 @@ public class ModItems extends RegisterItem
         mythos_pool = register(new MythosPool("mythos_pool", 20000, 250));
         mythos_exciter = register(new MythosInventGen("mythos_exciter", 512, 16, ModConfig.mythosExciterGen));
         mythos_nova = register(new MythosInventGen("mythos_nova", Integer.MAX_VALUE, 100, ModConfig.mythosMaxStorage));
+        mythos_negator = register(new MythosGenFall("mythos_negator"));
 
         longbow = register(new LongBowItem("longbow", 144000, 640));
 
-        tmgdrill = register(new TMGDrill("tmgdrill"));
+        tmgdrill = register(new MythosSwordDrill());
         gladius_sword = register(new MythosSwordBase(ToolMaterial.GOLD,
                 "gladius_sword", 823));
 
