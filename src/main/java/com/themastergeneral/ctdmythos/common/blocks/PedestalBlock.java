@@ -83,7 +83,7 @@ public class PedestalBlock extends CTDTEBase<PedestalTileEntity>
                 	TextComponentTranslation message = new TextComponentTranslation("pedestal.progress.info");
                 	message.appendSibling(new TextComponentString(NumberFormat.getInstance().format(tile.getTicks())));
                 	message.appendText(" / ");
-                	message.appendSibling(new TextComponentString(NumberFormat.getInstance().format(200 * tile.inventory.getStackInSlot(0).getCount())));
+                	message.appendSibling(new TextComponentString(NumberFormat.getInstance().format(tile.getTotalTicks() * tile.inventory.getStackInSlot(0).getCount())));
                 	message.appendSibling(new TextComponentTranslation("pedestal.progress.ticks"));
                     player.sendStatusMessage(message,true);
                 }
