@@ -2,13 +2,14 @@
     "type": "minecraft:crafting_shaped",
     "group": "ctdmythos:lightning_staff",
     "pattern": [
-        " TB",
-        " ST",
+        " BP",
+        " AB",
 		"S  "
     ],
     "key": {
 		"S": [{"type": "forge:ore_dict", "ore": "stickEnchanted"}],
-		"T": { "item": "ctdmythos:xptome" },
+		"A": [{"type": "forge:ore_dict", "ore": "ingotArcheron"}],
+		"P": { "item": "ctdmythos:mythos_pool" },
 		"B": { "item": "ctdmythos:lightning_bottle" }
     },
     "result": {

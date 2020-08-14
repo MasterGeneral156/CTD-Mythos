@@ -2,19 +2,13 @@
     "type": "minecraft:crafting_shaped",
     "group": "ctdmythos:crystal_glove",
     "pattern": [
-        "WMG",
-        "RLR",
-		"FEO"
+        " L ",
+        "LWL",
+		"LLL"
     ],
     "key": {
 		"W": [{"type": "forge:ore_dict", "ore": "gemCrystallized"}],
-        "G": [{"type": "forge:ore_dict", "ore": "gemCrystallized"}],
-        "R": { "item": "ctdmythos:ethereal_fiber" },
-        "L": [{"type": "forge:ore_dict", "ore": "leather"}],
-        "F": [{"type": "forge:ore_dict", "ore": "gemCrystallized"}],
-        "O": [{"type": "forge:ore_dict", "ore": "gemCrystallized"}],
-        "E": { "item": "ctdmythos:xptome" },
-		"M": [{"type": "forge:ore_dict", "ore": "gemCrystallized"}]
+        "L": [{"type": "forge:ore_dict", "ore": "leather"}]
     },
     "result": {
         "item": "ctdmythos:crystal_glove",

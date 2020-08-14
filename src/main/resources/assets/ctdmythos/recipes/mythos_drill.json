@@ -7,7 +7,7 @@
 		"S  "
     ],
     "key": {
-		"B": [{"type": "forge:ore_dict", "ore": "blockIron"}],
+		"B": { "item": "ctdmythos:mythos_pool" },
         "S": [{"type": "forge:ore_dict", "ore": "stickEnchanted"}],
 		"I": { "item": "ctdmythos:gladius_sword" }
     },

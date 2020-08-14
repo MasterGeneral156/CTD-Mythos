@@ -4,10 +4,9 @@
     "pattern": [
         " IT",
         " SI",
-		"O  "
+		"S  "
     ],
     "key": {
-		"O": [{"type": "forge:ore_dict", "ore": "ingotArcheron"}],
         "S": [{"type": "forge:ore_dict", "ore": "stickWood"}],
         "T": [{"type": "forge:ore_dict", "ore": "gemCrystallizedGrief"}],
 		"I": { "item": "minecraft:enchanted_book", "data": 32767 }
