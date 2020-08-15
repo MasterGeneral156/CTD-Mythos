@@ -33,7 +33,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class MythosItemBase extends BaseItem 
 {
-	private int poolSize;
+	private static int poolSize;
 	private int changeSize;
 	public MythosItemBase(String name, int maxStorage, int changesize) 
 	{
@@ -108,7 +108,7 @@ public class MythosItemBase extends BaseItem
         return MathHelper.clamp(1.0D - ((double) getCurrentPool(stack) / (double) getMaxPool(stack)), 0.0D, 1.0D);
     }
 	
-	public int getCurrentPool(ItemStack stack)
+	public static int getCurrentPool(ItemStack stack)
 	{
 		 NBTTagCompound nbt = stack.getTagCompound();
          if (nbt == null)
@@ -123,7 +123,7 @@ public class MythosItemBase extends BaseItem
 		return nbt.getInteger("mythos_pool");
 	}
 	
-	public int getMaxPool(ItemStack stack)
+	public static int getMaxPool(ItemStack stack)
 	{
 		 NBTTagCompound nbt = stack.getTagCompound();
          if (nbt == null)
@@ -138,7 +138,7 @@ public class MythosItemBase extends BaseItem
 		return nbt.getInteger("mythos_pool_max");
 	}
 	
-	public void addToPool(ItemStack stack, int addToPool)
+	public static void addToPool(ItemStack stack, int addToPool)
 	{
 		int currentPool = getCurrentPool(stack);
 		int maxPool = getMaxPool(stack);
@@ -147,7 +147,7 @@ public class MythosItemBase extends BaseItem
 		stack.setTagCompound(nbt);
 	}
 	
-	public void setPool(ItemStack stack, int setPool)
+	public static void setPool(ItemStack stack, int setPool)
 	{
 		int currentPool = getCurrentPool(stack);
 		int maxPool = getMaxPool(stack);
@@ -156,7 +156,7 @@ public class MythosItemBase extends BaseItem
 		stack.setTagCompound(nbt);
 	}
 	
-	public void removeFromPool(ItemStack stack, int remove)
+	public static void removeFromPool(ItemStack stack, int remove)
 	{
 		int currentPool = getCurrentPool(stack);
 		int maxPool = getMaxPool(stack);
@@ -177,5 +177,15 @@ public class MythosItemBase extends BaseItem
 		{
 			return false;
 		}
+	}
+	
+	public static int getReceiveCapacity(ItemStack stack)
+	{
+		return (getMaxPool(stack) - getCurrentPool(stack));
+	}
+	
+	public static int getSendCapacity(ItemStack stack)
+	{
+		return ((getCurrentPool(stack) - getMaxPool(stack)) * -1);
 	}
 }
