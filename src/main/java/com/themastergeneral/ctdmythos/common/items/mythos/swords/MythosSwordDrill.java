@@ -43,7 +43,7 @@ public class MythosSwordDrill extends MythosSword {
             ItemStack leggings = targetted.inventory.armorItemInSlot(1);
             ItemStack chest = targetted.inventory.armorItemInSlot(2);
             ItemStack helmet = targetted.inventory.armorItemInSlot(3);
-            if (getCurrentPool(stack) >= 1024)
+            if (getCurrentPool(stack) >= ModConfig.mythosCostDrill)
             {
 				if (!boots.isEmpty() || !leggings.isEmpty() || !chest.isEmpty() || !helmet.isEmpty())
 	            {
@@ -62,13 +62,13 @@ public class MythosSwordDrill extends MythosSword {
 		        	targetted.sendStatusMessage(new TextComponentTranslation("info.dropped.armor2"),true);
 		            attackerr.sendStatusMessage(new TextComponentTranslation("info.dropped.armor"),true);
 		            
-		            removeFromPool(stack, 1024);
+		            removeFromPool(stack, ModConfig.mythosCostDrill);
 	            }
             }
             else
             {
             	attackerr.sendStatusMessage(new TextComponentTranslation(
-    	                "You need at least 1,024 mythos to disarm your opponent."),true);
+    	                "You need at least " + ModConfig.mythosCostDrill + " Mythos to disarm your opponent."),true);
             }
         }
 		target.attackEntityFrom(DamageSource.GENERIC, getAttackDamage());
