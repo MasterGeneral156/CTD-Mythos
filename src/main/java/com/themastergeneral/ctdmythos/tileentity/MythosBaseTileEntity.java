@@ -5,8 +5,8 @@ import net.minecraft.tileentity.TileEntity;
 
 public class MythosBaseTileEntity extends TileEntity
 {	
-	public int mythos_pool;
-	public int max_mythos_pool;
+	protected int mythos_pool;
+	protected int max_mythos_pool;
 	@Override
     public NBTTagCompound writeToNBT(NBTTagCompound compound)
     {
