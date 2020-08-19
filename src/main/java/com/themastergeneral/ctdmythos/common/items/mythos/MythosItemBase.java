@@ -33,8 +33,8 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class MythosItemBase extends BaseItem 
 {
-	protected int poolSize;
-	protected int changeSize;
+	protected static int poolSize;
+	protected static int changeSize;
 	
 	public MythosItemBase(String name, int maxStorage, int changesize) 
 	{
@@ -100,7 +100,10 @@ public class MythosItemBase extends BaseItem
 	@Override
 	public boolean showDurabilityBar(ItemStack stack) 
 	{
-		return true;
+		if (getCurrentPool(stack) > 0)
+			return true;
+		else
+			return false;
 	}
 	
 	@Override
@@ -109,7 +112,7 @@ public class MythosItemBase extends BaseItem
         return MathHelper.clamp(1.0D - ((double) getCurrentPool(stack) / (double) getMaxPool(stack)), 0.0D, 1.0D);
     }
 	
-	public int getCurrentPool(ItemStack stack)
+	public static int getCurrentPool(ItemStack stack)
 	{
 		 NBTTagCompound nbt = stack.getTagCompound();
          if (nbt == null)
@@ -124,7 +127,7 @@ public class MythosItemBase extends BaseItem
 		return nbt.getInteger("mythos_pool");
 	}
 	
-	public int getMaxPool(ItemStack stack)
+	public static int getMaxPool(ItemStack stack)
 	{
 		 NBTTagCompound nbt = stack.getTagCompound();
          if (nbt == null)
@@ -133,13 +136,13 @@ public class MythosItemBase extends BaseItem
          }
          if (!nbt.hasKey("mythos_pool_max"))
          {
-         	nbt.setInteger("mythos_pool_max", this.poolSize);
+         	nbt.setInteger("mythos_pool_max", poolSize);
          }
          stack.setTagCompound(nbt);
 		return nbt.getInteger("mythos_pool_max");
 	}
 	
-	public void addToPool(ItemStack stack, int addToPool)
+	public static void addToPool(ItemStack stack, int addToPool)
 	{
 		int currentPool = getCurrentPool(stack);
 		int maxPool = getMaxPool(stack);
@@ -157,7 +160,7 @@ public class MythosItemBase extends BaseItem
 		stack.setTagCompound(nbt);
 	}
 	
-	public void removeFromPool(ItemStack stack, int remove)
+	public static void removeFromPool(ItemStack stack, int remove)
 	{
 		int currentPool = getCurrentPool(stack);
 		int maxPool = getMaxPool(stack);
@@ -180,23 +183,8 @@ public class MythosItemBase extends BaseItem
 		}
 	}
 	
-	public int getReceiveCapacity(ItemStack stack)
+	public static int getChangeRate(ItemStack stack)
 	{
-		int returned = getMaxPool(stack) - getCurrentPool(stack);
-		if (returned > changeSize)
-		{
-			returned = changeSize;
-		}
-		return returned;
-	}
-	
-	public int getSendCapacity(ItemStack stack)
-	{
-		int returned = getCurrentPool(stack);
-		if (returned > changeSize)
-		{
-			returned = changeSize;
-		}
-		return returned;
+		return changeSize;
 	}
 }
