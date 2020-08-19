@@ -18,10 +18,10 @@ import net.minecraft.world.World;
 public class MythosFlightWand extends MythosItemBase 
 {
 	private int changeSize;
-	public MythosFlightWand(String name, int maxStorage, int changesize) 
+	public MythosFlightWand(String name, int maxStorage, int change) 
 	{
-		super(name, maxStorage, changesize);
-		this.changeSize = changesize;
+		super(name, maxStorage, change);
+		this.changeSize = change;
 	}
 	@Override
     public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand handIn)
