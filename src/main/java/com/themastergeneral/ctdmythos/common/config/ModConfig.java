@@ -34,7 +34,7 @@ public class ModConfig {
 	//Mythos configs
 	public static int mythosMaxStorage = 4000;
 	public static int mythosCostLightingStaff = 3000;
-	public static int mythosCostEffigy = 250;
+	public static int mythosCostEffigy = 25;
 	public static int mythosCostMulesKick = 350;
 	public static int mythosCostTalisman = 750;
 	public static int mythosCostDrill = 1500;
