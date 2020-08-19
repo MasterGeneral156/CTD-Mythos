@@ -9,5 +9,7 @@ public class ModTileEntities
     {
         GameRegistry.registerTileEntity(PedestalTileEntity.class,
                 "ctdmythos:pedestal_block");
+        GameRegistry.registerTileEntity(MythosBaseTileEntity.class,
+                "ctdmythos:mythos_ base");
     }
 }
