@@ -34,6 +34,7 @@ public class ModBlocks extends RegisterBlock
     public static CrystalBlocks crystal_grief_block;
 
     public static PedestalBlock pedestal_block;
+    public static MythosTEBlock mythos_well;
 
     // Register the blocks by calling this method.
     public static void loadBlocks()
@@ -67,5 +68,8 @@ public class ModBlocks extends RegisterBlock
         crystal_grief_block = register(new CrystalBlocks("crystal_grief_block"));
 
         pedestal_block = register(new PedestalBlock("pedestal_block"));
+        
+        //Mythos Blocks?
+        mythos_well = register(new MythosTEBlock("mythos_well", 25000));
     }
 }
