@@ -8,7 +8,6 @@ import com.themastergeneral.ctdcore.item.RegisterItem;
 import com.themastergeneral.ctdmythos.CTDMythos;
 import com.themastergeneral.ctdmythos.common.config.ModConfig;
 import com.themastergeneral.ctdmythos.common.items.artifacts.DebugItem;
-import com.themastergeneral.ctdmythos.common.items.artifacts.HumanEffigyItem;
 import com.themastergeneral.ctdmythos.common.items.artifacts.LightningStaff;
 import com.themastergeneral.ctdmythos.common.items.artifacts.MBValidatorItem;
 import com.themastergeneral.ctdmythos.common.items.artifacts.MulesKickItem;
@@ -30,6 +29,7 @@ import com.themastergeneral.ctdmythos.common.items.misc.SingleStackItem;
 import com.themastergeneral.ctdmythos.common.items.mythos.MythosFlightWand;
 import com.themastergeneral.ctdmythos.common.items.mythos.MythosPick;
 import com.themastergeneral.ctdmythos.common.items.mythos.MythosPool;
+import com.themastergeneral.ctdmythos.common.items.mythos.artifacts.HumanEffigyItem;
 import com.themastergeneral.ctdmythos.common.items.mythos.gens.MythosGenFall;
 import com.themastergeneral.ctdmythos.common.items.mythos.gens.MythosInventGen;
 import com.themastergeneral.ctdmythos.common.items.mythos.swords.MythosSwordDrill;
@@ -111,7 +111,7 @@ public class ModItems extends RegisterItem
         crystal_glove = register(new BasicBauble("crystal_glove"));
         ethereal_fiber = register(new BaseItem("ethereal_fiber"));
         enchanted_stick = register(new BaseItem("enchanted_stick"));
-        mythos_pool = register(new MythosPool("mythos_pool", 20000, 250));
+        mythos_pool = register(new MythosPool("mythos_pool", 20000, 1024));
         mythos_exciter = register(new MythosInventGen("mythos_exciter", 512, 16, ModConfig.mythosExciterGen));
         mythos_nova = register(new MythosInventGen("mythos_nova", Integer.MAX_VALUE, 100, ModConfig.mythosMaxStorage));
         mythos_negator = register(new MythosGenFall("mythos_negator"));
@@ -127,7 +127,7 @@ public class ModItems extends RegisterItem
         teleport_wand = register(new WandItemTeleport("teleport_wand"));
 
         flight_wand = register(new WandItemFlight("flight_wand"));
-        mythos_flight_wand = register(new MythosFlightWand("mythos_flight_wand", 4000, 375));
+        mythos_flight_wand = register(new MythosFlightWand("mythos_flight_wand", 4000, 175));
 
         revitalizing_rye = register(new BaseFood("revitalizing_rye", 3, 1.0F,
                 false));
