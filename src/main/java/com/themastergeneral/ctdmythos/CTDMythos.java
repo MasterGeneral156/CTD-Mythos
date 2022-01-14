@@ -1,108 +1,76 @@
-package com.themastergeneral.ctdmythos;
+package com.example.examplemod;
 
-import net.minecraftforge.fml.common.FMLLog;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.InterModComms;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.Mod.EventHandler;
-import net.minecraftforge.fml.common.Mod.Instance;
-import net.minecraftforge.fml.common.SidedProxy;
-import net.minecraftforge.fml.common.event.FMLFingerprintViolationEvent;
-import net.minecraftforge.fml.common.event.FMLInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLInterModComms.IMCEvent;
-import net.minecraftforge.fml.common.event.FMLLoadCompleteEvent;
-import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import net.minecraftforge.fml.common.network.NetworkRegistry;
-import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
-import net.minecraftforge.fml.relauncher.Side;
-
-import java.util.LinkedList;
-import java.util.List;
-
+import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
+import net.minecraftforge.fml.event.lifecycle.InterModProcessEvent;
+import net.minecraftforge.event.server.ServerStartingEvent;
+import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.themastergeneral.ctdmythos.client.MythosTab;
-import com.themastergeneral.ctdmythos.integration.imc.IMCHandler;
-import com.themastergeneral.ctdmythos.network.PacketRequestUpdatePedestal;
-import com.themastergeneral.ctdmythos.network.PacketUpdatePedestal;
-import com.themastergeneral.ctdmythos.proxy.Common;
+import java.util.stream.Collectors;
 
-import crafttweaker.CraftTweakerAPI;
-import crafttweaker.IAction;
-
-@Mod(modid = CTDMythos.MODID, name = CTDMythos.MODNAME, version = CTDMythos.VERSION, acceptedMinecraftVersions = CTDMythos.acceptedMinecraftVersions,
-        updateJSON = CTDMythos.updateJSON, certificateFingerprint = CTDMythos.certificateFingerprint, dependencies = CTDMythos.DEPENDENCIES)
-public class CTDMythos
+// The value here should match an entry in the META-INF/mods.toml file
+@Mod("examplemod")
+public class ExampleMod
 {
-    public static final List<IAction> LATE_REMOVALS = new LinkedList<>();
-    public static final List<IAction> LATE_ADDITIONS = new LinkedList<>();
-    
-    public static final String MODID = "ctdmythos";
-    public static final String MODNAME = "CTD Mythos";
-    public static final String VERSION = "0.9.3";
-    public static final String updateJSON = "https://raw.githubusercontent.com/MasterGeneral156/Version/master/CTD-Mythos.json";
-    public static final String acceptedMinecraftVersions = "1.12.2";
-    public static final String certificateFingerprint = "b50fe22651b9d97d9d6631514a6a57cd6174b0dc";
-    public static final String DEPENDENCIES = "required-after:baubles;required-after:ctdcore@[1.4.2,];";
+    // Directly reference a log4j logger.
+    private static final Logger LOGGER = LogManager.getLogger();
 
-    // Creative Tab
-    public static final MythosTab creativeTab = new MythosTab();
+    public ExampleMod() {
+        // Register the setup method for modloading
+        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
+        // Register the enqueueIMC method for modloading
+        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::enqueueIMC);
+        // Register the processIMC method for modloading
+        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::processIMC);
 
-    @Instance
-    public static CTDMythos instance = new CTDMythos();
-
-    @SidedProxy(clientSide = "com.themastergeneral.ctdmythos.proxy.Client", serverSide = "com.themastergeneral.ctdmythos.proxy.Server")
-    public static Common proxy;
-    public static Logger logger;
-    public static SimpleNetworkWrapper wrapper;
-
-    @EventHandler
-    public void preInit(FMLPreInitializationEvent e)
-    {
-        logger = e.getModLog();
-        wrapper = NetworkRegistry.INSTANCE.newSimpleChannel(MODID);
-        wrapper.registerMessage(new PacketUpdatePedestal.Handler(), PacketUpdatePedestal.class, 0, Side.CLIENT);
-        wrapper.registerMessage(new PacketRequestUpdatePedestal.Handler(), PacketRequestUpdatePedestal.class, 1, Side.SERVER);
-        proxy.preInit(e);
-        proxy.registerRenderers();
+        // Register ourselves for server and other game events we are interested in
+        MinecraftForge.EVENT_BUS.register(this);
     }
 
-    @EventHandler
-    public void init(FMLInitializationEvent e)
+    private void setup(final FMLCommonSetupEvent event)
     {
-        proxy.init(e);
+        // some preinit code
+        LOGGER.info("HELLO FROM PREINIT");
+        LOGGER.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
     }
 
-    @EventHandler
-    public void postInit(FMLPostInitializationEvent e)
+    private void enqueueIMC(final InterModEnqueueEvent event)
     {
-        proxy.postInit(e);
+        // some example code to dispatch IMC to another mod
+        InterModComms.sendTo("examplemod", "helloworld", () -> { LOGGER.info("Hello world from the MDK"); return "Hello world";});
     }
 
-    @EventHandler
-    public void onFingerprintViolation(FMLFingerprintViolationEvent e)
+    private void processIMC(final InterModProcessEvent event)
     {
-        FMLLog.warning("Invalid fingerprint detected for CTD Mythos! TheMasterGeneral will not support this version!");
+        // some example code to receive and process InterModComms from other mods
+        LOGGER.info("Got IMC {}", event.getIMCStream().
+                map(m->m.messageSupplier().get()).
+                collect(Collectors.toList()));
     }
-    
-    //Needed for craft tweaker!
-    @EventHandler
-    public void loadComplete(FMLLoadCompleteEvent event) 
-    {
-        try {
-            LATE_REMOVALS.forEach(CraftTweakerAPI::apply);
-            LATE_ADDITIONS.forEach(CraftTweakerAPI::apply);
-        } catch(Exception e) {
-            e.printStackTrace();
-            CraftTweakerAPI.logError("Error while applying actions", e);
+    // You can use SubscribeEvent and let the Event Bus discover methods to call
+    @SubscribeEvent
+    public void onServerStarting(ServerStartingEvent event) {
+        // do something when the server starts
+        LOGGER.info("HELLO from server starting");
+    }
+
+    // You can use EventBusSubscriber to automatically subscribe events on the contained class (this is subscribing to the MOD
+    // Event bus for receiving Registry Events)
+    @Mod.EventBusSubscriber(bus=Mod.EventBusSubscriber.Bus.MOD)
+    public static class RegistryEvents {
+        @SubscribeEvent
+        public static void onBlocksRegistry(final RegistryEvent.Register<Block> blockRegistryEvent) {
+            // register a new block here
+            LOGGER.info("HELLO from Register Block");
         }
-        LATE_REMOVALS.clear();
-        LATE_ADDITIONS.clear();
-    }
-
-    @EventHandler
-    public void handleIMC(IMCEvent e)
-    {
-        logger.info("CTD Mythos is awaiting IMC from other mods...");
-        IMCHandler.INSTANCE.handleIMC(e.getMessages());
     }
 }
