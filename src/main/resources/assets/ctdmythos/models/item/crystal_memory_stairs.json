@@ -1,6 +1,0 @@
-{
-    "parent": "ctdmythos:block/crystal_memory_stairs",
-    "textures": {
-        "inventory": "ctdmythos:block/crystal_memory_brick"
-    }
-}

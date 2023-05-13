@@ -1,6 +1,0 @@
-{
-    "parent": "ctdmythos:blocks/crystal_grief_ore",
-    "textures": {
-        "inventory": "ctdmythos:blocks/crystal_grief_ore"
-    }
-}

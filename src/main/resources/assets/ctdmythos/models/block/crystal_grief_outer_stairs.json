@@ -1,8 +1,0 @@
-{
-    "parent": "block/outer_stairs",
-    "textures": {
-        "bottom": "ctdmythos:blocks/crystal_grief_brick",
-        "top": "ctdmythos:blocks/crystal_grief_brick",
-        "side": "ctdmythos:blocks/crystal_grief_brick"
-    }
-}

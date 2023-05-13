@@ -1,7 +1,0 @@
-{
-    "spell_complete" : {"category": "block", "sounds": ["ctdmythos:spell_complete"]},
-    "human_effigy" : {"category": "block", "sounds": ["ctdmythos:human_effigy"]},
-    "flight_wand" : {"category": "block", "sounds": ["ctdmythos:flight_wand"]},
-	"multiblock_random" : {"category": "block", "sounds": ["ctdmythos:multiblock_random"]},
-    "mules_kick" : {"category": "block", "sounds": ["ctdmythos:mules_kick"]}
-}

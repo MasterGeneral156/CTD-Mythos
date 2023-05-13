@@ -1,8 +1,0 @@
-{
-    "parent": "block/stairs",
-    "textures": {
-        "bottom": "ctdmythos:blocks/crystal_woe_brick",
-        "top": "ctdmythos:blocks/crystal_woe_brick",
-        "side": "ctdmythos:blocks/crystal_woe_brick"
-    }
-}
