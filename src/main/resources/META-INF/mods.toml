@@ -6,7 +6,7 @@ issueTrackerURL="https://github.com/MasterGeneral156/CTD-Mythos/issues"
 
 [[mods]] #mandatory
 modId="mythosreborn" #mandatory
-version="2.0-dev #mandatory
+version="2.0-indev #mandatory
 displayName="Mythos Reborn" #mandatory
 updateJSONURL="https://raw.githubusercontent.com/MasterGeneral156/Version/master/CTD-Mythos.json" #optional
 displayURL="https://www.curseforge.com/minecraft/mc-mods/ctd-mythos" #optional
