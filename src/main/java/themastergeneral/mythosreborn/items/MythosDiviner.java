@@ -1,10 +1,8 @@
 package themastergeneral.mythosreborn.items;
 
-import com.themastergeneral.ctdcore.CTDCore;
-import com.themastergeneral.ctdcore.item.CTDItem;
+import com.themastergeneral.ctdcore.item.CTDDurabilityItem;
 
 import net.minecraft.core.BlockPos;
-import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.item.context.UseOnContext;
@@ -14,12 +12,12 @@ import net.minecraft.world.level.block.state.BlockState;
 import themastergeneral.mythosreborn.MythosReborn;
 import themastergeneral.mythosreborn.blocks.BlockConstants;
 
-public class MythosDiviner extends CTDItem 
+public class MythosDiviner extends CTDDurabilityItem
 {
 
 	public MythosDiviner() 
 	{
-		super(new Properties().stacksTo(1).setNoRepair().defaultDurability(128));
+		super(new Properties().stacksTo(1).setNoRepair(), 128);
 	}
 
 	@Override
