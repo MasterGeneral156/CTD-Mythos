@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "mythosreborn:ore_crystal_fire",
+	"mythosreborn:ore_crystal_oath",
+	"mythosreborn:ore_crystal_memory",
+	"mythosreborn:ore_crystal_grief",
+	"mythosreborn:ore_crystal_woe"
+  ]
+}

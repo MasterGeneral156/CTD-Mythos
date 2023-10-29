@@ -1,0 +1,6 @@
+{
+    "parent": "block/cube_all",
+    "textures": {
+        "all": "mythosreborn:block/ore_crystal_memory"
+    }
+}

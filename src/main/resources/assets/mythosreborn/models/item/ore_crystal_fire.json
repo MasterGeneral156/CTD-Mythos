@@ -1,0 +1,6 @@
+{
+    "parent": "mythosreborn:block/ore_crystal_fire",
+    "textures": {
+        "inventory": "mythosreborn:block/ore_crystal_fire"
+    }
+}

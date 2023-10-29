@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "mythosreborn:items/crystal_fire"
+        "layer0": "mythosreborn:item/crystal_fire"
     }
 }

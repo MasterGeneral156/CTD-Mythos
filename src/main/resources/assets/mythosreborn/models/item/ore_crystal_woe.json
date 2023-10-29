@@ -1,0 +1,6 @@
+{
+    "parent": "mythosreborn:block/ore_crystal_woe",
+    "textures": {
+        "inventory": "mythosreborn:block/ore_crystal_woe"
+    }
+}

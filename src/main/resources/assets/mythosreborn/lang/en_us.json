@@ -1,7 +1,17 @@
 {
-    "item.mythosreborn.crystal_oath": "Crystal Oath",
-	"item.mythosreborn.crystal_fire": "Crystal Fire",
-	"item.mythosreborn.crystal_memory": "Crystal Memory",
-	"item.mythosreborn.crystal_grief": "Crystal Grief",
-	"item.mythosreborn.crystal_woe": "Crystal Woe"
+    "item.mythosreborn.crystal_oath": "§eCrystal Oath",
+	"item.mythosreborn.crystal_fire": "§4Crystal Fire",
+	"item.mythosreborn.crystal_memory": "§aCrystal Memory",
+	"item.mythosreborn.crystal_grief": "§7Crystal Grief",
+	"item.mythosreborn.crystal_woe": "§9Crystal Woe",
+	
+	"item.mythosreborn.mythos_diviner": "Mythos Diviner",
+	
+	"block.mythosreborn.ore_crystal_fire": "§4Crystal Fire Ore",
+	"block.mythosreborn.ore_crystal_oath": "§eCrystal Oath Ore",
+	"block.mythosreborn.ore_crystal_memory": "§aCrystal Memory Ore",
+	"block.mythosreborn.ore_crystal_grief": "§7Crystal Grief Ore",
+	"block.mythosreborn.ore_crystal_woe": "§9Crystal Woe Ore",
+	
+	"itemgroup.mythosreborn.tab": "Mythos Reborn"
 }
