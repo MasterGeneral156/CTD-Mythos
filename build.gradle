@@ -1,3 +1,5 @@
+import java.security.MessageDigest
+
 plugins {
     id 'eclipse'
     id 'maven-publish'
@@ -95,6 +97,13 @@ dependencies {
 	implementation fg.deobf('curse.maven:ctd-core-' + project.property('ctd_core_ver'))
 }
 
+def generateMD5() {
+    def md5 = MessageDigest.getInstance("MD5")
+    def randomString = new Random().nextInt().toString()
+    def hash = md5.digest(randomString.bytes).encodeHex().toString()
+	hash.substring(0, 8)
+}
+
 // Example for how to get properties into the manifest for reading at runtime.
 jar {
     manifest {
@@ -108,6 +117,8 @@ jar {
                 "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
         ])
     }
+	def md5 = generateMD5()
+    archiveFileName = project.property('mod_name') + "-" + project.property('mc_version') + "-" + project.property('mod_version') + "+${md5}.jar"
 }
 
 // Example configuration to allow publishing using the maven-publish plugin
