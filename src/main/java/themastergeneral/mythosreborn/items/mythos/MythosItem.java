@@ -1,17 +1,17 @@
 package themastergeneral.mythosreborn.items.mythos;
 
+import org.jetbrains.annotations.Nullable;
+
 import com.themastergeneral.ctdcore.item.CTDItem;
 
-import net.minecraft.nbt.IntTag;
-import net.minecraft.nbt.Tag;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.util.Mth;
 import net.minecraft.world.item.ItemStack;
-import net.minecraftforge.common.util.INBTSerializable;
 
-public class MythosItem extends CTDItem implements IMythosItem, INBTSerializable<Tag> {
+public class MythosItem extends CTDItem implements IMythosItem {
 
 	protected int maxMythos;
-	protected int currentMythos;
+	protected int currentMythos = 0;
 	
 	public MythosItem(int maxMythos) {
 		super(new Properties());
@@ -21,32 +21,26 @@ public class MythosItem extends CTDItem implements IMythosItem, INBTSerializable
 	@Override
 	public int receiveMythos(int receive) {
 		int mythosReceived = Math.min(maxMythos - currentMythos, receive);
-        currentMythos += mythosReceived;
+        this.currentMythos += mythosReceived;
         return mythosReceived;
 	}
 
 	@Override
 	public int extractMythos(int extract) {
 		int mythosExtracted = Math.min(currentMythos, extract);
-        currentMythos -= mythosExtracted;
+        this.currentMythos -= mythosExtracted;
         return mythosExtracted;
 	}
 
 	@Override
 	public int getMaxMythos() {
-		return this.maxMythos;
+		return maxMythos;
 	}
 
 	@Override
 	public int getCurrentMythos() {
 		return currentMythos;
 	}
-	
-    @Override
-    public Tag serializeNBT()
-    {
-        return IntTag.valueOf(this.getCurrentMythos());
-    }
     
     @Override
 	public boolean isBarVisible(ItemStack stack)
@@ -70,11 +64,12 @@ public class MythosItem extends CTDItem implements IMythosItem, INBTSerializable
     }
 
     @Override
-    public void deserializeNBT(Tag nbt)
+    public void readShareTag(ItemStack stack, @Nullable CompoundTag nbt)
     {
-        if (!(nbt instanceof IntTag intNbt))
-            throw new IllegalArgumentException("Can not deserialize to an instance that isn't the default implementation");
-        this.currentMythos = intNbt.getAsInt();
+    	CompoundTag compoundnbt = new CompoundTag();
+    	compoundnbt.putInt("currentMythos", currentMythos);
+    	compoundnbt.putInt("maxMythos", maxMythos);
+        stack.setTag(compoundnbt);
     }
 
 }

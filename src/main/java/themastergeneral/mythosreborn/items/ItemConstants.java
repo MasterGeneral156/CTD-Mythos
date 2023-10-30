@@ -4,6 +4,8 @@ import com.themastergeneral.ctdcore.item.CTDItem;
 
 import net.minecraft.world.item.Item.Properties;
 import themastergeneral.mythosreborn.blocks.BlockConstants;
+import themastergeneral.mythosreborn.items.mythos.MythosItemGeneratorSolar;
+import themastergeneral.mythosreborn.items.mythos.MythosItemGeneratorStormer;
 
 public class ItemConstants {
 
@@ -15,6 +17,10 @@ public class ItemConstants {
 	
 	//Non mythos tools
 	public static MythosDiviner mythos_diviner = new MythosDiviner();
+	
+	//Mythos Items
+	public static MythosItemGeneratorSolar mythos_refractor = new MythosItemGeneratorSolar();
+	public static MythosItemGeneratorStormer mythos_conductor = new MythosItemGeneratorStormer();
 	
 	//Ore Blocks
 	public static MythosBlockItem ore_crystal_fire = new MythosBlockItem(BlockConstants.ore_crystal_fire);
