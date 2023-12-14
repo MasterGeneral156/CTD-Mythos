@@ -19,8 +19,8 @@ public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = Defer
             .title(Component.translatable("itemgroup.mythosreborn.tab"))
             .displayItems((parameters, ev) -> {
             	ev.accept(ItemConstants.mythos_diviner);
-            	ev.accept(ItemConstants.mythos_refractor);
-            	ev.accept(ItemConstants.mythos_conductor);
+            	ev.accept(new ItemStack(ItemConstants.mythos_refractor));
+            	ev.accept(new ItemStack(ItemConstants.mythos_conductor));
             	
             	ev.accept(ItemConstants.crystal_grief);
                 ev.accept(ItemConstants.ore_crystal_grief);

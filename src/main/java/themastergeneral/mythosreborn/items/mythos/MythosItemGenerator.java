@@ -6,7 +6,7 @@ import net.minecraft.world.level.Level;
 
 public class MythosItemGenerator extends MythosItem {
 
-	private int genRate;
+	protected int genRate;
 	
 	public MythosItemGenerator(int maxMythos, int genRate) {
 		super(maxMythos);
@@ -23,8 +23,7 @@ public class MythosItemGenerator extends MythosItem {
 	{
 		if (checkGenerationCondtions(stack, level, entity))
 		{
-			MythosItem actualStack = (MythosItem) stack.getItem();
-			actualStack.receiveMythos(returnGenRate());
+			this.receiveMythos(returnGenRate(), stack);
 		}
 	}
 	

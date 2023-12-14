@@ -1,34 +1,59 @@
 package themastergeneral.mythosreborn.items.mythos;
 
-import org.jetbrains.annotations.Nullable;
-
 import com.themastergeneral.ctdcore.item.CTDItem;
 
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.util.Mth;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.Level;
 
 public class MythosItem extends CTDItem implements IMythosItem {
 
 	protected int maxMythos;
 	protected int currentMythos = 0;
 	
-	public MythosItem(int maxMythos) {
-		super(new Properties());
-		this.maxMythos = maxMythos;
+	public MythosItem(int max) {
+		super(new Properties().stacksTo(1));
+		maxMythos = max;
+	}
+	
+	@Override
+	public void onCraftedBy(ItemStack stack, Level worldIn, Player playerIn) {
+		if (!stack.hasTag())
+		{
+			CompoundTag compoundnbt = new CompoundTag();
+			compoundnbt.putInt("maxMythos", maxMythos);
+			compoundnbt.putInt("currentMythos", currentMythos);
+			stack.setTag(compoundnbt);
+		}
 	}
 
 	@Override
-	public int receiveMythos(int receive) {
+	public int receiveMythos(int receive, ItemStack stack) {
 		int mythosReceived = Math.min(maxMythos - currentMythos, receive);
-        this.currentMythos += mythosReceived;
+		currentMythos += mythosReceived;
+		if (stack.hasTag())
+		{
+			CompoundTag compoundnbt = new CompoundTag();
+			compoundnbt.putInt("maxMythos", maxMythos);
+			compoundnbt.putInt("currentMythos", currentMythos);
+			stack.setTag(compoundnbt);
+		}
         return mythosReceived;
 	}
 
 	@Override
-	public int extractMythos(int extract) {
+	public int extractMythos(int extract, ItemStack stack) {
 		int mythosExtracted = Math.min(currentMythos, extract);
-        this.currentMythos -= mythosExtracted;
+        currentMythos -= mythosExtracted;
+        if (stack.hasTag())
+		{
+			CompoundTag compoundnbt = new CompoundTag();
+			compoundnbt.putInt("maxMythos", maxMythos);
+			compoundnbt.putInt("currentMythos", currentMythos);
+			stack.setTag(compoundnbt);
+		}
         return mythosExtracted;
 	}
 
@@ -61,15 +86,6 @@ public class MythosItem extends CTDItem implements IMythosItem {
     {
        float f = Math.max(0.0F, (this.getMaxMythos() - (float) (this.getMaxMythos() - this.getCurrentMythos())) / this.getMaxMythos());
        return Mth.hsvToRgb(f / 3.0F, 1.0F, 1.0F);
-    }
-
-    @Override
-    public void readShareTag(ItemStack stack, @Nullable CompoundTag nbt)
-    {
-    	CompoundTag compoundnbt = new CompoundTag();
-    	compoundnbt.putInt("currentMythos", currentMythos);
-    	compoundnbt.putInt("maxMythos", maxMythos);
-        stack.setTag(compoundnbt);
     }
 
 }
