@@ -1,0 +1,21 @@
+{
+    "item.ctdmythos.crystal_oath": "§eCrystal Oath",
+	"item.ctdmythos.crystal_fire": "§4Crystal Fire",
+	"item.ctdmythos.crystal_memory": "§aCrystal Memory",
+	"item.ctdmythos.crystal_grief": "§7Crystal Grief",
+	"item.ctdmythos.crystal_woe": "§9Crystal Woe",
+	
+	"item.ctdmythos.mythos_diviner": "Mythos Diviner",
+	"item.ctdmythos.mythos_refractor": "Mythos Refractor",
+	"item.ctdmythos.mythos_conductor": "Mythos Conductor",
+	
+	"block.ctdmythos.ore_crystal_fire": "§4Crystal Fire Ore",
+	"block.ctdmythos.ore_crystal_oath": "§eCrystal Oath Ore",
+	"block.ctdmythos.ore_crystal_memory": "§aCrystal Memory Ore",
+	"block.ctdmythos.ore_crystal_grief": "§7Crystal Grief Ore",
+	"block.ctdmythos.ore_crystal_woe": "§9Crystal Woe Ore",
+	
+	"block.ctdmythos.mythos_pylon": "Mythos Pylon",
+	
+	"itemgroup.ctdmythos.tab": "CTD Mythos: Reborn"
+}

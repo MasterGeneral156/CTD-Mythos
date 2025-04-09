@@ -1,0 +1,6 @@
+{
+    "parent": "ctdmythos:block/ore_crystal_oath",
+    "textures": {
+        "inventory": "ctdmythos:block/ore_crystal_oath"
+    }
+}
