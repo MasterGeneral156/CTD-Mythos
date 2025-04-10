@@ -6,9 +6,9 @@ import net.minecraft.world.level.Level;
 
 public class MythosItemGenerator extends MythosItem {
 
-	protected int genRate;
+	protected float genRate;
 	
-	public MythosItemGenerator(int maxMythos, int genRate) {
+	public MythosItemGenerator(float maxMythos, float genRate) {
 		super(maxMythos);
 		this.genRate = genRate;
 	}
@@ -28,7 +28,7 @@ public class MythosItemGenerator extends MythosItem {
 		}
 	}
 	
-	public int returnGenRate()
+	public float returnGenRate()
 	{
 		return genRate;
 	}

@@ -19,8 +19,8 @@ public class ItemConstants {
 	public static MythosDiviner mythos_diviner = new MythosDiviner();
 	
 	//Mythos Items
-	public static MythosItemGeneratorSolar mythos_refractor = new MythosItemGeneratorSolar();
-	public static MythosItemGeneratorStormer mythos_conductor = new MythosItemGeneratorStormer();
+	public static MythosItemGeneratorSolar mythos_refractor = new MythosItemGeneratorSolar(1024, 0.25F);
+	public static MythosItemGeneratorStormer mythos_conductor = new MythosItemGeneratorStormer(1024, 1.25F);
 	
 	//Ore Blocks
 	public static MythosBlockItem ore_crystal_fire = new MythosBlockItem(BlockConstants.ore_crystal_fire);

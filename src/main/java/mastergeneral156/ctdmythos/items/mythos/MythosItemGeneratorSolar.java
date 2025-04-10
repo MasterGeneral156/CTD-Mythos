@@ -8,9 +8,9 @@ import net.minecraft.world.level.Level;
 
 public class MythosItemGeneratorSolar extends MythosItemGenerator {
 
-	public MythosItemGeneratorSolar() 
+	public MythosItemGeneratorSolar(float maxMythos, float genRate)
 	{
-		super(1024, 8);
+		super(maxMythos, genRate);
 	}
 	
 	@Override

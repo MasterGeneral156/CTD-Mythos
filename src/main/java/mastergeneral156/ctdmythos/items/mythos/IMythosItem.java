@@ -4,8 +4,8 @@ import net.minecraft.world.item.ItemStack;
 
 public interface IMythosItem {
 
-	int receiveMythos(int receive, ItemStack stack);
-	int extractMythos(int extract, ItemStack stack);
-	int getMaxMythos();
-	int getCurrentMythos();
+	float receiveMythos(float receive, ItemStack stack);
+	float extractMythos(float extract, ItemStack stack);
+	float getMaxMythos();
+	float getCurrentMythos();
 }

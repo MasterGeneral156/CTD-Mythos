@@ -1,20 +1,28 @@
 package mastergeneral156.ctdmythos.items.mythos;
 
+import com.themastergeneral.ctdcore.helpers.ModUtils;
 import com.themastergeneral.ctdcore.item.CTDItem;
 
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.chat.Component;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
+
+import javax.annotation.Nullable;
+import java.util.List;
 
 public class MythosItem extends CTDItem implements IMythosItem {
 
-	protected int maxMythos;
-	protected int currentMythos = 0;
+	protected float maxMythos;
+	protected float currentMythos = 0;
 	
-	public MythosItem(int max) {
+	public MythosItem(float max) {
 		super(new Properties().stacksTo(1));
 		maxMythos = max;
 	}
@@ -23,40 +31,38 @@ public class MythosItem extends CTDItem implements IMythosItem {
 	public void onCraftedBy(ItemStack stack, Level worldIn, Player playerIn) {
 		CompoundTag tag = stack.getOrCreateTag();
 		if (!tag.contains("maxMythos")) {
-			tag.putInt("maxMythos", maxMythos); // from constructor
-			tag.putInt("currentMythos", 0);
+			tag.putFloat("maxMythos", maxMythos); // from constructor
+			tag.putFloat("currentMythos", 0);
 		}
 	}
 
 	@Override
-	public int receiveMythos(int receive, ItemStack stack) {
+	public float receiveMythos(float receive, ItemStack stack) {
 		CompoundTag tag = stack.getOrCreateTag();
-		int current = tag.getInt("currentMythos");
-		int max = tag.getInt("maxMythos");
-		int received = Math.min(max - current, receive);
-		tag.putInt("currentMythos", current + received);
+		float current = tag.getFloat("currentMythos");
+		float max = tag.getFloat("maxMythos");
+		float received = Math.min(max - current, receive);
+		tag.putFloat("currentMythos", current + received);
 		return received;
 	}
 
 	@Override
-	public int extractMythos(int extract, ItemStack stack) {
+	public float extractMythos(float extract, ItemStack stack) {
 		CompoundTag tag = stack.getOrCreateTag();
-		int current = tag.getInt("currentMythos");
-		int extracted = Math.min(current, extract);
-		tag.putInt("currentMythos", current - extracted);
+		float current = tag.getFloat("currentMythos");
+		float extracted = Math.min(current, extract);
+		tag.putFloat("currentMythos", current - extracted);
 		return extracted;
 	}
 
 	@Override
-	public int getMaxMythos() {
-		// Default fallback if needed
-		return 100;
+	public float getMaxMythos() {
+		return 100F;
 	}
 
 	@Override
-	public int getCurrentMythos() {
-		// Deprecated - use stack-based method instead
-		return 0;
+	public float getCurrentMythos() {
+		return 0F;
 	}
 
 	public int getCurrentMythos(ItemStack stack) {
@@ -97,9 +103,17 @@ public class MythosItem extends CTDItem implements IMythosItem {
 	public void inventoryTick(ItemStack stack, Level level, Entity entity, int slot, boolean selected) {
 		if (!stack.hasTag()) {
 			CompoundTag tag = new CompoundTag();
-			tag.putInt("maxMythos", maxMythos);
-			tag.putInt("currentMythos", 0);
+			tag.putFloat("maxMythos", maxMythos);
+			tag.putFloat("currentMythos", 0);
 			stack.setTag(tag);
 		}
+	}
+
+	@Override
+	@OnlyIn(Dist.CLIENT)
+	public void appendHoverText(ItemStack stack, @Nullable Level worldIn, List<Component> tooltip, TooltipFlag flagIn) {
+		super.appendHoverText(stack, worldIn, tooltip, flagIn);
+		tooltip.add(ModUtils.displayString("Mythos: " + ModUtils.returnShortenedNumber(getCurrentMythos(stack)) + "/" + ModUtils.returnShortenedNumber(getMaxMythos(stack))));
+
 	}
 }
