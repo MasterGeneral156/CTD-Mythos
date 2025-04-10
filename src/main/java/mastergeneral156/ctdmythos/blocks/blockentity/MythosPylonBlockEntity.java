@@ -37,7 +37,7 @@ public class MythosPylonBlockEntity extends BlockEntity implements BlockEntityTi
                     double x = pos.getX() + 0.5;
                     double y = pos.getY() + 1.0;
                     double z = pos.getZ() + 0.5;
-                    level.addParticle(ParticleTypes.ENCHANT, x, y, z, 0.0, 0.1, 0.0);
+                    level.addParticle(ParticleTypes.ENCHANT, x, y, z, 0.0, 0.5, 0.0);
                 }
             }
             return;
