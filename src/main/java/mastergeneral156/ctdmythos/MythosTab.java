@@ -16,11 +16,12 @@ public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = Defer
 	public static final RegistryObject<CreativeModeTab> MYTHOS_TAB = CREATIVE_MODE_TABS.register("mythos_tab", () -> CreativeModeTab.builder()
             .withTabsBefore(CreativeModeTabs.COMBAT)
             .icon(() -> new ItemStack(ItemConstants.mythos_diviner))
-            .title(Component.translatable("itemgroup.mythosreborn.tab"))
+            .title(Component.translatable("itemgroup.ctdmythos.tab"))
             .displayItems((parameters, ev) -> {
             	ev.accept(ItemConstants.mythos_diviner);
             	ev.accept(new ItemStack(ItemConstants.mythos_refractor));
             	ev.accept(new ItemStack(ItemConstants.mythos_conductor));
+                ev.accept(new ItemStack(ItemConstants.mythos_battery));
                 ev.accept(ItemConstants.mythos_pylon);
             	
             	ev.accept(ItemConstants.crystal_grief);
