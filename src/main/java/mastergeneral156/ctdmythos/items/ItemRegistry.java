@@ -20,7 +20,9 @@ public class ItemRegistry {
 	//Mythos Items
 	public static final RegistryObject<Item> mythos_refractor = ITEMS.register("mythos_refractor", () -> ItemConstants.mythos_refractor);
 	public static final RegistryObject<Item> mythos_conductor = ITEMS.register("mythos_conductor", () -> ItemConstants.mythos_conductor);
-	
+	public static final RegistryObject<Item> mythos_battery = ITEMS.register("mythos_battery", () -> ItemConstants.mythos_battery);
+
+
 	//Ore Blocks
 	public static final RegistryObject<Item> ore_crystal_fire = ITEMS.register("ore_crystal_fire", () -> ItemConstants.ore_crystal_fire);
 	public static final RegistryObject<Item> ore_crystal_woe = ITEMS.register("ore_crystal_woe", () -> ItemConstants.ore_crystal_woe);

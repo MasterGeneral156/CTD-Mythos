@@ -5,6 +5,7 @@ import com.themastergeneral.ctdcore.item.CTDItem;
 import mastergeneral156.ctdmythos.blocks.BlockConstants;
 import mastergeneral156.ctdmythos.items.mythos.MythosItemGeneratorSolar;
 import mastergeneral156.ctdmythos.items.mythos.MythosItemGeneratorStormer;
+import mastergeneral156.ctdmythos.items.mythos.MythosItemStorage;
 import net.minecraft.world.item.Item.Properties;
 
 public class ItemConstants {
@@ -19,6 +20,7 @@ public class ItemConstants {
 	public static MythosDiviner mythos_diviner = new MythosDiviner();
 	
 	//Mythos Items
+	public static MythosItemStorage mythos_battery = new MythosItemStorage(1024, 8F);
 	public static MythosItemGeneratorSolar mythos_refractor = new MythosItemGeneratorSolar(1024, 0.25F);
 	public static MythosItemGeneratorStormer mythos_conductor = new MythosItemGeneratorStormer(1024, 1.25F);
 	
