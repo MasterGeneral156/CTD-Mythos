@@ -26,7 +26,7 @@ import java.util.Properties;
 public class MythosPylonBlock extends CTDBlock implements EntityBlock {
 
     public MythosPylonBlock() {
-        super(Properties.of().destroyTime(100F));
+        super(Properties.of().destroyTime(100F).dynamicShape());
     }
 
     @Override
