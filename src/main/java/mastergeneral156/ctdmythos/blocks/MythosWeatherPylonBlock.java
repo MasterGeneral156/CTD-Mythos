@@ -107,7 +107,7 @@ public class MythosWeatherPylonBlock extends CTDBlock implements EntityBlock {
                         storage.extractMythos(512F, slotItem);
                     }
 
-                    //Crystal oath = moon rise
+                    //Crystal grief = moon rise
                     if (handItem.getItem() == ItemConstants.crystal_grief) {
                         if (!level.isClientSide && level instanceof ServerLevel serverLevel) {
                             serverLevel.setDayTime(13000L);
