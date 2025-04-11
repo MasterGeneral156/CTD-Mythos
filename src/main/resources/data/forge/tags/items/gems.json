@@ -1,9 +1,9 @@
 {
   "values": [
-    "ctdmythos:ore_crystal_oath",
-	"ctdmythos:ore_crystal_fire",
-	"ctdmythos:ore_crystal_memory",
-	"ctdmythos:ore_crystal_woe",
-	"ctdmythos:ore_crystal_grief"
+    "ctdmythos:crystal_oath",
+	"ctdmythos:crystal_fire",
+	"ctdmythos:crystal_memory",
+	"ctdmythos:crystal_woe",
+	"ctdmythos:crystal_grief"
   ]
 }
