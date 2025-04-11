@@ -8,7 +8,7 @@
     "key": {
 		"P": { "tag": "minecraft:planks"},
 		"O": { "tag": "minecraft:logs" },
-		"S": { "tag": "forge:rods/wooden"},
+		"S": { "tag": "forge:rods/wooden"}
     },
   "result": {
     "item": "ctdmythos:solstice_legion_staff",
