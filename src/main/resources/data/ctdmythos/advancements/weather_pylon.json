@@ -1,0 +1,20 @@
+{
+  "parent": "ctdmythos:mythos_pool",
+  "criteria": {
+    "triggered": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "ctdmythos.advancement.weather_pylon.desc"
+    },
+    "frame": "task",
+    "icon": {
+      "item": "ctdmythos:mythos_weather_pylon"
+    },
+    "title": {
+      "translate": "ctdmythos.advancement.weather_pylon.title"
+    }
+  }
+}

@@ -3,7 +3,10 @@ package mastergeneral156.ctdmythos.blocks;
 import com.themastergeneral.ctdcore.block.CTDBlock;
 import mastergeneral156.ctdmythos.blocks.blockentity.MythosPylonBlockEntity;
 import mastergeneral156.ctdmythos.items.mythos.MythosItem;
+import mastergeneral156.ctdmythos.utils.PlayerUtils;
 import net.minecraft.core.BlockPos;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
@@ -63,6 +66,7 @@ public class MythosPylonBlock extends CTDBlock implements EntityBlock {
             pylon.getItemHandler().setStackInSlot(0, handItem.copyWithCount(1));
             handItem.shrink(1);
             level.playSound(null, pos, SoundEvents.ITEM_FRAME_ADD_ITEM, SoundSource.BLOCKS, 1.0F, 1.0F);
+            PlayerUtils.grantAdvancement((ServerPlayer) player, new ResourceLocation("ctdmythos", "pylon"));
             return InteractionResult.CONSUME;
         }
 

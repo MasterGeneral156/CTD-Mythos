@@ -1,0 +1,29 @@
+{
+  "parent": "ctdmythos:root",
+  "criteria": {
+		"requirement": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": [
+							"ctdmythos:mythos_battery"
+						]
+					}
+				]
+			}
+		}
+  },
+  "display": {
+    "description": {
+      "translate": "ctdmythos.advancement.mythos_pool.desc"
+    },
+    "frame": "task",
+    "icon": {
+      "item": "ctdmythos:mythos_battery"
+    },
+    "title": {
+      "translate": "ctdmythos.advancement.mythos_pool.title"
+    }
+  }
+}

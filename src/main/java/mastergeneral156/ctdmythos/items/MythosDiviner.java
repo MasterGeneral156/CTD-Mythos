@@ -4,7 +4,10 @@ import com.themastergeneral.ctdcore.item.CTDDurabilityItem;
 
 import mastergeneral156.ctdmythos.MythosReborn;
 import mastergeneral156.ctdmythos.blocks.BlockConstants;
+import mastergeneral156.ctdmythos.utils.PlayerUtils;
 import net.minecraft.core.BlockPos;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.item.context.UseOnContext;
@@ -42,6 +45,8 @@ public class MythosDiviner extends CTDDurabilityItem
 		if (newstate != null)
 		{
 			level.setBlock(pos, newstate, 0);
+			if (!level.isClientSide)
+				PlayerUtils.grantAdvancement((ServerPlayer) use.getPlayer(), new ResourceLocation("ctdmythos", "root"));
 			use.getItemInHand().hurt(1, RandomSource.createNewThreadLocalInstance(), null);
 			MythosReborn.LOGGER.info(use.getPlayer().getStringUUID());
 		}

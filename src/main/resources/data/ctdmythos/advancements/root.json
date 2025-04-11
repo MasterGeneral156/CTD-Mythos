@@ -1,0 +1,21 @@
+{
+  "criteria": {
+    "triggered": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "background": "minecraft:textures/gui/advancements/backgrounds/adventure.png",
+    "description": {
+      "translate": "ctdmythos.advancement.diviner.desc"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "ctdmythos:mythos_diviner"
+    },
+    "title": {
+      "translate": "ctdmythos.advancement.diviner.title"
+    }
+  }
+}

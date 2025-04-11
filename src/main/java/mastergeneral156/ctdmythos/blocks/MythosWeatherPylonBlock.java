@@ -7,8 +7,11 @@ import mastergeneral156.ctdmythos.blocks.blockentity.MythosWeatherPylonBlockEnti
 import mastergeneral156.ctdmythos.items.ItemConstants;
 import mastergeneral156.ctdmythos.items.mythos.MythosItem;
 import mastergeneral156.ctdmythos.items.mythos.MythosItemStorage;
+import mastergeneral156.ctdmythos.utils.PlayerUtils;
 import net.minecraft.core.BlockPos;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
@@ -76,6 +79,7 @@ public class MythosWeatherPylonBlock extends CTDBlock implements EntityBlock {
                     if (handItem.getItem() == ItemConstants.crystal_fire) {
                         if (!level.isClientSide && level instanceof ServerLevel serverLevel) {
                             serverLevel.setWeatherParameters(0, new Random().nextInt(600, 24000), true, true);
+                            PlayerUtils.grantAdvancement((ServerPlayer) player, new ResourceLocation("ctdmythos", "weather_pylon"));
                         }
                         handItem.shrink(1);
                         storage.extractMythos(512F, slotItem);
@@ -84,6 +88,7 @@ public class MythosWeatherPylonBlock extends CTDBlock implements EntityBlock {
                     if (handItem.getItem() == ItemConstants.crystal_woe) {
                         if (!level.isClientSide && level instanceof ServerLevel serverLevel) {
                             serverLevel.setWeatherParameters(0, new Random().nextInt(600, 24000), true, false);
+                            PlayerUtils.grantAdvancement((ServerPlayer) player, new ResourceLocation("ctdmythos", "weather_pylon"));
                         }
                         handItem.shrink(1);
                         storage.extractMythos(512F, slotItem);
@@ -93,6 +98,7 @@ public class MythosWeatherPylonBlock extends CTDBlock implements EntityBlock {
                     if (handItem.getItem() == ItemConstants.crystal_memory) {
                         if (!level.isClientSide && level instanceof ServerLevel serverLevel) {
                             serverLevel.setWeatherParameters(new Random().nextInt(600, 24000), 0, false, false);
+                            PlayerUtils.grantAdvancement((ServerPlayer) player, new ResourceLocation("ctdmythos", "weather_pylon"));
                         }
                         handItem.shrink(1);
                         storage.extractMythos(512F, slotItem);
@@ -102,6 +108,7 @@ public class MythosWeatherPylonBlock extends CTDBlock implements EntityBlock {
                     if (handItem.getItem() == ItemConstants.crystal_oath) {
                         if (!level.isClientSide && level instanceof ServerLevel serverLevel) {
                             serverLevel.setDayTime(0L);
+                            PlayerUtils.grantAdvancement((ServerPlayer) player, new ResourceLocation("ctdmythos", "weather_pylon"));
                         }
                         handItem.shrink(1);
                         storage.extractMythos(512F, slotItem);
@@ -111,6 +118,7 @@ public class MythosWeatherPylonBlock extends CTDBlock implements EntityBlock {
                     if (handItem.getItem() == ItemConstants.crystal_grief) {
                         if (!level.isClientSide && level instanceof ServerLevel serverLevel) {
                             serverLevel.setDayTime(13000L);
+                            PlayerUtils.grantAdvancement((ServerPlayer) player, new ResourceLocation("ctdmythos", "weather_pylon"));
                         }
                         handItem.shrink(1);
                         storage.extractMythos(512F, slotItem);

@@ -19,5 +19,16 @@
 	"block.ctdmythos.mythos_pylon": "Mythos Pylon",
 	"block.ctdmythos.mythos_weather_pylon": "Mythos Celestial Pylon",
 	
-	"itemgroup.ctdmythos.tab": "CTD Mythos: Reborn"
+	"itemgroup.ctdmythos.tab": "CTD Mythos: Reborn",
+	
+	"ctdmythos.advancement.diviner.desc": "Used a Mythos Diviner on correct ore to receive Crystals",
+	"ctdmythos.advancement.diviner.title": "Divine Crystals",
+	"ctdmythos.advancement.pylon.desc": "Placed a Mythos item on a Pylon",
+	"ctdmythos.advancement.pylon.title": "Just enough Pylons",
+	"ctdmythos.advancement.weather_pylon.desc": "Used a Crystal on Celestial Pylon to change the weather or time",
+	"ctdmythos.advancement.weather_pylon.title": "Celestial Manipulation",
+	"ctdmythos.advancement.mythos_pool.desc": "Obtain your first Mythos storage item",
+	"ctdmythos.advancement.mythos_pool.title": "Mythos Pool",
+	"ctdmythos.advancement.socket.desc": "Socketed a Crystal to a compatible Mythos item",
+	"ctdmythos.advancement.socket.title": "Mythos Modifiers"
 }
