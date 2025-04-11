@@ -12,4 +12,5 @@ public class BlockEntityRegistry {
     public static final DeferredRegister<BlockEntityType<?>> TILES = DeferredRegister.create(ForgeRegistries.BLOCK_ENTITY_TYPES, "ctdmythos");
 
     public static final RegistryObject<BlockEntityType<MythosPylonBlockEntity>> mythos_pylon = TILES.register("mythos_pylon", () -> BlockEntityType.Builder.of(MythosPylonBlockEntity::new, BlockConstants.mythos_pylon).build(null));
+    public static final RegistryObject<BlockEntityType<MythosWeatherPylonBlockEntity>> mythos_weather_pylon = TILES.register("mythos_weather_pylon", () -> BlockEntityType.Builder.of(MythosWeatherPylonBlockEntity::new, BlockConstants.mythos_weather_pylon).build(null));
 }

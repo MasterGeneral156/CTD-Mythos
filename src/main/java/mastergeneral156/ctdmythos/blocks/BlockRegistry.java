@@ -16,4 +16,5 @@ public class BlockRegistry {
 	public static final RegistryObject<Block> ore_crystal_grief = BLOCKS.register("ore_crystal_grief", () -> BlockConstants.ore_crystal_grief);
 
 	public static final RegistryObject<Block> mythos_pylon = BLOCKS.register("mythos_pylon", () -> BlockConstants.mythos_pylon);
+	public static final RegistryObject<Block> mythos_weather_pylon = BLOCKS.register("mythos_weather_pylon", () -> BlockConstants.mythos_weather_pylon);
 }

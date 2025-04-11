@@ -31,4 +31,5 @@ public class ItemRegistry {
 	public static final RegistryObject<Item> ore_crystal_oath = ITEMS.register("ore_crystal_oath", () -> ItemConstants.ore_crystal_oath);
 
 	public static final RegistryObject<Item> mythos_pylon = ITEMS.register("mythos_pylon", () -> ItemConstants.mythos_pylon);
+	public static final RegistryObject<Item> mythos_weather_pylon = ITEMS.register("mythos_weather_pylon", () -> ItemConstants.mythos_weather_pylon);
 }

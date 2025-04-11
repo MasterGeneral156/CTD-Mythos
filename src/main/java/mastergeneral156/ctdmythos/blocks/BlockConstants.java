@@ -9,4 +9,5 @@ public class BlockConstants {
 	public static MythosOreBlock ore_crystal_woe = new MythosOreBlock();
 
 	public static MythosPylonBlock mythos_pylon = new MythosPylonBlock();
+	public static MythosWeatherPylonBlock mythos_weather_pylon = new MythosWeatherPylonBlock();
 }

@@ -23,6 +23,7 @@ public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = Defer
             	ev.accept(new ItemStack(ItemConstants.mythos_conductor));
                 ev.accept(new ItemStack(ItemConstants.mythos_battery));
                 ev.accept(ItemConstants.mythos_pylon);
+                ev.accept(ItemConstants.mythos_weather_pylon);
             	
             	ev.accept(ItemConstants.crystal_grief);
                 ev.accept(ItemConstants.ore_crystal_grief);
