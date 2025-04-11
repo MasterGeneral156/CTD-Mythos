@@ -14,13 +14,16 @@ public class ItemRegistry {
 	public static final RegistryObject<Item> crystal_memory = ITEMS.register("crystal_memory", () -> ItemConstants.crystal_memory);
 	public static final RegistryObject<Item> crystal_woe = ITEMS.register("crystal_woe", () -> ItemConstants.crystal_woe);
 
-	//Non mythos tools
+	//Non mythos tools, Tier 0
 	public static final RegistryObject<Item> mythos_diviner = ITEMS.register("mythos_diviner", () -> ItemConstants.mythos_diviner);
 
-	//Mythos Items
+	//Mythos Items, Tier 1
 	public static final RegistryObject<Item> mythos_refractor = ITEMS.register("mythos_refractor", () -> ItemConstants.mythos_refractor);
 	public static final RegistryObject<Item> mythos_conductor = ITEMS.register("mythos_conductor", () -> ItemConstants.mythos_conductor);
 	public static final RegistryObject<Item> mythos_battery = ITEMS.register("mythos_battery", () -> ItemConstants.mythos_battery);
+
+	//Crystal Socketable, Tier 2
+	public static final RegistryObject<Item> solstice_legion_staff = ITEMS.register("solstice_legion_staff", () -> ItemConstants.solstice_legion_staff);
 
 
 	//Ore Blocks

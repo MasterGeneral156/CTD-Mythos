@@ -1,0 +1,61 @@
+{
+  "name": "Forgotten Legion Staff",
+  "category": "ctdmythos:mythos_tools",
+  "icon": "ctdmythos:solstice_legion_staff",
+  "pages": [
+    {
+	  "type": "patchouli:spotlight",
+	  "item": {
+		"item": "ctdmythos:solstice_legion_staff"
+	  },
+	  "title": "Forgotten Legion Staff",
+	  "text": "Crafted from a banner pole once held by the original Solstice Legion, the staff radiates with ancient loyalty and fractured oaths. Its wood is scorched by Mythos storms, and its tip holds a shard of a fallen Crystal. No one remembers the full story of the Legion that first wielded it. But the staff remembers everything."
+	},
+	{
+	  "type": "patchouli:crafting",
+	  "recipe": "ctdmythos:solstice_legion_staff",
+	  "title": "Shaped Recipe",
+	  "text": "This staff can house a single Mythos Crystal, altering its behavior depending on the crystal used. Requires a reserve of 64 Mythos, casts at a cost of 16 Mythos."
+	},
+	{
+	  "type": "patchouli:spotlight",
+	  "item": {
+		"tag": "forge:gems/crystal_fire"
+	  },
+	  "title": "Crystal Fire",
+	  "text": "Emits a flaming wave, setting nearby foes ablaze."
+	},
+	{
+	  "type": "patchouli:spotlight",
+	  "item": {
+		"tag": "forge:gems/crystal_memory"
+	  },
+	  "title": "Crystal Memory",
+	  "text": "Disrupts invisibility, revealing hidden foes with a wave of primal clarity."
+	},
+	{
+	  "type": "patchouli:spotlight",
+	  "item": {
+		"tag": "forge:gems/crystal_oath"
+	  },
+	  "title": "Crystal Oath",
+	  "text": "Uplifts allies with strength and resistance, calling upon ancient pacts."
+	},
+	{
+	  "type": "patchouli:spotlight",
+	  "item": {
+		"tag": "forge:gems/crystal_woe"
+	  },
+	  "title": "Crystal Woe",
+	  "text": "Drains the strength of your enemies, afflicting them with Weakness."
+	},
+	{
+	  "type": "patchouli:spotlight",
+	  "item": {
+		"tag": "forge:gems/crystal_grief"
+	  },
+	  "title": "Crystal Grief",
+	  "text": "Dampens movement and vision, slowing and blinding enemies in shadowy radius."
+	}
+  ]
+}
