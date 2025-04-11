@@ -1,0 +1,65 @@
+{
+  "name": "Mythos Celestial Pylon",
+  "category": "ctdmythos:mythos_blocks",
+  "icon": "ctdmythos:mythos_weather_pylon",
+  "pages": [
+    {
+	  "type": "patchouli:spotlight",
+	  "item": {
+		"item": "ctdmythos:mythos_weather_pylon"
+	  },
+	  "title": "The Forgotten Hands",
+	  "text": "Few structures remain from the Celestine Era, when the sky itself was guided by ritual. The Mythos Celestial Pylon is one such artifact—capable of reaching beyond the world, altering weather and time by invoking immense Mythos through a Crystal catalyst."
+	},
+	{
+	  "type": "patchouli:crafting",
+	  "recipe": "ctdmythos:mythos_weather_pylon",
+	  "title": "Shaped Recipe",
+	  "text": "To awaken the heavens, a Mythos Storage Item—such as a Mythos Pool—must be placed upon the Pylon, containing at least 512 units of stored Mythos. When a Crystal is presented to the Pylon's altar, the ancient bond between element and sky reasserts itself:"
+	},
+	{
+	  "type": "patchouli:spotlight",
+	  "item": {
+		"tag": "forge:gems/crystal_fire"
+	  },
+	  "title": "Thunderstorm",
+	  "text": "Rage and static pour from the heavens. Lightning splits the sky, igniting the world with the Pylon’s fury."
+	},
+	{
+	  "type": "patchouli:spotlight",
+	  "item": {
+		"tag": "forge:gems/crystal_woe"
+	  },
+	  "title": "Rainfall",
+	  "text": "A soft, endless sorrow descends. Crops thrive, rivers swell, and a strange quiet settles over the land."
+	},
+	{
+	  "type": "patchouli:spotlight",
+	  "item": {
+		"tag": "forge:gems/crystal_memory"
+	  },
+	  "title": "Clear Weather",
+	  "text": "The clouds part. Birds return. The sun shines unopposed, and the world breathes anew."
+	},
+	{
+	  "type": "patchouli:spotlight",
+	  "item": {
+		"tag": "forge:gems/crystal_oath"
+	  },
+	  "title": "Crystal Oath",
+	  "text": "The world is reborn in golden light. All shadows recede as the sun rises—no matter the hour."
+	},
+	{
+	  "type": "patchouli:spotlight",
+	  "item": {
+		"tag": "forge:gems/crystal_grief"
+	  },
+	  "title": "Crystal Grief",
+	  "text": "Time bows to silence. The sky darkens, the moon ascends, and night claims the realm with gentle certainty."
+	},
+	{
+      "type": "patchouli:text",
+      "text": "The ritual burns the crystal, but those attuned to Mythos believe the energy lingers above, drifting among the stars."
+    }
+  ]
+}

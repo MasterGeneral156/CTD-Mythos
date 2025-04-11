@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+        "COC",
+        "FMW",
+		"CGC"
+    ],
+    "key": {
+		"O": { "tag": "forge:gems/crystal_oath" },
+		"G": { "tag": "forge:gems/crystal_grief" },
+		"W": { "tag": "forge:gems/crystal_woe" },
+		"F": { "tag": "forge:gems/crystal_fire" },
+		"C": { "tag": "forge:ingots/copper" },
+		"M": { "tag": "forge:gems/crystal_memory" }
+    },
+  "result": {
+    "item": "ctdmythos:mythos_battery",
+    "count": 1
+  }
+}

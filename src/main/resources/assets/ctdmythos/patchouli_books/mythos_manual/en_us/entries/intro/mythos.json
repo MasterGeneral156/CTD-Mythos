@@ -1,0 +1,12 @@
+{
+  "name": "The Flow of Mythos",
+  "category": "ctdmythos:getting_started",
+  "icon": "minecraft:enchanted_book",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "Mythos Flow",
+      "text": "Mythos cannot be seen—but when channeled, the air tingles, the ground hums, and the light shimmers oddly. Items empowered by Mythos will draw from the nearest source—be it a Pool, a Refractor, or even another tool—so long as they are within the unseen current. Understanding this network is key to mastering Mythos."
+    }
+  ]
+}

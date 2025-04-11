@@ -1,0 +1,52 @@
+{
+  "name": "Crystals of Attunement",
+  "category": "ctdmythos:getting_started",
+  "icon": "minecraft:enchanted_book",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "Crystals of Attunement",
+      "text": "Over time, five distinct Crystal alignments were unearthed—each channeling a different aspect of Mythos energy. Each crystal does more than modify Mythos; they anchor it, shaping raw energy into usable forms."
+    },
+	{
+	  "type": "patchouli:spotlight",
+	  "item": {
+		"tag": "forge:gems/crystal_fire"
+	  },
+	  "title": "Crystal Fire",
+	  "text": "The fuel of ambition. Volatile and unstable, it drives machines and consumes like flame. Often feared, it is essential in activating advanced constructs."
+	},
+	{
+	  "type": "patchouli:spotlight",
+	  "item": {
+		"tag": "forge:gems/crystal_memory"
+	  },
+	  "title": "Crystal Memory",
+	  "text": "The root of the world. Earth-bound, steady, and old. It connects to the natural order and is vital for restoration, growth, and balance."
+	},
+	{
+	  "type": "patchouli:spotlight",
+	  "item": {
+		"tag": "forge:gems/crystal_oath"
+	  },
+	  "title": "Crystal Oath",
+	  "text": "The sun's promise. Embodying resolve, radiance, and clarity, it shines brightest when used to strengthen or defend. A favored energy among guardians."
+	},
+	{
+	  "type": "patchouli:spotlight",
+	  "item": {
+		"tag": "forge:gems/crystal_woe"
+	  },
+	  "title": "Crystal Woe",
+	  "text": "The echo of decay. This corrupted energy weakens, seeps, and deconstructs. A remnant of deep sorrow and ancient loss, aligned with water and emotional fragility."
+	},
+	{
+	  "type": "patchouli:spotlight",
+	  "item": {
+		"tag": "forge:gems/crystal_grief"
+	  },
+	  "title": "Crystal Grief",
+	  "text": "The abyss gazes back. This lunar, cold magic draws from shadows and silence. It's often avoided by common folk, but necessary for rituals in the dark."
+	}
+  ]
+}

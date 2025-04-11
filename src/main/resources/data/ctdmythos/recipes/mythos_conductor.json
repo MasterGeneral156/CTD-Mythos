@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+        "WFG",
+        " R ",
+		" P "
+    ],
+    "key": {
+		"G": { "tag": "forge:gems/crystal_grief" },
+		"W": { "tag": "forge:gems/crystal_woe" },
+		"F": { "tag": "forge:gems/crystal_fire" },
+		"P": { "item": "ctdmythos:mythos_battery", "data": 32767 },
+		"R": { "item": "minecraft:lightning_rod"}
+    },
+  "result": {
+    "item": "ctdmythos:mythos_conductor",
+    "count": 1
+  }
+}

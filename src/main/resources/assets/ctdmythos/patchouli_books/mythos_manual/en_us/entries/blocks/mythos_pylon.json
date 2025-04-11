@@ -1,0 +1,21 @@
+{
+  "name": "Mythos Pylon",
+  "category": "ctdmythos:mythos_blocks",
+  "icon": "ctdmythos:mythos_pylon",
+  "pages": [
+    {
+	  "type": "patchouli:spotlight",
+	  "item": {
+		"item": "ctdmythos:mythos_pylon"
+	  },
+	  "title": "The Forgotten Hands",
+	  "text": "Ancient scholars knew that proximity was the key to control—but what of scale? As civilizations grew, they needed Mythos-powered tools to function even when no hand guided them. Enter the Mythos Pylon, a relic from the lost age of automation and ritual magic."
+	},
+	{
+	  "type": "patchouli:crafting",
+	  "recipe": "ctdmythos:mythos_pylon",
+	  "title": "Shaped Recipe",
+	  "text": "Pylons serve as conduits of intent, allowing Mythos Items to operate as though held by a living soul. When placed atop a Pylon, an item continues to draw, channel, and interact with Mythos as if wielded—extending a user’s will through stone and time."
+	}
+  ]
+}

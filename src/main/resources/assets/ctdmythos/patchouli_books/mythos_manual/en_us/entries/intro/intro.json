@@ -1,0 +1,12 @@
+{
+  "name": "Welcome",
+  "category": "ctdmythos:getting_started",
+  "icon": "minecraft:knowledge_book",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "Welcome",
+      "text": "This ancient text will guide you through the magical world of Mythos."
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "name": "Mythos Refractor",
+  "category": "ctdmythos:mythos_tools",
+  "icon": "ctdmythos:mythos_refractor",
+  "pages": [
+    {
+	  "type": "patchouli:spotlight",
+	  "item": {
+		"item": "ctdmythos:mythos_refractor"
+	  },
+	  "title": "Mythos Refractor",
+	  "text": "Draws power from sunlight and fair skies. Refractors slowly fill with Mythos when conditions are calm, transferring their energy to nearby tools or a Mythos Pool. They are often used in observatories and mountaintop altars."
+	},
+	{
+	  "type": "patchouli:crafting",
+	  "recipe": "ctdmythos:mythos_refractor",
+	  "title": "Shaped Recipe"
+	}
+  ]
+}

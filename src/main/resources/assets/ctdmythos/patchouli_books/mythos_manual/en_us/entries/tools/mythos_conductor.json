@@ -1,0 +1,20 @@
+{
+  "name": "Mythos Conductor",
+  "category": "ctdmythos:mythos_tools",
+  "icon": "ctdmythos:mythos_conductor",
+  "pages": [
+    {
+	  "type": "patchouli:spotlight",
+	  "item": {
+		"item": "ctdmythos:mythos_conductor"
+	  },
+	  "title": "Mythos Conductor",
+	  "text": "Built to thrive in the storm. Conductors draw in Mythos from rain, wind, and lightning, storing it only temporarily before passing it to other nearby Mythos Items. Conduits of power in chaos."
+	},
+	{
+	  "type": "patchouli:crafting",
+	  "recipe": "ctdmythos:mythos_conductor",
+	  "title": "Shaped Recipe"
+	}
+  ]
+}

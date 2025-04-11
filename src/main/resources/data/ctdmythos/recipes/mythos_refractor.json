@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+        "OOO",
+        " P "
+    ],
+    "key": {
+		"P": { "item": "ctdmythos:mythos_battery", "data": 32767 },
+		"O": { "tag": "forge:gems/crystal_oath" }
+    },
+  "result": {
+    "item": "ctdmythos:mythos_refractor",
+    "count": 1
+  }
+}

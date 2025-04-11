@@ -1,0 +1,20 @@
+{
+  "name": "Mythos Pool",
+  "category": "ctdmythos:mythos_tools",
+  "icon": "ctdmythos:mythos_battery",
+  "pages": [
+    {
+	  "type": "patchouli:spotlight",
+	  "item": {
+		"item": "ctdmythos:mythos_battery"
+	  },
+	  "title": "Mythos Pool",
+	  "text": "A central reservoir. It stores Mythos collected from the Refractor, Conductor, or other tools. Pools allow the user to distribute Mythos energy to constructs, weapons, or mechanisms in range. They are often placed at the heart of Mythos-powered systems."
+	},
+	{
+	  "type": "patchouli:crafting",
+	  "recipe": "ctdmythos:mythos_battery",
+	  "title": "Shaped Recipe"
+	}
+  ]
+}

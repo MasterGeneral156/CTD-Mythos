@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+        "D",
+        "B",
+		"B"
+    ],
+    "key": {
+		"D": { "tag": "forge:gems" },
+		"B": { "tag": "forge:rods/blaze" }
+    },
+  "result": {
+    "item": "ctdmythos:mythos_diviner",
+    "count": 1
+  }
+}

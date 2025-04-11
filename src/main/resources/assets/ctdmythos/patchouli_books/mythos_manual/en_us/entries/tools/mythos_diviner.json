@@ -1,0 +1,21 @@
+{
+  "name": "Mythos Diviner",
+  "category": "ctdmythos:mythos_tools",
+  "icon": "ctdmythos:mythos_diviner",
+  "pages": [
+    {
+	  "type": "patchouli:spotlight",
+	  "item": {
+		"item": "ctdmythos:mythos_diviner"
+	  },
+	  "title": "Mythos Diviner",
+	  "text": "Not a tool of creation, but of revelation. When used on certain ores, the Diviner does not imbue Mythos, but calls forth the latent energy hidden within, transforming mundane minerals into their Crystal Ore variants. It is a reminder that Mythos is already there—waiting to be seen."
+	},
+	{
+	  "type": "patchouli:crafting",
+	  "recipe": "ctdmythos:mythos_diviner",
+	  "title": "Shaped Recipe",
+	  "text": "When used on ore, it may convert the ore to Crystal Ores to mine."
+	}
+  ]
+}

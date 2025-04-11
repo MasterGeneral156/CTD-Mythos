@@ -1,0 +1,8 @@
+{
+  "name": "Mythos Manual",
+  "landing_text": "Welcome to the Mythos Manual! This book details all things arcane and obscure.",
+  "version": 1,
+  "subtitle": "Secrets of the Realm",
+  "creative_tab": "ctdmythos:mythos_tab",
+  "use_resource_pack": true
+}
