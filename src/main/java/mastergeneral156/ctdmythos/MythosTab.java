@@ -11,7 +11,7 @@ import net.minecraftforge.registries.RegistryObject;
 
 public class MythosTab {
 
-public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, "mythosreborn");
+public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, "ctdmythos");
 	
 	public static final RegistryObject<CreativeModeTab> MYTHOS_TAB = CREATIVE_MODE_TABS.register("mythos_tab", () -> CreativeModeTab.builder()
             .withTabsBefore(CreativeModeTabs.COMBAT)
