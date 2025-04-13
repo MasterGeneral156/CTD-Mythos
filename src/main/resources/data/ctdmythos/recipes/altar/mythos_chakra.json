@@ -1,0 +1,20 @@
+{
+  "type": "ctdmythos:altar",
+
+  "catalyst": {
+    "item": "ctdmythos:crystal_mythos", "data": 32767
+  },
+
+  "ingredients": [
+    { "item": "ctdmythos:mythos_battery", "data": 32767 },
+    { "item": "ctdmythos:mythos_battery", "data": 32767 }
+  ],
+
+  "result": {
+    "item": "ctdmythos:mythos_chakra",
+    "count": 1
+  },
+
+  "mythos": 1024,
+  "time": 400
+}
