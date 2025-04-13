@@ -1,0 +1,6 @@
+{
+    "parent": "block/cube_all",
+    "textures": {
+        "all": "ctdmythos:block/crystal_grief_brick"
+    }
+}

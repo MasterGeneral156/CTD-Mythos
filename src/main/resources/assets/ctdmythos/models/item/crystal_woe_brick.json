@@ -1,0 +1,6 @@
+{
+    "parent": "ctdmythos:block/crystal_woe_brick",
+    "textures": {
+        "inventory": "ctdmythos:block/crystal_woe_brick"
+    }
+}

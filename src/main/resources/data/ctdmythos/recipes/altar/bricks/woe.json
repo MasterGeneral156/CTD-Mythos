@@ -1,0 +1,22 @@
+{
+  "type": "ctdmythos:altar",
+
+  "catalyst": {
+    "item": "minecraft:bricks"
+  },
+
+  "ingredients": [
+    { "tag": "forge:gems/crystal_woe" },
+    { "tag": "forge:gems/crystal_woe" },
+	{ "tag": "forge:gems/crystal_woe" },
+    { "tag": "forge:gems/crystal_woe" }
+  ],
+
+  "result": {
+    "item": "ctdmythos:crystal_woe_brick",
+    "count": 8
+  },
+
+  "mythos": 128,
+  "time": 200
+}

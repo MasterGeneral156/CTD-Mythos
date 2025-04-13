@@ -17,6 +17,12 @@
 	"block.ctdmythos.ore_crystal_grief": "§7Crystal Grief Ore",
 	"block.ctdmythos.ore_crystal_woe": "§9Crystal Woe Ore",
 	
+	"block.ctdmythos.crystal_fire_brick": "§4Crystal Fire Brick",
+	"block.ctdmythos.crystal_oath_brick": "§eCrystal Oath Brick",
+	"block.ctdmythos.crystal_memory_brick": "§aCrystal Memory Brick",
+	"block.ctdmythos.crystal_grief_brick": "§7Crystal Grief Brick",
+	"block.ctdmythos.crystal_woe_brick": "§9Crystal Woe Brick",
+	
 	"block.ctdmythos.mythos_pylon": "Mythos Pylon",
 	"block.ctdmythos.mythos_weather_pylon": "Mythos Celestial Pylon",
 	"block.ctdmythos.mythos_altar": "Mythos Altar",
@@ -33,5 +39,7 @@
 	"ctdmythos.advancement.mythos_pool.desc": "Obtain your first Mythos storage item",
 	"ctdmythos.advancement.mythos_pool.title": "Mythos Pool",
 	"ctdmythos.advancement.socket.desc": "Socketed a Crystal to a compatible Mythos item",
-	"ctdmythos.advancement.socket.title": "Mythos Modifiers"
+	"ctdmythos.advancement.socket.title": "Mythos Modifiers",
+	
+	"jei.ctdmythos.altar": "Mythos Altar Recipes"
 }

@@ -19,4 +19,10 @@ public class BlockRegistry {
 	public static final RegistryObject<Block> mythos_weather_pylon = BLOCKS.register("mythos_weather_pylon", () -> BlockConstants.mythos_weather_pylon);
 	public static final RegistryObject<Block> mythos_altar = BLOCKS.register("mythos_altar", () -> BlockConstants.mythos_altar);
 	public static final RegistryObject<Block> mythos_pedestal = BLOCKS.register("mythos_pedestal", () -> BlockConstants.mythos_pedestal);
+
+	public static final RegistryObject<Block> crystal_fire_brick = BLOCKS.register("crystal_fire_brick", () -> BlockConstants.crystal_fire_brick);
+	public static final RegistryObject<Block> crystal_grief_brick = BLOCKS.register("crystal_grief_brick", () -> BlockConstants.crystal_grief_brick);
+	public static final RegistryObject<Block> crystal_memory_brick = BLOCKS.register("crystal_memory_brick", () -> BlockConstants.crystal_memory_brick);
+	public static final RegistryObject<Block> crystal_oath_brick = BLOCKS.register("crystal_oath_brick", () -> BlockConstants.crystal_oath_brick);
+	public static final RegistryObject<Block> crystal_woe_brick = BLOCKS.register("crystal_woe_brick", () -> BlockConstants.crystal_woe_brick);
 }

@@ -34,6 +34,12 @@ public class ItemRegistry {
 	public static final RegistryObject<Item> ore_crystal_memory = ITEMS.register("ore_crystal_memory", () -> ItemConstants.ore_crystal_memory);
 	public static final RegistryObject<Item> ore_crystal_oath = ITEMS.register("ore_crystal_oath", () -> ItemConstants.ore_crystal_oath);
 
+	public static final RegistryObject<Item> crystal_fire_brick = ITEMS.register("crystal_fire_brick", () -> ItemConstants.crystal_fire_brick);
+	public static final RegistryObject<Item> crystal_woe_brick = ITEMS.register("crystal_woe_brick", () -> ItemConstants.crystal_woe_brick);
+	public static final RegistryObject<Item> crystal_grief_brick = ITEMS.register("crystal_grief_brick", () -> ItemConstants.crystal_grief_brick);
+	public static final RegistryObject<Item> crystal_memory_brick = ITEMS.register("crystal_memory_brick", () -> ItemConstants.crystal_memory_brick);
+	public static final RegistryObject<Item> crystal_oath_brick = ITEMS.register("crystal_oath_brick", () -> ItemConstants.crystal_oath_brick);
+
 	public static final RegistryObject<Item> mythos_pylon = ITEMS.register("mythos_pylon", () -> ItemConstants.mythos_pylon);
 	public static final RegistryObject<Item> mythos_weather_pylon = ITEMS.register("mythos_weather_pylon", () -> ItemConstants.mythos_weather_pylon);
 	public static final RegistryObject<Item> mythos_altar = ITEMS.register("mythos_altar", () -> ItemConstants.mythos_altar);

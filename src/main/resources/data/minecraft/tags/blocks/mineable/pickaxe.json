@@ -9,6 +9,11 @@
 	"ctdmythos:mythos_pylon",
 	"ctdmythos:mythos_weather_pylon",
 	"ctdmythos:mythos_altar",
-	"ctdmythos:mythos_pedestal"
+	"ctdmythos:mythos_pedestal",
+	"ctdmythos:crystal_fire_brick",
+	"ctdmythos:crystal_oath_brick",
+	"ctdmythos:crystal_memory_brick",
+	"ctdmythos:crystal_grief_brick",
+	"ctdmythos:crystal_woe_brick"
   ]
 }

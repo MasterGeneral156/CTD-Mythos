@@ -35,6 +35,12 @@ public class ItemConstants {
 	public static MythosBlockItem ore_crystal_grief = new MythosBlockItem(BlockConstants.ore_crystal_grief);
 	public static MythosBlockItem ore_crystal_oath = new MythosBlockItem(BlockConstants.ore_crystal_oath);
 
+	public static MythosBlockItem crystal_fire_brick = new MythosBlockItem(BlockConstants.crystal_fire_brick);
+	public static MythosBlockItem crystal_woe_brick = new MythosBlockItem(BlockConstants.crystal_woe_brick);
+	public static MythosBlockItem crystal_memory_brick = new MythosBlockItem(BlockConstants.crystal_memory_brick);
+	public static MythosBlockItem crystal_grief_brick = new MythosBlockItem(BlockConstants.crystal_grief_brick);
+	public static MythosBlockItem crystal_oath_brick = new MythosBlockItem(BlockConstants.crystal_oath_brick);
+
 	//Mythos blocks
 	public static MythosBlockItem mythos_pylon = new MythosBlockItem(BlockConstants.mythos_pylon);
 	public static MythosBlockItem mythos_weather_pylon = new MythosBlockItem(BlockConstants.mythos_weather_pylon);

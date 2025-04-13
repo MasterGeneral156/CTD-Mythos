@@ -31,18 +31,23 @@ public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = Defer
                 ev.accept(ItemConstants.mythos_pedestal);
             	
             	ev.accept(ItemConstants.crystal_grief);
+                ev.accept(ItemConstants.crystal_grief_brick);
                 ev.accept(ItemConstants.ore_crystal_grief);
             	
                 ev.accept(ItemConstants.crystal_fire);
+                ev.accept(ItemConstants.crystal_fire_brick);
                 ev.accept(ItemConstants.ore_crystal_fire);
                 
                 ev.accept(ItemConstants.crystal_memory);
+                ev.accept(ItemConstants.crystal_memory_brick);
                 ev.accept(ItemConstants.ore_crystal_memory);
                 
                 ev.accept(ItemConstants.crystal_oath);
+                ev.accept(ItemConstants.crystal_oath_brick);
                 ev.accept(ItemConstants.ore_crystal_oath);
                 
                 ev.accept(ItemConstants.crystal_woe);
+                ev.accept(ItemConstants.crystal_woe_brick);
                 ev.accept(ItemConstants.ore_crystal_woe);
 
                 ev.accept(ItemConstants.crystal_mythos);
