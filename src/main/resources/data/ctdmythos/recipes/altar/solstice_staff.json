@@ -1,0 +1,24 @@
+{
+  "type": "ctdmythos:altar",
+
+  "catalyst": {
+    "item": "ctdmythos:mythos_battery", "data": 32767
+  },
+
+  "ingredients": [
+    { "tag": "minecraft:banners" },
+    { "tag": "forge:rods/wooden" },
+	{ "tag": "forge:rods/wooden" },
+	{ "tag": "minecraft:planks" },
+    { "tag": "minecraft:logs" },
+	{ "tag": "minecraft:logs" }
+  ],
+
+  "result": {
+    "item": "ctdmythos:solstice_legion_staff",
+    "count": 1
+  },
+
+  "mythos": 1024,
+  "time": 400
+}
