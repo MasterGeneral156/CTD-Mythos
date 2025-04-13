@@ -1,6 +1,6 @@
 package mastergeneral156.ctdmythos.packets;
 
-import mastergeneral156.ctdmythos.items.mythos.MythosCrystalSocketItem;
+import mastergeneral156.ctdmythos.items.mythos.socketable.MythosCrystalSocketItem;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.item.ItemStack;

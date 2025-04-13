@@ -1,6 +1,5 @@
-package mastergeneral156.ctdmythos.items.mythos;
+package mastergeneral156.ctdmythos.items.mythos.socketable;
 
-import mastergeneral156.ctdmythos.MythosReborn;
 import mastergeneral156.ctdmythos.utils.EchoEffects;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;

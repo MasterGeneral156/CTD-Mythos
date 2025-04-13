@@ -1,19 +1,14 @@
-package mastergeneral156.ctdmythos.items.mythos;
+package mastergeneral156.ctdmythos.items.mythos.socketable;
 
 import com.themastergeneral.ctdcore.helpers.ModUtils;
 import mastergeneral156.chasethedragon.radial.RadialClientEvents;
 import mastergeneral156.chasethedragon.radial.RadialMenuOption;
 import mastergeneral156.chasethedragon.radial.api.CTDRadialAPI;
 import mastergeneral156.ctdmythos.MythosNetworkManager;
-import mastergeneral156.ctdmythos.items.ItemConstants;
+import mastergeneral156.ctdmythos.items.mythos.MythosItem;
 import mastergeneral156.ctdmythos.packets.EjectCrystalPacket;
 import mastergeneral156.ctdmythos.packets.SocketCrystalPacket;
 import mastergeneral156.ctdmythos.utils.ItemUtils;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.entity.ItemRenderer;
-import net.minecraft.client.renderer.texture.TextureAtlasSprite;
-import net.minecraft.core.Holder;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;

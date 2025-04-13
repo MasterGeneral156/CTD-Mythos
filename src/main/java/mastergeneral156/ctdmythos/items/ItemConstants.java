@@ -6,7 +6,7 @@ import mastergeneral156.ctdmythos.blocks.BlockConstants;
 import mastergeneral156.ctdmythos.items.mythos.MythosItemGeneratorSolar;
 import mastergeneral156.ctdmythos.items.mythos.MythosItemGeneratorStormer;
 import mastergeneral156.ctdmythos.items.mythos.MythosItemStorage;
-import mastergeneral156.ctdmythos.items.mythos.SolsticeLegionStaffItem;
+import mastergeneral156.ctdmythos.items.mythos.socketable.SolsticeLegionStaffItem;
 import net.minecraft.world.item.Item.Properties;
 
 public class ItemConstants {
@@ -26,6 +26,8 @@ public class ItemConstants {
 	public static MythosItemStorage mythos_chakra = new MythosItemStorage(1024*2.25F, 8*4.5F);
 	public static MythosItemGeneratorSolar mythos_refractor = new MythosItemGeneratorSolar(1024, 0.25F);
 	public static MythosItemGeneratorStormer mythos_conductor = new MythosItemGeneratorStormer(1024, 1.25F);
+
+	//Unique items
 	public static SolsticeLegionStaffItem solstice_legion_staff = new SolsticeLegionStaffItem(512F);
 	
 	//Ore Blocks
