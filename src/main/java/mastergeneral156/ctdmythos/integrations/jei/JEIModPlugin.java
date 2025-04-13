@@ -1,18 +1,22 @@
 package mastergeneral156.ctdmythos.integrations.jei;
 
+import mastergeneral156.ctdmythos.blocks.BlockConstants;
 import mastergeneral156.ctdmythos.recipes.AltarRecipe;
 import mastergeneral156.ctdmythos.recipes.RecipeRegistry;
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
 import mezz.jei.api.helpers.IGuiHelper;
 import mezz.jei.api.recipe.RecipeType;
+import mezz.jei.api.registration.IRecipeCatalystRegistration;
 import mezz.jei.api.registration.IRecipeCategoryRegistration;
 import mezz.jei.api.registration.IRecipeRegistration;
 import net.minecraft.client.Minecraft;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.RecipeManager;
 import net.minecraft.world.level.Level;
 
+import javax.annotation.Nonnull;
 import java.util.List;
 
 @JeiPlugin
@@ -38,8 +42,15 @@ public class JEIModPlugin implements IModPlugin {
         if (level != null) {
             RecipeManager recipeManager = level.getRecipeManager();
             List<AltarRecipe> recipes = recipeManager.getAllRecipesFor(RecipeRegistry.ALTAR_TYPE.get());
-            registration.addRecipes(new RecipeType<>(AltarRecipeCategory.UID, AltarRecipe.class), recipes);
+            registration.addRecipes(JEIRecipeTypes.ALTAR, recipes);
         }
+    }
+
+    @Override
+    public void registerRecipeCatalysts(@Nonnull final IRecipeCatalystRegistration registration) {
+        registration.addRecipeCatalyst(new ItemStack(BlockConstants.mythos_altar), JEIRecipeTypes.ALTAR);
+        registration.addRecipeCatalyst(new ItemStack(BlockConstants.mythos_pedestal), JEIRecipeTypes.ALTAR);
+
     }
 }
 
