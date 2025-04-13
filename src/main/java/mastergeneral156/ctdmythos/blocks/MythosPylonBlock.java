@@ -21,6 +21,8 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.phys.BlockHitResult;
 
 import javax.annotation.Nullable;
@@ -28,8 +30,11 @@ import java.util.Properties;
 
 public class MythosPylonBlock extends CTDBlock implements EntityBlock {
 
+    public static final IntegerProperty LIGHT = IntegerProperty.create("light", 0, 15);
+
     public MythosPylonBlock() {
-        super(Properties.of().destroyTime(100F).dynamicShape());
+        super(Properties.of().destroyTime(100F).dynamicShape().lightLevel(state -> state.getValue(LIGHT)));
+        this.registerDefaultState(this.defaultBlockState().setValue(LIGHT, 0));
     }
 
     @Override
@@ -101,5 +106,9 @@ public class MythosPylonBlock extends CTDBlock implements EntityBlock {
         return 0;
     }
 
-
+    @Override
+    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
+        super.createBlockStateDefinition(builder);
+        builder.add(LIGHT);
+    }
 }
