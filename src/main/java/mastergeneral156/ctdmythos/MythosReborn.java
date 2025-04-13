@@ -31,6 +31,7 @@ public class MythosReborn {
         RecipeRegistry.RECIPE_TYPES.register(modbus);
         BlockEntityRegistry.TILES.register(modbus);
         MythosTab.CREATIVE_MODE_TABS.register(modbus);
+        MythosNetworkManager.registerMessages();
     }
 	
 	private void setup(final FMLCommonSetupEvent event)
