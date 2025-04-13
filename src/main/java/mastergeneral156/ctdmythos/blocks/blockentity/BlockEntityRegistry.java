@@ -13,4 +13,7 @@ public class BlockEntityRegistry {
 
     public static final RegistryObject<BlockEntityType<MythosPylonBlockEntity>> mythos_pylon = TILES.register("mythos_pylon", () -> BlockEntityType.Builder.of(MythosPylonBlockEntity::new, BlockConstants.mythos_pylon).build(null));
     public static final RegistryObject<BlockEntityType<MythosWeatherPylonBlockEntity>> mythos_weather_pylon = TILES.register("mythos_weather_pylon", () -> BlockEntityType.Builder.of(MythosWeatherPylonBlockEntity::new, BlockConstants.mythos_weather_pylon).build(null));
+
+    public static final RegistryObject<BlockEntityType<MythosAltarBlockEntity>> mythos_altar = TILES.register("mythos_altar", () -> BlockEntityType.Builder.of(MythosAltarBlockEntity::new, BlockConstants.mythos_altar).build(null));
+    public static final RegistryObject<BlockEntityType<MythosPedestalBlockEntity>> mythos_pedestal = TILES.register("mythos_pedestal", () -> BlockEntityType.Builder.of(MythosPedestalBlockEntity::new, BlockConstants.mythos_pedestal).build(null));
 }

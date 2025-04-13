@@ -36,4 +36,6 @@ public class ItemConstants {
 	//Mythos blocks
 	public static MythosBlockItem mythos_pylon = new MythosBlockItem(BlockConstants.mythos_pylon);
 	public static MythosBlockItem mythos_weather_pylon = new MythosBlockItem(BlockConstants.mythos_weather_pylon);
+	public static MythosBlockItem mythos_altar = new MythosBlockItem(BlockConstants.mythos_altar);
+	public static MythosBlockItem mythos_pedestal = new MythosBlockItem(BlockConstants.mythos_pedestal);
 }

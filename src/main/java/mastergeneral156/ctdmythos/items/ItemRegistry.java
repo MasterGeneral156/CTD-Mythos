@@ -35,4 +35,6 @@ public class ItemRegistry {
 
 	public static final RegistryObject<Item> mythos_pylon = ITEMS.register("mythos_pylon", () -> ItemConstants.mythos_pylon);
 	public static final RegistryObject<Item> mythos_weather_pylon = ITEMS.register("mythos_weather_pylon", () -> ItemConstants.mythos_weather_pylon);
+	public static final RegistryObject<Item> mythos_altar = ITEMS.register("mythos_altar", () -> ItemConstants.mythos_altar);
+	public static final RegistryObject<Item> mythos_pedestal = ITEMS.register("mythos_pedestal", () -> ItemConstants.mythos_pedestal);
 }

@@ -10,4 +10,6 @@ public class BlockConstants {
 
 	public static MythosPylonBlock mythos_pylon = new MythosPylonBlock();
 	public static MythosWeatherPylonBlock mythos_weather_pylon = new MythosWeatherPylonBlock();
+	public static MythosAltarBlock mythos_altar = new MythosAltarBlock();
+	public static MythosPedestalBlock mythos_pedestal = new MythosPedestalBlock();
 }

@@ -3,6 +3,7 @@ package mastergeneral156.ctdmythos;
 import mastergeneral156.ctdmythos.blocks.BlockRegistry;
 import mastergeneral156.ctdmythos.blocks.blockentity.BlockEntityRegistry;
 import mastergeneral156.ctdmythos.items.ItemRegistry;
+import mastergeneral156.ctdmythos.recipes.RecipeRegistry;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
@@ -26,13 +27,15 @@ public class MythosReborn {
         MinecraftForge.EVENT_BUS.register(this);
         ItemRegistry.ITEMS.register(modbus);
         BlockRegistry.BLOCKS.register(modbus);
+        RecipeRegistry.RECIPE_SERIALIZER.register(modbus);
+        RecipeRegistry.RECIPE_TYPES.register(modbus);
         BlockEntityRegistry.TILES.register(modbus);
         MythosTab.CREATIVE_MODE_TABS.register(modbus);
     }
 	
 	private void setup(final FMLCommonSetupEvent event)
     {
-		LOGGER.info("Mythos Reborn is launching.");
+		LOGGER.info("CTD Mythos is launching.");
     }
 
 }
