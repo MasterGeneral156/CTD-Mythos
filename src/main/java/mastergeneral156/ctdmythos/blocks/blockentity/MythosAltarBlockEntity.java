@@ -107,7 +107,6 @@ public class MythosAltarBlockEntity extends BlockEntity implements BlockEntityTi
         List<ItemStack> ingredients = pedestalPositions.stream()
                 .filter(posD -> {
                     BlockEntity blockEntity = level.getBlockEntity(posD);
-                    MythosReborn.LOGGER.debug(level.getBlockEntity(posD));
                     return blockEntity instanceof MythosPedestalBlockEntity;
                 })
                 .map(posD -> {
