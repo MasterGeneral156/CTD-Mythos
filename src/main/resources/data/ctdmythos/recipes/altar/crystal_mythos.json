@@ -1,0 +1,23 @@
+{
+  "type": "ctdmythos:altar",
+
+  "catalyst": {
+    "tag": "forge:glass"
+  },
+
+  "ingredients": [
+    { "tag": "forge:gems/crystal_fire" },
+    { "tag": "forge:gems/crystal_woe" },
+	{ "tag": "forge:gems/crystal_oath" },
+	{ "tag": "forge:gems/crystal_grief" },
+    { "tag": "forge:gems/crystal_memory" }
+  ],
+
+  "result": {
+    "item": "ctdmythos:crystal_mythos",
+    "count": 4
+  },
+
+  "mythos": 1024,
+  "time": 200
+}
