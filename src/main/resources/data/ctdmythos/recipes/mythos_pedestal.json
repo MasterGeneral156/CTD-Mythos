@@ -11,7 +11,7 @@
 		"S": { "item": "minecraft:bricks"}
     },
   "result": {
-    "item": "ctdmythos:pedestal",
+    "item": "ctdmythos:mythos_pedestal",
     "count": 1
   }
 }

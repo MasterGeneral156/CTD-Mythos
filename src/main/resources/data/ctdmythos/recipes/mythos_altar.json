@@ -9,7 +9,7 @@
 		"S": { "item": "minecraft:polished_deepslate"}
     },
   "result": {
-    "item": "ctdmythos:altar",
+    "item": "ctdmythos:mythos_altar",
     "count": 1
   }
 }
