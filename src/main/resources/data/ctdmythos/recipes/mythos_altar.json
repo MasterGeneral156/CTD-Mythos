@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+        "OSO",
+		"SSS"
+    ],
+    "key": {
+		"O": { "tag": "forge:gems/mythos" },
+		"S": { "item": "minecraft:polished_deepslate"}
+    },
+  "result": {
+    "item": "ctdmythos:altar",
+    "count": 1
+  }
+}

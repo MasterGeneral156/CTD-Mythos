@@ -1,0 +1,21 @@
+{
+  "name": "Mythos Altar",
+  "category": "ctdmythos:mythos_blocks",
+  "icon": "ctdmythos:mythos_altar",
+  "pages": [
+    {
+	  "type": "patchouli:spotlight",
+	  "item": {
+		"item": "ctdmythos:mythos_altar"
+	  },
+	  "text": "When scrolls turn to ash and forges grow cold, only ritual remains. The Mythos Altar is not a tool of artisans or blacksmiths—but of mystics. It is the centerpiece of advanced crafting through invocation, channeling the flow of Mythos to reshape the very nature of matter.",
+	  "title": "The Forgotten Hands"
+	},
+	{
+	  "type": "patchouli:crafting",
+	  "recipe": "ctdmythos:mythos_altar",
+	  "title": "Shaped Recipe",
+	  "text": "It is not fire, nor pressure, nor craftsmanship that births the items of the old world. It is intention, channeled through the Mythos itself. We do not create—we merely remind the world what it could be."
+	}
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "name": "Ritual of the Old Way",
+  "category": "ctdmythos:getting_started",
+  "icon": "ctdmythos:mythos_altar",
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "The Ritual Process",
+      "text": "To begin a ritual, the user must place a catalyst item onto the Altar—a focus for the transformation to come. Around the Altar, up to nine Mythos Pedestals may be arranged within a 16×16×3 block area, each bearing a unique ingredient required by the ritual’s recipe."
+    },
+	{
+		"type": "patchouli:text",
+		"text": "Unlike traditional crafting, there is no hammer or hand to guide this process. Instead, it is the energy of Mythos itself that binds the items into a new whole. But Mythos does not act without will."      
+    },
+	{
+		"type": "patchouli:text",
+		"text": "To empower the ritual, a nearby Mythos Pylon must hold a Mythos Storage Item—typically a Mythos Pool—containing at least the required amount of Mythos specified in the recipe. When all conditions are met, the Altar draws from the Pylon, weaving the materials into the result over time." 
+    },
+	{
+		"type": "patchouli:text",
+		"title": "Ritual Requirements",
+		"text": "A Mythos Altar with a valid catalyst item<br>Up to 9x Mythos Pedestals holding the correct ritual ingredients<br>A Mythos Pylon in range, holding a Mythos Item with sufficient Mythos<br>A valid ritual recipe, stored in the world’s knowledge or known to the player" 
+    },
+	{
+		"type": "patchouli:text",
+		"text": "The ritual does not complete instantly. Each one takes time as the Altar processes the energy and reshapes the items. During this time, the ritual may emit visual cues: pulses of light, shifting runes, or the slow rising hum of Mythos aligning." 
+    }
+  ]
+}
