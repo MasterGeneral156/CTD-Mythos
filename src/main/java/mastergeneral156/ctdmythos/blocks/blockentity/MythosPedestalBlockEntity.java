@@ -28,7 +28,6 @@ public class MythosPedestalBlockEntity extends BlockEntity {
 
     public MythosPedestalBlockEntity(BlockPos pos, BlockState state) {
         super(BlockEntityRegistry.mythos_pedestal.get(), pos, state);
-        MythosReborn.LOGGER.info("Pedestal block entity created at " + pos);
     }
 
     public void dropContents() {
