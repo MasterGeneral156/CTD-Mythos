@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+	  "name": "ctdmythos:mythos_weather_pylon",
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "ctdmythos:mythos_weather_pylon"
+        }
+      ]
+    }
+  ]
+}
