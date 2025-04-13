@@ -1,5 +1,6 @@
 package mastergeneral156.ctdmythos.blocks.blockentity;
 
+import mastergeneral156.ctdmythos.blocks.MythosPylonBlock;
 import mastergeneral156.ctdmythos.items.mythos.MythosItem;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
@@ -50,6 +51,20 @@ public class MythosPylonBlockEntity extends BlockEntity implements BlockEntityTi
             return;
         }
 
+        if (!level.isClientSide) {
+            ItemStack stack = itemHandler.getStackInSlot(0);
+            int light = 0;
+
+            if (!stack.isEmpty() && stack.getItem() instanceof MythosItem item) {
+                float ratio = (float) item.getCurrentMythos() / (float) item.getMaxMythos();
+                light = Math.round(ratio * 15);
+            }
+
+            BlockState currentState = level.getBlockState(pos);
+            if (currentState.getBlock() instanceof MythosPylonBlock && currentState.getValue(MythosPylonBlock.LIGHT) != light) {
+                level.setBlock(pos, currentState.setValue(MythosPylonBlock.LIGHT, light), 3);
+            }
+        }
         // Server logic
         ItemStack stack = be.itemHandler.getStackInSlot(0);
         if (!stack.isEmpty() && stack.getItem() instanceof MythosItem mythosItem) {
