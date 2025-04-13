@@ -22,6 +22,7 @@ public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = Defer
             	ev.accept(new ItemStack(ItemConstants.mythos_refractor));
             	ev.accept(new ItemStack(ItemConstants.mythos_conductor));
                 ev.accept(new ItemStack(ItemConstants.mythos_battery));
+                ev.accept(new ItemStack(ItemConstants.mythos_chakra));
                 ev.accept(new ItemStack(ItemConstants.solstice_legion_staff));
 
                 ev.accept(ItemConstants.mythos_pylon);
@@ -43,5 +44,7 @@ public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = Defer
                 
                 ev.accept(ItemConstants.crystal_woe);
                 ev.accept(ItemConstants.ore_crystal_woe);
+
+                ev.accept(ItemConstants.crystal_mythos);
             }).build());
 }

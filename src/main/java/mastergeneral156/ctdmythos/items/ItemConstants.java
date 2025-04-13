@@ -16,12 +16,14 @@ public class ItemConstants {
 	public static CTDItem crystal_grief = new CTDItem(new Properties());
 	public static CTDItem crystal_memory = new CTDItem(new Properties());
 	public static CTDItem crystal_fire = new CTDItem(new Properties());
+	public static CTDItem crystal_mythos = new CTDItem(new Properties());
 	
 	//Non mythos tools
 	public static MythosDiviner mythos_diviner = new MythosDiviner();
 	
 	//Mythos Items
 	public static MythosItemStorage mythos_battery = new MythosItemStorage(1024, 8F);
+	public static MythosItemStorage mythos_chakra = new MythosItemStorage(1024*2.25F, 8*4.5F);
 	public static MythosItemGeneratorSolar mythos_refractor = new MythosItemGeneratorSolar(1024, 0.25F);
 	public static MythosItemGeneratorStormer mythos_conductor = new MythosItemGeneratorStormer(1024, 1.25F);
 	public static SolsticeLegionStaffItem solstice_legion_staff = new SolsticeLegionStaffItem(512F);
