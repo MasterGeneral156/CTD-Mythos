@@ -1,0 +1,22 @@
+{
+  "type": "ctdmythos:altar",
+
+  "catalyst": {
+    "tag": "forge:stone"
+  },
+
+  "ingredients": [
+    { "tag": "minecraft:creeper_igniters" },
+    { "tag": "forge:dusts/redstone" },
+	{ "tag": "forge:dyes/red" },
+    { "tag": "forge:crops/nether_wart" }
+  ],
+
+  "result": {
+    "item": "ctdmythos:ore_crystal_fire",
+    "count": 1
+  },
+
+  "mythos": 32,
+  "time": 200
+}

@@ -1,0 +1,22 @@
+{
+  "type": "ctdmythos:altar",
+
+  "catalyst": {
+    "tag": "forge:stone"
+  },
+
+  "ingredients": [
+    { "tag": "forge:slimeballs" },
+    { "tag": "forge:seeds" },
+	{ "tag": "forge:dyes/lime" },
+    { "tag": "forge:crops/potato" }
+  ],
+
+  "result": {
+    "item": "ctdmythos:ore_crystal_memory",
+    "count": 1
+  },
+
+  "mythos": 32,
+  "time": 200
+}

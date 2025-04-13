@@ -1,0 +1,22 @@
+{
+  "type": "ctdmythos:altar",
+
+  "catalyst": {
+    "tag": "forge:stone"
+  },
+
+  "ingredients": [
+    { "tag": "forge:coals" },
+    { "tag": "forge:bones" },
+	{ "tag": "forge:dyes/black" },
+    { "tag": "forge:crops/gunpowder" }
+  ],
+
+  "result": {
+    "item": "ctdmythos:ore_crystal_grief",
+    "count": 1
+  },
+
+  "mythos": 32,
+  "time": 200
+}

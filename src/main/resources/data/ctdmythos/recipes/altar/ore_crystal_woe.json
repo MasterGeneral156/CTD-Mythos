@@ -1,0 +1,22 @@
+{
+  "type": "ctdmythos:altar",
+
+  "catalyst": {
+    "tag": "forge:stone"
+  },
+
+  "ingredients": [
+    { "tag": "forge:gems/lapis" },
+    { "item": "minecraft:ghast_tear" },
+	{ "tag": "forge:dyes/blue" },
+    { "item": "minecraft:water_bucket" }
+  ],
+
+  "result": {
+    "item": "ctdmythos:ore_crystal_woe",
+    "count": 1
+  },
+
+  "mythos": 32,
+  "time": 200
+}
