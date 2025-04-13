@@ -12,6 +12,8 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
 
+import java.util.concurrent.atomic.AtomicReference;
+
 public class MythosPedestalRenderer implements BlockEntityRenderer<MythosPedestalBlockEntity> {
 
     private final ItemRenderer itemRenderer;
@@ -32,17 +34,38 @@ public class MythosPedestalRenderer implements BlockEntityRenderer<MythosPedesta
         poseStack.pushPose();
 
         // Position the item above the pedestal
-        poseStack.translate(0.5D, 1.1D, 0.5D);
+        poseStack.translate(0.5D, 0.9D, 0.5D);
 
-        // Rotate to face the player
-        double dx = player.getX() - (pedestal.getBlockPos().getX() + 0.5);
-        double dz = player.getZ() - (pedestal.getBlockPos().getZ() + 0.5);
-        float yaw = (float) (Math.toDegrees(Math.atan2(dz, dx)) - 90);
-        poseStack.mulPose(Axis.YP.rotationDegrees(-yaw));
+        float rotation = 0f;
 
-        // Optional: Add a slow rotation around Y axis
-        float rotation = (System.currentTimeMillis() / 30L) % 360;
-        poseStack.mulPose(Axis.YP.rotationDegrees(rotation));
+        if (!pedestal.isActive()) {
+            // Face the player when idle
+            double dx = player.getX() - (pedestal.getBlockPos().getX() + 0.5);
+            double dz = player.getZ() - (pedestal.getBlockPos().getZ() + 0.5);
+            float yaw = (float) (Math.toDegrees(Math.atan2(dz, dx)) - 90);
+            poseStack.mulPose(Axis.YP.rotationDegrees(-yaw));
+        } else {
+            // Try to get the linked altar and use its ritual progress
+            float baseSpeed = 1.0f;
+            float maxSpeed = 5000.0f;
+
+            AtomicReference<Float> progress = new AtomicReference<>(0f);
+
+            pedestal.getLinkedAltar().ifPresent(altar -> {
+                if (altar.isRitualActive()) {
+                    int max = altar.ritualTime;
+                    if (max > 0) {
+                        float p = (float) altar.ritualProgress / max;
+                        progress.set(Math.min(1f, p));
+                    }
+                }
+            });
+
+            float speedMultiplier = baseSpeed + (maxSpeed - baseSpeed) * progress.get();
+            rotation = ((System.currentTimeMillis() / 20L) % 360) * speedMultiplier;
+
+            poseStack.mulPose(Axis.YP.rotationDegrees(rotation));
+        }
 
         // Scale down the item for a nice floaty effect
         poseStack.scale(0.6f, 0.6f, 0.6f);
@@ -52,5 +75,6 @@ public class MythosPedestalRenderer implements BlockEntityRenderer<MythosPedesta
 
         poseStack.popPose();
     }
+
 }
 

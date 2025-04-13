@@ -36,15 +36,26 @@ public class MythosAltarRenderer implements BlockEntityRenderer<MythosAltarBlock
         // Position the item above the altar
         poseStack.translate(0.5D, 1.1D, 0.5D);
 
-        // Rotate to face the player
-        double dx = player.getX() - (altar.getBlockPos().getX() + 0.5);
-        double dz = player.getZ() - (altar.getBlockPos().getZ() + 0.5);
-        float yaw = (float) (Math.toDegrees(Math.atan2(dz, dx)) - 90);
-        poseStack.mulPose(Axis.YP.rotationDegrees(-yaw));
+        // Rotation logic
+        float rotation;
 
-        // Optional: Add a slow rotation around Y axis
-        float rotation = (System.currentTimeMillis() / 30L) % 360;
-        poseStack.mulPose(Axis.YP.rotationDegrees(rotation));
+        if (!altar.isRitualActive()) {
+            // Face the player when idle
+            double dx = player.getX() - (altar.getBlockPos().getX() + 0.5);
+            double dz = player.getZ() - (altar.getBlockPos().getZ() + 0.5);
+            float yaw = (float) (Math.toDegrees(Math.atan2(dz, dx)) - 90);
+            poseStack.mulPose(Axis.YP.rotationDegrees(-yaw));
+        } else {
+            // Spin faster as the ritual progresses
+            float baseSpeed = 1.0f; // Base multiplier (you can tune this)
+            float maxSpeed = 5000.0f;  // Max speed multiplier at 100% progress
+
+            float progress = altar.ritualTime > 0 ? (float) altar.ritualProgress / altar.ritualTime : 0f;
+            float speedMultiplier = baseSpeed + (float)Math.pow(progress, 2) * (maxSpeed - baseSpeed);
+
+            rotation = ((System.currentTimeMillis() / 20L) % 360) * speedMultiplier;
+            poseStack.mulPose(Axis.YP.rotationDegrees(rotation));
+        }
 
         // Scale down the item for a nice floaty effect
         poseStack.scale(0.6f, 0.6f, 0.6f);
@@ -54,5 +65,6 @@ public class MythosAltarRenderer implements BlockEntityRenderer<MythosAltarBlock
 
         poseStack.popPose();
     }
+
 }
 

@@ -37,11 +37,12 @@ public class MythosAltarBlockEntity extends BlockEntity implements BlockEntityTi
     private static final int MAX_PEDESTALS = 9;
     private NonNullList<ItemStack> pedestalInputs = NonNullList.withSize(MAX_PEDESTALS, ItemStack.EMPTY);
     private ItemStack catalyst = ItemStack.EMPTY;
-    private int ritualTime = 0;
-    private int ritualProgress = 0;
-    private AltarRecipe activeRecipe = null;
+    public int ritualTime = 0;
+    public int ritualProgress = 0;
+    public AltarRecipe activeRecipe = null;
     private final ItemStackHandler itemHandler = new ItemStackHandler(1);
     private List<BlockPos> pedestalPositions = new ArrayList<>();
+    private boolean isRitualActive = false;
 
     public MythosAltarBlockEntity(BlockPos pos, BlockState state) {
         super(BlockEntityRegistry.mythos_altar.get(), pos, state);
@@ -81,6 +82,18 @@ public class MythosAltarBlockEntity extends BlockEntity implements BlockEntityTi
             tryStartRitual();
         } else {
             continueRitual();
+        }
+    }
+
+    public boolean isRitualActive() {
+        return isRitualActive;
+    }
+
+    public void setRitualActive(boolean active) {
+        this.isRitualActive = active;
+        setChanged();
+        if (level != null && !level.isClientSide) {
+            level.sendBlockUpdated(worldPosition, getBlockState(), getBlockState(), 3);
         }
     }
 
@@ -134,8 +147,19 @@ public class MythosAltarBlockEntity extends BlockEntity implements BlockEntityTi
 
                 this.pedestalInputs = NonNullList.create();
                 this.pedestalInputs.addAll(ingredients);
+                this.setRitualActive(true);
 
                 markUpdated();
+                for (BlockPos pedestalPos : pedestalPositions) {
+                    BlockEntity be = level.getBlockEntity(pedestalPos);
+                    if (be instanceof MythosPedestalBlockEntity pedestal) {
+                        ItemStack stack = pedestal.getItem();
+                        if (!stack.isEmpty()) {
+                            pedestal.setActive(true);
+                            pedestal.setChanged();
+                        }
+                    }
+                }
             }
         }
     }
@@ -184,6 +208,8 @@ public class MythosAltarBlockEntity extends BlockEntity implements BlockEntityTi
         ItemStack catalystStack = getItem();
         if (!catalystStack.isEmpty()) {
             catalystStack.shrink(1);
+            setRitualActive(false);
+            setChanged();
             itemHandler.setStackInSlot(0, catalystStack);
         }
 
@@ -194,6 +220,7 @@ public class MythosAltarBlockEntity extends BlockEntity implements BlockEntityTi
                 ItemStack stack = pedestal.getItem();
                 if (!stack.isEmpty()) {
                     stack.shrink(1);
+                    pedestal.setActive(false);
                     pedestal.setChanged();
                 }
             }
@@ -251,6 +278,7 @@ public class MythosAltarBlockEntity extends BlockEntity implements BlockEntityTi
     public CompoundTag getUpdateTag() {
         CompoundTag tag = new CompoundTag();
         tag.put("ItemHandler", itemHandler.serializeNBT());
+        tag.putBoolean("RitualActive", isRitualActive);
         return tag;
     }
 
@@ -258,6 +286,9 @@ public class MythosAltarBlockEntity extends BlockEntity implements BlockEntityTi
     public void handleUpdateTag(CompoundTag tag) {
         if (tag.contains("ItemHandler")) {
             itemHandler.deserializeNBT(tag.getCompound("ItemHandler"));
+        }
+        if (tag.contains("RitualActive")) {
+            isRitualActive = tag.getBoolean("RitualActive");
         }
     }
 

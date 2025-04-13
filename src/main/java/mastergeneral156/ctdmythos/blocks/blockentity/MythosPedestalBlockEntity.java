@@ -13,14 +13,18 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.items.ItemStackHandler;
 
 import javax.annotation.Nullable;
+import java.util.Optional;
 
 public class MythosPedestalBlockEntity extends BlockEntity {
     private final ItemStackHandler itemHandler = new ItemStackHandler(1);
+    private static final int SCAN_RADIUS = 8;
+    private boolean active = false;
 
     public MythosPedestalBlockEntity(BlockPos pos, BlockState state) {
         super(BlockEntityRegistry.mythos_pedestal.get(), pos, state);
@@ -29,6 +33,18 @@ public class MythosPedestalBlockEntity extends BlockEntity {
 
     public void dropContents() {
         Containers.dropContents(level, worldPosition, new SimpleContainer(itemHandler.getStackInSlot(0)));
+    }
+
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
+        setChanged(); // marks server-side change
+        if (level != null && !level.isClientSide) {
+            level.sendBlockUpdated(worldPosition, getBlockState(), getBlockState(), 3); // tells client to re-render
+        }
     }
 
     public ItemStack getItem() {
@@ -80,13 +96,18 @@ public class MythosPedestalBlockEntity extends BlockEntity {
     public CompoundTag getUpdateTag() {
         CompoundTag tag = new CompoundTag();
         tag.put("ItemHandler", itemHandler.serializeNBT());
+        tag.putBoolean("Active", active);
         return tag;
     }
 
     @Override
     public void handleUpdateTag(CompoundTag tag) {
+        super.load(tag);
         if (tag.contains("ItemHandler")) {
             itemHandler.deserializeNBT(tag.getCompound("ItemHandler"));
+        }
+        if (tag.contains("Active")) {
+            active = tag.getBoolean("Active");
         }
     }
 
@@ -95,5 +116,15 @@ public class MythosPedestalBlockEntity extends BlockEntity {
         handleUpdateTag(pkt.getTag());
     }
 
+    public Optional<MythosAltarBlockEntity> getLinkedAltar() {
+        BlockPos center = this.getBlockPos();
+        Level level = this.getLevel();
+        if (level == null) return Optional.empty();
 
+        return BlockPos.betweenClosedStream(center.offset(-SCAN_RADIUS, -3, -SCAN_RADIUS), center.offset(SCAN_RADIUS, 3, SCAN_RADIUS))
+                .map(level::getBlockEntity)
+                .filter(be -> be instanceof MythosAltarBlockEntity altar && altar.isRitualActive())
+                .findFirst()
+                .map(be -> (MythosAltarBlockEntity) be);
+    }
 }
