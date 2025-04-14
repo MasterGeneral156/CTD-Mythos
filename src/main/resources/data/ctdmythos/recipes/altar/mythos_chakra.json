@@ -2,12 +2,19 @@
   "type": "ctdmythos:altar",
 
   "catalyst": {
-    "item": "ctdmythos:crystal_mythos", "data": 32767
+    "item": "ctdmythos:mythos_battery", "data": 32767
   },
 
   "ingredients": [
-    { "item": "ctdmythos:mythos_battery", "data": 32767 },
-    { "item": "ctdmythos:mythos_battery", "data": 32767 }
+	{ "tag": "forge:gems/crystal_memory" },
+	{ "item": "ctdmythos:crystal_mythos" },
+	{ "tag": "forge:gems/crystal_fire" },
+	{ "item": "ctdmythos:crystal_mythos" },
+    { "tag": "forge:gems/crystal_woe" },
+	{ "item": "ctdmythos:crystal_mythos" },
+	{ "tag": "forge:gems/crystal_oath" },
+	{ "item": "ctdmythos:crystal_mythos" },
+	{ "tag": "forge:gems/crystal_grief" }
   ],
 
   "result": {

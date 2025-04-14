@@ -2,7 +2,7 @@
   "type": "ctdmythos:altar",
 
   "catalyst": {
-    "tag": "forge:glass"
+    "tag": "minecraft:trim_materials"
   },
 
   "ingredients": [
@@ -15,9 +15,9 @@
 
   "result": {
     "item": "ctdmythos:crystal_mythos",
-    "count": 4
+    "count": 5
   },
 
   "mythos": 1024,
-  "time": 200
+  "time": 100
 }
