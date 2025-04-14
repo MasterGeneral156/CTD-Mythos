@@ -2,14 +2,18 @@
   "type": "ctdmythos:altar",
 
   "catalyst": {
-    "item": "minecraft:bricks"
+    "tag": "forge:gems/crystal_woe"
   },
 
   "ingredients": [
-    { "tag": "forge:gems/crystal_woe" },
-    { "tag": "forge:gems/crystal_woe" },
-	{ "tag": "forge:gems/crystal_woe" },
-    { "tag": "forge:gems/crystal_woe" }
+    { "item": "minecraft:bricks" },
+    { "item": "minecraft:bricks" },
+	{ "item": "minecraft:bricks" },
+	{ "item": "minecraft:bricks" },
+	{ "item": "minecraft:bricks" },
+	{ "item": "minecraft:bricks" },
+	{ "item": "minecraft:bricks" },
+    { "item": "minecraft:bricks" }
   ],
 
   "result": {
