@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "ctdmythos:crystal_fire_brick",
+    "ctdmythos:crystal_memory_brick",
+    "ctdmythos:crystal_oath_brick",
+    "ctdmythos:crystal_grief_brick",
+    "ctdmythos:crystal_woe_brick"
+  ]
+}
