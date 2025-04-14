@@ -1,0 +1,12 @@
+{
+  "type": "patchouli:shapeless_book_recipe",
+  "ingredients": [
+    {
+      "tag": "minecraft:bookshelf_books"
+    },
+    {
+      "tag": "forge:gems/mythos"
+    }
+  ],
+  "book": "ctdmythos:mythos_manual"
+}
