@@ -1,0 +1,23 @@
+{
+  "type": "ctdmythos:altar",
+
+  "catalyst": {
+    "item": "ctdmythos:mythos_pylon"
+  },
+
+  "ingredients": [
+    { "item": "ctdmythos:crystal_mythos" },
+    { "item": "ctdmythos:crystal_mythos" },
+	{ "item": "minecraft:clock" },
+	{ "item": "minecraft:lightning_rod" },
+    { "item": "minecraft:snowball" }
+  ],
+
+  "result": {
+    "item": "ctdmythos:mythos_weather_pylon",
+    "count": 1
+  },
+
+  "mythos": 1024,
+  "time": 200
+}

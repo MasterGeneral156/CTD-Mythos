@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+        " A ",
+        "GBG",
+		" A "
+    ],
+    "key": {
+		"B": { "tag": "forge:storage_blocks/amethyst" },
+		"A": { "tag": "forge:gems/amethyst" },
+		"G": { "tag": "forge:ingots/gold" }
+    },
+  "result": {
+    "item": "ctdmythos:mythos_pylon",
+    "count": 1
+  }
+}
