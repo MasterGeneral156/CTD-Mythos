@@ -22,6 +22,8 @@ public class ItemRegistry {
 	public static final RegistryObject<Item> mythos_refractor = ITEMS.register("mythos_refractor", () -> ItemConstants.mythos_refractor);
 	public static final RegistryObject<Item> mythos_conductor = ITEMS.register("mythos_conductor", () -> ItemConstants.mythos_conductor);
 	public static final RegistryObject<Item> mythos_battery = ITEMS.register("mythos_battery", () -> ItemConstants.mythos_battery);
+	public static final RegistryObject<Item> mythos_pickaxe = ITEMS.register("mythos_pickaxe", () -> ItemConstants.mythos_pickaxe);
+
 
 	//Crystal Socketable, Tier 2
 	public static final RegistryObject<Item> solstice_legion_staff = ITEMS.register("solstice_legion_staff", () -> ItemConstants.solstice_legion_staff);

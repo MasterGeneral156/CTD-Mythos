@@ -1,0 +1,24 @@
+{
+  "type": "ctdmythos:altar",
+
+  "catalyst": {
+    "item": "minecraft:diamond_pickaxe"
+  },
+
+  "ingredients": [
+    { "item": "ctdmythos:mythos_battery", "data": 32767 },
+    { "tag": "forge:gems/crystal_fire" },
+    { "tag": "forge:gems/crystal_woe" },
+	{ "tag": "forge:gems/crystal_oath" },
+	{ "tag": "forge:gems/crystal_grief" },
+    { "tag": "forge:gems/crystal_memory" }
+  ],
+
+  "result": {
+    "item": "ctdmythos:mythos_pickaxe",
+    "count": 1
+  },
+
+  "mythos": 512,
+  "time": 400
+}

@@ -19,6 +19,7 @@ public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = Defer
             .title(Component.translatable("itemgroup.ctdmythos.tab"))
             .displayItems((parameters, ev) -> {
             	ev.accept(ItemConstants.mythos_diviner);
+                ev.accept(new ItemStack(ItemConstants.mythos_pickaxe));
             	ev.accept(new ItemStack(ItemConstants.mythos_refractor));
             	ev.accept(new ItemStack(ItemConstants.mythos_conductor));
                 ev.accept(new ItemStack(ItemConstants.mythos_battery));

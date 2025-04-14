@@ -1,0 +1,19 @@
+{
+  "name": "Mythos Pickaxe",
+  "category": "ctdmythos:mythos_tools",
+  "icon": "ctdmythos:mythos_pickaxe",
+  "pages": [
+    {
+	  "type": "patchouli:spotlight",
+	  "item": {
+		"item": "ctdmythos:mythos_pickaxe"
+	  },
+	  "title": "Mythos Pickaxe",
+	  "text": "An ancient tool reforged through bound Mythos. The Mythos Pickaxe is a powerful mining tool infused with ambient Mythos energy. Unlike conventional tools, it draws from the Mythos reserves"
+	},
+	{
+		"type": "patchouli:text",
+		"text": "Consumes 8 Mythos per block mined. If no Mythos is available, the pickaxe cannot mine. Will passively refill from items like Mythos Pools."      
+    }
+  ]
+}
