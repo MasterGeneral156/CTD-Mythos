@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+        "GBG"
+    ],
+    "key": {
+		"B": { "item": "ctdmythos:crystal_mythos" },
+		"G": { "tag": "forge:ingots/gold" }
+    },
+  "result": {
+    "item": "ctdmythos:mythos_pylon",
+    "count": 1
+  }
+}

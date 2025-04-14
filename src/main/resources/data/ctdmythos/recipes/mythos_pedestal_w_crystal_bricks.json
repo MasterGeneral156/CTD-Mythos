@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+        " Z ",
+		"BSB"
+    ],
+    "key": {
+		"Z": { "item": "minecraft:smooth_stone" },
+		"B": { "tag": "forge:ingots/brick" },
+		"S": { "tag": "ctdmythos:crystal_bricks"}
+    },
+  "result": {
+    "item": "ctdmythos:mythos_pedestal",
+    "count": 1
+  }
+}
