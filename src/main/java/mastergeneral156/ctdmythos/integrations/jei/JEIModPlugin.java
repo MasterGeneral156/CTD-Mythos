@@ -1,6 +1,8 @@
 package mastergeneral156.ctdmythos.integrations.jei;
 
+import com.themastergeneral.ctdcore.helpers.ModUtils;
 import mastergeneral156.ctdmythos.blocks.BlockConstants;
+import mastergeneral156.ctdmythos.items.ItemRegistry;
 import mastergeneral156.ctdmythos.recipes.AltarRecipe;
 import mastergeneral156.ctdmythos.recipes.RecipeRegistry;
 import mezz.jei.api.IModPlugin;
@@ -43,6 +45,11 @@ public class JEIModPlugin implements IModPlugin {
             RecipeManager recipeManager = level.getRecipeManager();
             List<AltarRecipe> recipes = recipeManager.getAllRecipesFor(RecipeRegistry.ALTAR_TYPE.get());
             registration.addRecipes(JEIRecipeTypes.ALTAR, recipes);
+            registration.addIngredientInfo(ItemRegistry.ore_crystal_fire.get(), ModUtils.displayTranslation("jei.ctdmthos.ore_fire"));
+            registration.addIngredientInfo(ItemRegistry.ore_crystal_grief.get(), ModUtils.displayTranslation("jei.ctdmthos.ore_grief"));
+            registration.addIngredientInfo(ItemRegistry.ore_crystal_oath.get(), ModUtils.displayTranslation("jei.ctdmthos.ore_oath"));
+            registration.addIngredientInfo(ItemRegistry.ore_crystal_memory.get(), ModUtils.displayTranslation("jei.ctdmthos.ore_memory"));
+            registration.addIngredientInfo(ItemRegistry.ore_crystal_woe.get(), ModUtils.displayTranslation("jei.ctdmthos.ore_woe"));
         }
     }
 

@@ -44,5 +44,10 @@
 	"ctdmythos.advancement.socket.desc": "Socketed a Crystal to a compatible Mythos item",
 	"ctdmythos.advancement.socket.title": "Mythos Modifiers",
 	
-	"jei.ctdmythos.altar": "Mythos Altar Recipes"
+	"jei.ctdmythos.altar": "Mythos Altar Recipes",
+	"jei.ctdmythos.ore_fire": "Use Mythos Diviner on Redstone Ore to transform it into Crystal Fire Ore",
+	"jei.ctdmythos.ore_grief": "Use Mythos Diviner on Coal Ore to transform it into Crystal Grief Ore",
+	"jei.ctdmythos.ore_memory": "Use Mythos Diviner on Emerald Ore to transform it into Crystal Memory Ore",
+	"jei.ctdmythos.ore_oath": "Use Mythos Diviner on Gold Ore to transform it into Crystal Oath Ore",
+	"jei.ctdmythos.ore_woe": "Use Mythos Diviner on Lapis Ore to transform it into Crystal Woe Ore"
 }
