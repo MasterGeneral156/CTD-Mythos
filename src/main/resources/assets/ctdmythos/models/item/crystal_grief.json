@@ -1,6 +1,77 @@
 {
-    "parent": "item/generated",
-    "textures": {
-        "layer0": "ctdmythos:item/crystal_grief"
-    }
+	"credit": "Made with Blockbench",
+	"textures": {
+		"0": "ctdmythos:item/crystal_grief",
+		"particle": "ctdmythos:item/crystal_grief"
+	},
+	"elements": [
+		{
+			"from": [6.25, 0, 6.5],
+			"to": [9.75, 8, 9.5],
+			"rotation": {"angle": 0, "axis": "y", "origin": [6.25, 0, 6.5]},
+			"faces": {
+				"north": {"uv": [6.25, 8, 9.75, 16], "texture": "#0"},
+				"east": {"uv": [6.5, 8, 9.5, 16], "texture": "#0"},
+				"south": {"uv": [6.25, 8, 9.75, 16], "texture": "#0"},
+				"west": {"uv": [6.5, 8, 9.5, 16], "texture": "#0"},
+				"up": {"uv": [6.25, 6.5, 9.75, 9.5], "texture": "#0"},
+				"down": {"uv": [6.25, 6.5, 9.75, 9.5], "texture": "#0"}
+			}
+		},
+		{
+			"from": [8.25, 0.25, 8.5],
+			"to": [11.75, 5.25, 11.5],
+			"rotation": {"angle": 0, "axis": "y", "origin": [8.25, 0, 8.5]},
+			"faces": {
+				"north": {"uv": [4.25, 10.75, 7.75, 15.75], "texture": "#0"},
+				"east": {"uv": [8.5, 10.75, 11.5, 15.75], "texture": "#0"},
+				"south": {"uv": [8.25, 10.75, 11.75, 15.75], "texture": "#0"},
+				"west": {"uv": [4.5, 10.75, 7.5, 15.75], "texture": "#0"},
+				"up": {"uv": [8.25, 4.5, 11.75, 7.5], "texture": "#0"},
+				"down": {"uv": [8.25, 8.5, 11.75, 11.5], "texture": "#0"}
+			}
+		},
+		{
+			"from": [3.25, 0.5, 7.5],
+			"to": [6.75, 3.5, 10.5],
+			"rotation": {"angle": 0, "axis": "y", "origin": [3.25, 0, 7.5]},
+			"faces": {
+				"north": {"uv": [9.25, 12.5, 12.75, 15.5], "texture": "#0"},
+				"east": {"uv": [8.5, 12.5, 11.5, 15.5], "texture": "#0"},
+				"south": {"uv": [3.25, 12.5, 6.75, 15.5], "texture": "#0"},
+				"west": {"uv": [4.5, 12.5, 7.5, 15.5], "texture": "#0"},
+				"up": {"uv": [3.25, 4.5, 6.75, 7.5], "texture": "#0"},
+				"down": {"uv": [3.25, 8.5, 6.75, 11.5], "texture": "#0"}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"translation": [0, 3.25, 0],
+			"scale": [0.4, 0.4, 0.4]
+		},
+		"thirdperson_lefthand": {
+			"translation": [0, 3.25, 0],
+			"scale": [0.4, 0.4, 0.4]
+		},
+		"firstperson_righthand": {
+			"translation": [0, 3.25, 0],
+			"scale": [0.4, 0.4, 0.4]
+		},
+		"firstperson_lefthand": {
+			"translation": [0, 3.25, 0],
+			"scale": [0.4, 0.4, 0.4]
+		},
+		"ground": {
+			"translation": [0, 3.25, 0],
+			"scale": [0.4, 0.4, 0.4]
+		},
+		"gui": {
+			"rotation": [22.5, 22.5, 0],
+			"translation": [0, 4.75, 0]
+		},
+		"fixed": {
+			"translation": [0, 4.25, 0]
+		}
+	}
 }

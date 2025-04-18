@@ -1,6 +1,102 @@
 {
-    "parent": "item/generated",
-    "textures": {
-        "layer0": "ctdmythos:item/crystal_mythos"
-    }
+	"credit": "Made with Blockbench",
+	"textures": {
+		"0": "ctdmythos:item/crystal_mythos",
+		"particle": "ctdmythos:item/crystal_mythos"
+	},
+	"elements": [
+		{
+			"name": "octagon",
+			"from": [6.79391, 0.25, 7.525],
+			"to": [9.20419, 6.25, 8.475],
+			"rotation": {"angle": 22.5, "axis": "z", "origin": [8.01155, 3.25, 5.5]},
+			"faces": {
+				"north": {"uv": [6.29581, 8.25, 8.70609, 14.25], "texture": "#0"},
+				"east": {"uv": [7.025, 8.25, 7.975, 14.25], "texture": "#0"},
+				"south": {"uv": [6.29391, 8.25, 8.70419, 14.25], "texture": "#0"},
+				"west": {"uv": [7.025, 8.25, 7.975, 14.25], "texture": "#0"},
+				"up": {"uv": [6.29391, 6.025, 8.70419, 6.975], "texture": "#0"},
+				"down": {"uv": [6.29391, 6.025, 8.70419, 6.975], "texture": "#0"}
+			}
+		},
+		{
+			"name": "octagon",
+			"from": [6.81891, 0.25, 7.55],
+			"to": [9.17919, 6.25, 8.45],
+			"rotation": {"angle": -22.5, "axis": "z", "origin": [8.01155, 3.25, 5.5]},
+			"faces": {
+				"north": {"uv": [6.32081, 8.25, 8.68109, 14.25], "texture": "#0"},
+				"east": {"uv": [7.05, 8.25, 7.95, 14.25], "texture": "#0"},
+				"south": {"uv": [6.31891, 8.25, 8.67919, 14.25], "texture": "#0"},
+				"west": {"uv": [7.05, 8.25, 7.95, 14.25], "texture": "#0"},
+				"up": {"uv": [6.31891, 6.05, 8.67919, 6.95], "texture": "#0"},
+				"down": {"uv": [6.31891, 6.05, 8.67919, 6.95], "texture": "#0"}
+			}
+		},
+		{
+			"name": "octagon",
+			"from": [5.01155, 2.00736, 7.575],
+			"to": [10.96155, 4.49264, 8.425],
+			"rotation": {"angle": 22.5, "axis": "z", "origin": [8.01155, 3.25, 5.5]},
+			"faces": {
+				"north": {"uv": [4.53845, 10.00736, 10.48845, 12.49264], "texture": "#0"},
+				"east": {"uv": [7.075, 10.00736, 7.925, 12.49264], "texture": "#0"},
+				"south": {"uv": [4.51155, 10.00736, 10.46155, 12.49264], "texture": "#0"},
+				"west": {"uv": [7.075, 10.00736, 7.925, 12.49264], "texture": "#0"},
+				"up": {"uv": [4.51155, 6.075, 10.46155, 6.925], "texture": "#0"},
+				"down": {"uv": [4.51155, 6.075, 10.46155, 6.925], "texture": "#0"}
+			}
+		},
+		{
+			"name": "octagon",
+			"from": [5.01155, 2.00736, 7.5],
+			"to": [10.98655, 4.49264, 8.5],
+			"rotation": {"angle": -22.5, "axis": "z", "origin": [8.01155, 3.25, 5.5]},
+			"faces": {
+				"north": {"uv": [4.51345, 10.00736, 10.48845, 12.49264], "texture": "#0"},
+				"east": {"uv": [7, 10.00736, 8, 12.49264], "texture": "#0"},
+				"south": {"uv": [4.51155, 10.00736, 10.48655, 12.49264], "texture": "#0"},
+				"west": {"uv": [7, 10.00736, 8, 12.49264], "texture": "#0"},
+				"up": {"uv": [4.51155, 6, 10.48655, 7], "texture": "#0"},
+				"down": {"uv": [4.51155, 6, 10.48655, 7], "texture": "#0"}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"translation": [0, 3.25, 0],
+			"scale": [0.4, 0.4, 0.4]
+		},
+		"thirdperson_lefthand": {
+			"translation": [0, 3.25, 0],
+			"scale": [0.4, 0.4, 0.4]
+		},
+		"firstperson_righthand": {
+			"translation": [0, 3.25, 0],
+			"scale": [0.4, 0.4, 0.4]
+		},
+		"firstperson_lefthand": {
+			"translation": [0, 3.25, 0],
+			"scale": [0.4, 0.4, 0.4]
+		},
+		"ground": {
+			"translation": [0, 3.25, 0],
+			"scale": [0.4, 0.4, 0.4]
+		},
+		"gui": {
+			"rotation": [22.5, 22.5, 0],
+			"translation": [0, 4.75, 0]
+		},
+		"fixed": {
+			"translation": [0, 4.25, 0]
+		}
+	},
+	"groups": [
+		{
+			"name": "octagon",
+			"origin": [8.01155, 8, 5.5],
+			"color": 0,
+			"children": [0, 1, 2, 3]
+		}
+	]
 }
